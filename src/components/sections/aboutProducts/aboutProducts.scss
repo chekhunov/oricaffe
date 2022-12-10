@@ -1,0 +1,72 @@
+
+@import '../../../scss/vars.scss';
+
+.about-products {
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 20px;
+
+    &::before {
+        content: '';
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 1px;
+        color: rgba(205, 186, 170, 0.5);
+    }
+
+    &__desc {
+      align-items: baseline;
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__content-block {
+        padding: 70px 0;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+  .about-products {
+    .line {
+      display: none;
+    }
+
+    &__text {
+      margin-bottom: 50px;
+      font-size: 24px;
+    }
+
+    &__meta-text {
+      font-size: 14px;
+    }
+
+    &__content {
+      & a:last-child {
+        margin-right: 35px;
+      }
+    }
+
+    &__content-block {
+      padding-top: 20px;
+    }
+
+    &__link {
+      width: 157px;
+      height: 157px;
+      margin-right: 20px;
+
+      &:hover{
+        box-shadow: none;
+      }
+    }
+
+    &__card-desc {
+      font-size: 18px;
+    }
+  }
+}

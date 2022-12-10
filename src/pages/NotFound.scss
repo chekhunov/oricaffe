@@ -1,0 +1,36 @@
+@import '../scss/vars.scss';
+
+.error {
+  min-height: 600px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__inner {
+    height: 100%;
+  }
+
+  &__link {
+    color: $hover;
+    transition: color 0.3s;
+
+    &:hover {
+      color: lighten($color: $hover, $amount: 30%);
+    }
+  }
+}
+
+.subtitle {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 45px;
+}
+
+.text {
+  max-width: 600px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  text-align: center;
+}

@@ -1,0 +1,11 @@
+.dots {
+  position: absolute;
+  height: 6px;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 2px;
+  transform: translate(-50%);
+  z-index: 100;
+}

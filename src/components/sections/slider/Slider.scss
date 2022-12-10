@@ -1,0 +1,70 @@
+@import '../../../scss/vars.scss';
+
+.slider {
+  position: relative;
+  margin-top: 80px;
+  margin-bottom: 50px;
+  overflow: hidden;
+
+  & .slide-list {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+
+    & .slide {
+      flex: 1 0 100%;
+      position: relative;
+
+      & .slide-image {
+        position: relative;
+        display: inline-flex;
+        margin: 0 auto;
+        max-height: 900px;
+        width: 100%;
+        object-fit: contain;
+      }
+    //   .slide-image::after {
+    //     content: "";
+    //     display: block;    
+    //     width: 100%;
+    //     height: 100%;    
+    //     position: absolute;
+    //     top: 0;      
+    //     left: 0;   
+    //     background: transparent;
+    //     background: linear-gradient(transparent, rgb(164, 230, 230) 99%, rgb(164, 229, 229) 30%);
+    //     opacity: 0.8;
+    // }
+
+      &__content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform: translate(-50%, -50%); 
+        @extend %libreBaskerville-700;
+        z-index: 200;
+      }
+
+      & .slide-title {
+        font-size: 48px;
+        text-align: center;
+        margin-top: 10px;
+        color: #ffffff;
+
+      }
+
+      & .slide-subtitle {
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 28px;
+        color: #ffffff;
+        text-align: center;
+        margin-bottom: 50px;
+      }
+    }
+  }
+}

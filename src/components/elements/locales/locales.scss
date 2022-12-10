@@ -1,0 +1,67 @@
+.flag {
+  border-radius: 5px;
+  border: 0.1px solid #c8c7c7;
+}
+
+.lang {
+  // padding: 20px 0;
+  font-size: 14px;
+  text-transform: uppercase;
+  z-index: 0;
+  &:hover {
+    .lang__popup {
+      visibility: visible;
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  &__el {
+    position: relative;
+    cursor: pointer;
+  }
+
+  &__item {
+    padding: 0 10px;
+    position: relative;
+    color: $title;
+    cursor: pointer;
+    transition: color 0.3s;
+
+    &:hover {
+      background-color: darken(#ffffff, 10%);
+    }
+
+    &:not(:last-child) {
+        margin-bottom: 10px;
+      }
+  }
+
+  &__text {
+    color: $default;
+    line-height: 0.5;
+  }
+
+  .active {
+    padding-top: 2px;
+  }
+
+  &__popup {
+    position: absolute;
+    width: 100%;
+    min-width: 80px;
+    display: flex;
+    padding: 10px 0;
+    flex-direction: column;
+    top: 35px;
+    left: -10px;
+    color: $hover!important;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all .3s ease;
+  }
+}

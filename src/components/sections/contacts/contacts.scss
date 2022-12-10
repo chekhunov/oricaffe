@@ -1,0 +1,147 @@
+.contacts {
+    margin-bottom: 60px;
+    &__content-block{
+        padding-top: 130px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__desc {
+        padding-top: 110px;
+    }
+
+    &__img {
+        width: calc(65% - 15px);
+    }
+
+    .line {
+        height: 70px;
+    }
+
+    &__list {
+        width: calc(35% - 15px);
+    }
+
+    &__item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 70px;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+    }
+
+    .icon-location {
+      &::before {
+        font-size: 28px;
+      }
+    }
+
+    .icon-phone {
+      &::before {
+        font-size: 27px;
+      }
+    }
+
+    .icon-mail {
+      padding-top: 2px;
+      &::before {
+        font-size: 21px;
+      }
+    }
+
+
+    &__block {
+      margin-left: 10px;
+    }
+
+    &__title {
+      font-size: 24px;
+      color: $default;
+      white-space: nowrap;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $hover;
+      }
+    }
+
+    &__text {
+      font-size: 14px;
+      color: #CDBAAA;
+    }
+}
+
+@media screen and (max-width: 1167px) {
+  .contacts {
+    &__content-block {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+    }
+
+    &__item {
+      margin-bottom: 35px;
+
+      &:last-child {
+        margin-bottom: 35px;
+      }
+    }
+
+    &__img {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .contacts {
+    margin-bottom: 30px;
+
+    .line {
+      display: none;
+    }
+
+    &__desc {
+        padding-top: 70px;
+    }
+
+    &__content-block {
+      padding-top: 100px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .contacts {
+    margin-bottom: 0;
+
+    &__content-block {
+      margin: 0 -15px;
+      padding-top: 60px;
+    }
+
+    &__list {
+      width: 60%;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    &__title {
+      font-size: 18px;
+    }
+
+    &__desc {
+      padding-top: 50px;
+    }
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .contacts {
+    &__list {
+      width: 100%;
+    }
+  }
+}

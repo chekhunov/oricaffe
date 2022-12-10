@@ -1,0 +1,15 @@
+{
+
+  "home": "home",
+  "services": "services",
+  "portfolio": "portfolio",
+  "contacts": "Contacts",
+  "skills": "Skills",
+  "about": "About me",
+  "hey": "Hey!",
+  "my_name": "My name is Igor, I am 40 years old, I have been programming for years, of which 1 year I studied Java, 2 years I have been doing Frontend development in the field of marketplaces using React and Vue technologies, also developing layouts in Figma. In my free time, I study new technologies and new approaches in development, and also help beginners to form in the profession of a Frontend developer.",
+  "start": "Start a project",
+  "process": "The process",
+  "workin": "Workin with the layout",
+  "content": "Content layout"
+}

@@ -1,0 +1,82 @@
+@import 'mixins';
+
+html,
+body {
+  min-width: 320px;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  color: $default;
+  background-color: #ffffff;
+  @extend %helvetica-400;
+}
+
+.main {
+  flex-grow: 1;
+}
+
+.container {
+  max-width: 1350px;
+  margin: 0 auto;
+  padding: 0 25px;
+
+  @media screen and (max-width: 767px) {
+    padding: 0 15px;
+  }
+}
+
+.container-big {
+  max-width: 1340px;
+  margin: 0 auto;
+  padding: 0 25px;
+
+  @media screen and (max-width: 1024px) {
+    padding: 0 40px;
+  }
+
+  @media screen and (max-width: 767px) {
+    padding: 0 15px;
+  }
+}
+
+a,
+button {
+  display: block;
+  outline: transparent;
+  cursor: pointer;
+}
+
+.fadeIn {
+  animation: 0.5s fadeIn forwards;
+}
+
+.fadeOut {
+  animation: 0.5s fadeOut forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-20px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+  to {
+    transform: translate(-20px, 0);
+    opacity: 0;
+  }
+}

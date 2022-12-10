@@ -1,0 +1,59 @@
+@import '../../../scss/vars.scss';
+
+.atuin-btn {
+    height: 46px;
+    width: 100%;
+    min-width: 170px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    position: relative;
+    font-size: 16px;
+    color: $hover;
+    // text-transform: uppercase;
+    background-color: #F2E9E9;
+    cursor: pointer;
+    // border: 0.2px solid $hover;
+    border-radius: 100px;
+    overflow: hidden;
+    z-index: 1;
+    @extend %helvetica-400;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    // box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    // box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+
+    &__text {
+      padding-top: 2px;
+    }
+}
+.atuin-btn:hover,
+.atuin-btn:active,
+.atuin-btn:focus {
+    color: #FFF;
+}
+.atuin-btn:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -50px;
+    bottom: 0;
+    left: 0;
+    border-right: 50px solid transparent;
+    border-top: 50px solid #ffa9a9;
+    transition: transform 0.5s;
+    transform: translateX(-100%);
+    z-index: -1;
+}
+.atuin-btn:hover:before,
+.atuin-btn:active:before,
+.atuin-btn:focus:before {
+    transform: translateX(0);
+}
+
+.atuin-btn:active {
+      // color: #ffffff;
+      // background-color: #CE1D26;
+box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+      transition: color 0.3s, background-color 0.3s;
+    }

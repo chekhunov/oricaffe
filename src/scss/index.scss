@@ -1,0 +1,36 @@
+//* Globals *
+@import "./reset";
+@import "./vars";
+@import "./fonts";
+@import "./mixins";
+@import "./normalize";
+@import "./global";
+@import "./libs";
+
+//* Plagins *
+@import "../../node_modules/macro-css/index.min.css";
+
+//* Elements *
+@import "../components/elements/closedButton/closedButton";
+@import "../components/elements/popup/popup";
+// @import "../components/about/about";
+// @import "../components/consultation/consultation";
+@import "../components/sections/contacts/contacts";
+@import "../components/elements/menu/menu";
+@import "../components/elements/locales/locales.scss";
+
+//* Modules *
+@import "../components/modules/header/header";
+@import "../components/modules/header/headerMenuPopup/headerMenuPopup";
+@import "../components/modules/header/logoCompany/logoCompany";
+// @import "../components/modules/footer/footer";
+
+@import "../components/listPlusPopup/listPlusPopup";
+
+// @import "../components/news/news";
+// @import "../components/participation/participation";
+// @import "../components/employes/employes";
+// @import "../components/employes/cardEmploye/cardEmploye";
+@import "../components/sections/slider/Slider.scss";
+
+
