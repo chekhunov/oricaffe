@@ -1,13 +1,15 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { About, Slider } from "../components";
+import { Slider } from "../components";
 
+import About from "../components/sections/about";
 import AboutProducts from "../components/sections/aboutProducts";
+import Socials from "../components/sections/socials";
 
 import "./home.scss";
 
 export default function Home() {
   const colorDefault = "rgba(205, 186, 170, 0.5)";
-  const colorAccent = "#1EAEFF";
+  const colorAccent = "#8E0303";
 
   const [setColor] = React.useState(colorDefault);
 
@@ -15,128 +17,132 @@ export default function Home() {
   const [isHeigthAbout, setIsHeigthAbout] = useState(0);
   const [textAccentAbout, setTextAccentAbout] = useState(colorDefault);
 
-  // // calculation number heigth %
-  // function procentAccentBlock(num) {
-  //   return (Number(window.scrollY) - num) / 4.5;
-  // }
+  const [colorAboutProducts, setColorAboutProducts] = useState(colorDefault);
+  const [isHeigthAboutProducts, setIsHeigthAboutProducts] = useState(0);
+  const [textAccentAboutProducts, setTextAccentAboutProducts] =
+    useState(colorDefault);
 
-  // //calculation and set color line
-  // function isActiveLine(
-  //   scrollTop,
-  //   numProcentAccentBlock,
-  //   setColor,
-  //   setIsHeigth
-  // ) {
-  //   const scrollPlace = window.scrollY;
-  //   if (scrollPlace > scrollTop) {
-  //     setColor(colorAccent);
-  //     let procentAccentBlockAbout = procentAccentBlock(numProcentAccentBlock);
-  //     if (procentAccentBlockAbout < 100) {
-  //       setIsHeigth(procentAccentBlockAbout);
-  //     }
-  //     if (procentAccentBlockAbout > 100) {
-  //       setIsHeigth(100);
-  //     }
-  //   }
-  // }
+  const [colorSocials, setColorSocials] = useState(colorDefault);
+  const [isHeigthSocials, setIsHeigthSocials] = useState(0);
+  const [textAccentSocials, setTextAccentSocials] = useState(colorDefault);
 
-  // //calculation and set color text
-  // function isActiveText(scrollTop, setTextAccent) {
-  //   const scrollPlace = window.scrollY;
-  //   console.log("isActiveText", scrollPlace);
-  //   if (scrollPlace > scrollTop) {
-  //     setTextAccent(colorAccent);
-  //   }
-  //   if (scrollPlace < scrollTop) {
-  //     setTextAccent(colorDefault);
-  //   }
-  // }
+  // calculation number heigth %
+  function procentAccentBlock(num) {
+    return (Number(window.scrollY) - num) / 4.5;
+  }
 
-  // const listenScrollEvent = (event) => {
-  //   const scrollPlace = window.scrollY;
+  //calculation and set color line
+  function isActiveLine(
+    scrollTop,
+    numProcentAccentBlock,
+    setColor,
+    setIsHeigth
+  ) {
+    const scrollPlace = window.scrollY;
+    if (scrollPlace > scrollTop) {
+      setColor(colorAccent);
+      let procentAccentBlockAbout = procentAccentBlock(numProcentAccentBlock);
+      if (procentAccentBlockAbout < 100) {
+        setIsHeigth(procentAccentBlockAbout);
+      }
+      if (procentAccentBlockAbout > 100) {
+        setIsHeigth(100);
+      }
+    }
+  }
 
-  //   //default
-  //   if (scrollPlace < 10) {
-  //     setColor(colorDefault);
-  //   }
+  //calculation and set color text
+  function isActiveText(scrollTop, setTextAccent) {
+    const scrollPlace = window.scrollY;
+    console.log("isActiveText", scrollPlace);
+    if (scrollPlace > scrollTop) {
+      setTextAccent(colorAccent);
+    }
+    if (scrollPlace < scrollTop) {
+      setTextAccent(colorDefault);
+    }
+  }
 
-  //   //about title
-  //   isActiveText(540, setTextAccentAbout);
-  //   //about line
-  //   isActiveLine(560, 580, setColorAbout, setIsHeigthAbout);
+  const listenScrollEvent = (event) => {
+    const scrollPlace = window.scrollY;
+    console.log(scrollPlace);
 
-  //   if (scrollPlace < 500) {
-  //     setColorAbout(colorDefault);
-  //   }
+    //default
+    if (scrollPlace < 10) {
+      setColor(colorDefault);
+    }
 
-  //   // //treatment title
-  //   // isActiveText(1000, setTextAccentTreatment);
-  //   // //treatment line
-  //   // isActiveLine(1020, 1100, setColorTreatment, setIsHeigthTreatment);
+    //about title
+    isActiveText(640, setTextAccentAbout);
+    isActiveLine(660, 680, setColorAbout, setIsHeigthAbout);
 
-  //   // if (scrollPlace < 1020) {
-  //   //   setColorTreatment(colorDefault);
-  //   // }
+    if (scrollPlace < 680) {
+      setColorAbout(colorDefault);
+    }
 
-  //   // //participation title
-  //   // isActiveText(1570, setTextAccentParticipation);
-  //   // //participation line
-  //   // isActiveLine(1590, 1670, setColorParticipation, setIsHeigthParticipation);
+    //aboutProducts title
+    isActiveText(1200, setTextAccentAboutProducts);
+    isActiveLine(1250, 1300, setColorAboutProducts, setIsHeigthAboutProducts);
 
-  //   // if (scrollPlace < 1590) {
-  //   //   setColorParticipation(colorDefault);
-  //   // }
-  //   // //employers title
-  //   // isActiveText(2150, setTextAccentEmployes);
+    if (scrollPlace < 1300) {
+      setColorAboutProducts(colorDefault);
+    }
 
-  //   // //News line
-  //   // isActiveLine(2650, 2480, setColorNews, setIsHeigthNews);
+    //socials title
+    isActiveText(2440, setTextAccentSocials);
+    isActiveLine(2480, 2500, setColorSocials, setIsHeigthSocials);
 
-  //   // if (scrollPlace < 2650) {
-  //   //   setColorNews(colorDefault);
-  //   // }
-  //   // //News title
-  //   // isActiveText(2950, setTextAccentNews);
+    if (scrollPlace < 2500) {
+      setColorSocials(colorDefault);
+    }
 
-  //   // //Consultation title
-  //   // isActiveText(3400, setTextAccentConsultation);
-  //   // //Consultation line
-  //   // isActiveLine(3400, 3400, setColorConsultation, setIsHeigthConsultation);
+    //   // //participation title
+    //   // isActiveText(1570, setTextAccentParticipation);
+    //   // //participation line
+    //   // isActiveLine(1590, 1670, setColorParticipation, setIsHeigthParticipation);
 
-  //   // if (scrollPlace < 3420) {
-  //   //   setColorConsultation(colorDefault);
-  //   // }
+    //   // if (scrollPlace < 1590) {
+    //   //   setColorParticipation(colorDefault);
+    //   // }
+    //   // //employers title
+    //   // isActiveText(2150, setTextAccentEmployes);
 
-  //   // //Contacts line
-  //   // isActiveLine(3900, 3780, setColorContacts, setIsHeigthContacts);
+    //   // //News line
+    //   // isActiveLine(2650, 2480, setColorNews, setIsHeigthNews);
 
-  //   // if (scrollPlace < 3900) {
-  //   //   setColorContacts(colorDefault);
-  //   // }
+    //   // if (scrollPlace < 2650) {
+    //   //   setColorNews(colorDefault);
+    //   // }
+    //   // //News title
+    //   // isActiveText(2950, setTextAccentNews);
 
-  //   // //Consultation title
-  //   // isActiveText(4200, setTextAccentContacts);
-  // };
+    //   // //Consultation title
+    //   // isActiveText(3400, setTextAccentConsultation);
+    //   // //Consultation line
+    //   // isActiveLine(3400, 3400, setColorConsultation, setIsHeigthConsultation);
 
-  // useEffect(() => {
-  //   window.addEventListener("scroll", listenScrollEvent, { passive: true });
-  //   return () =>
-  //     window.removeEventListener("scroll", listenScrollEvent, {
-  //       passive: true,
-  //     });
-  // }, [listenScrollEvent]);
- 
-  // useEffect(() => {
-  //   console.log(window.pageYOffset);
-  //   function watchScroll() {
-  //     window.addEventListener("scroll", logit);
-  //   }
-  //   watchScroll();
-  //   // Remove listener (like componentWillUnmount)
-  //   return () => {
-  //     window.removeEventListener("scroll", logit);
-  //   };
-  // }, []);
+    //   // if (scrollPlace < 3420) {
+    //   //   setColorConsultation(colorDefault);
+    //   // }
+
+    //   // //Contacts line
+    //   // isActiveLine(3900, 3780, setColorContacts, setIsHeigthContacts);
+
+    //   // if (scrollPlace < 3900) {
+    //   //   setColorContacts(colorDefault);
+    //   // }
+
+    //   // //Consultation title
+    //   // isActiveText(4200, setTextAccentContacts);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", listenScrollEvent, { passive: true });
+    return () =>
+      window.removeEventListener("scroll", listenScrollEvent, {
+        passive: true,
+      });
+  }, [listenScrollEvent]);
 
   return (
     <>
@@ -147,17 +153,20 @@ export default function Home() {
           colorAbout={colorAbout}
           isHeigthAbout={isHeigthAbout}
         />
-        <About
-        // textAccentAbout={textAccentAbout}
-        // colorAbout={colorAbout}
-        // isHeigthAbout={isHeigthAbout}
+
+        <AboutProducts
+          textAccent={textAccentAboutProducts}
+          color={colorAboutProducts}
+          isHeigth={isHeigthAboutProducts}
         />
-        <About
-        // textAccentAbout={textAccentAbout}
-        // colorAbout={colorAbout}
-        // isHeigthAbout={isHeigthAbout}
+
+        <Socials
+          textAccent={textAccentSocials}
+          color={colorSocials}
+          isHeigth={isHeigthSocials}
         />
-        <AboutProducts />
+
+        <img className='home__baner' src="/baners/baner-1.jpg" alt="baner" />
       </div>
     </>
   );

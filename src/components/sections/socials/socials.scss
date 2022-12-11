@@ -1,0 +1,74 @@
+@import '../../../scss/vars.scss';
+
+.socials {
+    position: relative;
+    padding-top: 30px;
+    margin-bottom: 50px;
+
+    &::before {
+        content: '';
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 1px;
+        color: rgba(205, 186, 170, 0.5);
+    }
+
+    &__desc {
+      align-items: baseline;
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__content-block {
+      width: 100%;
+      padding: 100px 0;
+    }
+
+    &__block {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+
+    &__icon {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      background-color: #E6481F;
+      border-radius: 50%;
+      transition: background-color 0.3s;
+
+      &:not(:last-child) {
+        margin-right: 30px;
+      }
+
+      &:hover {
+        background-color: lighten($color: #E6481F, $amount: 20%);
+        transition: background-color 0.3s;
+      }
+    }
+
+    &__link {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__ico path {
+      fill: $disable;
+    }
+
+    .icon-instagram {
+      font-size: 42px;
+
+      &::before {
+        color: #E8E8E8;
+      }
+    }
+  }

@@ -8,25 +8,25 @@ import { Context } from "./context";
 export default function App({ appState }) {
   const [context, setContext] = useState([]);
 
-  const [scrollY, setScrollY] = useState(0);
+  // const [scrollY, setScrollY] = useState(0);
 
-  function logit() {
-    console.log("logit", window.pageYOffset);
-    setScrollY(window.pageYOffset);
-  }
+  // function logit() {
+  //   console.log("logit", window.pageYOffset);
+  //   setScrollY(window.pageYOffset);
+  // }
 
-  useEffect(() => console.log("scrollY effect", scrollY), [scrollY]);
+  // useEffect(() => console.log("scrollY effect", scrollY), [scrollY]);
 
-  useEffect(() => {
-    function watchScroll() {
-      window.addEventListener("scroll", logit);
-    }
-    watchScroll();
-    // Remove listener (like componentWillUnmount)
-    return () => {
-      window.removeEventListener("scroll", logit);
-    };
-  }, []);
+  // useEffect(() => {
+  //   function watchScroll() {
+  //     window.addEventListener("scroll", logit);
+  //   }
+  //   watchScroll();
+  //   // Remove listener (like componentWillUnmount)
+  //   return () => {
+  //     window.removeEventListener("scroll", logit);
+  //   };
+  // }, []);
 
   return (
     <BrowserRouter>

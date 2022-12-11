@@ -4,7 +4,7 @@
 .about-products {
     position: relative;
     padding-top: 30px;
-    padding-bottom: 20px;
+    margin-bottom: 50px;
 
     &::before {
         content: '';
@@ -26,8 +26,59 @@
     }
 
     &__content-block {
-        padding: 70px 0;
+      width: 100%;
+      padding: 70px 0;
     }
+
+    &__subtitle {
+      text-align: left;
+    }
+
+    &__row {
+      width: 100%;
+    }
+}
+
+.about-row {
+  width: 100%;
+  color: $default;
+  background-color: rgba(255,255,255, 55%);
+  border: 0.5px solid $hover;
+  border-radius: 15px;
+  @extend%libreBaskervilleItalic-400;
+
+  &__title {
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+
+  &__text {
+    font-size: 16px;
+  }
+
+  &__column-left {
+    height: 100%;
+    width: calc(60% - 20px);
+  }
+  &__column-right {
+    height: 100%;
+    width: calc(40%);
+    margin-top: -20px;
+    margin-right: -20px;
+  }
+
+  &__img {
+    border-radius: 15px;
+  }
+
+  &__column {
+    padding: 20px;
+  }
+
+
+  &__column-inner {
+    width: calc(50%);
+  }
 }
 
 @media screen and (max-width: 1024px) {
