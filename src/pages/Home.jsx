@@ -166,8 +166,8 @@ export default function Home() {
           isHeigth={isHeigthSocials}
         />
 
-        <img className='home__baner' src="/baners/baner-1.jpg" alt="baner" />
       </div>
+      <img className='home__baner' src="/baners/baner-1.jpg" alt="baner" />
     </>
   );
 }

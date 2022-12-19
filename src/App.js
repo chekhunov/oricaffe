@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 
 import { Home, NotFound, PageContacts } from "./pages";
-import { Header, Footer, Popup } from "./components";
+import { Header, Footer, Popup, Player } from "./components";
 import { Context } from "./context";
 
 export default function App({ appState }) {
@@ -32,6 +32,7 @@ export default function App({ appState }) {
     <BrowserRouter>
       <Context.Provider value={{ appState, context, setContext }}>
         <Header appState={appState} />
+        <Player />
         <Content />
         {/* <Footer /> */}
         <Popup />

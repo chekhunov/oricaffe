@@ -84,26 +84,29 @@ const Slider = function ({ width, height, autoPlay, autoPlayTime }) {
   }, [items.length, slide]); // when images uploaded or slide changed manually we start timer
 
   return (
-    <div
-      style={{ width, height }}
-      className="slider"
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-    >
-      <SliderContext.Provider
-        value={{
-          goToSlide,
-          changeSlide,
-          slidesCount: items.length,
-          slideNumber: slide,
-          items,
-        }}
+    <>
+      <div
+        style={{ width, height }}
+        className="slider"
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
       >
-        <Arrows />
-        <SlidesList />
-        <Dots />
-      </SliderContext.Provider>
-    </div>
+        <SliderContext.Provider
+          value={{
+            goToSlide,
+            changeSlide,
+            slidesCount: items.length,
+            slideNumber: slide,
+            items,
+          }}
+        >
+          <Arrows />
+          <SlidesList />
+          <Dots />
+        </SliderContext.Provider>
+      </div>
+      <div className='decor-lamore'>l’amore per l’aroma</div>
+    </>
   );
 };
 

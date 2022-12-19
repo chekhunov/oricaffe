@@ -35,25 +35,46 @@ const Menu = ({
     <nav className={classNames("menu", activePopup && "active")}>
       {menuItems &&
         menuItems.map((item, index) => (
-          <Link key={item.id} to={`/${item.link}`}>
-            <li
-              className={classNames(
-                "menu__item",
-                item.id === activeId ? "active" : ""
-              )}
-              key={item.id}
-            >
-              <div
-                type="link"
-                className="dd-list-link"
-                onClick={(e) => {
-                  handleOnClick(item);
-                  clickItem(index);
-                }}
+          <>
+            {!item.category ? (
+              <Link key={item.id} to={`/${item.link}`}>
+                <li
+                  className={classNames(
+                    "menu__item",
+                    item.id === activeId ? "active" : ""
+                  )}
+                  key={item.id}
+                >
+                  <div
+                    type="link"
+                    className="dd-list-link"
+                    onClick={(e) => {
+                      handleOnClick(item);
+                      clickItem(index);
+                    }}
+                  >
+                    <span className={"menu__left"}>{item.value}</span>
+                  </div>
+                </li>
+              </Link>
+            ) : (
+              <li
+                className={classNames(
+                  "menu__item",
+                  item.id === activeId ? "active" : ""
+                )}
+                key={item.id}
               >
-                <span className={"menu__left"}>{item.value}</span>
+                <div
+                  type="link"
+                  className="dd-list-link"
+                  onClick={(e) => {
+                    handleOnClick(item);
+                    clickItem(index);
+                  }}
+                >
+                  <span className={"menu__left"}>{item.value}</span>
 
-                {item.category && (
                   <svg
                     className="menu__arrow ml-5"
                     width="11"
@@ -67,10 +88,18 @@ const Menu = ({
                       fill="#8E0303"
                     />
                   </svg>
-                )}
-              </div>
-            </li>
-          </Link>
+                </div>
+
+                <ul className="submenu">
+                  {item?.category.map((elem) => (
+                    <Link key={elem.id} to={`${elem.link}`}>
+                      <li className="submenu__elem">{elem.value}</li>
+                    </Link>
+                  ))}
+                </ul>
+              </li>
+            )}
+          </>
         ))}
     </nav>
   );

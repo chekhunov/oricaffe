@@ -19,6 +19,10 @@
   @extend %helvetica-700;
 }
 
+.paragraph {
+  text-indent: 10px;
+}
+
 .desc {
     position: absolute;
     left: -18px;
@@ -35,6 +39,27 @@
           justify-content: center;    
 }
 }
+
+.player {
+    position: fixed;
+    right: 40px;
+    bottom: 30px;
+    z-index: 100;
+
+    // @include _380 {
+    //   right: 20px;
+    //   bottom: 20px;
+    // }
+    &__btn {
+      background-color: transparent;
+      border: 0;
+    }
+
+    &__icon {
+      border-radius: 50%;
+      box-shadow: 0px 3px 6px #00000029;
+    }
+  }
 
 .button-color {
     width: 100%;
@@ -170,6 +195,17 @@
     color: lighten($color: $hover, $amount: 20%);
     transition: color 0.3s;
   }
+}
+
+.decor-lamore {
+  width: 100%;
+  font-family: 'Akshar';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+  color: $hover;
 }
 
 .page-news {
