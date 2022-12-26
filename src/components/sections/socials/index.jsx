@@ -42,7 +42,7 @@ export default function socials({ textAccent, color, isHeigth }) {
                   Следи за новостями и обновлениями, участвуй в акциях, получай
                   скидки!
                 </div>
-
+{/* 
                 <ul className="socials__block">
                   <li className="socials__icon">
                     <a
@@ -100,7 +100,7 @@ export default function socials({ textAccent, color, isHeigth }) {
                       </svg>
                     </a>
                   </li>
-                </ul>
+                </ul> */}
               </div>
             </div>
           </div>

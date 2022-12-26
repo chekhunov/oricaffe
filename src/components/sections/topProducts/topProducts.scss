@@ -1,0 +1,25 @@
+@import '../../../scss/vars.scss';
+
+.top-products {
+    position: relative;
+    padding-top: 30px;
+
+    &::before {
+        content: '';
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 1px;
+        color: rgba(205, 186, 170, 0.5);
+    }
+
+    &__desc {
+      align-items: baseline;
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+  }

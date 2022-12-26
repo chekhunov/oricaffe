@@ -2,7 +2,7 @@ import React, { useEffect, useState, createContext } from "react";
 import PropTypes from "prop-types";
 
 import Arrows from "./arrow";
-import Dots from "./dots";
+// import Dots from "./dots";
 
 import SlidesList from "./sliderList";
 
@@ -21,8 +21,8 @@ const defaultItems = [
       width: "200px",
     },
   },
-  { url: "/news/notradition.jpg", title: "dsfgsdfgdfbf" },
-  { url: "/news/notradition.jpg", title: "dsfgsdfgdfbf" },
+  { url: "/baners/banner-2.jpg" },
+  { url: "/baners/banner-2.jpg" },
 ];
 
 const Slider = function ({ width, height, autoPlay, autoPlayTime }) {
@@ -102,10 +102,10 @@ const Slider = function ({ width, height, autoPlay, autoPlayTime }) {
         >
           <Arrows />
           <SlidesList />
-          <Dots />
+          {/* <Dots /> */}
         </SliderContext.Provider>
       </div>
-      <div className='decor-lamore'>l’amore per l’aroma</div>
+      <div className="decor-lamore">l’amore per l’aroma</div>
     </>
   );
 };

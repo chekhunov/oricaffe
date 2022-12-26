@@ -22,7 +22,6 @@
     &__inner {
         display: flex;
         flex-direction: column;
-        align-items: center;
     }
 
     &__content-block {
@@ -37,33 +36,6 @@
     &__row {
       width: 100%;
     }
-
-    // &__link {
-    //   margin: 0 auto;
-    //   display: flex;
-    //   justify-content: center;
-    //   align-items: center;
-    //   margin-top: 20px;
-    //   width:100%;
-    //   background-color: $disable;
-    //   margin-bottom: -20px;
-    //   border-top: 0.5px solid $hover;
-    //   border-left: 0.5px solid $hover;
-    //   border-right: 0.5px solid $hover;
-    //   border-radius: 15px 15px 0 0;
-    //   padding: 0;
-    //   height: 0;
-    //   visibility: hidden;
-    // }
-
-    // &__btn {
-    //   width: 100%;
-    //   display: flex;
-    //   justify-content: center;
-    //   margin: 0 auto;
-    //   transform: translateY(20px);
-    //   visibility: hidden;
-    // }
 }
 
 .about-row {
@@ -84,14 +56,14 @@
   }
 
   &__column-left {
-    height: 100%;
-    width: calc(60% - 20px);
+    height: auto;
+    min-height: 100%;
+    width: calc(75% - 20px);
   }
   &__column-right {
-    height: 100%;
-    width: calc(40%);
-    margin-top: -20px;
-    margin-right: -20px;
+    height: auto;
+    width: 100%;
+    margin-right: 0;
   }
 
   &__inner {
@@ -100,32 +72,38 @@
   }
 
   &__img {
-    border-radius: 15px;
+    border-radius: 10px;
     width: 30%;
-    // width:40vw;
-    // background-size:cover;
     float:right;
-    // shape-outside: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
-    // shape-margin:20px;
-    // -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
-    //         clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%)
+  }
+
+  &__img--big {
+    height: auto;
+    width: 24%;
+    margin-right: 0;
+    border-radius: 10px;
   }
 
   &__column {
     padding: 20px;
-
-    &:hover {
-      // .about-products__btn {
-      //   visibility: visible;
-      //   transform: translateY(10px);
-      //   transition: visibility 0.3s, transform 0.3s;
-      // }
-    }
   }
 
 
   &__column-inner {
     width: calc(50%);
+  }
+}
+
+.column-right {
+  height: 100%;
+  max-height: 720px;
+
+  &__img {
+    max-height: 220px;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 10px;
+    float:right;
   }
 }
 

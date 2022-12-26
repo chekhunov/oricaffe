@@ -13,16 +13,18 @@ export default function Slide({
   return (
     <div className="slide">
       <div className="slide__content">
-        <SlideTitle title={title} />
+        {title && <SlideTitle title={title} />}
         {subTitle && <SlideSubTitle subTitle={subTitle} />}
         {button && <Button sx={sx} link={urlButton} text={button} />}
       </div>
+
       <SlideImage src={url} alt={title} />
-      <div className="slide__content">
-        <SlideTitle title={title} />
+
+      {/* <div className="slide__content">
+        {title && <SlideTitle title={title} />}
         {subTitle && <SlideSubTitle subTitle={subTitle} />}
         {button && <Button sx={sx} link={urlButton} text={button} />}
-      </div>
+      </div> */}
     </div>
   );
 }

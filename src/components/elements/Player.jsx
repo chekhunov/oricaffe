@@ -18,7 +18,10 @@ export default function Player() {
     audio.file.pause();
   }
   return (
-    <div className="player">
+    <div
+      className="player fab-buttons__link"
+      data-tooltip="Sound"
+    >
       <button
         className="player__btn"
         onClick={() => (isPlaying ? pause(audio) : play(audio))}
