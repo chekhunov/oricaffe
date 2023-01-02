@@ -1,15 +1,41 @@
 {
-
-  "home": "home",
-  "services": "services",
-  "portfolio": "portfolio",
+  "coffe": "Coffe",
+  "orientalcaffe": "Orientalcaffe",
+  "quality": "Quality",
+  "home": "Home",
+  "about": "About",
+  "catalog": "Catalog",
+  "cooperation": "Cooperation",
+  "services": "Services",
   "contacts": "Contacts",
   "skills": "Skills",
-  "about": "About me",
-  "hey": "Hey!",
-  "my_name": "My name is Igor, I am 40 years old, I have been programming for years, of which 1 year I studied Java, 2 years I have been doing Frontend development in the field of marketplaces using React and Vue technologies, also developing layouts in Figma. In my free time, I study new technologies and new approaches in development, and also help beginners to form in the profession of a Frontend developer.",
-  "start": "Start a project",
-  "process": "The process",
-  "workin": "Workin with the layout",
-  "content": "Content layout"
+  "process": "Process",
+  "name": "Name",
+  "e-mail": "Email",
+  "company": "Company",
+  "send": "Send",
+  "catalog_products": "Catalog of Products",
+  "banners": {
+    "b-0": "Exactly what you were looking for"
+  },
+  "category_coffee": {
+    "coffe_beans": "Whole bean coffee",
+    "coffe_single": "Coffee in single doses",
+    "coffe_nespresso": "Coffee in nespresso capsules",
+    "coffe_filter": "Coffee filter",
+    "coffe_green": "Green coffee",
+    "coffe_ground": "Ground coffee"
+  },
+  "category_products": {
+    "coffee": "Coffee",
+    "coffee_equipment": "Coffee equipment",
+    "tea": "Tea",
+    "chocolate": "Chocolate"
+  },
+  "about_section": {
+    "headline": "(Oriental caffè) has been operating in Tuscany (a region in Italy) since 1955.",
+    "about_company": "is a small craft company representing refinement of the art of Italian coffee roasting grains. We produce roasted coffee and try to do it ok we love coffee and try to spread coffee culture in the world. Values ​​and passion are the heritage of our company, associated with the precious baggage of knowledge, which with special care and attention are daily introduced into practice, starting from sorting and selection of raw materials to complete the process at the stage roasting and mixing beans. Due to coffee roasting grains and mixture assembly",
+    "about_company_two": "master of frying, controlling your senses, embracing the whole soul of our work: the search for the most pleasant extraction of flavors in their harmonious and balanced balance. The goal is simple and clear: every cup of our coffee should be used for flavors. Our philosophy is to make quality coffee well, for every chain that accompanies the coffee drink from seed to cup, which must pursue this goal of perfection with the same passion and devotion. This is due to the emergence of such a phenomenon among the peasants as green coffee sprouts, which manifests itself in every daily gesture aimed at the frequency perception of the opposite of coffee compared to the biodiversity of the territory. It means engaging in discussions with customers about cultured coffee and making sure that all the flavor love that accompanied every upcoming choice is consumed through its extraction.",
+    "about_company_three": "This community of intentions is the basis of our art and prerequisite for coffee tasting."
+  }
 }

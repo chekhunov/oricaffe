@@ -1,14 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import "./Button.scss";
 
 export default function Button({ sx, link, text }) {
+  const { t } = useTranslation();
   return (
-    <Link to={link}>
-      {/* <span style={sx} className="button-trans btn-contact"> */}
+    <Link to={link} className={`${link}-btn`}>
       <span style={sx} className="atuin-btn">
-        <span className="atuin-btn__text">{text}</span>
+        <span className="atuin-btn__text">{t(text)}</span>
       </span>
     </Link>
   );

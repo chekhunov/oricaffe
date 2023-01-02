@@ -2,27 +2,36 @@ import React, { useEffect, useState, createContext } from "react";
 import PropTypes from "prop-types";
 
 import Arrows from "./arrow";
-import Dots from "./dots";
+// import Dots from "./dots";
 
 import SlidesList from "./sliderList";
 
 export const SliderContext = createContext();
 
 const defaultItems = [
+  // {
+  //   url: "/baners/1.jpg",
+  //   title:
+  //     "Благодаря нам у Вас больше времени для того, чтобы заниматься любимым делом — приготовлением кофе!",
+  //   subTitle:
+  //     "Мы здесь для того, чтобы компания Orientalcaffe избавила Вас от головной боли, предоставив вам уникальную возможность заниматься любимым делом – наслаждаться вкусом свеже сваренного кофе!",
+  //   button: "Сделать заказ",
+  //   urlButton: "/contacts",
+  //   sx: {
+  //     width: "200px",
+  //   },
+  // },
   {
-    url: "/baners/1.jpg",
-    title:
-      "Благодаря нам у Вас больше времени для того, чтобы заниматься любимым делом — приготовлением кофе!",
-    subTitle:
-      "Мы здесь для того, чтобы компания Orientalcaffe избавила Вас от головной боли, предоставив вам уникальную возможность заниматься любимым делом – наслаждаться вкусом свеже сваренного кофе!",
-    button: "Сделать заказ",
+    url: "/baners/b-0.jpg",
+    title: "banners.b-0",
+    titleColor: "grey",
+    button: "catalog_products",
     urlButton: "/contacts",
     sx: {
       width: "200px",
+      borderRadius: "5px 25px 5px 25px",
     },
   },
-  { url: "/news/notradition.jpg", title: "dsfgsdfgdfbf" },
-  { url: "/news/notradition.jpg", title: "dsfgsdfgdfbf" },
 ];
 
 const Slider = function ({ width, height, autoPlay, autoPlayTime }) {
@@ -84,26 +93,29 @@ const Slider = function ({ width, height, autoPlay, autoPlayTime }) {
   }, [items.length, slide]); // when images uploaded or slide changed manually we start timer
 
   return (
-    <div
-      style={{ width, height }}
-      className="slider"
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-    >
-      <SliderContext.Provider
-        value={{
-          goToSlide,
-          changeSlide,
-          slidesCount: items.length,
-          slideNumber: slide,
-          items,
-        }}
+    <>
+      <div
+        style={{ width, height }}
+        className="slider"
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
       >
-        <Arrows />
-        <SlidesList />
-        <Dots />
-      </SliderContext.Provider>
-    </div>
+        <SliderContext.Provider
+          value={{
+            goToSlide,
+            changeSlide,
+            slidesCount: items.length,
+            slideNumber: slide,
+            items,
+          }}
+        >
+          <Arrows />
+          <SlidesList />
+          {/* <Dots /> */}
+        </SliderContext.Provider>
+      </div>
+      <div className="decor-lamore">l’amore per l’aroma</div>
+    </>
   );
 };
 
@@ -116,9 +128,9 @@ Slider.propTypes = {
 
 Slider.defaultProps = {
   autoPlay: true,
-  autoPlayTime: 5000,
+  autoPlayTime: 10000,
   width: "100%",
-  height: "900px",
+  height: "920px",
 };
 
 export default Slider;

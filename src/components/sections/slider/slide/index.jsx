@@ -7,22 +7,23 @@ import Button from "../../../elements/button";
 import "./../Slider.scss";
 
 export default function Slide({
-  data: { url, title, subTitle, button, urlButton, sx },
+  data: { url, title, subTitle, button, urlButton, sx, titleColor },
 }) {
-
   return (
     <div className="slide">
       <div className="slide__content">
-        <SlideTitle title={title} />
+        {title && <SlideTitle title={title} titleColor={titleColor} />}
         {subTitle && <SlideSubTitle subTitle={subTitle} />}
         {button && <Button sx={sx} link={urlButton} text={button} />}
       </div>
+
       <SlideImage src={url} alt={title} />
-      <div className="slide__content">
-        <SlideTitle title={title} />
+
+      {/* <div className="slide__content">
+        {title && <SlideTitle title={title} />}
         {subTitle && <SlideSubTitle subTitle={subTitle} />}
         {button && <Button sx={sx} link={urlButton} text={button} />}
-      </div>
+      </div> */}
     </div>
   );
 }

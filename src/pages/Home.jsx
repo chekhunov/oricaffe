@@ -1,9 +1,10 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import { Slider } from "../components";
 
 import About from "../components/sections/about";
 import AboutProducts from "../components/sections/aboutProducts";
-import Socials from "../components/sections/socials";
+import TopProducts from "../components/sections/topProducts";
+import Package from "../components/sections/package";
 
 import "./home.scss";
 
@@ -22,9 +23,10 @@ export default function Home() {
   const [textAccentAboutProducts, setTextAccentAboutProducts] =
     useState(colorDefault);
 
-  const [colorSocials, setColorSocials] = useState(colorDefault);
-  const [isHeigthSocials, setIsHeigthSocials] = useState(0);
-  const [textAccentSocials, setTextAccentSocials] = useState(colorDefault);
+  const [colortTopProducts, setColortTopProducts] = useState(colorDefault);
+  const [isHeigthtTopProducts, setIsHeigthtTopProducts] = useState(0);
+  const [textAccentTopProducts, setTextAccenttTopProducts] =
+    useState(colorDefault);
 
   // calculation number heigth %
   function procentAccentBlock(num) {
@@ -88,12 +90,12 @@ export default function Home() {
       setColorAboutProducts(colorDefault);
     }
 
-    //socials title
-    isActiveText(2440, setTextAccentSocials);
-    isActiveLine(2480, 2500, setColorSocials, setIsHeigthSocials);
+    //tTopProducts title
+    isActiveText(2440, setTextAccenttTopProducts);
+    isActiveLine(2480, 2500, setColortTopProducts, setIsHeigthtTopProducts);
 
     if (scrollPlace < 2500) {
-      setColorSocials(colorDefault);
+      setColortTopProducts(colorDefault);
     }
 
     //   // //participation title
@@ -146,8 +148,10 @@ export default function Home() {
 
   return (
     <>
-      <Slider autoPlay={false} />
-      <div className="background">
+      <Slider />
+      {/* <Slider autoPlay={false} /> */}
+
+      <div className="background pb-50">
         <About
           textAccentAbout={textAccentAbout}
           colorAbout={colorAbout}
@@ -160,13 +164,25 @@ export default function Home() {
           isHeigth={isHeigthAboutProducts}
         />
 
-        <Socials
-          textAccent={textAccentSocials}
-          color={colorSocials}
-          isHeigth={isHeigthSocials}
+        <TopProducts
+          textAccent={textAccentTopProducts}
+          color={colortTopProducts}
+          isHeigth={isHeigthtTopProducts}
         />
+      </div>
 
-        <img className='home__baner' src="/baners/baner-1.jpg" alt="baner" />
+      <img
+        className="home__baner mb-50"
+        src="/baners/baner-1.jpg"
+        alt="baner"
+      />
+
+      <div className="background-two pb-50">
+        <Package
+          textAccent={textAccentTopProducts}
+          color={colortTopProducts}
+          isHeigth={isHeigthtTopProducts}
+        />
       </div>
     </>
   );

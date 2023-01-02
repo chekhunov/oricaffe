@@ -19,6 +19,10 @@
   @extend %helvetica-700;
 }
 
+.paragraph {
+  text-indent: 10px;
+}
+
 .desc {
     position: absolute;
     left: -18px;
@@ -170,6 +174,17 @@
     color: lighten($color: $hover, $amount: 20%);
     transition: color 0.3s;
   }
+}
+
+.decor-lamore {
+  width: 100%;
+  font-family: 'Akshar';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+  color: $hover;
 }
 
 .page-news {

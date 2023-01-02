@@ -3,35 +3,19 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 
 import { Home, NotFound, PageContacts } from "./pages";
 import { Header, Footer, Popup } from "./components";
+import SocialBtn from './components/elements/socialBtn'
 import { Context } from "./context";
 
 export default function App({ appState }) {
   const [context, setContext] = useState([]);
 
-  // const [scrollY, setScrollY] = useState(0);
-
-  // function logit() {
-  //   console.log("logit", window.pageYOffset);
-  //   setScrollY(window.pageYOffset);
-  // }
-
-  // useEffect(() => console.log("scrollY effect", scrollY), [scrollY]);
-
-  // useEffect(() => {
-  //   function watchScroll() {
-  //     window.addEventListener("scroll", logit);
-  //   }
-  //   watchScroll();
-  //   // Remove listener (like componentWillUnmount)
-  //   return () => {
-  //     window.removeEventListener("scroll", logit);
-  //   };
-  // }, []);
-
   return (
     <BrowserRouter>
       <Context.Provider value={{ appState, context, setContext }}>
         <Header appState={appState} />
+
+        <SocialBtn />
+
         <Content />
         {/* <Footer /> */}
         <Popup />

@@ -3,7 +3,7 @@
 .socials {
     position: relative;
     padding-top: 30px;
-    margin-bottom: 50px;
+    // margin-bottom: 50px;
 
     &::before {
         content: '';
@@ -26,7 +26,7 @@
 
     &__content-block {
       width: 100%;
-      padding: 100px 0;
+      padding: 70px 0;
     }
 
     &__block {

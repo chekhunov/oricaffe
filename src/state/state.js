@@ -2,44 +2,49 @@ let state = {
   menuItems: [
     {
       id: 0,
-      value: "О нас",
+      value: "about",
       link: "history",
     },
     {
       id: 1,
-      value: "Каталог",
+      value: "catalog",
       link: "catalog",
       category: [
         {
           id: 0,
-          value: "Каталог",
+          value: "category_products.coffee",
           link: "catalog",
         },
         {
           id: 1,
-          value: "Каталог",
+          value: "category_products.coffee_equipment",
           link: "catalog",
         },
         {
           id: 2,
-          value: "Каталог",
+          value: "category_products.tea",
+          link: "catalog",
+        },
+        {
+          id: 3,
+          value: "category_products.chocolate",
           link: "catalog",
         },
       ],
     },
     {
       id: 2,
-      value: "Услуги",
+      value: "services",
       link: "services",
     },
     {
       id: 3,
-      value: "Качество",
+      value: "quality",
       link: "quality",
     },
     {
       id: 4,
-      value: "Сотрудничество",
+      value: "cooperation",
       link: "cooperation",
     },
   ],

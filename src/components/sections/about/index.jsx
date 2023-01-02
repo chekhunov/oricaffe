@@ -1,9 +1,11 @@
 import React from "react";
 import classNames from "classnames";
+import { useTranslation } from "react-i18next";
 
 import "./about.scss";
 
 export default function About({ textAccentAbout, colorAbout, isHeigthAbout }) {
+  const { t } = useTranslation();
   const stylesBlock = {
     backgroundColor: colorAbout,
     height: isHeigthAbout + "%",
@@ -20,14 +22,14 @@ export default function About({ textAccentAbout, colorAbout, isHeigthAbout }) {
             style={{ color: textAccentAbout }}
             className={classNames("about__desc d-flex", "desc")}
           >
-            Компания
+            {t("company")}
             <a
               className="oriental-link ml-10"
               href="https://bhousecoffee.com/"
               target="_blank"
               rel="noreferrer"
             >
-              Orientalcaffe
+              Oriental caffe
             </a>
           </h2>
 
@@ -39,20 +41,22 @@ export default function About({ textAccentAbout, colorAbout, isHeigthAbout }) {
             <div className="container">
               <div className="about__text">
                 <span className="about__meta-text pb-20">
-                  Компания
-                  <span className="about__text-accent">Orientalcaffe</span>
-                  была основана в 1955 году благодаря семье{" "}
-                  <span className="about__text-accent">Bonachi</span> и ее
-                  вкладу в дальнейшее развитие компании.
+                  {t("company")}
+                  <span className="about__text-accent">Oriental caffe</span>
+                  {t("about_section.headline")}
                 </span>
-                <span className="about__text-desc">
-                  Компания занимается комплексным производством от посадки зерна
-                  до обработки, фасовки COFFE и других продуктов в
-                  таблетированном, порошковом, капсулированном виде. Наша
-                  система работы построена на полностью официальных принципах,
-                  поэтому при работе с нами Вы гарантированно получите тот
-                  результат, которого ожидаете, без лишних проблем.
-                </span>
+                <p className="about__text-desc">
+                  {t("company")}
+                  <span className="about__text-accent">
+                    Oriental caffe (Oriental caffè)
+                  </span>
+                  – {t("about_section.about_company")}{" "}
+                  <span style={{ color: "red" }}>Samuele</span>,{" "}
+                  {t("about_section.about_company_two")}
+                </p>
+                <p className="about__text-desc">
+                  {t("about_section.about_company_three")}
+                </p>
               </div>
             </div>
           </div>

@@ -109,6 +109,10 @@
 }
 
 @media screen and (max-width: 1024px) {
+  .oriental {
+    margin-left: 75px;
+  }
+
   .header {
     &__popup {
       display: inline-block;
@@ -166,28 +170,25 @@
 
 @media screen and (max-width: 767px) {
   .header {
-    padding: 15px 0;
-    
     &__inner.active {
-      .menu-mobile {
-        top: 105px;
-      }
-
       .menu {
         height: 50%;
         padding-top: 45px;
         padding-bottom: 20px;
-      }
-
-
-      .contacts__list {
-        width: 100%;
       }
     }
 
     &__subdesc {
       font-size: 18px;
     }
+  }
+
+  .oriental {
+    margin-right: 75px;
+  }
+
+  .contacts-btn {
+    display: none;
   }
 }
 
@@ -205,14 +206,8 @@
       font-size: 18px;
     }
 
-     &__inner.active {
-      .menu-mobile {
-        top: 110px;
-
-        .contacts__list {
-          padding-top: 80px;
-        }
-      }
+    .oriental {
+      display: none;
     }
   }
 }

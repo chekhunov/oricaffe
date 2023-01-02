@@ -8,3 +8,4 @@ export { default as ClosedButton } from "./elements/closedButton";
 export { default as Breadcrumbs } from "./elements/breadcrumbs";
 export { default as Slider } from "./sections/slider";
 export { default as Contacts } from "./sections/contacts";
+export { default as Player } from "./elements/Player";

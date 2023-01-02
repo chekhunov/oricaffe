@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import classNames from "classnames";
 
 const Menu = ({
@@ -10,6 +11,7 @@ const Menu = ({
   activePopup,
 }) => {
   const [selection, setSelection] = React.useState([]);
+  const { t } = useTranslation();
 
   function handleOnClick(item) {
     if (!selection.some((current) => current.id === item.id)) {
@@ -35,25 +37,49 @@ const Menu = ({
     <nav className={classNames("menu", activePopup && "active")}>
       {menuItems &&
         menuItems.map((item, index) => (
-          <Link key={item.id} to={`/${item.link}`}>
-            <li
-              className={classNames(
-                "menu__item",
-                item.id === activeId ? "active" : ""
-              )}
-              key={item.id}
-            >
-              <div
-                type="link"
-                className="dd-list-link"
-                onClick={(e) => {
-                  handleOnClick(item);
-                  clickItem(index);
-                }}
+          <>
+            {!item.category ? (
+              <Link
+                key={`without-category_${item.id}-${item.name}`}
+                to={`/${item.link}`}
               >
-                <span className={"menu__left"}>{item.value}</span>
+                <li
+                  className={classNames(
+                    "menu__item",
+                    item.id === activeId ? "active" : ""
+                  )}
+                  key={item.id}
+                >
+                  <div
+                    type="link"
+                    className="dd-list-link"
+                    onClick={(e) => {
+                      handleOnClick(item);
+                      clickItem(index);
+                    }}
+                  >
+                    <span className={"menu__left"}>{t(`${item.value}`)}</span>
+                  </div>
+                </li>
+              </Link>
+            ) : (
+              <li
+                className={classNames(
+                  "menu__item",
+                  item.id === activeId ? "active" : ""
+                )}
+                key={`category_${item.id}-${item.name}`}
+              >
+                <div
+                  type="link"
+                  className="dd-list-link"
+                  onClick={(e) => {
+                    handleOnClick(item);
+                    clickItem(index);
+                  }}
+                >
+                  <span className={"menu__left"}>{t(`${item.value}`)}</span>
 
-                {item.category && (
                   <svg
                     className="menu__arrow ml-5"
                     width="11"
@@ -67,10 +93,18 @@ const Menu = ({
                       fill="#8E0303"
                     />
                   </svg>
-                )}
-              </div>
-            </li>
-          </Link>
+                </div>
+
+                <ul className="submenu">
+                  {item?.category.map((elem) => (
+                    <Link key={`category-item_${elem.id}`} to={`${elem.link}`}>
+                      <li className="submenu__elem">{t(`${elem.value}`)}</li>
+                    </Link>
+                  ))}
+                </ul>
+              </li>
+            )}
+          </>
         ))}
     </nav>
   );
