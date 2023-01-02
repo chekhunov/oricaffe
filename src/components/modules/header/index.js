@@ -9,7 +9,7 @@ import Button from "../../elements/button";
 import LogoCompany from "./logoCompany";
 import { Locales } from "../..";
 
-import help from "../../../assets/img/help.png";
+// import help from "../../../assets/img/help.png";
 import logo from "../../../assets/header/logo.png";
 
 export default function Header({ appState }) {
@@ -76,14 +76,17 @@ export default function Header({ appState }) {
             />
           )}
 
-          <a href="/">
+          {/* <a href="/">
             <img className="help" height="70" src={help} alt="help" />
-          </a>
+          </a> */}
 
           <div className="d-flex align-center">
             <Locales />
 
-            <Button link={"/contacts"} text={t("contacts")} />
+            <Button
+              link={"contacts"}
+              text={t("contacts")}
+            />
           </div>
         </div>
       </div>

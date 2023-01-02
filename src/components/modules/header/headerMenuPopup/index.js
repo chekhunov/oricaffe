@@ -1,6 +1,6 @@
 import React from "react";
 import Menu from "../../../elements/menu";
-import ContactsAddress from "../../../contactsAddress";
+// import ContactsAddrsess from "../../../contactsAddress";
 
 export default function HeaderMenuPopup({
   activePopup,
@@ -18,7 +18,7 @@ export default function HeaderMenuPopup({
           setActiveId={setActiveId}
         />
 
-        <ContactsAddress />
+        {/* <ContactsAddress /> */}
       </div>
     </div>
   );

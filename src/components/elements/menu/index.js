@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import classNames from "classnames";
 
 const Menu = ({
@@ -10,6 +11,7 @@ const Menu = ({
   activePopup,
 }) => {
   const [selection, setSelection] = React.useState([]);
+  const { t } = useTranslation();
 
   function handleOnClick(item) {
     if (!selection.some((current) => current.id === item.id)) {
@@ -37,7 +39,10 @@ const Menu = ({
         menuItems.map((item, index) => (
           <>
             {!item.category ? (
-              <Link key={item.id} to={`/${item.link}`}>
+              <Link
+                key={`without-category_${item.id}-${item.name}`}
+                to={`/${item.link}`}
+              >
                 <li
                   className={classNames(
                     "menu__item",
@@ -53,7 +58,7 @@ const Menu = ({
                       clickItem(index);
                     }}
                   >
-                    <span className={"menu__left"}>{item.value}</span>
+                    <span className={"menu__left"}>{t(`${item.value}`)}</span>
                   </div>
                 </li>
               </Link>
@@ -63,7 +68,7 @@ const Menu = ({
                   "menu__item",
                   item.id === activeId ? "active" : ""
                 )}
-                key={item.id}
+                key={`category_${item.id}-${item.name}`}
               >
                 <div
                   type="link"
@@ -73,7 +78,7 @@ const Menu = ({
                     clickItem(index);
                   }}
                 >
-                  <span className={"menu__left"}>{item.value}</span>
+                  <span className={"menu__left"}>{t(`${item.value}`)}</span>
 
                   <svg
                     className="menu__arrow ml-5"
@@ -92,8 +97,8 @@ const Menu = ({
 
                 <ul className="submenu">
                   {item?.category.map((elem) => (
-                    <Link key={elem.id} to={`${elem.link}`}>
-                      <li className="submenu__elem">{elem.value}</li>
+                    <Link key={`category-item_${elem.id}`} to={`${elem.link}`}>
+                      <li className="submenu__elem">{t(`${elem.value}`)}</li>
                     </Link>
                   ))}
                 </ul>

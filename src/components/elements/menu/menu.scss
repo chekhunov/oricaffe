@@ -65,11 +65,11 @@
 .submenu {
   position: absolute;
   width: 100%;
-  min-width: 100px;
+  min-width: 180px;
   display: flex;
   padding: 10px 0;
   flex-direction: column;
-  top: 35px;
+  top: 30px;
   left: -10px;
   color: $hover!important;
   background-color: #ffffff;
@@ -94,6 +94,19 @@
 }
 
 @media screen and (max-width: 1024px) {
+
+.submenu {
+  top: 0;
+  display: none;
+  position: relative;
+  height: 0;
+  font-size: 16px;
+  padding-left: 20px;
+  background-color: transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+
 .menu {
   width: 0;
   height: 0;
@@ -121,6 +134,15 @@
       margin-bottom: 30px;
       font-size: 24px;
     } 
+  }
+
+  &__item {
+    &:hover {
+      .submenu {
+        display: inline-block;
+          transform: translateY(0px);
+      }
+    }
   }
 }
 }

@@ -9,20 +9,29 @@ import SlidesList from "./sliderList";
 export const SliderContext = createContext();
 
 const defaultItems = [
+  // {
+  //   url: "/baners/1.jpg",
+  //   title:
+  //     "Благодаря нам у Вас больше времени для того, чтобы заниматься любимым делом — приготовлением кофе!",
+  //   subTitle:
+  //     "Мы здесь для того, чтобы компания Orientalcaffe избавила Вас от головной боли, предоставив вам уникальную возможность заниматься любимым делом – наслаждаться вкусом свеже сваренного кофе!",
+  //   button: "Сделать заказ",
+  //   urlButton: "/contacts",
+  //   sx: {
+  //     width: "200px",
+  //   },
+  // },
   {
-    url: "/baners/1.jpg",
-    title:
-      "Благодаря нам у Вас больше времени для того, чтобы заниматься любимым делом — приготовлением кофе!",
-    subTitle:
-      "Мы здесь для того, чтобы компания Orientalcaffe избавила Вас от головной боли, предоставив вам уникальную возможность заниматься любимым делом – наслаждаться вкусом свеже сваренного кофе!",
-    button: "Сделать заказ",
+    url: "/baners/b-0.jpg",
+    title: "banners.b-0",
+    titleColor: "grey",
+    button: "catalog_products",
     urlButton: "/contacts",
     sx: {
       width: "200px",
+      borderRadius: "5px 25px 5px 25px",
     },
   },
-  { url: "/baners/banner-2.jpg" },
-  { url: "/baners/banner-2.jpg" },
 ];
 
 const Slider = function ({ width, height, autoPlay, autoPlayTime }) {
@@ -119,9 +128,9 @@ Slider.propTypes = {
 
 Slider.defaultProps = {
   autoPlay: true,
-  autoPlayTime: 5000,
+  autoPlayTime: 10000,
   width: "100%",
-  height: "900px",
+  height: "920px",
 };
 
 export default Slider;
