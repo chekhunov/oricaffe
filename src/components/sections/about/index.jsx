@@ -4,7 +4,12 @@ import { useTranslation } from "react-i18next";
 
 import "./about.scss";
 
-export default function About({ textAccentAbout, colorAbout, isHeigthAbout }) {
+export default function About({
+  textAccentAbout,
+  colorAbout,
+  isHeigthAbout,
+  bgColor,
+}) {
   const { t } = useTranslation();
   const stylesBlock = {
     backgroundColor: colorAbout,
@@ -19,7 +24,7 @@ export default function About({ textAccentAbout, colorAbout, isHeigthAbout }) {
           </div>
 
           <h2
-            style={{ color: textAccentAbout }}
+            style={{ color: textAccentAbout, backgroundColor: bgColor }}
             className={classNames("about__desc d-flex", "desc")}
           >
             {t("company")}

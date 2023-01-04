@@ -19,6 +19,13 @@
   @extend %helvetica-700;
 }
 
+.subtitle-card {
+  font-size: 32px;
+  color: $title;
+  text-align: left;
+  @extend %helvetica-700;
+}
+
 .paragraph {
   text-indent: 10px;
 }

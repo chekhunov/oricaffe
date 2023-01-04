@@ -109,7 +109,7 @@ const Slider = function ({ width, height, autoPlay, autoPlayTime }) {
             items,
           }}
         >
-          <Arrows />
+          {/* <Arrows /> */}
           <SlidesList />
           {/* <Dots /> */}
         </SliderContext.Provider>

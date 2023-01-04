@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 
 import { Home, NotFound, PageContacts } from "./pages";
-import { Header, Footer, Popup } from "./components";
-import SocialBtn from './components/elements/socialBtn'
+import { Header, Footer } from "./components";
+import SocialBtn from "./components/elements/socialBtn";
 import { Context } from "./context";
 
 export default function App({ appState }) {
@@ -17,8 +17,7 @@ export default function App({ appState }) {
         <SocialBtn />
 
         <Content />
-        {/* <Footer /> */}
-        <Popup />
+        <Footer />
       </Context.Provider>
     </BrowserRouter>
   );

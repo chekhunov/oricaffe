@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Slider } from "../components";
+import { Slider, Popup } from "../components";
 
 import About from "../components/sections/about";
 import AboutProducts from "../components/sections/aboutProducts";
 import TopProducts from "../components/sections/topProducts";
+import TopProductsNew from "../components/sections/topProductsNew";
 import Package from "../components/sections/package";
 
 import "./home.scss";
@@ -11,14 +12,19 @@ import "./home.scss";
 export default function Home() {
   const colorDefault = "rgba(205, 186, 170, 0.5)";
   const colorAccent = "#8E0303";
+  const bgColorDefault = "transparent";
+  const bgColor = "#F4BC2F";
 
   const [setColor] = React.useState(colorDefault);
+  const [setBgColor] = React.useState(bgColor);
 
   const [colorAbout, setColorAbout] = useState(colorDefault);
+  const [bgColorAbout, setBgColorAbout] = useState(bgColorDefault);
   const [isHeigthAbout, setIsHeigthAbout] = useState(0);
   const [textAccentAbout, setTextAccentAbout] = useState(colorDefault);
 
   const [colorAboutProducts, setColorAboutProducts] = useState(colorDefault);
+  const [colorBgAboutProducts, setColorBgAboutProducts] = useState(bgColor);
   const [isHeigthAboutProducts, setIsHeigthAboutProducts] = useState(0);
   const [textAccentAboutProducts, setTextAccentAboutProducts] =
     useState(colorDefault);
@@ -54,28 +60,30 @@ export default function Home() {
   }
 
   //calculation and set color text
-  function isActiveText(scrollTop, setTextAccent) {
+  function isActiveText(scrollTop, setTextAccent, setBgAccent) {
     const scrollPlace = window.scrollY;
-    console.log("isActiveText", scrollPlace);
     if (scrollPlace > scrollTop) {
       setTextAccent(colorAccent);
+      setBgAccent(bgColor);
     }
     if (scrollPlace < scrollTop) {
       setTextAccent(colorDefault);
+      setBgAccent(bgColorDefault);
     }
   }
 
   const listenScrollEvent = (event) => {
     const scrollPlace = window.scrollY;
-    console.log(scrollPlace);
+    // console.log(scrollPlace);
 
     //default
     if (scrollPlace < 10) {
       setColor(colorDefault);
+      setBgColor(bgColorDefault);
     }
 
     //about title
-    isActiveText(640, setTextAccentAbout);
+    isActiveText(640, setTextAccentAbout, setBgColorAbout);
     isActiveLine(660, 680, setColorAbout, setIsHeigthAbout);
 
     if (scrollPlace < 680) {
@@ -83,7 +91,7 @@ export default function Home() {
     }
 
     //aboutProducts title
-    isActiveText(1200, setTextAccentAboutProducts);
+    isActiveText(1200, setTextAccentAboutProducts, setColorBgAboutProducts);
     isActiveLine(1250, 1300, setColorAboutProducts, setIsHeigthAboutProducts);
 
     if (scrollPlace < 1300) {
@@ -148,12 +156,27 @@ export default function Home() {
 
   return (
     <>
+      {/* <div>
+        <video
+          width="100%"
+          height="auto"
+          autoplay="autoplay"
+          loop
+          muted
+          playsInline
+          // playsinline
+        >
+          <source src="/video/1.mp4" type="video/mp4" />
+        </video>
+      </div> */}
+
       <Slider />
       {/* <Slider autoPlay={false} /> */}
 
       <div className="background pb-50">
         <About
           textAccentAbout={textAccentAbout}
+          bgColor={bgColorAbout}
           colorAbout={colorAbout}
           isHeigthAbout={isHeigthAbout}
         />
@@ -161,6 +184,7 @@ export default function Home() {
         <AboutProducts
           textAccent={textAccentAboutProducts}
           color={colorAboutProducts}
+          bgColor={colorBgAboutProducts}
           isHeigth={isHeigthAboutProducts}
         />
 
@@ -169,6 +193,14 @@ export default function Home() {
           color={colortTopProducts}
           isHeigth={isHeigthtTopProducts}
         />
+
+        <div className="mt-50">
+          <TopProductsNew
+            textAccent={textAccentTopProducts}
+            color={colortTopProducts}
+            isHeigth={isHeigthtTopProducts}
+          />
+        </div>
       </div>
 
       <img
@@ -184,6 +216,7 @@ export default function Home() {
           isHeigth={isHeigthtTopProducts}
         />
       </div>
+      <Popup />
     </>
   );
 }

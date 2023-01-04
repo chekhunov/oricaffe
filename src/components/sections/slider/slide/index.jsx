@@ -16,7 +16,17 @@ export default function Slide({
         {subTitle && <SlideSubTitle subTitle={subTitle} />}
         {button && <Button sx={sx} link={urlButton} text={button} />}
       </div>
-
+      <video
+        width="100%"
+        height="auto"
+        autoplay="autoplay"
+        loop
+        muted
+        playsInline
+        // playsinline
+      >
+        <source src="/video/1.mp4" type="video/mp4" />
+      </video>
       <SlideImage src={url} alt={title} />
 
       {/* <div className="slide__content">
