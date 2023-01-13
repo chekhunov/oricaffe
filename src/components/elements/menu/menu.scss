@@ -35,6 +35,11 @@
       color: lighten($color: $hover, $amount: 20%);
       transition: color 0.3s;
 
+      &::before {
+        width: 100%;
+        background-color: $hover;
+      }
+
       .menu {
         &__arrow {
           transform: rotate(0deg);
@@ -140,7 +145,7 @@
     &:hover {
       .submenu {
         display: inline-block;
-          transform: translateY(0px);
+        transform: translateY(0px);
       }
     }
   }

@@ -1,11 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function LogoCompany({ setActiveId, logo }) {
+export default function LogoCompany({ logo }) {
   return (
     <>
       <Link to={"/"}>
-        <div className={"header__img"} onClick={setActiveId}>
+        <div
+          className={"header__img"}
+          onClick={() => {
+            window.scrollTo(0, 0);
+          }}
+        >
           <img
             className={"header__img"}
             height="50"

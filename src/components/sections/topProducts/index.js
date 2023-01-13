@@ -2,19 +2,25 @@ import * as React from "react";
 import classNames from "classnames";
 // import { Context } from "../../../context";
 import CardTopProducts from "./cardTopProducts";
+import { Navigation, Autoplay, A11y } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 import "./topProducts.scss";
+
+// Import Swiper styles
+import 'swiper/scss';
+import 'swiper/scss/navigation';
 
 let topProductsCard = [
   {
     id: 0,
-    name: "il ROSSO",
+    name: "Il Rosso in grains",
     desc: "в зернах",
     arabica: "Арабика: 80%",
     robasta: "Робаста: 20%",
     weight: "1",
     weightBox: "12",
     price: "900",
-    imgUrl: "topProducts/rosso.jpg",
+    imgUrl: "topProducts/nero.jpg",
     infoEmploye:
       "елітна Арабіка з Центральної і Південної Америки і суміш високоякісної відбірної Робусти з найкращих областей Індії ",
     link: "",
@@ -28,7 +34,7 @@ let topProductsCard = [
     weight: "1",
     weightBox: "12",
     price: "900",
-    imgUrl: "topProducts/rosso.jpg",
+    imgUrl: "topProducts/nero.jpg",
     infoEmploye:
       "елітна Арабіка з Центральної і Південної Америки і суміш високоякісної відбірної Робусти з найкращих областей Індії ",
     link: "",
@@ -42,7 +48,7 @@ let topProductsCard = [
     weight: "1",
     weightBox: "12",
     price: "900",
-    imgUrl: "topProducts/rosso.jpg",
+    imgUrl: "topProducts/nero.jpg",
     infoEmploye:
       "елітна Арабіка з Центральної і Південної Америки і суміш високоякісної відбірної Робусти з найкращих областей Індії ",
     link: "",
@@ -56,7 +62,7 @@ let topProductsCard = [
     weight: "1",
     weightBox: "12",
     price: "900",
-    imgUrl: "topProducts/rosso.jpg",
+    imgUrl: "topProducts/nero.jpg",
     infoEmploye:
       "елітна Арабіка з Центральної і Південної Америки і суміш високоякісної відбірної Робусти з найкращих областей Індії ",
     link: "",
@@ -70,7 +76,7 @@ let topProductsCard = [
     weight: "1",
     weightBox: "12",
     price: "900",
-    imgUrl: "topProducts/rosso.jpg",
+    imgUrl: "topProducts/nero.jpg",
     infoEmploye:
       "елітна Арабіка з Центральної і Південної Америки і суміш високоякісної відбірної Робусти з найкращих областей Індії ",
     link: "",
@@ -84,33 +90,14 @@ let topProductsCard = [
     weight: "1",
     weightBox: "12",
     price: "900",
-    imgUrl: "topProducts/rosso.jpg",
+    imgUrl: "topProducts/nero.jpg",
     infoEmploye:
       "елітна Арабіка з Центральної і Південної Америки і суміш високоякісної відбірної Робусти з найкращих областей Індії ",
     link: "",
   },
 ];
 
-const sideScroll = (element, speed, distance, step) => {
-  let scrollAmount = 0;
-  console.log(scrollAmount);
-  const slideTimer = setInterval(() => {
-    element.scrollLeft += step;
-    scrollAmount += Math.abs(step);
-    if (scrollAmount >= distance) {
-      clearInterval(slideTimer);
-    }
-  }, speed);
-};
-
-//добавляем пустой обьтект на четное количество елементов
-if (topProductsCard.length % 2 == 0) {
-  topProductsCard.push([...Array(1)]);
-}
-
 export default function TopProducts({ textAccent, color, isHeigth }) {
-  let listLenght = topProductsCard.length;
-
   const stylesBlock = {
     backgroundColor: color,
     height: isHeigth + "%",
@@ -118,26 +105,7 @@ export default function TopProducts({ textAccent, color, isHeigth }) {
 
   // const { context, setContext } = React.useContext(Context);
 
-  const [isActiveDot, setIsActiveDot] = React.useState(0);
-  const [isOpen, setIsOpen] = React.useState(false); //open close popup
-  const [showEmployeCard, setShowEmployeCard] = React.useState(false);
-
   const contentWrapper = React.useRef(null);
-
-  const plus = () => {
-    isActiveDot < topProductsCard.length && setIsActiveDot(isActiveDot + 1);
-  };
-  const minus = () => {
-    isActiveDot !== 0 && setIsActiveDot(isActiveDot - 1);
-  };
-
-  const stepNext = () => {
-    sideScroll(contentWrapper.current, 10, 660, 20);
-  };
-
-  const stepPrev = () => {
-    sideScroll(contentWrapper.current, 10, 660, -20);
-  };
 
   return (
     <section className={"top-products"}>
@@ -154,67 +122,27 @@ export default function TopProducts({ textAccent, color, isHeigth }) {
             <span style={stylesBlock} className="line__accent"></span>
           </div>
 
-          <div className={"top-products__block"}>
-            <div className={"top-products__wrapper-items"} ref={contentWrapper}>
-              <div className={"top-products__items"}>
-                {topProductsCard &&
-                  topProductsCard.map((item, index) => (
+          <div className={"top-products__block pt-50 pb-50"}>
+            <Swiper
+              modules={[Navigation, Autoplay, A11y]}
+              spaceBetween={50}
+              slidesPerView={4}
+              // autoplay={{ delay: 5000 }}
+              navigation
+              onSwiper={(swiper) => console.log(swiper)}
+              onSlideChange={() => console.log("slide change")}
+            >
+              {topProductsCard &&
+                topProductsCard.map((item, index) => (
+                  <SwiperSlide>
                     <CardTopProducts
                       key={`card_${item.id}`}
                       {...item}
-                      listLenght={listLenght}
                       index={index}
-                      isActiveDot={isActiveDot}
                     />
-                  ))}
-              </div>
-            </div>
-
-            <div className="top-products__paginations paginations">
-              <div className="paginations__dots">
-                {topProductsCard &&
-                  topProductsCard.map((dot, index) => (
-                    <span
-                      key={`dot_${dot.id}`}
-                      className={classNames(
-                        "dot",
-                        dot.id === isActiveDot ? "active" : ""
-                      )}
-                    ></span>
-                  ))}
-              </div>
-
-              <div className="paginations__left-line">
-                <span className="prev">назад</span>
-                <div
-                  className={classNames(
-                    "icon-arrowleft",
-                    isActiveDot === 0 && "disabled"
-                  )}
-                  onClick={(e) => {
-                    stepPrev();
-                    minus();
-                  }}
-                  disabled={isActiveDot === 0}
-                ></div>
-              </div>
-
-              <div className="paginations__right-line">
-                <div
-                  className={classNames(
-                    "icon-arrowright",
-                    isActiveDot === listLenght - 2 && "disabled"
-                  )}
-                  onClick={(e) => {
-                    stepNext();
-                    plus();
-                  }}
-                  disabled={isActiveDot === listLenght - 2}
-                ></div>
-
-                <span className="next">далее</span>
-              </div>
-            </div>
+                  </SwiperSlide>
+                ))}
+            </Swiper>
           </div>
         </div>
       </div>

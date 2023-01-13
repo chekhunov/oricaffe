@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Slider, Popup } from "../components";
 
-import About from "../components/sections/about";
+import Category from "../components/sections/category";
 import AboutProducts from "../components/sections/aboutProducts";
 import TopProducts from "../components/sections/topProducts";
-import TopProductsNew from "../components/sections/topProductsNew";
 import Package from "../components/sections/package";
 
 import "./home.scss";
@@ -156,29 +155,14 @@ export default function Home() {
 
   return (
     <>
-      {/* <div>
-        <video
-          width="100%"
-          height="auto"
-          autoplay="autoplay"
-          loop
-          muted
-          playsInline
-          // playsinline
-        >
-          <source src="/video/1.mp4" type="video/mp4" />
-        </video>
-      </div> */}
-
       <Slider />
-      {/* <Slider autoPlay={false} /> */}
 
       <div className="background pb-50">
-        <About
-          textAccentAbout={textAccentAbout}
+        <Category
+          textAccent={textAccentAbout}
           bgColor={bgColorAbout}
-          colorAbout={colorAbout}
-          isHeigthAbout={isHeigthAbout}
+          color={colorAbout}
+          isHeigth={isHeigthAbout}
         />
 
         <AboutProducts
@@ -193,14 +177,6 @@ export default function Home() {
           color={colortTopProducts}
           isHeigth={isHeigthtTopProducts}
         />
-
-        <div className="mt-50">
-          <TopProductsNew
-            textAccent={textAccentTopProducts}
-            color={colortTopProducts}
-            isHeigth={isHeigthtTopProducts}
-          />
-        </div>
       </div>
 
       <img

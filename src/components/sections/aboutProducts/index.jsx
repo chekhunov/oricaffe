@@ -5,11 +5,12 @@ import { useTranslation } from "react-i18next";
 
 import Button from "../../elements/button";
 
-import grani from "../../../assets/img/aboutProducts/grani.jpg";
+import grani from "../../../assets/img/aboutProducts/beans.jpg";
 import green from "../../../assets/img/aboutProducts/green.jpg";
-import moka from "../../../assets/img/aboutProducts/moka.jpg";
-import chald from "../../../assets/img/aboutProducts/chald.jpg";
-import capsule from "../../../assets/img/aboutProducts/capsule.jpg";
+import moka from "../../../assets/img/aboutProducts/ground.jpg";
+import chald from "../../../assets/img/aboutProducts/cialda.jpg";
+// import capsule from "../../../assets/img/aboutProducts/Capsules-for-Nespresso.jpg";
+import capsule from "../../../assets/img/aboutProducts/kofe-k.png";
 
 import "./aboutProducts.scss";
 
@@ -155,15 +156,16 @@ export default function AboutProducts({
                               />
                             </div>
                           </div>
-
-                          <p className="about-row__text">
+                          <div className="d-flex">
+                            <p className="about-row__text">
+                              {t("about_products.many_people_represent")}
+                            </p>
                             <img
-                              className="about-row__img"
+                              className="about-row__img-moka"
                               src={moka}
                               alt="coffe"
                             />
-                            {t("about_products.many_people_represent")}
-                          </p>
+                          </div>
                         </div>
                       </div>
 
@@ -250,7 +252,7 @@ export default function AboutProducts({
                     </div>
 
                     <img
-                      className="about-row__img--big"
+                      className="about-row__img-green about-row__img--big"
                       src={green}
                       alt="coffe"
                     />

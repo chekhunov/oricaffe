@@ -10,6 +10,7 @@ import LogoCompany from "./logoCompany";
 import { Locales } from "../..";
 
 // import help from "../../../assets/img/help.png";
+import cart from "../../../assets/icons/anim/cart.gif";
 import logo from "../../../assets/header/logo.png";
 
 export default function Header({ appState }) {
@@ -38,7 +39,7 @@ export default function Header({ appState }) {
           )}
         >
           <div className={"header__box"}>
-            <LogoCompany logo={logo} setActiveId={setActiveId} />
+            <LogoCompany logo={logo} />
 
             <button
               className={classNames("header__popup", activePopup && "active")}
@@ -49,10 +50,19 @@ export default function Header({ appState }) {
             >
               <span className="header__popup-line"></span>Меню
             </button>
+
+            <a
+              className="oriental ml-20"
+              href="https://bhousecoffee.com/"
+              target={"_blank"}
+              rel="noreferrer"
+            >
+              Orientalcaffe
+            </a>
           </div>
 
           <a
-            className="oriental"
+            className="oriental-mobile ml-20"
             href="https://bhousecoffee.com/"
             target={"_blank"}
             rel="noreferrer"
@@ -79,14 +89,14 @@ export default function Header({ appState }) {
           {/* <a href="/">
             <img className="help" height="70" src={help} alt="help" />
           </a> */}
+          <a href="/" className='cart'>
+            <img className="cart__img" height="38" src={cart} alt="cart" />
+          </a>
 
           <div className="d-flex align-center">
             <Locales />
 
-            <Button
-              link={"contacts"}
-              text={t("contacts")}
-            />
+            <Button link={"contacts"} text={t("contacts")} />
           </div>
         </div>
       </div>

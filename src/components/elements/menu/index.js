@@ -4,34 +4,35 @@ import { useTranslation } from "react-i18next";
 import classNames from "classnames";
 
 const Menu = ({
+  sx = {},
   multiSelect = false,
   menuItems,
   activeId,
   setActiveId,
   activePopup,
 }) => {
-  const [selection, setSelection] = React.useState([]);
+  // const [selection, setSelection] = React.useState([]);
   const { t } = useTranslation();
 
-  function handleOnClick(item) {
-    if (!selection.some((current) => current.id === item.id)) {
-      if (!multiSelect) {
-        setSelection([item]);
-      } else if (multiSelect) {
-        setSelection([...selection, item]);
-      }
-    } else {
-      let selectionAfterRemoval = selection;
-      selectionAfterRemoval = selectionAfterRemoval.filter(
-        (current) => current.id !== item.id
-      );
-      setSelection([...selectionAfterRemoval]);
-    }
-  }
+  // function handleOnClick(item) {
+  //   if (!selection.some((current) => current.id === item.id)) {
+  //     if (!multiSelect) {
+  //       setSelection([item]);
+  //     } else if (multiSelect) {
+  //       setSelection([...selection, item]);
+  //     }
+  //   } else {
+  //     let selectionAfterRemoval = selection;
+  //     selectionAfterRemoval = selectionAfterRemoval.filter(
+  //       (current) => current.id !== item.id
+  //     );
+  //     setSelection([...selectionAfterRemoval]);
+  //   }
+  // }
 
-  function clickItem(val) {
-    setActiveId(val);
-  }
+  // function clickItem(val) {
+  //   setActiveId(val);
+  // }
 
   return (
     <nav className={classNames("menu", activePopup && "active")}>
@@ -44,6 +45,7 @@ const Menu = ({
                 to={`/${item.link}`}
               >
                 <li
+                  style={sx}
                   className={classNames(
                     "menu__item",
                     item.id === activeId ? "active" : ""
@@ -53,9 +55,10 @@ const Menu = ({
                   <div
                     type="link"
                     className="dd-list-link"
-                    onClick={(e) => {
-                      handleOnClick(item);
-                      clickItem(index);
+                    onClick={() => {
+                      window.scrollTo(0, 0);
+                      //   handleOnClick(item);
+                      //   clickItem(index);
                     }}
                   >
                     <span className={"menu__left"}>{t(`${item.value}`)}</span>
@@ -73,10 +76,10 @@ const Menu = ({
                 <div
                   type="link"
                   className="dd-list-link"
-                  onClick={(e) => {
-                    handleOnClick(item);
-                    clickItem(index);
-                  }}
+                  // onClick={(e) => {
+                  // handleOnClick(item);
+                  // clickItem(index);
+                  // }}
                 >
                   <span className={"menu__left"}>{t(`${item.value}`)}</span>
 

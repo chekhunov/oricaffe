@@ -1,3 +1,4 @@
+export { default as SubHeader } from "./modules/subHeader";
 export { default as Header } from "./modules/header";
 export { default as Footer } from "./modules/footer";
 export { default as Menu } from "./elements/menu";

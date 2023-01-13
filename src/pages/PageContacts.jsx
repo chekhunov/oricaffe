@@ -19,14 +19,16 @@ let breadcrumbs = [
 
 export default function PageContacts() {
   return (
-    <section className={classNames(style.pageContacts, "page-contacts")}>
+    <section className={classNames(style.pageContacts, "page-contacts mt-50")}>
       <div className={classNames("container-big")}>
-        <Breadcrumbs breadcrumbs={breadcrumbs} />
+        <div className="page-contacts__inner pt-50">
+          <Breadcrumbs breadcrumbs={breadcrumbs} />
 
-        <div className={style.title}>Контакты</div>
+          <div className={style.title}>Контакты</div>
 
-        <div className={style.inner}>
-          <Contacts />
+          <div className={style.inner}>
+            <Contacts />
+          </div>
         </div>
       </div>
     </section>

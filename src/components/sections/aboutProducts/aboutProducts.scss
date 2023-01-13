@@ -74,15 +74,26 @@
 
   &__img {
     border-radius: 10px;
-    width: 30%;
+    width: 39%;
     float:right;
+  }
+
+  &__img-moka {
+    border-radius: 10px;
+    width: 39%;
+    object-fit: cover;
+    float: right;
   }
 
   &__img--big {
     height: auto;
-    width: 24%;
+    width: 25%;
     margin-right: 0;
     border-radius: 10px;
+  }
+
+  &__img-green {
+    width: 32%;
   }
 
   &__column {

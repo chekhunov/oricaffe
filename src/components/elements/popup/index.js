@@ -7,13 +7,13 @@ import "./popup.scss";
 
 export default function Popup() {
   const { context, setContext } = React.useContext(Context);
-  console.log(context, "context");
+  // console.log(context, "context");
 
   function removeOverflowForBody() {
     document.body.classList.remove("overflowe");
   }
 
-  console.log(context.scrollPlace);
+  // console.log(context.scrollPlace);
 
   return (
     <div className={classNames("popup", context.isOpen ? "active" : "")}>

@@ -32,7 +32,8 @@
     "coffee": "Coffee",
     "coffee_equipment": "Coffee equipment",
     "tea": "Tea",
-    "chocolate": "Chocolate"
+    "chocolate": "Chocolate",
+    "coffee_accessories": "Coffee accessories"
   },
   "about_section": {
     "headline": "(Oriental caffè) has been operating in Tuscany (a region in Italy) since 1955.",
@@ -55,5 +56,9 @@
     "coffee_nespresso_this": "The Nespresso capsule is a whole system for preparing a coffee drink. It consists of a coffee machine and Nespresso capsules. Nespresso coffee makers are automatic coffee makers that are able to prepare a unique and delicious coffee, getting the maximum flavor and aroma from the capsule. The biggest advantage of these machines is the speed and ease of making coffee, as well as easy maintenance. Nespresso capsules are pre-packaged ground roasted coffee, pressed into portioned disposable sealed plastic or metal capsules, which are small cups with a lid. The preparation of the drink is carried out in a special machine that provides simultaneous perforation of the bottom of the capsule and its lid, while high-pressure water is injected into the capsule through the bottom, and the finished drink is discharged from the place of preparation into the cup through the lid. To fill the capsules, manufacturers often use coffee blends consisting of several varieties of ground coffee beans. Also, the capsule does not allow air, moisture and sunlight to pass through. The coffee is always fresh.",
     "coffee_green": "Green coffee",
     "june": "In June 2017 we took part in the WOC (World of Coffee) in Budapest and from this important event we introduced our Farmers & Roasters Project. Thanks to the Farmers & Roasters project, we can finally truly control the entire production process of our coffee from grain to cup, focusing on improving the working conditions of people on the plantation, paying their wages fairly, applying agricultural practices that are environmentally friendly, getting the cup of the highest. quality. This project is a transparent supply chain - more than fair trade In our social projects, we cooperate with the cooperative Cocafcal (Honduras). Our goal is to help local communities in producing countries fight hunger and poverty, improve their education and economy, and implement environmental standards."
-  }
+  },
+  "about_company": "About company",
+  "bonus": "Bonus program",
+  "delivery": "Delivery",
+  "guarantee": "Guarantee"
 }
