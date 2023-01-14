@@ -184,6 +184,88 @@
   }
 }
 
+//look this and 
+
+.cart-total-block {
+  ul {
+    display: block;
+    margin-bottom: 40px;
+
+    li {
+      display: flex;
+      align-items: flex-end;
+      margin-bottom: 20px;
+
+      div {
+        position: relative;
+        flex: 1;
+        top: -3px;
+        height: 1px;
+        margin: 0 7px;
+        border-bottom: 1px dashed #dfdfdf;
+      }
+    }
+  }
+
+  button {
+    width: 100%;
+    height: 55px;
+    font-weight: 500;
+    background-color: #9dd558;
+    color: white;
+    border-radius: 18px;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: lighten(#9dd558, 5%);
+    }
+
+    &:active {
+      background-color: darken(#9dd558, 5%);
+    }
+  }
+}
+
+.cartItem {
+  padding: 20px;
+  border: 1px solid #f3f3f3;
+  border-radius: 20px;
+  overflow: hidden;
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  p {
+    margin: 0;
+    font-size: 16px;
+  }
+
+  b {
+    font-size: 14px;
+  }
+}
+
+.cartItemImg {
+  width: 70px;
+  height: 70px;
+  margin-right: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 0 -3px;
+}
+
+.removeBtn {
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.15s ease-in-out;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
 .decor-lamore {
   width: 100%;
   font-family: 'Akshar';

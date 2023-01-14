@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 
-import { Home, NotFound, PageAbout, PageContacts } from "./pages";
+import { Home, NotFound, PageAbout, PageContacts, Drawer } from "./pages";
 import { Header, Footer, SubHeader } from "./components";
 import SocialBtn from "./components/elements/socialBtn";
 import { Context } from "./context";
@@ -48,6 +48,7 @@ function Content() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<PageAbout />} />
         <Route path="/contacts" element={<PageContacts />} />
+        <Route path="/drawer" element={<Drawer />} />
         <Route path="*" element={<NotFound to="/404" replace />} />
       </Routes>
     </div>

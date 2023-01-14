@@ -34,7 +34,7 @@ export default function Category({ textAccent, color, isHeigth, bgColor }) {
             style={{ color: textAccent, backgroundColor: bgColor }}
             className={classNames("category__desc d-flex", "desc")}
           >
-            {t("category")}
+            {t("category_coffee")}
             <a
               className="oriental-link ml-10"
               href="https://bhousecoffee.com/"

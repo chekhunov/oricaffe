@@ -24,7 +24,7 @@ export default function PageAbout() {
   return (
     <section className={classNames("page-about mt-50")}>
       <div className={classNames("container-big")}>
-        <div className="page-about__inner pt-50">
+        <div className="page-about__inner">
           <Breadcrumbs breadcrumbs={breadcrumbs} />
 
           <img

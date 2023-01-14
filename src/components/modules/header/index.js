@@ -89,12 +89,14 @@ export default function Header({ appState }) {
           {/* <a href="/">
             <img className="help" height="70" src={help} alt="help" />
           </a> */}
-          <a href="/" className='cart'>
-            <img className="cart__img" height="38" src={cart} alt="cart" />
-          </a>
 
           <div className="d-flex align-center">
             <Locales />
+
+            <a href="/drawer" className="cart mr-30">
+              <span className="cart__count">20</span>
+              <img className="cart__img" height="38" src={cart} alt="cart" />
+            </a>
 
             <Button link={"contacts"} text={t("contacts")} />
           </div>

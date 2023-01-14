@@ -59,7 +59,7 @@
   &__column-left {
     height: auto;
     min-height: 100%;
-    width: calc(75% - 20px);
+    width: calc(90% - 20px);
   }
   &__column-right {
     height: auto;
@@ -74,32 +74,31 @@
 
   &__img {
     border-radius: 10px;
-    width: 39%;
+    width: 32%;
     float:right;
   }
 
   &__img-moka {
     border-radius: 10px;
-    width: 39%;
+    width: 35%;
     object-fit: cover;
     float: right;
   }
 
   &__img--big {
-    height: auto;
-    width: 25%;
+    max-height: 250px;
+    width: 20%;
     margin-right: 0;
     border-radius: 10px;
   }
 
   &__img-green {
-    width: 32%;
+    width: 20%;
   }
 
   &__column {
     padding: 20px;
   }
-
 
   &__column-inner {
     width: calc(50%);
@@ -108,14 +107,14 @@
 
 .column-right {
   height: 100%;
-  // max-height: 720px;
 
   &__img {
-    max-height: 220px;
+    max-height: 250px;
     object-fit: cover;
-    width: 100%;
+    margin: 0 auto;
+    width: 35%;
     border-radius: 10px;
-    float:right;
+    float:bottom;
   }
 }
 

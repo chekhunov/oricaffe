@@ -17,10 +17,11 @@
   "catalog_products": "Catalog of Products",
   "production_company": "Production of the company",
   "more": "More",
+  "category_coffee": "Category",
   "banners": {
     "b-0": "Exactly what you were looking for"
   },
-  "category_coffee": {
+  "category": {
     "coffe_beans": "Whole bean coffee",
     "coffe_single": "Coffee in single doses",
     "coffe_nespresso": "Coffee in nespresso capsules",

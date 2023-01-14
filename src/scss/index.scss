@@ -12,25 +12,17 @@
 
 //* Elements *
 @import "../components/elements/closedButton/closedButton";
-@import "../components/elements/popup/popup";
-// @import "../components/about/about";
-// @import "../components/consultation/consultation";
 @import "../components/sections/contacts/contacts";
 @import "../components/elements/menu/menu";
 @import "../components/elements/locales/locales.scss";
 
 //* Modules *
+@import "../components/modules/footer/footer.scss";
 @import "../components/modules/header/header";
 @import "../components/modules/header/headerMenuPopup/headerMenuPopup";
-// @import "../components/modules/header/logoCompany";
-// @import "../components/modules/footer/footer";
 
 @import "../components/listPlusPopup/listPlusPopup";
 
-// @import "../components/news/news";
-// @import "../components/participation/participation";
-// @import "../components/employes/employes";
-// @import "../components/employes/cardEmploye/cardEmploye";
 @import "../components/sections/slider/Slider.scss";
 
 

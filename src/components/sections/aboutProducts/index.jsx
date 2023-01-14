@@ -1,16 +1,14 @@
 import React from "react";
 import classNames from "classnames";
 import { useTranslation } from "react-i18next";
-// import { Link } from "react-router-dom";
 
 import Button from "../../elements/button";
 
-import grani from "../../../assets/img/aboutProducts/beans.jpg";
-import green from "../../../assets/img/aboutProducts/green.jpg";
-import moka from "../../../assets/img/aboutProducts/ground.jpg";
-import chald from "../../../assets/img/aboutProducts/cialda.jpg";
-// import capsule from "../../../assets/img/aboutProducts/Capsules-for-Nespresso.jpg";
-import capsule from "../../../assets/img/aboutProducts/kofe-k.png";
+import grani from "../../../assets/img/aboutProducts/icona_grani.png";
+import green from "../../../assets/img/aboutProducts/icona_green.png";
+import moka from "../../../assets/img/aboutProducts/icona_moka.png";
+import chald from "../../../assets/img/aboutProducts/icona_cialda.png";
+import capsule from "../../../assets/img/aboutProducts/icona_NESPRESSO.png";
 
 import "./aboutProducts.scss";
 
@@ -23,14 +21,6 @@ const coffeGrani = {
 };
 
 const coffeGround = {
-  button: "more",
-  urlButton: "/contacts",
-  sx: {
-    width: "200px",
-  },
-};
-
-const coffeMono = {
   button: "more",
   urlButton: "/contacts",
   sx: {
@@ -132,7 +122,7 @@ export default function AboutProducts({
                       />
                     </div>
 
-                    <img
+                    <img      
                       className="about-row__img--big"
                       src={grani}
                       alt="coffe"

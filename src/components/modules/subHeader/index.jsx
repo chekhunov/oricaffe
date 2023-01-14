@@ -8,7 +8,7 @@ export default function SubHeader({ appState }) {
     <div className="sub-header">
       <div className="container">
         <div className="sub-header__inner">
-          <Menu sx={{ fontSize: "12px" }} menuItems={appState.menu_subheader} />
+          <Menu sx={{ fontSize: "12px", color: '#ffffff' }} menuItems={appState.menu_subheader} />
         </div>
       </div>
     </div>

@@ -115,10 +115,27 @@
 }
 
 .cart {
+  position: relative;
+  &__count {
+    position: absolute;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4px;
+    font-size: 12px;
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    background-color: #F2E9E9;
+    box-shadow: rgb(0 0 0 / 2%) 0px 1px 3px 0px, rgb(27 31 35 / 15%) 0px 0px 0px 1px;
+  }
+
   &__img {
     padding: 4px;
     border-radius: 50%;
     transition: box-shadow 0.3s;
+
     &:hover {
       box-shadow: rgb(0 0 0 / 2%) 0px 1px 3px 0px, rgb(27 31 35 / 15%) 0px 0px 0px 1px;
       transition: box-shadow 0.3s;

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function LogoCompany({ logo }) {
+export default function LogoCompany({ logo, height = 50, width = 50 }) {
   return (
     <>
       <Link to={"/"}>
@@ -13,8 +13,8 @@ export default function LogoCompany({ logo }) {
         >
           <img
             className={"header__img"}
-            height="50"
-            width="50"
+            height={height}
+            width={width}
             src={logo}
             alt="logo company"
           />

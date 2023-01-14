@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { Slider, Popup } from "../components";
+import { Slider } from "../components";
 
 import Category from "../components/sections/category";
 import AboutProducts from "../components/sections/aboutProducts";
 import TopProducts from "../components/sections/topProducts";
 import Package from "../components/sections/package";
+
+import BannerMapCaffee from "../assets/img/home/map-coffe.jpg";
+import BannerBottom from "../assets/img/home/bottom.jpg";
 
 import "./home.scss";
 
@@ -192,7 +195,21 @@ export default function Home() {
           isHeigth={isHeigthtTopProducts}
         />
       </div>
-      <Popup />
+
+      <div className="background-bottom">
+        <img className="home__baner" src={BannerMapCaffee} alt="baner" />
+      </div>
+
+      <div className="container-max">
+      <div className="background-bottom">
+        <img
+          height={"1130"}
+          className="home__baner"
+          src={BannerBottom}
+          alt="baner"
+        />
+      </div>
+      </div>
     </>
   );
 }
