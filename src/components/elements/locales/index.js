@@ -7,8 +7,8 @@ import ua from "../../../assets/img/flags/ua.png";
 
 export default function Locales() {
   const { i18n } = useTranslation();
-  const [locale, setLocale] = useState(i18n.language || 'en');
-  const [flag, setFlag] = useState(i18n.language || 'en');
+  const [locale, setLocale] = useState(i18n.language || "en");
+  const [flag, setFlag] = useState(i18n.language || "en");
 
   const changeLanguage = (lng) => {
     setFlag(lng);
@@ -20,10 +20,10 @@ export default function Locales() {
     <div className="lang mr-20">
       <span className="lang__el d-flex align-center">
         <img
-          className="flag mr-5"
-          height="20"
+          className="flag-active mr-5"
+          height="30"
           width="30"
-          src={`flags/${flag === ("en-US" || "en-GB") ? "en" : flag}.png`}
+          src="/icons/globe.png"
           alt="flag"
         />
 

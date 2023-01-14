@@ -95,7 +95,7 @@ export default function Header({ appState }) {
 
             <a href="/drawer" className="cart mr-30">
               <span className="cart__count">20</span>
-              <img className="cart__img" height="38" src={cart} alt="cart" />
+              <img className="cart__img" height="30" src={cart} alt="cart" />
             </a>
 
             <Button link={"contacts"} text={t("contacts")} />

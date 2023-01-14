@@ -4,8 +4,8 @@ import { useTranslation } from "react-i18next";
 
 import Button from "../../elements/button";
 
-import grani from "../../../assets/img/aboutProducts/icona_grani.png";
-import green from "../../../assets/img/aboutProducts/icona_green.png";
+import grani from "../../../assets/img/aboutProducts/beans.png";
+import green from "../../../assets/img/aboutProducts/beans-green.png";
 import moka from "../../../assets/img/aboutProducts/icona_moka.png";
 import chald from "../../../assets/img/aboutProducts/icona_cialda.png";
 import capsule from "../../../assets/img/aboutProducts/icona_NESPRESSO.png";
@@ -122,7 +122,7 @@ export default function AboutProducts({
                       />
                     </div>
 
-                    <img      
+                    <img
                       className="about-row__img--big"
                       src={grani}
                       alt="coffe"

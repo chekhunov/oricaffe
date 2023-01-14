@@ -2,9 +2,8 @@
 
 .footer { 
   position: relative;
-  margin-top: -225px;
   z-index: 20;
-  
+
   &__bottom {
     height: 210px;
     padding: 40px 110px 50px;
@@ -12,6 +11,7 @@
     border-radius: 40px;
     display: flex;
     justify-content: space-between;
+    box-shadow: rgb(0 0 0 / 2%) 0px 1px 3px 0px, rgb(27 31 35 / 15%) 0px 0px 0px 1px;
   }
 
   &__logo {
@@ -45,18 +45,75 @@
         margin-right: 10px;
       }
     }
+
+    &__link {
+      height: 40px;
+      width: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      background-color: #131938;
+      transition:  box-shadow 0.3s;
+
+      .telegram-ico {
+        border-radius: 50%;
+      }
+      .facebook-ico path {
+        fill: #ffffff;
+      }
+
+      &.telegram {
+        background-color: #fff;
+      }
+
+      &:hover {
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+        transition:  box-shadow 0.3s;
+
+        .socials__ico path,
+        .facebook-ico path {
+          fill: darken($color: #ffffff, $amount: 30%);
+          transition: fill 0.3s;
+        }
+
+        &.telegram {
+          background-color: darken($color: #ffffff, $amount: 30%);
+          transition: background-color 0.3s;
+        }
+    }
+    }
+  }
+
+  &__headline {
+    color: #131938;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  &__link {
+    color: #2B304F;
+    font-size: 16px;
+    font-weight: normal;
+    transition: color 0.3s;
+
+    &:hover {
+      color: lighten($color: #2B304F, $amount: 30%);
+      transition: color 0.3s;
+    }
   }
 }
 
-
   .icon-instagram {
     &:before {
-      font-size: 40px;
-        color: $default;
+      font-size: 26px;
+        color: #ffffff;
+        transition: color 0.3s;
       }
     &:hover {
       &:before {
-        color: lighten($color: $default, $amount: 30%);
+        color: darken($color: #ffffff, $amount: 30%);
+        transition: color 0.3s;
       }
     }
   }

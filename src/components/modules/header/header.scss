@@ -118,7 +118,8 @@
   position: relative;
   &__count {
     position: absolute;
-    right: 0;
+    top: -2px;
+    right: -4px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -132,7 +133,7 @@
   }
 
   &__img {
-    padding: 4px;
+    padding: 2px;
     border-radius: 50%;
     transition: box-shadow 0.3s;
 

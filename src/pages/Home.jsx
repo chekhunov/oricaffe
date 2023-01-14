@@ -196,19 +196,16 @@ export default function Home() {
         />
       </div>
 
-      <div className="background-bottom">
-        <img className="home__baner" src={BannerMapCaffee} alt="baner" />
+      <div className="background-mc w100p">
+        <div className="container-max">
+          <img className="home__baner" src={BannerMapCaffee} alt="baner" />
+        </div>
       </div>
 
-      <div className="container-max">
-      <div className="background-bottom">
-        <img
-          height={"1130"}
-          className="home__baner"
-          src={BannerBottom}
-          alt="baner"
-        />
-      </div>
+      <div className="background-bottom w100p">
+        <div className="container-max">
+          <img className="home__baner" src={BannerBottom} alt="baner" />
+        </div>
       </div>
     </>
   );

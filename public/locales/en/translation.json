@@ -61,5 +61,16 @@
   "about_company": "About company",
   "bonus": "Bonus program",
   "delivery": "Delivery",
-  "guarantee": "Guarantee"
+  "guarantee": "Guarantee",
+  "back_to": "Back to",
+  "drawer": "Basket",
+  "service": "Service",
+  "menu": "Menu",
+  "history_company": "History company",
+  "faq": "FAQs",
+  "terms_conditions": "Terms & Conditions",
+  "legal_material": "Legal material",
+  "privacy_policy": "Privacy Policy",
+  "cancelation_policy": "Cancelation policy",
+  "find_us_on": "Find us on social networks"
 }
