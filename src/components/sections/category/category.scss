@@ -15,13 +15,60 @@
         color: rgba(205, 186, 170, 0.5);
     }
 
+    .swiper-wrapper {
+      padding: 40px 0;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next  {
+      position: relative;
+      height: 50px;
+      width: 50px;
+      background-color: #fff;
+      border-radius: 50%;
+      z-index: 10;
+      border: 0.5px solid #8E0303;
+      transition: background-color 0.3s;
+
+      &:before {
+        position: absolute;
+        display: block;
+        content: url('../../../assets/icons/category/arrow-b.svg');
+      }
+
+      &:hover {
+        background-color: darken($color: #fff, $amount: 5%);
+        transition: background-color 0.3s;
+      }
+    }
+
+    .swiper-button-prev {
+      bottom: 4px;
+      left: 88%;
+
+      &:before {
+        right: 20px;
+        bottom: 13px;
+        transform: rotate(-180deg);
+      }
+    }
+
+    .swiper-button-next {
+      bottom: 32px;
+      left: 95%;
+
+      &:before {
+        right: 16px;
+        bottom: 6px;
+      }
+    }
+
     &__link {
       height: 250px;
       width: 250px;
       background-repeat: no-repeat;
       background-size: 100%;
       background-position: center center;
-      // border-radius: 15px;
       display: flex;
       justify-content: center;
       align-items: end;
@@ -48,9 +95,6 @@
 
     &__content-block {
         padding: 70px 20px;
-        // background-color: rgba(255, 255, 255, 0.2);
-        // border-radius: 0 25px 25px 0;
-        // box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
     }
     
     &__text {

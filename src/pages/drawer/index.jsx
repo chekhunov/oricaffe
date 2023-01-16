@@ -1,5 +1,6 @@
 import React from "react";
 import { Info, Breadcrumbs } from "../../components";
+import { useTranslation } from "react-i18next";
 
 let breadcrumbs = [
   {
@@ -15,6 +16,7 @@ let breadcrumbs = [
 ];
 
 function Drawer({ onClosed, onRemove, items = [] }) {
+  const { t } = useTranslation();
   return (
     <div className="drawer mt-50 mb-50">
       <div className="container-big">
@@ -63,8 +65,8 @@ function Drawer({ onClosed, onRemove, items = [] }) {
           </div>
         ) : (
           <Info
-            title={"Корзина пустая"}
-            description={`Ваш заказ # скоро будет передан курьерской доставке`}
+            title={t("cart_is_empty")}
+            description={t("add_item_to_cart")}
             image={"cart/empty.png"}
           />
         )}

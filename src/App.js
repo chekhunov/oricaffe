@@ -1,24 +1,25 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 
+import LayoutDefault from "./components/layouts";
 import { Home, NotFound, PageAbout, PageContacts, Drawer } from "./pages";
-import { Header, Footer, SubHeader } from "./components";
-import SocialBtn from "./components/elements/socialBtn";
 import { Context } from "./context";
 
 export default function App({ appState }) {
   const [context, setContext] = useState([]);
 
+  const contextData = {
+    appState,
+    context,
+    setContext,
+  };
+
   return (
     <BrowserRouter>
-      <Context.Provider value={{ appState, context, setContext }}>
-        <SubHeader appState={appState} />
-        <Header appState={appState} />
-
-        <SocialBtn />
-
-        <Content />
-        <Footer />
+      <Context.Provider value={contextData}>
+        <LayoutDefault appState={appState}>
+          <Content />
+        </LayoutDefault>
       </Context.Provider>
     </BrowserRouter>
   );

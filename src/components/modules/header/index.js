@@ -1,20 +1,24 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-
-import classNames from "classnames";
-
+import cn from "classnames";
+import { Context } from "../../../context";
 import { Menu } from "../..";
 import HeaderMenuPopup from "./headerMenuPopup";
 import Button from "../../elements/button";
 import LogoCompany from "./logoCompany";
 import { Locales } from "../..";
 
+/* TODO remove */
 // import help from "../../../assets/img/help.png";
-import cart from "../../../assets/icons/anim/cart.gif";
+import cartIcon from "../../../assets/icons/anim/cart.gif";
 import logo from "../../../assets/header/logo.png";
+import { Link } from "react-router-dom";
 
 export default function Header({ appState }) {
   const { t } = useTranslation();
+  const { context } = React.useContext(Context);
+
+  const { cart } = context;
 
   const [activeId, setActiveId] = React.useState(null);
   const [activePopup, setActivePopup] = React.useState(false);
@@ -30,10 +34,10 @@ export default function Header({ appState }) {
   }
 
   return (
-    <header className={classNames("header")}>
+    <header className={cn("header")}>
       <div className="container-big">
         <div
-          className={classNames(
+          className={cn(
             "header__inner d-flex justify-beetwen",
             activePopup && "active"
           )}
@@ -42,7 +46,7 @@ export default function Header({ appState }) {
             <LogoCompany logo={logo} />
 
             <button
-              className={classNames("header__popup", activePopup && "active")}
+              className={cn("header__popup", activePopup && "active")}
               onClick={(e) => {
                 isActivePopup();
                 addedOverflowForBody();
@@ -60,7 +64,6 @@ export default function Header({ appState }) {
               Orientalcaffe
             </a>
           </div>
-
           <a
             className="oriental-mobile ml-20"
             href="https://bhousecoffee.com/"
@@ -69,23 +72,24 @@ export default function Header({ appState }) {
           >
             Orientalcaffe
           </a>
-
           {!activePopup ? (
             <Menu
               activePopup={activePopup}
-              menuItems={appState.menuItems}
+              menuItems={appState?.menuItems}
               activeId={activeId}
               setActiveId={setActiveId}
             />
           ) : (
             <HeaderMenuPopup
               activePopup={activePopup}
-              menuItems={appState.menuItems}
+              menuItems={appState?.menuItems}
               activeId={activeId}
               setActiveId={setActiveId}
             />
           )}
 
+          {/* TODO remove */}
+          {/* help for ukraine */}
           {/* <a href="/">
             <img className="help" height="70" src={help} alt="help" />
           </a> */}
@@ -93,10 +97,15 @@ export default function Header({ appState }) {
           <div className="d-flex align-center">
             <Locales />
 
-            <a href="/drawer" className="cart mr-30">
-              <span className="cart__count">20</span>
-              <img className="cart__img" height="30" src={cart} alt="cart" />
-            </a>
+            <Link to="drawer" className="cart mr-30">
+              <span className="cart__count">{cart?.count || 0}</span>
+              <img
+                className="cart__img"
+                height="30"
+                src={cartIcon}
+                alt="cart"
+              />
+            </Link>
 
             <Button link={"contacts"} text={t("contacts")} />
           </div>

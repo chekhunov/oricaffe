@@ -1,13 +1,12 @@
 import React from "react";
 import classNames from "classnames";
 import { useTranslation } from "react-i18next";
-import { Navigation, Autoplay } from "swiper";
+import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Context } from "../../../context";
 
 import "swiper/scss";
 import "swiper/scss/navigation";
-import "swiper/scss/autoplay";
 
 import "./category.scss";
 
@@ -52,10 +51,10 @@ export default function Category({ textAccent, color, isHeigth, bgColor }) {
           <div className="container">
             <div className="category__content-block">
               <Swiper
-                modules={[Navigation, Autoplay]}
+                modules={[Navigation]}
                 spaceBetween={50}
                 slidesPerView={4}
-                autoplay={{ delay: 5000 }}
+                // autoplay={{ delay: 5000 }}
                 navigation
                 onSlideChange={() => console.log("slide change")}
                 onSwiper={(swiper) => console.log(swiper)}

@@ -3,7 +3,6 @@ export { default as Header } from "./modules/header";
 export { default as Footer } from "./modules/footer";
 export { default as Menu } from "./elements/menu";
 export { default as Locales } from "./elements/locales";
-export { default as ListPlusPopup } from "./listPlusPopup";
 
 export { default as Info } from "./elements/info";
 export { default as ClosedButton } from "./elements/closedButton";

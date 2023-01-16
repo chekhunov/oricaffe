@@ -1,0 +1,75 @@
+@import '../../../scss/vars.scss';
+
+.button-add-cart {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  bottom: 0;
+  height: 46px;
+  width: 100%;
+  min-width: 150px;
+  padding-top: 2px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-size: 16px;
+  color: $hover;
+  text-transform: uppercase;
+  background-color: #7de790;
+  border-radius: 100px;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  @extend %helvetica-400;
+  transform: translateY(-20px);
+  cursor: pointer;
+  transition: all 0.3s;
+
+    &.icon {
+      .ico {
+        margin-right: 10px;
+        transform: translateX(0);
+        transition: transform 0.3s;
+      }
+    }
+
+    &:hover {
+      .ico {
+        transform: translateX(-10px);
+        transition: transform 0.3s;
+      }
+    }
+
+    &__text {
+      padding-top: 2px;
+    }
+}
+.button-add-cart:hover,
+.button-add-cart:active,
+.button-add-cart:focus {
+    color: #FFF;
+}
+.button-add-cart:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -50px;
+    bottom: 0;
+    left: 0;
+    border-right: 50px solid transparent;
+    border-top: 50px solid #ffa9a9;
+    transition: transform 0.5s;
+    transform: translateX(-100%);
+    z-index: -1;
+}
+.button-add-cart:hover:before,
+.button-add-cart:active:before,
+.button-add-cart:focus:before {
+    transform: translateX(0);
+}
+
+.abutton-add-cart:active {
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  transition: color 0.3s, background-color 0.3s;
+}

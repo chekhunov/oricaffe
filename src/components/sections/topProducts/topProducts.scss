@@ -2,14 +2,57 @@
     padding: 20px 0;
     position: relative;
 
-    &__inner {
-        // margin-right: -75px;
+    .swiper-wrapper {
+      padding: 20px 0 40px;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next  {
+      position: relative;
+      height: 50px;
+      width: 50px;
+      background-color: #fff;
+      border-radius: 50%;
+      z-index: 10;
+      border: 0.5px solid #8E0303;
+      transition: background-color 0.3s;
+
+      &:before {
+        position: absolute;
+        display: block;
+        content: url('../../../assets/icons/category/arrow-b.svg');
+      }
+
+      &:hover {
+        background-color: darken($color: #fff, $amount: 5%);
+        transition: background-color 0.3s;
+      }
+    }
+
+    .swiper-button-prev {
+      bottom: 4px;
+      left: 88%;
+
+      &:before {
+        right: 20px;
+        bottom: 13px;
+        transform: rotate(-180deg);
+      }
+    }
+
+    .swiper-button-next {
+      bottom: 32px;
+      left: 95%;
+
+      &:before {
+        right: 16px;
+        bottom: 6px;
+      }
     }
 
     &__block {
         position: relative;
         width: 100%;
-        // margin-right: -75px;
         padding-left: 25px;
     }
 

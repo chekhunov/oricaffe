@@ -72,5 +72,8 @@
   "legal_material": "Legal material",
   "privacy_policy": "Privacy Policy",
   "cancelation_policy": "Cancelation policy",
-  "find_us_on": "Find us on social networks"
+  "find_us_on": "Find us on social networks",
+  "cart_is_empty": "Cart is empty",
+  "add_to_cart": "Add to cart",
+  "add_item_to_cart": "Add item to cart. You can do this -> go to the products section and make your choice, or you can contact our managers and they will help you place an order. You can also send an inquiry with order details."
 }

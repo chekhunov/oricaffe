@@ -1,3 +1,16 @@
 .top-products__text {
   display: none;
 }
+
+.top-products {
+  &__item {
+    &:hover {
+      .button-add-cart {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+        transition: all 0.3s;
+      }
+    }
+  }
+}
