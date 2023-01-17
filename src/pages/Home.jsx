@@ -5,6 +5,8 @@ import Category from "../components/sections/category";
 import AboutProducts from "../components/sections/aboutProducts";
 import TopProducts from "../components/sections/topProducts";
 import Package from "../components/sections/package";
+import Delivery from "../components/sections/delivery";
+import HowItWork from "../components/sections/howItWork";
 
 import BannerMapCaffee from "../assets/img/home/map-coffe.jpg";
 import BannerBottom from "../assets/img/home/bottom.jpg";
@@ -182,19 +184,23 @@ export default function Home() {
         />
       </div>
 
-      <img
-        className="home__baner mb-50"
-        src="/baners/baner-1.jpg"
-        alt="baner"
-      />
+      <img className="home__baner" src="/baners/baner-1.jpg" alt="baner" />
 
-      <div className="background-two pb-50">
+      <div className="background-two pt-50 pb-50">
         <Package
           textAccent={textAccentTopProducts}
           color={colortTopProducts}
           isHeigth={isHeigthtTopProducts}
         />
+
+        <Delivery
+          textAccent={textAccentTopProducts}
+          color={colortTopProducts}
+          isHeigth={isHeigthtTopProducts}
+        />
       </div>
+
+      <HowItWork />
 
       <div className="background-mc w100p">
         <div className="container-max">
@@ -202,7 +208,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="background-bottom w100p">
+      <div className="background-footer w100p">
         <div className="container-max">
           <img className="home__baner" src={BannerBottom} alt="baner" />
         </div>

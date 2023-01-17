@@ -1,5 +1,5 @@
 import React from "react";
-import classNames from "classnames";
+import cn from "classnames";
 import { useTranslation } from "react-i18next";
 
 import Button from "../../elements/button";
@@ -60,13 +60,13 @@ export default function AboutProducts({
   return (
     <section className="about-products">
       <div className="container-big">
-        <div className={classNames("about-products__inner", "inner")}>
+        <div className={cn("about-products__inner", "inner")}>
           <div className="line">
             <span className="line__accent"></span>
           </div>
 
           <h2
-            className={classNames("about-products__desc d-flex", "desc")}
+            className={cn("about-products__desc d-flex", "desc")}
             style={{ color: textAccent, backgroundColor: bgColor }}
           >
             {t("production_company")}
