@@ -3,7 +3,7 @@ import classNames from "classnames";
 import { useTranslation } from "react-i18next";
 import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Context } from "../../../context";
+import { useGetNavMenu } from "../../../api/navMenu";
 
 import "swiper/scss";
 import "swiper/scss/navigation";
@@ -12,10 +12,9 @@ import "./category.scss";
 
 export default function Category({ textAccent, color, isHeigth, bgColor }) {
   const { t } = useTranslation();
-  const { appState } = React.useContext(Context);
 
-  const { category_products } = appState;
-  console.log(category_products);
+  const { data } = useGetNavMenu();
+  const { category } = data || [];
 
   const stylesBlock = {
     backgroundColor: color,
@@ -56,12 +55,11 @@ export default function Category({ textAccent, color, isHeigth, bgColor }) {
                 slidesPerView={4}
                 // autoplay={{ delay: 5000 }}
                 navigation
-                onSlideChange={() => console.log("slide change")}
-                onSwiper={(swiper) => console.log(swiper)}
+                onSwiper={(swiper) => swiper}
               >
-                {category_products &&
-                  category_products.map((slide) => (
-                    <SwiperSlide>
+                {category &&
+                  category.map((slide) => (
+                    <SwiperSlide key={`slide-category_${slide.id}`}>
                       <a
                         style={{ backgroundImage: `url(${slide.img})` }}
                         href={slide.link}

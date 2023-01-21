@@ -1,24 +1,21 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import cn from "classnames";
-import { Context } from "../../../context";
 import { Menu } from "../..";
 import HeaderMenuPopup from "./headerMenuPopup";
 import Button from "../../elements/button";
 import LogoCompany from "./logoCompany";
 import { Locales } from "../..";
+import { Link } from "react-router-dom";
 
 /* TODO remove */
 // import help from "../../../assets/img/help.png";
+
 import cartIcon from "../../../assets/icons/anim/cart.gif";
 import logo from "../../../assets/header/logo.png";
-import { Link } from "react-router-dom";
 
-export default function Header({ appState }) {
+export default function Header({ navMenu, menuSubheader, cart }) {
   const { t } = useTranslation();
-  const { context } = React.useContext(Context);
-
-  const { cart } = context;
 
   const [activeId, setActiveId] = React.useState(null);
   const [activePopup, setActivePopup] = React.useState(false);
@@ -64,6 +61,7 @@ export default function Header({ appState }) {
               Orientalcaffe
             </a>
           </div>
+
           <a
             className="oriental-mobile ml-20"
             href="https://bhousecoffee.com/"
@@ -72,17 +70,18 @@ export default function Header({ appState }) {
           >
             Orientalcaffe
           </a>
+
           {!activePopup ? (
             <Menu
               activePopup={activePopup}
-              menuItems={appState?.menuItems}
+              menuItems={navMenu}
               activeId={activeId}
               setActiveId={setActiveId}
             />
           ) : (
             <HeaderMenuPopup
               activePopup={activePopup}
-              menuItems={appState?.menuItems}
+              menuItems={{ navMenu, ...menuSubheader }}
               activeId={activeId}
               setActiveId={setActiveId}
             />
@@ -97,8 +96,8 @@ export default function Header({ appState }) {
           <div className="d-flex align-center">
             <Locales />
 
-            <Link to="drawer" className="cart mr-30">
-              <span className="cart__count">{cart?.count || 0}</span>
+            <Link to="cart" className="cart mr-30">
+              <span className="cart__count">{cart?.length || 0}</span>
               <img
                 className="cart__img"
                 height="30"

@@ -78,7 +78,6 @@ export default function Home() {
 
   const listenScrollEvent = (event) => {
     const scrollPlace = window.scrollY;
-    // console.log(scrollPlace);
 
     //default
     if (scrollPlace < 10) {

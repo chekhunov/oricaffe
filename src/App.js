@@ -1,27 +1,24 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 
-import LayoutDefault from "./components/layouts";
+import { pageRoutes } from "./utils/routes";
+import LayoutDefault from "./components/layout";
 import { Home, NotFound, PageAbout, PageContacts, Drawer } from "./pages";
-import { Context } from "./context";
 
-export default function App({ appState }) {
-  const [context, setContext] = useState([]);
+export default function App() {
+  // const history = useHistory();
+  // const { error } = useGetProfile();
 
-  const contextData = {
-    appState,
-    context,
-    setContext,
-  };
+  // useEffect(() => {
+  //   if (error) {
+  //     history.replace(pageRoutes.auth);
+  //   }
+  // }, [error]);
 
   return (
-    <BrowserRouter>
-      <Context.Provider value={contextData}>
-        <LayoutDefault appState={appState}>
-          <Content />
-        </LayoutDefault>
-      </Context.Provider>
-    </BrowserRouter>
+    <LayoutDefault>
+      <Content />
+    </LayoutDefault>
   );
 }
 
@@ -46,11 +43,14 @@ function Content() {
       }}
     >
       <Routes location={displayLocation}>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<PageAbout />} />
-        <Route path="/contacts" element={<PageContacts />} />
-        <Route path="/drawer" element={<Drawer />} />
-        <Route path="*" element={<NotFound to="/404" replace />} />
+        <Route path={pageRoutes.main} element={<Home />} />
+        <Route path={pageRoutes.about} element={<PageAbout />} />
+        <Route path={pageRoutes.contacts} element={<PageContacts />} />
+        <Route path={pageRoutes.cart} element={<Drawer />} />
+        <Route
+          path={pageRoutes.all}
+          element={<NotFound to={pageRoutes.not_found} replace />}
+        />
       </Routes>
     </div>
   );

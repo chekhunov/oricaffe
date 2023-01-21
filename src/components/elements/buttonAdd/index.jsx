@@ -7,7 +7,7 @@ export default function ButtonAdd({ click }) {
 
   return (
     <div className="button-add-cart" onClick={click}>
-      {t("add_to_cart")}
+      <span className="button-add-cart__text">{t("add_to_cart")}</span>
     </div>
   );
 }

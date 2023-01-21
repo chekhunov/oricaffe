@@ -1,22 +1,22 @@
 import React from "react";
 import cn from "classnames";
 import ButtonAdd from "../../../elements/buttonAdd";
-import { Context } from "../../../../context";
+// import { Context } from "../../../../context";
 
-import "./cardTopProducts.scss";
-export default function CardTopProducts({
-  name,
+import "./topProductsCard.scss";
+export default function TopProductsCard({
   id,
-  arabica,
-  robasta,
+  name,
+  desc,
+  sort,
   weight,
   imgUrl,
   price,
 }) {
-  const { setContext } = React.useContext(Context);
+  // const { setContext } = React.useContext(Context);
 
   const handleClick = () => {
-    setContext({ isActiveCardPopup: true, add_to_cart: id });
+    // setContext({ isActiveCardPopup: true, add_to_cart: id });
     document.body.classList.add("overflowe");
   };
 
@@ -53,14 +53,18 @@ export default function CardTopProducts({
             >
               {name}
             </span>
+            <span
+              style={{ fontWeight: "400", fontSize: "14px", color: "#131938" }}
+            >
+              {desc}
+            </span>
           </div>
 
           <div
-            className="top-products__description top-products__description--meta d-flex justify-center mb-30"
+            className="top-products__description top-products__description--meta d-flex justify-center mb-40"
             style={{ fontWeight: "400", fontSize: "14px", color: "#131938" }}
           >
-            <span>{arabica},</span>
-            <span>{robasta}</span>
+            <span>{sort}</span>
           </div>
 
           <div

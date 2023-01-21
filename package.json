@@ -1,5 +1,5 @@
 {
-  "name": "orientalcaffe",
+  "name": "orientalcaffee",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -7,29 +7,38 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.4.3",
+    "@types/js-cookie": "^3.0.2",
     "axios": "^1.2.1",
+    "axios-mock-adapter": "^1.21.2",
     "classnames": "^2.3.1",
     "i18next": "^22.1.4",
     "i18next-browser-languagedetector": "^7.0.1",
     "i18next-http-backend": "^2.0.2",
+    "js-cookie": "^3.0.1",
     "macro-css": "^1.0.5",
+    "path-to-regexp": "^6.2.1",
     "react": "^18.2.0",
     "react-datepicker": "^4.1.1",
     "react-dom": "^18.2.0",
     "react-i18next": "^12.1.1",
     "react-imask": "^6.1.0",
+    "react-query": "^3.39.2",
+    "react-query-devtools": "^2.6.3",
     "react-router-dom": "^6.4.5",
     "react-scripts": "5.0.1",
+    "react-toastify": "^9.1.1",
     "react-transition-group": "^4.4.5",
     "sass": "^1.56.1",
     "swiper": "^8.4.5",
+    "typescript": "^4.9.4",
     "web-vitals": "^3.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=3200 SKIP_PREFLIGHT_CHECK=true TSC_COMPILE_ON_ERROR=true ESLINT_NO_DEV_ERRORS=true react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "jest --maxWorkers=4",
+    "eject": "react-scripts eject",
+    "lint": "tsc && npx eslint src --ext ts,tsx"
   },
   "eslintConfig": {
     "extends": [

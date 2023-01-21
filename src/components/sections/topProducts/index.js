@@ -1,10 +1,11 @@
 import * as React from "react";
 import cn from "classnames";
-import { Context } from "../../../context";
+
 import { Navigation, Autoplay, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import CardTopProducts from "./cardTopProducts";
-import Poppup from "../../elements/poppup";
+
+import TopProductsCard from "./topProductsCard";
+import { useGetTopProducts } from "../../../api/topProductList";
 
 import "swiper/scss";
 import "swiper/scss/navigation";
@@ -16,11 +17,9 @@ export default function TopProducts({ textAccent, color, isHeigth }) {
     height: isHeigth + "%",
   };
 
-  const { appState, context } = React.useContext(Context);
-
-  const { isActiveCardPopup } = context;
-
-  const { top_products_card } = appState || [];
+  const { data } = useGetTopProducts();
+  console.log(data, "topProducts");
+  const { top_products } = data || [];
 
   return (
     <section className={"top-products"}>
@@ -42,15 +41,14 @@ export default function TopProducts({ textAccent, color, isHeigth }) {
               modules={[Navigation, Autoplay, A11y]}
               spaceBetween={50}
               slidesPerView={4}
-              // autoplay={{ delay: 5000 }}
               navigation
-              onSwiper={(swiper) => console.log(swiper)}
-              onSlideChange={() => console.log("slide change")}
+              onSwiper={(swiper) => swiper}
+              onSlideChange
             >
-              {top_products_card &&
-                top_products_card.map((item, index) => (
+              {top_products &&
+                top_products.map((item, index) => (
                   <SwiperSlide>
-                    <CardTopProducts
+                    <TopProductsCard
                       key={`card_${item.id}`}
                       {...item}
                       index={index}

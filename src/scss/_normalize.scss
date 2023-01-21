@@ -1,21 +1,27 @@
 @import 'mixins';
 
-html,
-body {
-  min-width: 320px;
+html {
   height: 100%;
 }
 
-body,
+html,
+body {
+  min-width: 320px;
+}
+
 #root {
-  height: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+body {
   font-size: 16px;
   color: $default;
   background-color: #ffffff;
   @extend %helvetica-400;
 }
+
 
 main,
 .fadeIn,

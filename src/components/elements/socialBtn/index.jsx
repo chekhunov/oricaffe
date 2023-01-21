@@ -16,36 +16,46 @@ export default function SocialBtn() {
             href="https://www.facebook.com/orientalcaffeua"
             className="fab-buttons__link"
             target="_blank"
+            rel="noreferrer"
             data-tooltip="Facebook"
           >
             <i className="icon-material icon-material_fb"></i>
           </a>
         </li>
+
         <li className="fab-buttons__item">
+          {/* TODO change Link */}
           <a
-            href="#"
+            href="https://www.facebook.com/orientalcaffeua"
             className="fab-buttons__link"
             target="_blank"
+            rel="noreferrer"
             data-tooltip="Twitter"
           >
             <i className="icon-material icon-material_tw"></i>
           </a>
         </li>
+
         <li className="fab-buttons__item">
+          {/* TODO change Link */}
           <a
-            href="#"
+            href="https://www.facebook.com/orientalcaffeua"
             className="fab-buttons__link"
             target="_blank"
+            rel="noreferrer"
             data-tooltip="Linkedin"
           >
             <i className="icon-material icon-material_li"></i>
           </a>
         </li>
+
         <li className="fab-buttons__item">
+          {/* TODO change Link */}
           <a
-            href="#"
+            href="https://www.facebook.com/orientalcaffeua"
             className="fab-buttons__link"
             target="_blank"
+            rel="noreferrer"
             data-tooltip="Instagram"
           >
             <i className="icon-material icon-material_gp"></i>

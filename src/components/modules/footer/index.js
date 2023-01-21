@@ -104,6 +104,7 @@ export default function Footer() {
                 <a
                   className="socials__link telegram"
                   href="https://www.facebook.com/orientalcaffeua"
+                  rel="noreferrer"
                   target="_blank"
                 >
                   <svg

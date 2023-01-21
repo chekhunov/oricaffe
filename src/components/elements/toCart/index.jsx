@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 
-export default function ToCart({ id, name }) {
+import ViewContext from '../../../utils/ViewPoppupContext'
+
+export default function ToCart() {
+  const { data } = useContext(ViewContext);
   return (
     <div>
-      ToCart
-      {id}
-      {name}
+      {data.id}
+      {data.name}
     </div>
   );
 }
