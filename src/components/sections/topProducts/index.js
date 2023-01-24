@@ -18,7 +18,6 @@ export default function TopProducts({ textAccent, color, isHeigth }) {
   };
 
   const { data } = useGetTopProducts();
-  console.log(data, "topProducts");
   const { top_products } = data || [];
 
   return (
@@ -43,16 +42,12 @@ export default function TopProducts({ textAccent, color, isHeigth }) {
               slidesPerView={4}
               navigation
               onSwiper={(swiper) => swiper}
-              onSlideChange
+              onSlideChange={() => console.log("slide change")}
             >
               {top_products &&
                 top_products.map((item, index) => (
-                  <SwiperSlide>
-                    <TopProductsCard
-                      key={`card_${item.id}`}
-                      {...item}
-                      index={index}
-                    />
+                  <SwiperSlide key={item} virtualIndex={index}>
+                    <TopProductsCard {...item} />
                   </SwiperSlide>
                 ))}
             </Swiper>

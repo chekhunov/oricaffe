@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import cn from "classnames";
 import ButtonAdd from "../../../elements/buttonAdd";
-// import { Context } from "../../../../context";
+import StateContext from "../../../../utils/stateContext";
 
 import "./topProductsCard.scss";
 export default function TopProductsCard({
   id,
+  code,
   name,
   desc,
   sort,
@@ -13,15 +14,20 @@ export default function TopProductsCard({
   imgUrl,
   price,
 }) {
-  // const { setContext } = React.useContext(Context);
+  const { setStateContext } = useContext(StateContext);
 
   const handleClick = () => {
-    // setContext({ isActiveCardPopup: true, add_to_cart: id });
+    console.log(id, "click");
+    setStateContext({
+      isActiveCardPopup: true,
+      type: 'to_cart',
+      add_to_cart: code,
+    });
     document.body.classList.add("overflowe");
   };
 
   return (
-    <div key={id} className={cn("top-products__item")}>
+    <div className={cn("top-products__item")}>
       <div className={"top-products__content"}>
         <div className="top-products__column">
           <div className="top-products__image">
@@ -34,6 +40,7 @@ export default function TopProductsCard({
               <span className="top-products__number">{weight}</span>
               <span className="top-products__practice">кг.</span>
             </div>
+
             <img
               className="top-products__img"
               src={imgUrl}
@@ -53,6 +60,7 @@ export default function TopProductsCard({
             >
               {name}
             </span>
+
             <span
               style={{ fontWeight: "400", fontSize: "14px", color: "#131938" }}
             >

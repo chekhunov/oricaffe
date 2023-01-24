@@ -19,7 +19,7 @@ export default function Slide({
       <video
         width="100%"
         height="auto"
-        autoplay="autoplay"
+        autoPlay="autoplay"
         loop
         muted
         playsInline

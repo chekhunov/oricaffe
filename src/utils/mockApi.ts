@@ -243,27 +243,29 @@ export const initializeMockAdapter = () => {
     return [200, { cart: cartMocks }];
   });
 
-  // mock.onPost(pathToRegexp(apiRoutes.job)).reply((config) => {
-  //   const user = getUser(config);
+  mock.onPost(pathToRegexp(apiRoutes.getCart)).reply((config) => {
+    // const user = getUser(config);
 
-  //   if (!user) {
-  //     return [403];
-  //   }
+    // if (!user) {
+    //   return [403];
+    // }
 
-  //   const data = JSON.parse(config.data);
+    const data = JSON.parse(config.data);
+    
+    // if (data.id === 2) {
+    //   return [400];
+    // }
+    
+    console.log('--------------------------')
+    console.log(data)
+    const body = {
+      ...data,
+      // id: Math.floor(Math.random() * 10000000),
+    };
+    cartMocks.push(body);
 
-  //   if (data.appointmentId === 2) {
-  //     return [400];
-  //   }
-
-  //   const body = {
-  //     ...data,
-  //     id: Math.floor(Math.random() * 10000000),
-  //   };
-  //   jobsMocks.push(body);
-
-  //   return [200, body];
-  // });
+    return [200, body];
+  });
 
   // mock.onDelete(pathToRegexp(apiRoutes.job)).reply((config) => {
   //   const user = getUser(config);

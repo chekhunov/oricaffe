@@ -3,9 +3,12 @@ import { Routes, Route, useLocation } from "react-router-dom";
 
 import { pageRoutes } from "./utils/routes";
 import LayoutDefault from "./components/layout";
-import { Home, NotFound, PageAbout, PageContacts, Drawer } from "./pages";
+import { Home, NotFound, PageAbout, PageContacts, PageCart } from "./pages";
+import StateContext from "./utils/stateContext";
+import { CartProvider } from "react-use-cart";
 
 export default function App() {
+  const [stateContext, setStateContext] = useState([]);
   // const history = useHistory();
   // const { error } = useGetProfile();
 
@@ -16,9 +19,13 @@ export default function App() {
   // }, [error]);
 
   return (
-    <LayoutDefault>
-      <Content />
-    </LayoutDefault>
+    <StateContext.Provider value={{ stateContext, setStateContext }}>
+      <CartProvider>
+        <LayoutDefault>
+          <Content />
+        </LayoutDefault>
+      </CartProvider>
+    </StateContext.Provider>
   );
 }
 
@@ -46,7 +53,7 @@ function Content() {
         <Route path={pageRoutes.main} element={<Home />} />
         <Route path={pageRoutes.about} element={<PageAbout />} />
         <Route path={pageRoutes.contacts} element={<PageContacts />} />
-        <Route path={pageRoutes.cart} element={<Drawer />} />
+        <Route path={pageRoutes.cart} element={<PageCart />} />
         <Route
           path={pageRoutes.all}
           element={<NotFound to={pageRoutes.not_found} replace />}

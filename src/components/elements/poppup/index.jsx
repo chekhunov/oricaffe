@@ -1,17 +1,16 @@
-import React from "react";
-// import { Context } from "../../../context";
+import React, { useContext} from "react";
 import ClosedButton from "../closedButton";
+import StateContext from "../../../utils/stateContext";
 
 import "./poppup.scss";
 export default function Poppup({ children }) {
-  // const { context, setContext } = React.useContext(Context);
+  const { stateContext, setStateContext } = useContext(StateContext);
 
-  // const { isActiveCardPopup } = context;
-  const isActiveCardPopup = false
+  const { isActiveCardPopup } = stateContext;
 
   const handleClick = () => {
     document.body.classList.remove("overflowe");
-    // setContext({ isActiveCardPopup: false, add_to_cart: null });
+    setStateContext({ isActiveCardPopup: false, add_to_cart: null });
   };
 
   return (

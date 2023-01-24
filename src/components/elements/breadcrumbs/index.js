@@ -6,7 +6,7 @@ import style from "./breadcrumbs.module.scss";
 export default function Breadcrumbs({ breadcrumbs }) {
   const { t } = useTranslation();
 
-  const length = breadcrumbs.length - 1;
+  const length = breadcrumbs?.length - 1;
 
   return (
     <>
@@ -14,9 +14,9 @@ export default function Breadcrumbs({ breadcrumbs }) {
         <ul className={style.list}>
           {breadcrumbs &&
             breadcrumbs.map((item, index) => (
-              <li className={style.item}>
+              <li key={item.id} className={style.item}>
                 {length !== index ? (
-                  <Link key={item.id} to={`/${item.link}`}>
+                  <Link to={`/${item.link}`}>
                     <span
                       onClick={() => {
                         window.scrollTo(0, 0);

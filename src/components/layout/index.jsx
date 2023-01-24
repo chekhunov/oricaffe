@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import SubHeader from "../modules/subHeader";
 import Header from "../modules/header";
@@ -7,37 +7,40 @@ import Poppup from "../elements/poppup";
 import ButtonTop from "../elements/buttonTop";
 import SocialBtn from "../elements/socialBtn";
 import ToCart from "../elements/toCart";
+import StateContext from "../../utils/stateContext";
 
 import { useInitialState } from "../../api/initialState";
-import ViewPoppupContext from "../../utils/ViewPoppupContext";
-// import { Context } from "../../context";
+import { useCart } from "react-use-cart";
 
-import { useGetCart } from "../../api/cart.api";
 import PreLoader from "../elements/preLoader";
 
 export default function Layout({ children }) {
   const { data, isLoading, isFetching } = useInitialState();
   const { top_products, menu_subheader, nav_menu } = data;
 
-  const { data: cart } = useGetCart();
+  const { stateContext } = useContext(StateContext);
+  const { items } = useCart();
 
-  // const [showBtnTop, setShowBtnTop] = useState(false)
+  const countCart = items?.length;
 
-  // const { context } = React.useContext(Context);
-  // const { add_to_cart } = context;
+  const setProductsToPoppup = top_products.filter(
+    (item) => item.code === stateContext?.add_to_cart
+  )[0];
 
-  const add_to_cart = 0;
-
-  //get modal popupp component with props
   const View = {
     to_cart: {
       component: ToCart,
-      props: { data: top_products[add_to_cart] },
+      props: {
+        data: setProductsToPoppup,
+        isActiveCardPopup: true,
+      },
     },
-  }["to_cart"];
+  }[stateContext?.type];
+
+  console.log(setProductsToPoppup, top_products, stateContext);
 
   const ViewComponent = View?.component;
-  const viewProps = View?.props;
+  const view_props = View?.props;
 
   return (
     <>
@@ -45,23 +48,16 @@ export default function Layout({ children }) {
       <Header
         navMenu={nav_menu}
         menuSubheader={menu_subheader}
-        countCart={cart || 0}
+        countCart={countCart}
       />
       <ButtonTop />
       <SocialBtn />
       <main>{isLoading || isFetching ? <PreLoader /> : children}</main>
       <Footer />
-      {isLoading || (isFetching && !viewProps) ? (
-        <PreLoader />
-      ) : ViewComponent ? (
+
+      {ViewComponent ? (
         <Poppup>
-          <ViewPoppupContext.Provider
-            value={{
-              ...viewProps,
-            }}
-          >
-            <ViewComponent />
-          </ViewPoppupContext.Provider>
+          <ViewComponent viewProps={view_props} />
         </Poppup>
       ) : null}
     </>

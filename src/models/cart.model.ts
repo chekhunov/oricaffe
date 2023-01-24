@@ -1,6 +1,7 @@
 
 export interface CartModel {
   id: number | string
+  code: string
   name: string
   desc: string
   cupage: string

@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 
-import { ReactQueryDevtools } from "react-query/devtools";
+// import { ReactQueryDevtools } from "react-query/devtools";
 import { ToastContainer } from "react-toastify";
 
 import { initializeMockAdapter } from "./utils/mockApi";
@@ -14,19 +14,24 @@ import App from "./App";
 import "./scss/index.scss";
 import "react-toastify/dist/ReactToastify.css";
 
-initializeMockAdapter();
-
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
 
-const queryClient = new QueryClient();
+initializeMockAdapter();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
 root.render(
   <BrowserRouter>
     <QueryClientProvider client={queryClient}>
       <App />
       <ToastContainer />
-      <ReactQueryDevtools initialIsOpen={false} />
+      {/* <ReactQueryDevtools initialIsOpen={false} /> */}
     </QueryClientProvider>
   </BrowserRouter>
 );

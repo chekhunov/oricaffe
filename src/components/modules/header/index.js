@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 import cartIcon from "../../../assets/icons/anim/cart.gif";
 import logo from "../../../assets/header/logo.png";
 
-export default function Header({ navMenu, menuSubheader, cart }) {
+export default function Header({ navMenu, menuSubheader, countCart }) {
   const { t } = useTranslation();
 
   const [activeId, setActiveId] = React.useState(null);
@@ -96,10 +96,10 @@ export default function Header({ navMenu, menuSubheader, cart }) {
           <div className="d-flex align-center">
             <Locales />
 
-            <Link to="cart" className="cart mr-30">
-              <span className="cart__count">{cart?.length || 0}</span>
+            <Link to="cart" className="header__cart mr-30">
+              <span className="header__cart-count">{countCart}</span>
               <img
-                className="cart__img"
+                className="header__cart-img"
                 height="30"
                 src={cartIcon}
                 alt="cart"

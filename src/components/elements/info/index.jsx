@@ -16,7 +16,7 @@ const Info = ({ title, image, description }) => {
       <Button
         link={"/"}
         text={t("back_to")}
-        icon={"icons/arrow_left.svg"}
+        icon={"/icons/arrow_left.svg"}
         sx={{
           minWidth: "200px",
           backgroundColor: "#2C397C",

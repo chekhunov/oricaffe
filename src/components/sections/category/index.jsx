@@ -56,6 +56,7 @@ export default function Category({ textAccent, color, isHeigth, bgColor }) {
                 // autoplay={{ delay: 5000 }}
                 navigation
                 onSwiper={(swiper) => swiper}
+                onSlideChange
               >
                 {category &&
                   category.map((slide) => (
