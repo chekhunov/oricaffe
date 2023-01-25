@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useCart } from "react-use-cart";
 
-import Button from "../button";
+import BaseButton from "../baseButton";
 
 import StateContext from "../../../utils/stateContext";
 
@@ -12,9 +12,9 @@ export default function ToCart({ viewProps }) {
   const { data } = viewProps;
 
   const { setStateContext } = useContext(StateContext);
-  const { addItem, updateItemQuantity } = useCart();
+  const { addItem } = useCart();
 
-  const { id, code, imgUrl, name, desc, price } = data;
+  const { code, imgUrl, name, desc, price } = data;
 
   const handleCancelClick = () => {
     document.body.classList.remove("overflowe");
@@ -22,47 +22,38 @@ export default function ToCart({ viewProps }) {
   };
 
   const handleContinueClick = () => {
-    addItem(data);
-    document.body.classList.remove("overflowe");
-    setStateContext({ isActiveCardPopup: false, type: "", add_to_cart: null });
+    addItem(data, quantity);
+    handleCancelClick();
   };
 
   const make_order_attributes = {
-    button: "make_an_order",
+    button: "order",
+    text: "make_an_order",
     sx: {
       width: "150px",
-      backgroundColor: "#9dd558",
-      color: "#ffffff",
-      borderRadius: "13px",
     },
   };
 
   const continue_attributes = {
-    button: "continue_shopping",
+    button: "continue",
+    text: "continue_shopping",
     sx: {
-      width: "120px",
-      marginRight: "20px",
-      backgroundColor: "#2C397C",
-      color: "#ffffff",
-      borderRadius: "13px",
+      width: "180px",
     },
   };
 
   const cancel_attributes = {
     button: "cancel",
+    text: "cancel",
     sx: {
-      width: "120px",
-      marginRight: "10px",
-      backgroundColor: "#ffffff",
-      color: "#2C397C",
-      borderRadius: "13px",
+      width: "150px",
     },
   };
 
   return (
     <div className="add-to-cart h100p d-flex flex-column justify-between">
-      <div className="subtitle__cart text-center">
-        Выбери количество товара и перейди в корзину для оформления
+      <div className="subtitle__cart text-center mb-20">
+        {t("popup.choose_the_quantity")}
       </div>
 
       <div className="cartItem d-flex justify-between align-center mb-50">
@@ -73,7 +64,7 @@ export default function ToCart({ viewProps }) {
           ></div>
 
           <div className="mr-20 d-flex align-center">
-            <span className="d-flex flex-column mr-20">
+            <span className="d-flex flex-column mr-40">
               <span style={{ fontSize: "10px" }} className="cart__label">
                 {t("cart_page.product_code")}
               </span>
@@ -82,28 +73,33 @@ export default function ToCart({ viewProps }) {
               </span>
             </span>
 
-            <p style={{ fontSize: "14px" }} className="cart__name mb-5">
+            <p style={{ fontSize: "14px" }} className="cart__name">
               {name} {desc}
             </p>
           </div>
         </div>
 
-        <div className="d-flex align-center ml-20 mr-20">
+        <div className="d-flex align-center pr-20 pl-20">
+          <button
+            className="cart__btn-quantity"
+            onClick={() => setQuantity(quantity - 1)}
+          >
+            -
+          </button>
+
           <span style={{ fontSize: "16px" }} className="cart__quantity">
             {quantity}
           </span>
+
+          <button
+            className="cart__btn-quantity"
+            onClick={() => setQuantity(quantity + 1)}
+          >
+            +
+          </button>
         </div>
 
         <div className="d-flex align-center">
-          <span className="cart__column d-flex flex-column align-start">
-            <span style={{ fontSize: "10px" }} className="cart__label">
-              {t("cart_page.price")}
-            </span>
-            <span style={{ fontSize: "16px" }} className="cart__num price">
-              {price} грн.
-            </span>
-          </span>
-
           <div className="cart__del-btn" onClick={handleCancelClick}>
             <svg
               width="10"
@@ -121,25 +117,46 @@ export default function ToCart({ viewProps }) {
         </div>
       </div>
 
-      <div className="controls d-flex justify-center">
-        <Button
-          sx={cancel_attributes.sx}
-          text={t(cancel_attributes.button)}
-          click={handleCancelClick}
-        />
+      <div className="cart-total-block">
+        <ul>
+          <li className={"d-flex"}>
+            <span>{t("cart_page.price")}</span>
+            <div></div>
+            <b>{price}</b>
+          </li>
 
-        <Button
-          sx={continue_attributes.sx}
-          text={t(continue_attributes.button)}
-          click={handleContinueClick}
-        />
+          <li className={"d-flex"}>
+            <span>{t("cart_page.total")}</span>
+            <div></div>
+            <b>{price * quantity} грн.</b>
+          </li>
+        </ul>
 
-        <Button
-          sx={make_order_attributes.sx}
-          text={t(make_order_attributes.button)}
-          click={handleContinueClick}
-          link={"/cart"}
-        />
+        <div className="d-flex justify-between">
+          <BaseButton
+            name={cancel_attributes.button}
+            click={handleCancelClick}
+            text={t(cancel_attributes.text)}
+            sx={cancel_attributes.sx}
+          />
+
+          <div className="d-flex">
+            <BaseButton
+              name={continue_attributes.button}
+              click={handleContinueClick}
+              text={t(continue_attributes.text)}
+              sx={continue_attributes.sx}
+            />
+
+            <BaseButton
+              name={make_order_attributes.button}
+              link="/cart"
+              click={handleCancelClick}
+              text={t(make_order_attributes.text)}
+              sx={make_order_attributes.sx}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

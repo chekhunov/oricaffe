@@ -46,7 +46,7 @@ export default function TopProducts({ textAccent, color, isHeigth }) {
             >
               {top_products &&
                 top_products.map((item, index) => (
-                  <SwiperSlide key={item} virtualIndex={index}>
+                  <SwiperSlide key={item.code} virtualIndex={index}>
                     <TopProductsCard {...item} />
                   </SwiperSlide>
                 ))}

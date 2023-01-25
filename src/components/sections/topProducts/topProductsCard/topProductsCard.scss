@@ -5,7 +5,7 @@
 .top-products {
   &__item {
     &:hover {
-      .button-add-cart {
+      .top-products__cart  {
         visibility: visible;
         opacity: 1;
         transform: translateY(0);
@@ -16,5 +16,32 @@
 
   &__title {
     margin-bottom: 10px;
+  }
+
+  &__cart {
+    visibility: hidden;
+    position: absolute;
+    bottom: -20px;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 10px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 1px solid #fff;
+    box-shadow: rgb(0 0 0 / 2%) 0px 1px 3px 0px, rgb(27 31 35 / 15%) 0px 0px 0px 1px;
+    opacity: 0;
+    transform: translateY(-10deg);
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: rgb(247, 238, 238);
+      border: 1px solid #8E0303;
+      transition: background-color 0.3s border 0.3s;
+    }
   }
 }

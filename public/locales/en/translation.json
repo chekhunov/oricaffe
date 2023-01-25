@@ -98,5 +98,8 @@
     "clear": "Clear cart",
     "cancel": "Cancel",
     "checkout": "proceed to Checkout"
+  },
+  "popup": {
+    "choose_the_quantity": "Choose the quantity of goods and go to the basket for design"
   }
 }
