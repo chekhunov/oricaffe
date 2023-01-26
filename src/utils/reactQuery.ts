@@ -71,7 +71,7 @@ export const useFetch = <T>(
     {
       enabled: !!url,
       ...config,
-    }
+    },
   );
 
   return context;

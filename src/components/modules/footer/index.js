@@ -14,7 +14,7 @@ export default function Footer() {
     <footer className={cn("footer")}>
       <div className="container">
         <div className="footer__bottom">
-          <div className='w100p d-flex justify-between'>
+          <div className="w100p d-flex justify-between">
             <div className="footer__logo">
               <div className="footer__bottom-meta">
                 <LogoCompany logo={logo} height={80} width={80} />
@@ -178,9 +178,13 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="sub-footer">
+          <a
+            className="sub-footer"
+            href="https://www.linkedin.com/in/ihor-chekhunov-8764b9139/"
+            target="_blank" rel="noreferrer"
+          >
             designed and developed: Ihor Chekhunov
-          </div>
+          </a>
         </div>
       </div>
     </footer>

@@ -21,6 +21,7 @@ const Slider = function ({ width, height, autoPlay, autoPlayTime }) {
       <div style={{ width, height }} className="slider">
         <Slide data={defaultItems[0]} />
       </div>
+      
       <div className="decor-lamore">l’amore per l’aroma</div>
     </>
   );

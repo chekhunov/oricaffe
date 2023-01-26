@@ -2,19 +2,7 @@
 @import '../../../scss/vars.scss';
 
 .category {
-    position: relative;
-    padding-top: 150px;
-    margin-bottom: 50px;
-
-    &::before {
-        content: '';
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 1px;
-        color: rgba(205, 186, 170, 0.5);
-    }
-
+  padding: 70px 20px 30px;
     .swiper-wrapper {
       padding: 40px 0;
     }
@@ -86,16 +74,6 @@
       font-weight: bold;
       color: #fff;
     }
-
-    &__desc {
-      padding: 5px 10px;
-      align-items: baseline;
-    }
-
-
-    &__content-block {
-        padding: 70px 20px;
-    }
     
     &__text {
         display: flex;
@@ -124,10 +102,7 @@
 
 @media screen and (max-width: 1024px) {
   .category {
-    .line {
-      display: none;
-    }
-
+    padding-top: 20px;
     &__text {
       margin-bottom: 50px;
       font-size: 24px;
@@ -141,10 +116,6 @@
       & a:last-child {
         margin-right: 35px;
       }
-    }
-
-    &__content-block {
-      padding-top: 20px;
     }
 
     &__link {
@@ -163,31 +134,13 @@
   }
 }
 
-@media screen and (max-width: 767px) {
-  .category {
-    &__desc {
-      left: -5px;
-    }
-  }
-}
-
 @media screen and (max-width: 468px) {
   .category {
-
-    &__desc {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-    }
-
+    padding-top: 0;
+    padding-bottom: 10px;
     &__text{
       font-size: 18px;
       margin-bottom: 20px;
-    }
-
-    &__content-block {
-      padding-top: 0;
-      padding-bottom: 10px;
     }
 
     &__content {

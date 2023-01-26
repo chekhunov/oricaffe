@@ -2,41 +2,46 @@
 @import '../../../scss/vars.scss';
 
 .about-products {
-    position: relative;
-    padding-top: 30px;
-    margin-bottom: 50px;
+  position: relative;
+  margin-bottom: 100px;
 
-    &::before {
-        content: '';
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 1px;
-        color: rgba(205, 186, 170, 0.5);
-    }
+  &::before {
+    content: '';
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 1px;
+    color: rgba(205, 186, 170, 0.5);
+  }
 
-    &__desc {
-      padding: 5px 10px;
-      align-items: baseline;
-    }
+  &__desc {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 400;
+    color:  #CDBAAA;
+    text-transform: uppercase;
 
-    &__inner {
-        display: flex;
-        flex-direction: column;
-    }
-
-    &__content-block {
+    @media screen and (max-width: 767px) { 
       width: 100%;
-      padding: 70px 0;
+      display: flex;
+      justify-content: center;    
     }
+  }
 
-    &__subtitle {
-      text-align: left;
-    }
+  &__inner {
+    display: flex;
+    flex-direction: column;
+  }
 
-    &__row {
-      width: 100%;
-    }
+  &__subtitle {
+    text-align: left;
+  }
+
+  &__row {
+    width: 100%;
+  }
 }
 
 .about-row {
@@ -121,41 +126,11 @@
 
 @media screen and (max-width: 1024px) {
   .about-products {
-    .line {
-      display: none;
-    }
-
-    &__text {
-      margin-bottom: 50px;
-      font-size: 24px;
-    }
-
-    &__meta-text {
-      font-size: 14px;
-    }
 
     &__content {
       & a:last-child {
         margin-right: 35px;
       }
-    }
-
-    &__content-block {
-      padding-top: 20px;
-    }
-
-    &__link {
-      width: 157px;
-      height: 157px;
-      margin-right: 20px;
-
-      &:hover{
-        box-shadow: none;
-      }
-    }
-
-    &__card-desc {
-      font-size: 18px;
     }
   }
 }

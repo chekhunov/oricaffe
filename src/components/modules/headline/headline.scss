@@ -1,0 +1,50 @@
+
+@import '../../../scss/vars.scss';
+
+.headline {
+  position: relative;
+  margin-bottom: 100px;
+
+  &::before {
+    content: '';
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 1px;
+    color: rgba(205, 186, 170, 0.5);
+  }
+
+
+  &__desc {
+    padding: 5px 10px;
+    align-items: baseline;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .headline {
+    .line {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .headline {
+    &__desc {
+      left: -5px;
+    }
+  }
+}
+
+@media screen and (max-width: 468px) {
+  .headline {
+    &__desc {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+

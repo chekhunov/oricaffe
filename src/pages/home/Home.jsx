@@ -1,15 +1,18 @@
 import React, { useState, useEffect } from "react";
-import { Slider } from "../components";
+import { Slider } from "../../components";
 
-import Category from "../components/sections/category";
-import AboutProducts from "../components/sections/aboutProducts";
-import TopProducts from "../components/sections/topProducts";
-import Package from "../components/sections/package";
-import Delivery from "../components/sections/delivery";
-import HowItWork from "../components/sections/howItWork";
+import Category from "../../components/sections/category";
+import AboutProducts from "../../components/sections/aboutProducts";
+import TopProducts from "../../components/sections/topProducts";
+import Package from "../../components/sections/package";
+import Delivery from "../../components/sections/delivery";
+import HowItWork from "../../components/sections/howItWork";
 
-import BannerMapCaffee from "../assets/img/home/map-coffe.jpg";
-import BannerBottom from "../assets/img/home/bottom.jpg";
+import Box from "../../components/elements/box";
+import Headline from "../../components/modules/headline";
+
+import BannerMapCaffee from "../../assets/img/home/map-coffe.jpg";
+import BannerBottom from "../../assets/img/home/bottom.jpg";
 
 import "./home.scss";
 
@@ -26,12 +29,6 @@ export default function Home() {
   const [bgColorAbout, setBgColorAbout] = useState(bgColorDefault);
   const [isHeigthAbout, setIsHeigthAbout] = useState(0);
   const [textAccentAbout, setTextAccentAbout] = useState(colorDefault);
-
-  const [colorAboutProducts, setColorAboutProducts] = useState(colorDefault);
-  const [colorBgAboutProducts, setColorBgAboutProducts] = useState(bgColor);
-  const [isHeigthAboutProducts, setIsHeigthAboutProducts] = useState(0);
-  const [textAccentAboutProducts, setTextAccentAboutProducts] =
-    useState(colorDefault);
 
   const [colortTopProducts, setColortTopProducts] = useState(colorDefault);
   const [isHeigthtTopProducts, setIsHeigthtTopProducts] = useState(0);
@@ -93,14 +90,6 @@ export default function Home() {
       setColorAbout(colorDefault);
     }
 
-    //aboutProducts title
-    isActiveText(1200, setTextAccentAboutProducts, setColorBgAboutProducts);
-    isActiveLine(1250, 1300, setColorAboutProducts, setIsHeigthAboutProducts);
-
-    if (scrollPlace < 1300) {
-      setColorAboutProducts(colorDefault);
-    }
-
     //tTopProducts title
     isActiveText(2440, setTextAccenttTopProducts);
     isActiveLine(2480, 2500, setColortTopProducts, setIsHeigthtTopProducts);
@@ -108,45 +97,6 @@ export default function Home() {
     if (scrollPlace < 2500) {
       setColortTopProducts(colorDefault);
     }
-
-    //   // //participation title
-    //   // isActiveText(1570, setTextAccentParticipation);
-    //   // //participation line
-    //   // isActiveLine(1590, 1670, setColorParticipation, setIsHeigthParticipation);
-
-    //   // if (scrollPlace < 1590) {
-    //   //   setColorParticipation(colorDefault);
-    //   // }
-    //   // //employers title
-    //   // isActiveText(2150, setTextAccentEmployes);
-
-    //   // //News line
-    //   // isActiveLine(2650, 2480, setColorNews, setIsHeigthNews);
-
-    //   // if (scrollPlace < 2650) {
-    //   //   setColorNews(colorDefault);
-    //   // }
-    //   // //News title
-    //   // isActiveText(2950, setTextAccentNews);
-
-    //   // //Consultation title
-    //   // isActiveText(3400, setTextAccentConsultation);
-    //   // //Consultation line
-    //   // isActiveLine(3400, 3400, setColorConsultation, setIsHeigthConsultation);
-
-    //   // if (scrollPlace < 3420) {
-    //   //   setColorConsultation(colorDefault);
-    //   // }
-
-    //   // //Contacts line
-    //   // isActiveLine(3900, 3780, setColorContacts, setIsHeigthContacts);
-
-    //   // if (scrollPlace < 3900) {
-    //   //   setColorContacts(colorDefault);
-    //   // }
-
-    //   // //Consultation title
-    //   // isActiveText(4200, setTextAccentContacts);
   };
 
   useEffect(() => {
@@ -161,31 +111,33 @@ export default function Home() {
     <>
       <Slider />
 
-      <div className="background pb-50">
-        <Category
-          textAccent={textAccentAbout}
+      <Box name="base-set set-1">
+        <Headline
+          name="category"
           bgColor={bgColorAbout}
+          textAccent={textAccentAbout}
           color={colorAbout}
           isHeigth={isHeigthAbout}
-        />
+        >
+          <Category />
+        </Headline>
 
-        <AboutProducts
-          textAccent={textAccentAboutProducts}
-          color={colorAboutProducts}
-          bgColor={colorBgAboutProducts}
-          isHeigth={isHeigthAboutProducts}
-        />
+        <AboutProducts />
 
-        <TopProducts
+        <Headline
+          name="top-products"
+          bgColor={bgColorAbout}
           textAccent={textAccentTopProducts}
           color={colortTopProducts}
           isHeigth={isHeigthtTopProducts}
-        />
-      </div>
+        >
+          <TopProducts />
+        </Headline>
+      </Box>
 
-      <img className="home__baner" src="/baners/baner-1.jpg" alt="baner" />
+      <img className="home__banner" src="/baners/baner-1.jpg" alt="banner" />
 
-      <div className="background-two pt-50 pb-50">
+      <Box name="base-set set-2">
         <Package
           textAccent={textAccentTopProducts}
           color={colortTopProducts}
@@ -197,21 +149,19 @@ export default function Home() {
           color={colortTopProducts}
           isHeigth={isHeigthtTopProducts}
         />
-      </div>
+      </Box>
 
       <HowItWork />
 
-      <div className="background-mc w100p">
-        <div className="container-max">
-          <img className="home__baner" src={BannerMapCaffee} alt="baner" />
-        </div>
+      <div className="container-max">
+        <img className="home__banner" src={BannerMapCaffee} alt="banner" />
       </div>
 
-      <div className="background-footer w100p">
+      <Box name="set-3">
         <div className="container-max">
           <img className="home__baner" src={BannerBottom} alt="baner" />
         </div>
-      </div>
+      </Box>
     </>
   );
 }

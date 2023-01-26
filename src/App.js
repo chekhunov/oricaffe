@@ -3,7 +3,8 @@ import { Routes, Route, useLocation } from "react-router-dom";
 
 import { pageRoutes } from "./utils/routes";
 import LayoutDefault from "./components/layout";
-import { Home, NotFound, PageAbout, PageContacts, PageCart } from "./pages";
+import { NotFound, PageAbout, PageContacts, PageCart } from "./pages";
+import { Home } from "./pages/home";
 import StateContext from "./utils/stateContext";
 import { CartProvider } from "react-use-cart";
 

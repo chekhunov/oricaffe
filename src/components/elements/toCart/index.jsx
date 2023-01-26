@@ -151,7 +151,7 @@ export default function ToCart({ viewProps }) {
             <BaseButton
               name={make_order_attributes.button}
               link="/cart"
-              click={handleCancelClick}
+              click={handleContinueClick}
               text={t(make_order_attributes.text)}
               sx={make_order_attributes.sx}
             />

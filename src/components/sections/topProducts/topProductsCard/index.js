@@ -48,8 +48,8 @@ export default function TopProductsCard({
 
             <div className="top-products__cart" onClick={handleClick}>
               <svg
-                width="36"
-                height="34"
+                width="30"
+                height="28"
                 viewBox="0 0 24 22"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
