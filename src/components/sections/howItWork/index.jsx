@@ -1,11 +1,12 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
+import {useTranslation} from "react-i18next";
 
 import Button from "../../elements/button";
 
 import "./howItWork.scss";
+
 export default function HowItWork() {
-  const { t } = useTranslation();
+  const {t} = useTranslation();
 
   const delivery_attributes = {
     button: "make_an_order",
@@ -33,16 +34,20 @@ export default function HowItWork() {
             </div>
             <div className="box__item">
               <span className="box__num">2</span>
-              <div className="box__title">Leave a request</div>
+              <div className="box__title">
+                Make a payment
+              </div>
               <div className="box__desc">
-                Our managers will help you make a choice
+                Choose a payment method convenient for you
               </div>
             </div>
             <div className="box__item">
               <span className="box__num">3</span>
-              <div className="box__title">Leave a request</div>
+              <div className="box__title">
+                Arrange delivery
+              </div>
               <div className="box__desc">
-                Our managers will help you make a choice
+                Arrange delivery and receive goods
               </div>
             </div>
           </div>

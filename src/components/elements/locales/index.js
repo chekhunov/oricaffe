@@ -8,7 +8,7 @@ import ua from "../../../assets/img/flags/ua.png";
 export default function Locales() {
   const { i18n } = useTranslation();
   const [locale, setLocale] = useState(i18n.language || "en");
-  // const [ setFlag] = useState(i18n.language || "en");
+
 
   const changeLanguage = (lng) => {
     setLocale(lng);

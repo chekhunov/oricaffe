@@ -1,0 +1,78 @@
+@import '../../../scss/vars.scss';
+
+.blog {
+  position: relative;
+  padding-top: 70px;
+
+  &::before {
+    content: '';
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 1px;
+    color: rgba(205, 186, 170, 0.5);
+  }
+
+  &__content {
+    height: 100%;
+    padding: 0 0 70px;
+  }
+
+  &__row {
+    width: 100%;
+  }
+}
+
+.blog-img {
+  border-radius: 15px;
+}
+
+.blog-row {
+  width: 100%;
+  color: $default;
+  background-color: rgba(255, 255, 255, 55%);
+  border: 0.5px solid $hover;
+  border-radius: 15px;
+
+  &__element {
+    padding: 5px;
+    font-size: 18px;
+    color: $default;
+    border-radius: 15px;
+    @extend %libreBaskervilleItalic-400;
+
+    &:hover {
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      transition: box-shadow 0.3s;
+    }
+  }
+
+  &__headline {
+    margin-bottom: 30px;
+  }
+
+  &__title {
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+
+  &__text {
+    font-size: 16px;
+    flex-grow: 1;
+  }
+
+  &__column-left {
+    height: auto;
+    min-height: 100%;
+    width: calc(50% - 20px);
+  }
+
+  &__img {
+    max-height: 150px;
+    max-width: 260px;
+    width: calc(40%);
+    object-fit: cover;
+    margin-right: 0;
+    border-radius: 10px;
+  }
+}

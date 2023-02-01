@@ -60,7 +60,7 @@
   },
   "about_company": "About company",
   "bonus": "Bonus program",
-  "delivery": "Delivery",
+  "delivery_coffee": "Delivery",
   "guarantee": "Guarantee",
   "back_to": "Back to",
   "drawer": "Basket",
@@ -77,7 +77,7 @@
   "cart_is_empty": "Cart is empty",
   "add_to_cart": "Add to cart",
   "add_item_to_cart": "Add item to cart. You can do this -> go to the products section and make your choice, or you can contact our managers and they will help you place an order. You can also send an inquiry with order details.",
-  "package": "package",
+  "package_coffee": "package",
   "follow_the_news": "Follow the news and updates, participate in promotions, get discounts, free shipping!",
   "there_is_a_wide": "There is a wide range of goods on the market for which we use different types of packaging to preserve the unique taste of ground coffee. When packing tablets in blisters, we guarantee the quality and purity of sealing, as well as the integrity of the product during production and during storage of the finished product in our warehouses.",
   "high_quality_preservation": "For high-quality preservation of products (tablets, capsules, pods), we use vacuum packaging, which preserves the freshness and aroma of coffee.",
@@ -101,5 +101,13 @@
   },
   "popup": {
     "choose_the_quantity": "Choose the quantity of goods and go to the basket for design"
+  },
+  "in_our_blog_coffee": "In our Blog",
+  "blog_section": {
+    "recommendations_from": "Recommendations from our experts:"
+  },
+  "reviews_section": {
+    "reviews": "Reviews",
+    "latest_customer": "Latest customer reviews of our store:"
   }
 }

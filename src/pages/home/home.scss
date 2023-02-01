@@ -3,16 +3,21 @@
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: contain;
-} 
+}
 
 .set-1 {
   padding-bottom: 50px;
-  background-image: linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,.3)), url(../../assets/img/home/subs.png);
+  background-image: linear-gradient(rgba(255, 255, 255, .3), rgba(255, 255, 255, .3)), url(../../assets/img/home/subs.png);
 }
 
 .set-2 {
-  padding: 50px 0;
-  background-image: linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,.3)), url(../../assets/img/home/subs-2.png);
+  padding: 150px 0 50px;
+  background-image: linear-gradient(rgba(255, 255, 255, .3), rgba(255, 255, 255, .3)), url(../../assets/img/home/subs-2.png);
+}
+
+.set-4 {
+  padding: 150px 0 50px;
+  background-image: linear-gradient(rgba(255, 255, 255, .3), rgba(255, 255, 255, .3)), url(../../assets/img/home/subs-3.png);
 }
 
 .set-3 {
@@ -26,6 +31,12 @@
   &__banner {
     width: 100%;
     margin-bottom: 100px;
+    object-fit: cover;
+
+  }
+
+  &__banner-clean {
+    width: 100%;
     object-fit: cover;
   }
 }

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Slider } from "../../components";
+import React, {useState, useEffect} from "react";
+import {Slider} from "../../components";
 
 import Category from "../../components/sections/category";
 import AboutProducts from "../../components/sections/aboutProducts";
@@ -15,6 +15,10 @@ import BannerMapCaffee from "../../assets/img/home/map-coffe.jpg";
 import BannerBottom from "../../assets/img/home/bottom.jpg";
 
 import "./home.scss";
+import Container from "../../components/modules/Container";
+import Blog from "../../components/sections/blog";
+import Reviews from "../../components/sections/reviews/Reviews";
+import Video from "../../components/sections/video";
 
 export default function Home() {
   const colorDefault = "rgba(205, 186, 170, 0.5)";
@@ -32,8 +36,7 @@ export default function Home() {
 
   const [colortTopProducts, setColortTopProducts] = useState(colorDefault);
   const [isHeigthtTopProducts, setIsHeigthtTopProducts] = useState(0);
-  const [textAccentTopProducts, setTextAccenttTopProducts] =
-    useState(colorDefault);
+  const [textAccentTopProducts, setTextAccenttTopProducts] = useState(colorDefault);
 
   // calculation number heigth %
   function procentAccentBlock(num) {
@@ -41,12 +44,7 @@ export default function Home() {
   }
 
   //calculation and set color line
-  function isActiveLine(
-    scrollTop,
-    numProcentAccentBlock,
-    setColor,
-    setIsHeigth
-  ) {
+  function isActiveLine(scrollTop, numProcentAccentBlock, setColor, setIsHeigth) {
     const scrollPlace = window.scrollY;
     if (scrollPlace > scrollTop) {
       setColor(colorAccent);
@@ -100,68 +98,105 @@ export default function Home() {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", listenScrollEvent, { passive: true });
-    return () =>
-      window.removeEventListener("scroll", listenScrollEvent, {
-        passive: true,
-      });
+    window.addEventListener("scroll", listenScrollEvent, {passive: true});
+    return () => window.removeEventListener("scroll", listenScrollEvent, {
+      passive: true,
+    });
   }, [listenScrollEvent]);
 
-  return (
-    <>
-      <Slider />
+  return (<>
+    <Slider/>
 
-      <Box name="base-set set-1">
-        <Headline
-          name="category"
-          bgColor={bgColorAbout}
-          textAccent={textAccentAbout}
-          color={colorAbout}
-          isHeigth={isHeigthAbout}
-        >
-          <Category />
-        </Headline>
+    <Box name="base-set set-1">
+      <Headline
+        name="category"
+        bgColor={bgColorAbout}
+        textAccent={textAccentAbout}
+        color={colorAbout}
+        isHeigth={isHeigthAbout}
+      >
+        <Container>
+          <Category/>
+        </Container>
+      </Headline>
 
-        <AboutProducts />
+      <AboutProducts/>
 
-        <Headline
-          name="top-products"
-          bgColor={bgColorAbout}
-          textAccent={textAccentTopProducts}
-          color={colortTopProducts}
-          isHeigth={isHeigthtTopProducts}
-        >
-          <TopProducts />
-        </Headline>
-      </Box>
+      <Headline
+        name="top-products"
+        bgColor={bgColorAbout}
+        textAccent={textAccentTopProducts}
+        color={colortTopProducts}
+        isHeigth={isHeigthtTopProducts}
+      >
+        <Container>
+          <TopProducts/>
+        </Container>
+      </Headline>
+    </Box>
 
-      <img className="home__banner" src="/baners/baner-1.jpg" alt="banner" />
+    <img className="home__banner-clean" src="/baners/baner-1.jpg" alt="banner"/>
 
-      <Box name="base-set set-2">
-        <Package
-          textAccent={textAccentTopProducts}
-          color={colortTopProducts}
-          isHeigth={isHeigthtTopProducts}
-        />
+    <Box name="base-set set-2">
+      <Headline
+        name="package"
+        bgColor={bgColorAbout}
+        textAccent={textAccentTopProducts}
+        color={{}}
+        isHeigth={{}}
+      >
+        <Container>
+          <Package/>
+        </Container>
+      </Headline>
 
-        <Delivery
-          textAccent={textAccentTopProducts}
-          color={colortTopProducts}
-          isHeigth={isHeigthtTopProducts}
-        />
-      </Box>
+      <Headline
+        name="delivery"
+        bgColor={bgColorAbout}
+        textAccent={textAccentTopProducts}
+        color={{}}
+        isHeigth={{}}
+      >
+        <Container>
+          <Delivery/>
+        </Container>
+      </Headline>
+    </Box>
 
-      <HowItWork />
+    <HowItWork/>
 
+    <Box name="base-set set-4">
+      <Headline
+        name="in_our_blog"
+        bgColor={bgColorAbout}
+        textAccent={textAccentTopProducts}
+        color={{}}
+        isHeigth={{}}
+      >
+        <Container>
+          <Blog/>
+        </Container>
+      </Headline>
+
+      <Reviews/>
+
+      <Headline
+        name="in_our_blog"
+        bgColor={bgColorAbout}
+        textAccent={textAccentTopProducts}
+        color={{}}
+        isHeigth={{}}
+      >
+        <Container>
+          <Video/>
+        </Container>
+      </Headline>
+    </Box>
+
+    <Box name="set-3">
       <div className="container-max">
-        <img className="home__banner" src={BannerMapCaffee} alt="banner" />
+        <img className="home__baner" src={BannerBottom} alt="baner"/>
       </div>
-
-      <Box name="set-3">
-        <div className="container-max">
-          <img className="home__baner" src={BannerBottom} alt="baner" />
-        </div>
-      </Box>
-    </>
-  );
+    </Box>
+  </>);
 }
