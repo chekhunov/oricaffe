@@ -23,6 +23,13 @@
   position: relative;
   height: 100%;
 
+  video {
+    @include _767 {
+      min-height: 420px;
+      object-fit: cover;
+    }
+  }
+
   & .slide-image {
     position: relative;
     height: 100%;
@@ -49,11 +56,18 @@
     z-index: 200;
 
     @include _767 {
-      position: relative;
-      height: 100%;
-      min-height: 320px;
-      top: 80%;
-      left: 50%;
+      top: 60%;
+      left: -10px;
+      transform: translate(0, 0); 
+
+      .contacts-btn {
+        display: inline-flex;
+      }
+    }
+
+    @include _640 {
+      left: 0;
+      align-items: center;
     }
   }
 
@@ -66,6 +80,15 @@
 
     @include _1024 {
       font-size: 32px;
+    }
+
+    @include _767 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    @include _320 {
+      font-size: 22px;
     }
   }
 

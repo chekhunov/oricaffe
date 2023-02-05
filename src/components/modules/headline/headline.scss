@@ -1,8 +1,21 @@
 @import '../../../scss/vars.scss';
+@import '../../../scss/mixins.scss';
 
 .headline {
   position: relative;
   margin-bottom: 150px;
+
+  @include _1200 {
+    margin-bottom: 100px;
+  }
+
+  @include _767 {
+    margin-bottom: 50px;
+  }
+
+  @include _320 {
+    margin-bottom: 30px;
+  }
 
   &::before {
     content: '';

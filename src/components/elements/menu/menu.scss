@@ -110,6 +110,7 @@
   background-color: transparent;
   border-radius: 0;
   box-shadow: none;
+
 }
 
 .menu {
@@ -117,6 +118,7 @@
   height: 0;
   opacity: 0;
   transition: opacity 0.3s, height 0.3s;
+  display: none;
 
   &.active {  
     position: relative;

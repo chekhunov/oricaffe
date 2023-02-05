@@ -19,7 +19,7 @@ const BaseButton = ({
 
   return link ? (
     <Link
-      to={link}
+      to={`/${link}`}
       onClick={click}
       style={sx}
       className={cn(`${name} base-btn`, { icon: icon })}

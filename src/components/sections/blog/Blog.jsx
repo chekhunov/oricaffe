@@ -13,7 +13,7 @@ export default function Blog() {
 
   const blog_attributes = {
     button: "more_info",
-    urlButton: "/blog",
+    urlButton: "blog",
     sx: {
       width: "200px",
     },

@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from "react";
-import {Slider} from "../../components";
+import React, { useState, useEffect } from "react";
+import { Slider } from "../../components";
 
 import Category from "../../components/sections/category";
 import AboutProducts from "../../components/sections/aboutProducts";
@@ -21,7 +21,7 @@ import Reviews from "../../components/sections/reviews/Reviews";
 import Video from "../../components/sections/video";
 import FormOrder from "../../components/sections/formOrder";
 import Questions from "../../components/sections/questions";
-import {DataProvider} from "../../utils/FormContext";
+import { DataProvider } from "../../utils/FormContext";
 import InfoBlock from "../../components/elements/infoBlock";
 
 export default function Home() {
@@ -40,7 +40,8 @@ export default function Home() {
 
   const [colortTopProducts, setColortTopProducts] = useState(colorDefault);
   const [isHeigthtTopProducts, setIsHeigthtTopProducts] = useState(0);
-  const [textAccentTopProducts, setTextAccenttTopProducts] = useState(colorDefault);
+  const [textAccentTopProducts, setTextAccenttTopProducts] =
+    useState(colorDefault);
 
   // calculation number heigth %
   function procentAccentBlock(num) {
@@ -48,7 +49,12 @@ export default function Home() {
   }
 
   //calculation and set color line
-  function isActiveLine(scrollTop, numProcentAccentBlock, setColor, setIsHeigth) {
+  function isActiveLine(
+    scrollTop,
+    numProcentAccentBlock,
+    setColor,
+    setIsHeigth
+  ) {
     const scrollPlace = window.scrollY;
     if (scrollPlace > scrollTop) {
       setColor(colorAccent);
@@ -102,44 +108,46 @@ export default function Home() {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", listenScrollEvent, {passive: true});
-    return () => window.removeEventListener("scroll", listenScrollEvent, {
-      passive: true,
-    });
+    window.addEventListener("scroll", listenScrollEvent, { passive: true });
+    return () =>
+      window.removeEventListener("scroll", listenScrollEvent, {
+        passive: true,
+      });
   }, [listenScrollEvent]);
 
-  return (<>
-    <Slider/>
+  return (
+    <>
+      <Slider />
 
-    <Box name="base-set set-1">
-      <Headline
-        name="category"
-        isHeigth={isHeigthAbout}
-        color={colorAbout}
-        bgColor={bgColorAbout}
-        textAccent={textAccentAbout}
-      >
-        <Container>
-          <Category/>
-        </Container>
-      </Headline>
+      <Box name="base-set set-1">
+        <Headline
+          name="category"
+          isHeigth={isHeigthAbout}
+          color={colorAbout}
+          bgColor={bgColorAbout}
+          textAccent={textAccentAbout}
+        >
+          <Container>
+            <Category />
+          </Container>
+        </Headline>
 
-      <AboutProducts/>
+        <AboutProducts />
 
-      <Headline
-        name="top-products"
-        isHeigth={isHeigthtTopProducts}
-        color={colortTopProducts}
-        bgColor={bgColorAbout}
-        textAccent={textAccentTopProducts}
-        sx={{marginBottom: '100px'}}
-      >
-        <Container>
-          <TopProducts/>
-        </Container>
-      </Headline>
-    </Box>
-
+        {/* <Headline
+          name="top-products"
+          isHeigth={isHeigthtTopProducts}
+          color={colortTopProducts}
+          bgColor={bgColorAbout}
+          textAccent={textAccentTopProducts}
+          sx={{ marginBottom: "100px" }}
+        >
+          <Container>
+            <TopProducts />
+          </Container>
+        </Headline> */}
+      </Box>
+      {/* 
     <img className="home__banner-clean" src="/baners/baner-1.jpg" alt="banner"/>
 
     <Box name="base-set set-2">
@@ -213,6 +221,7 @@ export default function Home() {
       <div className="container-max">
         <img className="home__baner" src={BannerBottom} alt="baner"/>
       </div>
-    </Box>
-  </>);
+    </Box> */}
+    </>
+  );
 }

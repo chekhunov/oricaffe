@@ -4,9 +4,7 @@ import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useGetNavMenu } from "../../../api/navMenu";
 
-import "swiper/scss";
-import "swiper/scss/navigation";
-
+import "./swiper.scss";
 import "./category.scss";
 
 export default function Category() {
@@ -25,6 +23,14 @@ export default function Category() {
         navigation
         onSwiper={(swiper) => swiper}
         onSlideChange={() => console.log("slide change")}
+        breakpoints={{
+          320: { slidesPerView: 1, spaceBetween: 20 },
+          480: { slidesPerView: 3, spaceBetween: 50 },
+          768: { slidesPerView: 4, spaceBetween: 50 },
+          1024: { slidesPerView: 4, spaceBetween: 20 },
+          1200: { slidesPerView: 4, spaceBetween: 20 },
+          1440: { slidesPerView: 4, spaceBetween: 50 },
+        }}
       >
         {category &&
           category.map((slide) => (

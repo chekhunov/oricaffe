@@ -13,7 +13,7 @@ import "./aboutProducts.scss";
 
 const coffeGrani = {
   button: "more",
-  urlButton: "/contacts",
+  urlButton: "contacts",
   sx: {
     width: "200px",
   },
@@ -21,7 +21,7 @@ const coffeGrani = {
 
 const coffeGround = {
   button: "more",
-  urlButton: "/contacts",
+  urlButton: "contacts",
   sx: {
     width: "200px",
   },
@@ -29,7 +29,7 @@ const coffeGround = {
 
 const coffeNespresso = {
   button: "more",
-  urlButton: "/contacts",
+  urlButton: "contacts",
   sx: {
     width: "200px",
   },
@@ -37,7 +37,7 @@ const coffeNespresso = {
 
 const coffeGreen = {
   button: "more",
-  urlButton: "/contacts",
+  urlButton: "contacts",
   sx: {
     width: "200px",
   },
@@ -68,7 +68,7 @@ export default function AboutProducts() {
 
           <div className="about-products__inner">
             <div className="about-products__row about-row mb-40 p-20 d-flex">
-              <div className="about-row__column-left d-flex flex-column mr-20">
+              <div className="about-row__column-left d-flex flex-column">
                 <div className="h100p">
                   <div className="about-row__title">
                     {t("about_products.grain_coffee")}
@@ -98,7 +98,7 @@ export default function AboutProducts() {
               <img className="about-row__img--big" src={grani} alt="coffe" />
             </div>
 
-            <div className="about-products__row d-flex mb-40">
+            <div className="about-products__row center d-flex">
               <div className="about-row__column-inner column-right mr-40">
                 <div className="about-row__column mb-40 about-row d-flex justify-between align-start">
                   <div className="about-row__headline">
@@ -115,6 +115,7 @@ export default function AboutProducts() {
                         />
                       </div>
                     </div>
+
                     <div className="d-flex">
                       <p className="about-row__text">
                         {t("about_products.many_people_represent")}
@@ -125,10 +126,18 @@ export default function AboutProducts() {
                         alt="coffe"
                       />
                     </div>
+
+                    <div className="about-products__btn-mobile">
+                      <Button
+                        sx={coffeGround.sx}
+                        link={coffeGround.urlButton}
+                        text={t(coffeGround.button)}
+                      />
+                    </div>
                   </div>
                 </div>
 
-                <div className="about-row__column about-row d-flex justify-between align-start">
+                <div className="about-row__column about-row single-doses d-flex justify-between align-start">
                   <div className="about-row__headline">
                     <div className="about-row__inner d-flex mb-10">
                       <div
@@ -154,6 +163,14 @@ export default function AboutProducts() {
                       <img className="about-row__img" src={chald} alt="coffe" />
                       {t("about_products.word_chald")}
                     </p>
+                  </div>
+
+                  <div className="about-products__btn-mobile">
+                    <Button
+                      sx={coffeGround.sx}
+                      link={coffeGround.urlButton}
+                      text={t(coffeGround.button)}
+                    />
                   </div>
                 </div>
               </div>
@@ -188,7 +205,7 @@ export default function AboutProducts() {
             </div>
 
             <div className="about-products__row about-row p-20 d-flex align-start justify-between">
-              <div className="about-row__column-left mr-20">
+              <div className="about-row__column-left">
                 <div className="about-row__title">
                   {t("about_products.coffee_green")}
                 </div>

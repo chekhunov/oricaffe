@@ -1,4 +1,5 @@
 @import '../../../scss/vars.scss';
+@import '../../../scss/mixins.scss';
 
 .about-products {
   position: relative;
@@ -11,6 +12,38 @@
     height: 100%;
     width: 1px;
     color: rgba(205, 186, 170, 0.5);
+  }
+
+  &__btn {
+    .contacts-btn {
+      display: inline-flex
+    }
+  }
+
+  &__btn-mobile {
+    width: 100%;
+    display: none;
+
+    @include _767 {
+      display: inline-flex;
+      margin-top: 20px;
+      .contacts-btn {
+        width: 100%;
+        display: inline-flex;
+        margin-right: 0!important;
+
+        .atuin-btn {
+          width: 100%!important;
+        }
+      }
+    }
+  }
+
+  .single-doses {
+    @include _767 {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   &__desc {
@@ -40,6 +73,14 @@
 
   &__row {
     width: 100%;
+
+    &.center {
+      margin-bottom: 40px;
+      @include _1200 {
+        flex-direction: column;
+        margin-bottom: 0;
+      }
+    }
   }
 }
 
@@ -64,6 +105,33 @@
     height: auto;
     min-height: 100%;
     width: calc(90% - 20px);
+    margin-right: 20px;
+
+    @include _1200 {
+      width: 100%;
+    }
+
+    @include _767 {
+      margin-right: 0;
+      margin-bottom: 0;
+      .contacts-btn {
+        width: 100%;
+        display: inline-flex;
+        margin-right: 0!important;
+
+        .atuin-btn {
+          width: 100%!important;
+        }
+      }
+    }
+  }
+
+  &__headline {
+    @include _767 {
+      .about-products__btn {
+        display: none;
+      }
+    }
   }
 
   &__column-right {
@@ -81,6 +149,10 @@
     border-radius: 10px;
     width: 32%;
     float: right;
+
+    @include _1200 {
+      display: none;
+    }
   }
 
   &__img-moka {
@@ -88,6 +160,10 @@
     width: 35%;
     object-fit: cover;
     float: right;
+
+    @include _1200 {
+      display: none;
+    }
   }
 
   &__img--big {
@@ -95,6 +171,10 @@
     width: 20%;
     margin-right: 0;
     border-radius: 10px;
+
+    @include _1200 {
+      display: none;
+    }
   }
 
   &__img-green {
@@ -107,11 +187,19 @@
 
   &__column-inner {
     width: calc(50%);
+
+    @include _1200 {
+      width: 100%;
+    }
   }
 }
 
 .column-right {
   height: 100%;
+
+  @include _1200 {
+    margin-bottom: 40px;
+  }
 
   &__img {
     max-height: 250px;
@@ -120,6 +208,10 @@
     width: 55%;
     border-radius: 10px;
     float: bottom;
+
+    @include _1200 {
+      display: none;
+    }
   }
 }
 

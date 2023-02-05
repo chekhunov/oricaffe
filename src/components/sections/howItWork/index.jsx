@@ -10,7 +10,7 @@ export default function HowItWork() {
 
   const delivery_attributes = {
     button: "make_an_order",
-    urlButton: "/delivery",
+    urlButton: "delivery",
     sx: {
       width: "200px",
       backgroundColor: "#2C397C",

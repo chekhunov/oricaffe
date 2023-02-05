@@ -15,7 +15,7 @@ const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2
 
 const form_attributes = {
   button: "Submite",
-  urlButton: "/",
+  urlButton: "",
   sx: {
     width: "100%",
     height: '50px',
