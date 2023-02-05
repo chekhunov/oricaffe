@@ -19,6 +19,10 @@ import Container from "../../components/modules/Container";
 import Blog from "../../components/sections/blog";
 import Reviews from "../../components/sections/reviews/Reviews";
 import Video from "../../components/sections/video";
+import FormOrder from "../../components/sections/formOrder";
+import Questions from "../../components/sections/questions";
+import {DataProvider} from "../../utils/FormContext";
+import InfoBlock from "../../components/elements/infoBlock";
 
 export default function Home() {
   const colorDefault = "rgba(205, 186, 170, 0.5)";
@@ -110,10 +114,10 @@ export default function Home() {
     <Box name="base-set set-1">
       <Headline
         name="category"
+        isHeigth={isHeigthAbout}
+        color={colorAbout}
         bgColor={bgColorAbout}
         textAccent={textAccentAbout}
-        color={colorAbout}
-        isHeigth={isHeigthAbout}
       >
         <Container>
           <Category/>
@@ -124,10 +128,11 @@ export default function Home() {
 
       <Headline
         name="top-products"
+        isHeigth={isHeigthtTopProducts}
+        color={colortTopProducts}
         bgColor={bgColorAbout}
         textAccent={textAccentTopProducts}
-        color={colortTopProducts}
-        isHeigth={isHeigthtTopProducts}
+        sx={{marginBottom: '100px'}}
       >
         <Container>
           <TopProducts/>
@@ -140,10 +145,10 @@ export default function Home() {
     <Box name="base-set set-2">
       <Headline
         name="package"
+        isHeigth={{}}
+        color={{}}
         bgColor={bgColorAbout}
         textAccent={textAccentTopProducts}
-        color={{}}
-        isHeigth={{}}
       >
         <Container>
           <Package/>
@@ -152,10 +157,11 @@ export default function Home() {
 
       <Headline
         name="delivery"
+        isHeigth={{}}
+        color={{}}
         bgColor={bgColorAbout}
         textAccent={textAccentTopProducts}
-        color={{}}
-        isHeigth={{}}
+        sx={{marginBottom: '100px'}}
       >
         <Container>
           <Delivery/>
@@ -168,10 +174,10 @@ export default function Home() {
     <Box name="base-set set-4">
       <Headline
         name="in_our_blog"
+        isHeigth={{}}
+        color={{}}
         bgColor={bgColorAbout}
         textAccent={textAccentTopProducts}
-        color={{}}
-        isHeigth={{}}
       >
         <Container>
           <Blog/>
@@ -182,16 +188,26 @@ export default function Home() {
 
       <Headline
         name="in_our_blog"
+        isHeigth={{}}
+        color={{}}
         bgColor={bgColorAbout}
         textAccent={textAccentTopProducts}
-        color={{}}
-        isHeigth={{}}
       >
         <Container>
           <Video/>
         </Container>
       </Headline>
+
+      <Container>
+        <DataProvider>
+          <FormOrder/>
+        </DataProvider>
+      </Container>
+
+      <InfoBlock/>
     </Box>
+
+    <Questions/>
 
     <Box name="set-3">
       <div className="container-max">

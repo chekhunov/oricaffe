@@ -3,111 +3,110 @@
   width: 100%;
   padding: 70px 20px 20px;
 
-    .swiper-wrapper {
-      padding: 0 0 40px;
-    }
+  .swiper-wrapper {
+    padding: 0 0 40px;
+  }
 
-    .swiper-button-prev,
-    .swiper-button-next  {
-      position: relative;
-      height: 50px;
-      width: 50px;
-      background-color: #fff;
-      border-radius: 50%;
-      z-index: 10;
-      border: 0.5px solid #8E0303;
-      transition: background-color 0.3s;
+  .swiper-button-prev,
+  .swiper-button-next {
+    position: relative;
+    height: 50px;
+    width: 50px;
+    background-color: #fff;
+    border-radius: 50%;
+    z-index: 10;
+    border: 0.5px solid #8E0303;
+    transition: background-color 0.3s;
 
-      &:before {
-        position: absolute;
-        display: block;
-        content: url('../../../assets/icons/category/arrow-b.svg');
-      }
-
-      &:hover {
-        background-color: darken($color: #fff, $amount: 5%);
-        transition: background-color 0.3s;
-      }
-    }
-
-    .swiper-button-prev {
-      bottom: 4px;
-      left: 88%;
-
-      &:before {
-        right: 20px;
-        bottom: 13px;
-        transform: rotate(-180deg);
-      }
-    }
-
-    .swiper-button-next {
-      bottom: 32px;
-      left: 95%;
-
-      &:before {
-        right: 16px;
-        bottom: 6px;
-      }
-    }
-
-    &__item {
-      margin: 10px;
-      padding: 14px;
-      background-color: #fff;
-      border: 1px solid #8E0303;
-      border-radius: 25px 25px 25px 0px;
-      transition: box-shadow 0.3s, background-color 0.3s;
-
-      &:hover {
-        background-color: rgb(255, 249, 249);
-        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-        transition: box-shadow 0.3s, background-color 0.3s;
-      }
-    }
-
-    &__image {
-      position: relative;
-      width:100%;
-      max-height: 200px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #fff;
-      margin: 0;
-      border-radius: 25px 25px 0px 0px;
-      // opacity: 0.3;
-    }
-
-    &__title {
-      margin-top: 12px;
-      font-style: italic;
-      text-transform: none;
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 12px; 
-    }
-
-    &__weight {
+    &:before {
       position: absolute;
-      top: 12px;
-      right: 12px;
+      display: block;
+      content: url('../../../assets/icons/category/arrow-b.svg');
     }
 
-    &__price {
-      font-weight: 400;
-      font-size: 38px;
+    &:hover {
+      background-color: darken($color: #fff, $amount: 5%);
+      transition: background-color 0.3s;
     }
+  }
+
+  .swiper-button-prev {
+    bottom: 4px;
+    left: 88%;
+
+    &:before {
+      right: 20px;
+      bottom: 13px;
+      transform: rotate(-180deg);
+    }
+  }
+
+  .swiper-button-next {
+    bottom: 32px;
+    left: 95%;
+
+    &:before {
+      right: 16px;
+      bottom: 6px;
+    }
+  }
+
+  &__item {
+    padding: 14px;
+    background-color: #fff;
+    border: 1px solid #8E0303;
+    border-radius: 25px 25px 25px 0px;
+    transition: box-shadow 0.3s, background-color 0.3s;
+
+    &:hover {
+      background-color: rgb(255, 249, 249);
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      transition: box-shadow 0.3s, background-color 0.3s;
+    }
+  }
+
+  &__image {
+    position: relative;
+    width: 100%;
+    max-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    margin: 0;
+    border-radius: 25px 25px 0px 0px;
+    // opacity: 0.3;
+  }
+
+  &__title {
+    margin-top: 12px;
+    font-style: italic;
+    text-transform: none;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+  }
+
+  &__weight {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+  }
+
+  &__price {
+    font-weight: 400;
+    font-size: 38px;
+  }
 }
 
 @media screen and (max-width: 1024px) {
-    .top-products {
-        padding-bottom: 70px;
-    }
+  .top-products {
+    padding-bottom: 70px;
+  }
 }
 
 @media screen and (max-width: 767px) {
-    .top-products {
-        padding-bottom: 50px;
-    }
+  .top-products {
+    padding-bottom: 50px;
+  }
 }

@@ -5,14 +5,14 @@ import {useTranslation} from "react-i18next";
 import "./headline.scss";
 
 export default function Category({
-                                   name, textAccent, color, isHeigth, bgColor, children,
+                                   name, textAccent, color, isHeigth, bgColor, children, sx = ''
                                  }) {
   const {t} = useTranslation();
 
   const stylesBlock = {
     backgroundColor: color, height: isHeigth + "%",
   };
-  return (<section className="headline">
+  return (<section className="headline" style={{...sx}}>
     <div className="container-big">
       <div className={cn("headline__inner", "inner")}>
         <div className="line">

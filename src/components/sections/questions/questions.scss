@@ -1,0 +1,99 @@
+@import '../../../scss/vars.scss';
+
+.questions {
+  margin-bottom: 25px;
+
+  &__inner {
+    padding: 90px 150px;
+    background-color: #FAF7EF;
+    border-radius: 40px;
+  }
+
+  &__column {
+
+  }
+
+  &__column.left {
+    width: calc(45%);
+    margin-right: 100px;
+
+    .title {
+      text-align: left;
+    }
+  }
+
+  &__column.right {
+    width: calc(55%);
+  }
+
+  &__title {
+    font-size: 36px;
+    @extend %libreBaskerville-700;
+  }
+
+  &__descriptions {
+    font-size: 18px;
+  }
+
+  &__item {
+    margin-bottom: 40px;
+    cursor: pointer;
+
+    &:hover {
+      .questions__item-title {
+        color: lighten($default, 20%);
+        transition: color 0.3s;
+      }
+
+      .questions__item-svg {
+        transform: rotate(180deg);
+        transition: transform 0.3s;
+      }
+
+      .questions__item-svg path {
+        stroke: lighten($default, 20%);
+        transition: transform 0.3s;
+      }
+
+      .questions__item-desc {
+        visibility: visible;
+        height: 100%;
+        opacity: 1;
+        transform: scale(1, 1);
+        transition: all 0.3s
+      }
+    }
+  }
+
+  &__item-svg {
+    margin-top: -5px;
+    transform: rotate(0deg);
+    transition: transform 0.3s;
+  }
+
+  &__item-title {
+    width: 100%;
+    display: flex;
+    justify-content: inherit;
+    font-weight: 600;
+    font-size: 18px;
+    color: $default;
+  }
+
+  &__item-desc {
+    padding-top: 20px;
+    visibility: hidden;
+    height: 0;
+    opacity: 0;
+    transform: scale(0.5, 0.5);
+    transition: all 0.3s;
+  }
+
+  &__headline {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}

@@ -1,29 +1,31 @@
-import React, { useState, useEffect } from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import React, {useState, useEffect} from "react";
+import {Routes, Route, useLocation} from "react-router-dom";
 
-import { pageRoutes } from "./utils/routes";
+import {pageRoutes} from "./utils/routes";
 import LayoutDefault from "./components/layout";
-import { NotFound, PageAbout, PageContacts, PageCart } from "./pages";
-import { Home } from "./pages/home";
+import {NotFound, PageAbout, PageContacts, PageCart} from "./pages";
+import {Home} from "./pages/home";
 import StateContext from "./utils/stateContext";
-import { CartProvider } from "react-use-cart";
+import {CartProvider} from "react-use-cart";
 
 export default function App() {
-  const [stateContext, setStateContext] = useState([]);
-  // const history = useHistory();
-  // const { error } = useGetProfile();
+  const [stateContext, setStateContext] = useState({},
+    )
+  ;
+// const history = useHistory();
+// const { error } = useGetProfile();
 
-  // useEffect(() => {
-  //   if (error) {
-  //     history.replace(pageRoutes.auth);
-  //   }
-  // }, [error]);
+// useEffect(() => {
+//   if (error) {
+//     history.replace(pageRoutes.auth);
+//   }
+// }, [error]);
 
   return (
-    <StateContext.Provider value={{ stateContext, setStateContext }}>
+    <StateContext.Provider value={{stateContext, setStateContext}}>
       <CartProvider>
         <LayoutDefault>
-          <Content />
+          <Content/>
         </LayoutDefault>
       </CartProvider>
     </StateContext.Provider>
@@ -51,13 +53,13 @@ function Content() {
       }}
     >
       <Routes location={displayLocation}>
-        <Route path={pageRoutes.main} element={<Home />} />
-        <Route path={pageRoutes.about} element={<PageAbout />} />
-        <Route path={pageRoutes.contacts} element={<PageContacts />} />
-        <Route path={pageRoutes.cart} element={<PageCart />} />
+        <Route path={pageRoutes.main} element={<Home/>}/>
+        <Route path={pageRoutes.about} element={<PageAbout/>}/>
+        <Route path={pageRoutes.contacts} element={<PageContacts/>}/>
+        <Route path={pageRoutes.cart} element={<PageCart/>}/>
         <Route
           path={pageRoutes.all}
-          element={<NotFound to={pageRoutes.not_found} replace />}
+          element={<NotFound to={pageRoutes.not_found} replace/>}
         />
       </Routes>
     </div>

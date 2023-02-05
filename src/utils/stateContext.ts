@@ -1,5 +1,5 @@
-import { createContext } from 'react'
-import { PoppupModel } from '../models/poppupToCart.model'
+import {createContext} from 'react'
+import {PoppupModel} from '../models/poppupToCart.model'
 
 interface StateContextProps {
   stateContext: Pick<PoppupModel, 'to_cart' | 'isActiveCardPopup' | 'type' | 'dataCart'>
@@ -23,7 +23,7 @@ const StateContext = createContext<StateContextProps>({
       imgUrl: '',
       info: '',
       link: ''
-    } ,
+    },
   }
 })
 
