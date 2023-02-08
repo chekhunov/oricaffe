@@ -1,3 +1,5 @@
+@import '../../../scss/mixins.scss';
+
 .top-products {
   position: relative;
   width: 100%;
@@ -5,6 +7,10 @@
 
   .swiper-wrapper {
     padding: 0 0 40px;
+
+    @include _767 {
+      padding: 0 0 10px;
+    }
   }
 
   .swiper-button-prev,
@@ -17,6 +23,10 @@
     z-index: 10;
     border: 0.5px solid #8E0303;
     transition: background-color 0.3s;
+
+    @include _1024 {
+      display: none;
+    }
 
     &:before {
       position: absolute;
@@ -34,6 +44,10 @@
     bottom: 4px;
     left: 88%;
 
+    @include _1200 {
+      left: 84%;
+    }
+
     &:before {
       right: 20px;
       bottom: 13px;
@@ -44,6 +58,10 @@
   .swiper-button-next {
     bottom: 32px;
     left: 95%;
+
+    @include _1200 {
+      left: 92%;
+    }
 
     &:before {
       right: 16px;
@@ -75,7 +93,6 @@
     background-color: #fff;
     margin: 0;
     border-radius: 25px 25px 0px 0px;
-    // opacity: 0.3;
   }
 
   &__title {
@@ -107,6 +124,6 @@
 
 @media screen and (max-width: 767px) {
   .top-products {
-    padding-bottom: 50px;
+    padding-bottom: 0;
   }
 }

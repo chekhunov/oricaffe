@@ -1,8 +1,6 @@
 import React from "react";
-import cn from "classnames";
 import {useTranslation} from "react-i18next";
 
-import Button from "../../elements/button";
 import BlogImg from '../../../assets/img/blog/blog-section.jpg'
 import BlogEl1 from '../../../assets/img/blog/blog-el.jpg'
 
@@ -27,7 +25,7 @@ export default function Blog() {
 
       <div className="blog__content d-flex">
         <img
-          className="blog-img mr-20"
+          className="blog-img"
           src={BlogImg}
           alt="blog"
         />
@@ -35,8 +33,7 @@ export default function Blog() {
         <div className="blog__row blog-row p-20 d-flex flex-column justify-between">
           <a className="blog-row__element d-flex mb-20" href="/blog">
             <img
-              className="blog-row__img mr-20"
-              height={250}
+              className="blog-row__img"
               src={BlogEl1}
               alt="blog-comment"
             />
@@ -49,7 +46,7 @@ export default function Blog() {
 
           <a className="blog-row__element d-flex mb-20" href="/blog">
             <img
-              className="blog-row__img mr-20"
+              className="blog-row__img"
               src={BlogEl1}
               alt="blog-comment"
             />
@@ -62,8 +59,7 @@ export default function Blog() {
 
           <a className="blog-row__element d-flex" href="/blog">
             <img
-              height={250}
-              className="blog-row__img mr-20"
+              className="blog-row__img"
               src={BlogEl1}
               alt="blog-comment"
             />

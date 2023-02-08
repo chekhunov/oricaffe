@@ -1,8 +1,8 @@
 import React from "react";
-import {useTranslation} from "react-i18next";
-import {Navigation} from "swiper";
-import {Swiper, SwiperSlide} from "swiper/react";
-import YouTube from 'react-youtube';
+import { useTranslation } from "react-i18next";
+import { Navigation } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import YouTube from "react-youtube";
 
 import "swiper/scss";
 import "swiper/scss/navigation";
@@ -10,63 +10,60 @@ import "swiper/scss/navigation";
 import "./video.scss";
 
 export default function Video() {
-  const {t} = useTranslation();
+  const { t } = useTranslation();
 
   const video = [
     {
       id: 1,
       title: "Coffee",
       text: "Latest customer",
-      urlVideo: 'N_N39X2J-UQ',
+      urlVideo: "N_N39X2J-UQ",
       opts: {
-        height: '140',
-        width: '250',
+        height: "140",
+        width: "250",
         playerVars: {
-          // https://developers.google.com/youtube/player_parameters
           autoplay: 1,
-        }
-      }
+        },
+      },
     },
     {
       id: 2,
       title: "NE Coffee",
       text: "Latest customer",
-      urlVideo: 'KQ6zr6kCPj8'
+      urlVideo: "KQ6zr6kCPj8",
     },
     {
       id: 3,
       title: "NE Coffee",
       text: "Latest customer",
-      urlVideo: 'y8trd3gjJt0'
+      urlVideo: "y8trd3gjJt0",
     },
     {
       id: 4,
       title: "NE Coffee",
       text: "Latest customer",
-      urlVideo: 'oqFtayBRdfs'
+      urlVideo: "oqFtayBRdfs",
     },
     {
       id: 5,
       title: "NE Coffee",
       text: "Latest customer",
-      urlVideo: 'oqFtayBRdfs'
-    }
-  ]
+      urlVideo: "oqFtayBRdfs",
+    },
+  ];
 
   const onPlayerReady = (event) => {
     // access to player in all event handlers via event.target
     event.target.pauseVideo();
-  }
+  };
   const opts = {
-    height: '200',
-    width: '370',
-    src: 'FmDECqhWLV8',
+    height: "200",
+    width: "370",
+    src: "FmDECqhWLV8",
     playerVars: {
-      // https://developers.google.com/youtube/player_parameters
       autoplay: 0,
     },
   };
-
 
   return (
     <div className="video">
@@ -74,15 +71,27 @@ export default function Video() {
         modules={[Navigation]}
         spaceBetween={50}
         slidesPerView={3}
-        // autoplay={{ delay: 5000 }}
         navigation
         onSwiper={(swiper) => swiper}
         onSlideChange={() => console.log("slide change")}
+        breakpoints={{
+          320: { slidesPerView: 1, spaceBetween: 0 },
+          480: { slidesPerView: 1, spaceBetween: 0 },
+          900: { slidesPerView: 2, spaceBetween: 20 },
+          1024: { slidesPerView: 2, spaceBetween: 20 },
+          1200: { slidesPerView: 3, spaceBetween: 20 },
+          1440: { slidesPerView: 3, spaceBetween: 50 },
+        }}
       >
         {video &&
           video.map((slide) => (
             <SwiperSlide key={`slide-video_${slide.id}`}>
-              <YouTube className={"video__item"} videoId={slide.urlVideo} opts={opts} onReady={onPlayerReady}/>
+              <YouTube
+                className={"video__item"}
+                videoId={slide.urlVideo}
+                opts={opts}
+                onReady={onPlayerReady}
+              />
               <div className="video__title">{slide.title}</div>
               <div className="video__text">{slide.text}</div>
             </SwiperSlide>

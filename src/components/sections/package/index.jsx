@@ -1,5 +1,4 @@
 import React from "react";
-import cn from "classnames";
 import {useTranslation} from "react-i18next";
 
 import Button from "../../elements/button";
@@ -12,9 +11,7 @@ export default function Package({textAccent, color, isHeigth}) {
     const {t} = useTranslation();
 
     const package_attributes = {
-        button: "more_info", urlButton: "/package", sx: {
-            width: "200px",
-        },
+        button: "more_info", urlButton: "package"
     };
 
     return (<div className="package__content-block">
@@ -25,7 +22,7 @@ export default function Package({textAccent, color, isHeigth}) {
                 </div>
 
                 <div className="package__row package-row p-20 d-flex justify-between">
-                    <div className="package-row__column-left d-flex flex-column mr-20">
+                    <div className="package-row__column-left d-flex flex-column">
                         <div className="package-row__title">
                             {t("high_quality_preservation")}
                         </div>

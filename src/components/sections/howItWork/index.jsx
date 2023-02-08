@@ -24,7 +24,7 @@ export default function HowItWork() {
         <div className="how-it-work__inner">
           <div className="how-it-work__title mb-30">{t("no_hassle")}</div>
           <div className="line-dec"></div>
-          <div className="how-it-work__box box d-flex justify-center align-center mb-50">
+          <div className="how-it-work__box box d-flex justify-center align-center">
             <div className="box__item">
               <span className="box__num">1</span>
               <div className="box__title">Leave a request</div>

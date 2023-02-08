@@ -1,9 +1,16 @@
 @import '../../../scss/vars.scss';
+@import '../../../scss/mixins.scss';
 
 .package {
   position: relative;
   margin-bottom: 50px;
   padding-top: 30px;
+
+  .container {
+    @include _380 {
+      padding: 0;
+    }
+  }
 
   &::before {
       content: '';
@@ -17,6 +24,18 @@
   &__content {
     height: 100%;
     padding: 70px 0;
+
+    @include _767 {
+      padding: 20px;
+    }
+  }
+
+  &__content-block {
+    .container {
+    @include _380 {
+      padding: 0;
+    }
+  }
   }
 
   &__row {
@@ -46,6 +65,12 @@
     height: auto;
     min-height: 100%;
     width: calc(50% - 20px);
+    margin-right: 20px;
+
+    @include _1024 {
+      width: 100%;
+      margin-right: 0;
+    }
   }
 
   &__img {
@@ -53,5 +78,21 @@
     width: calc(50%);
     margin-right: 0;
     border-radius: 10px;
+
+    @include _1024 {
+      display: none;
+    }
+  }
+
+  .package-btn {
+    width: 200px;
+
+    @include _767 {
+      width: 100%;
+
+      .autin-btn {
+        min-width: 100%;
+      }
+    }
   }
 }

@@ -19,7 +19,6 @@ export default function Category() {
         modules={[Navigation]}
         spaceBetween={50}
         slidesPerView={4}
-        // autoplay={{ delay: 5000 }}
         navigation
         onSwiper={(swiper) => swiper}
         onSlideChange={() => console.log("slide change")}

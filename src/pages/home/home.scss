@@ -1,3 +1,5 @@
+@import '../../scss/mixins.scss';
+
 .base-set {
   width: 100%;
   background-repeat: no-repeat;
@@ -25,6 +27,10 @@
   padding-bottom: 100px;
   background-color: #BFC1BF;
   margin-bottom: -225px;
+
+  @include _1200 {
+    display: none;
+  }
 }
 
 .home {
@@ -38,5 +44,9 @@
   &__banner-clean {
     width: 100%;
     object-fit: cover;
+
+    @include _767 {
+      min-height: 400px;
+    }
   }
 }

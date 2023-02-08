@@ -134,7 +134,7 @@ export default function Home() {
 
         <AboutProducts />
 
-        {/* <Headline
+        <Headline
           name="top-products"
           isHeigth={isHeigthtTopProducts}
           color={colortTopProducts}
@@ -145,83 +145,87 @@ export default function Home() {
           <Container>
             <TopProducts />
           </Container>
-        </Headline> */}
+        </Headline>
       </Box>
-      {/* 
-    <img className="home__banner-clean" src="/baners/baner-1.jpg" alt="banner"/>
 
-    <Box name="base-set set-2">
-      <Headline
-        name="package"
-        isHeigth={{}}
-        color={{}}
-        bgColor={bgColorAbout}
-        textAccent={textAccentTopProducts}
-      >
-        <Container>
-          <Package/>
-        </Container>
-      </Headline>
+      <img
+        className="home__banner-clean"
+        src="/baners/baner-1.jpg"
+        alt="banner"
+      />
 
-      <Headline
-        name="delivery"
-        isHeigth={{}}
-        color={{}}
-        bgColor={bgColorAbout}
-        textAccent={textAccentTopProducts}
-        sx={{marginBottom: '100px'}}
-      >
-        <Container>
-          <Delivery/>
-        </Container>
-      </Headline>
-    </Box>
+      <Box name="base-set set-2">
+        <Headline
+          name="package"
+          isHeigth={{}}
+          color={{}}
+          bgColor={bgColorAbout}
+          textAccent={textAccentTopProducts}
+        >
+          <Container>
+            <Package />
+          </Container>
+        </Headline>
 
-    <HowItWork/>
+        <Headline
+          name="delivery"
+          isHeigth={{}}
+          color={{}}
+          bgColor={bgColorAbout}
+          textAccent={textAccentTopProducts}
+          sx={{ marginBottom: "100px" }}
+        >
+          <Container>
+            <Delivery />
+          </Container>
+        </Headline>
+      </Box>
 
-    <Box name="base-set set-4">
-      <Headline
-        name="in_our_blog"
-        isHeigth={{}}
-        color={{}}
-        bgColor={bgColorAbout}
-        textAccent={textAccentTopProducts}
-      >
-        <Container>
-          <Blog/>
-        </Container>
-      </Headline>
+      <HowItWork />
 
-      <Reviews/>
+      <Box name="base-set set-4">
+        <Headline
+          name="in_our_blog"
+          isHeigth={{}}
+          color={{}}
+          bgColor={bgColorAbout}
+          textAccent={textAccentTopProducts}
+        >
+          <Container>
+            <Blog />
+          </Container>
+        </Headline>
 
-      <Headline
-        name="in_our_blog"
-        isHeigth={{}}
-        color={{}}
-        bgColor={bgColorAbout}
-        textAccent={textAccentTopProducts}
-      >
-        <Container>
-          <Video/>
-        </Container>
-      </Headline>
+        <Reviews />
 
+        <Headline
+          name="in_our_blog"
+          isHeigth={{}}
+          color={{}}
+          bgColor={bgColorAbout}
+          textAccent={textAccentTopProducts}
+        >
+          <Container>
+            <Video />
+          </Container>
+        </Headline>
+        {/* 
       <Container>
         <DataProvider>
           <FormOrder/>
         </DataProvider>
       </Container>
 
-      <InfoBlock/>
-    </Box>
+      <InfoBlock/> */}
+      </Box>
 
-    <Questions/>
+      {/* <Questions/> */}
 
-    <Box name="set-3">
-      <div className="container-max">
-        <img className="home__baner" src={BannerBottom} alt="baner"/>
-      </div>
-    </Box> */}
+      <Box name="set-3">
+        <div className="container-max">
+          <img className="home__baner" src={BannerBottom} alt="baner" />
+        </div>
+      </Box>
     </>
   );
 }
