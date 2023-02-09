@@ -6,6 +6,7 @@ import YouTube from "react-youtube";
 
 import "swiper/scss";
 import "swiper/scss/navigation";
+import "swiper/css/bundle";
 
 import "./video.scss";
 
@@ -56,9 +57,12 @@ export default function Video() {
     // access to player in all event handlers via event.target
     event.target.pauseVideo();
   };
+
+  const mobile = window.innerWidth;
+  
   const opts = {
     height: "200",
-    width: "370",
+    width: mobile < 340 ? "250" : "350",
     src: "FmDECqhWLV8",
     playerVars: {
       autoplay: 0,
@@ -68,6 +72,7 @@ export default function Video() {
   return (
     <div className="video">
       <Swiper
+        container
         modules={[Navigation]}
         spaceBetween={50}
         slidesPerView={3}
@@ -75,7 +80,7 @@ export default function Video() {
         onSwiper={(swiper) => swiper}
         onSlideChange={() => console.log("slide change")}
         breakpoints={{
-          320: { slidesPerView: 1, spaceBetween: 0 },
+          320: { slidesPerView: 1, spaceBetween: 50 },
           480: { slidesPerView: 1, spaceBetween: 0 },
           900: { slidesPerView: 2, spaceBetween: 20 },
           1024: { slidesPerView: 2, spaceBetween: 20 },
@@ -83,19 +88,20 @@ export default function Video() {
           1440: { slidesPerView: 3, spaceBetween: 50 },
         }}
       >
-        {video &&
-          video.map((slide) => (
-            <SwiperSlide key={`slide-video_${slide.id}`}>
-              <YouTube
-                className={"video__item"}
-                videoId={slide.urlVideo}
-                opts={opts}
-                onReady={onPlayerReady}
-              />
-              <div className="video__title">{slide.title}</div>
-              <div className="video__text">{slide.text}</div>
-            </SwiperSlide>
-          ))}
+        {video?.map((slide) => (
+          <SwiperSlide key={`slide-video_${slide.id}`}>
+            <YouTube
+              width="100%"
+              height="100%"
+              className={"video__item"}
+              videoId={slide.urlVideo}
+              opts={opts}
+              onReady={onPlayerReady}
+            />
+            <div className="video__title">{slide.title}</div>
+            <div className="video__text">{slide.text}</div>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );

@@ -34,11 +34,10 @@ const Menu = ({
   }
 
   return (
-    <nav className={cn("menu", activePopup && "active")}>
+    <nav className={cn("menu")}>
       {menuItems?.map((item, index) => (
         <MenuElement
           key={`${item.id}-${index}`}
-          activeId={activeId}
           item={item}
           index={index}
           {...item}

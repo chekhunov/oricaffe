@@ -1,6 +1,5 @@
 import React from "react";
 import classNames from "classnames";
-// import img from '../../assets/img/map.jpg'
 import ContactsAddress from "../../contactsAddress";
 
 export default function Contacts() {
@@ -15,8 +14,6 @@ export default function Contacts() {
           <h2 className={classNames("contacts__desc", "desc")}>Контакты</h2>
 
           <div className={"contacts__content-block"}>
-            {/* <img className={"contacts__img"} src={img} alt="map" /> */}
-
             <ContactsAddress />
           </div>
         </div>

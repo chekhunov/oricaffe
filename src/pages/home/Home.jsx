@@ -209,17 +209,17 @@ export default function Home() {
             <Video />
           </Container>
         </Headline>
-        {/* 
-      <Container>
-        <DataProvider>
-          <FormOrder/>
-        </DataProvider>
-      </Container>
 
-      <InfoBlock/> */}
+        <Container>
+          <DataProvider>
+            <FormOrder />
+          </DataProvider>
+        </Container>
+
+        <InfoBlock />
       </Box>
 
-      {/* <Questions/> */}
+      <Questions />
 
       <Box name="set-3">
         <div className="container-max">

@@ -14,7 +14,7 @@ const Info = ({ title, image, description }) => {
       <p className="cart-empty__desc opacity-6 mb-40">{description}</p>
 
       <Button
-        link={"/"}
+        link={""}
         text={t("back_to")}
         icon={"/icons/arrow_left.svg"}
         sx={{

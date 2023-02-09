@@ -1,6 +1,6 @@
 import React from "react";
 import classNames from "classnames";
-// import AppContext from '../../context';
+import { Divider } from "@material-ui/core";
 import "./About.scss";
 import { Breadcrumbs } from "../../components";
 import About from "../../components/sections/about";
@@ -27,23 +27,25 @@ export default function PageAbout() {
         <div className="page-about__inner">
           <Breadcrumbs breadcrumbs={breadcrumbs} />
 
-          <img
+          {/* <img
             className="page-about__title-img mt-20"
             src="/aboutPage/title.jpg"
             alt="title"
-          />
-          <div className="page-about__title">{t("about")}</div>
+          /> */}
+          <div className="page-about__title pb-50">{t("about")}</div>
+
+          <Divider />
 
           <About />
-
-          <div className="page-about__title">How it work</div>
+{/* 
+          <div className="page-about__title">How it work</div> */}
           <div className="page-about__content d-flex justify-center">
-            <img
+            {/* <img
               width="75%"
               className=""
               src="/aboutPage/background.jpg"
               alt="title"
-            />
+            /> */}
           </div>
         </div>
       </div>

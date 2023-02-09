@@ -1,4 +1,5 @@
 import React from "react";
+import { Divider } from "@material-ui/core";
 import { Info, Breadcrumbs } from "../../components";
 import { useTranslation } from "react-i18next";
 import { useCart } from "react-use-cart";
@@ -17,11 +18,10 @@ function Cart({ onClosed, onRemove, items = [] }) {
       link: "",
     },
   ];
+
   const { t } = useTranslation();
 
   const { items: cart, setItems, removeItem, updateItemQuantity } = useCart();
-
-console.log(cart)
 
   const sum = cart.map((el) => el.itemTotal);
   const quan = cart.map((el) => el.quantity);
@@ -41,7 +41,9 @@ console.log(cart)
           <Breadcrumbs breadcrumbs={breadcrumbs} />
         </div>
 
-        <div className="cart__title mb-30">{t("cart")}</div>
+        <div className="cart__title pb-50">{t("cart")}</div>
+
+        <Divider />
 
         {cart?.length > 0 ? (
           <div className="cart__inner d-flex flex-column">

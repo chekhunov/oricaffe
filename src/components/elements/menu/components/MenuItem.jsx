@@ -4,7 +4,6 @@ import { useTranslation } from "react-i18next";
 import cn from "classnames";
 
 const MenuElement= ({
-  activeId,
   item,
   index,
   id,
@@ -24,7 +23,7 @@ const MenuElement= ({
         <Link key={`without-category_${id}-${name}`} to={`/${link}`}>
           <li
             style={sx}
-            className={cn("menu__item", id === activeId ? "active" : "")}
+            className={cn("menu__item")}
             key={id}
           >
             <div
@@ -42,7 +41,7 @@ const MenuElement= ({
         </Link>
       ) : (
         <li
-          className={cn("menu__item", id === activeId ? "active" : "")}
+          className={cn("menu__item")}
           key={`category_${id}-${name}`}
         >
           <div
