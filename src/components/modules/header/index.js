@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import cn from "classnames";
 import { Menu } from "../..";
@@ -14,14 +14,23 @@ import { Link } from "react-router-dom";
 import cartIcon from "../../../assets/icons/anim/cart.gif";
 import logo from "../../../assets/header/logo.png";
 
+const home = [
+  {
+    id: 0,
+    value: "home",
+    link: "",
+  },
+];
+
 export default function Header({ navMenu, menuSubheader, countCart }) {
   const { t } = useTranslation();
 
-  const [activeId, setActiveId] = React.useState(null);
-  const [activePopup, setActivePopup] = React.useState(false);
+  const [activeId, setActiveId] = useState(null);
+  const [activePopup, setActivePopup] = useState(false);
 
   function isActivePopup() {
     setActivePopup(!activePopup);
+    addedOverflowForBody();
   }
 
   function addedOverflowForBody() {
@@ -46,12 +55,10 @@ export default function Header({ navMenu, menuSubheader, countCart }) {
               className={cn("header__popup", activePopup && "active")}
               onClick={(e) => {
                 isActivePopup();
-                addedOverflowForBody();
               }}
             >
               <span className="header__popup-line"></span>Меню
             </button>
-
             <a
               className="oriental ml-20"
               href="https://bhousecoffee.com/"
@@ -80,8 +87,9 @@ export default function Header({ navMenu, menuSubheader, countCart }) {
             />
           ) : (
             <HeaderMenuPopup
+              setActivePopup={isActivePopup}
               activePopup={activePopup}
-              menuItems={{ navMenu, ...menuSubheader }}
+              menuItems={[...home, ...navMenu, ...menuSubheader]}
               activeId={activeId}
               setActiveId={setActiveId}
             />

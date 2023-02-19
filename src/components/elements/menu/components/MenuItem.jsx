@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import cn from "classnames";
 
-const MenuElement= ({
+const MenuElement = ({
   item,
   index,
   id,
@@ -14,18 +14,19 @@ const MenuElement= ({
   sx,
   handleOnClick,
   clickItem,
+  setActivePopup,
 }) => {
   const { t } = useTranslation();
 
   return (
     <>
       {!category ? (
-        <Link key={`without-category_${id}-${name}`} to={`/${link}`}>
-          <li
-            style={sx}
-            className={cn("menu__item")}
-            key={id}
-          >
+        <Link
+          key={`without-category_${id}-${name}`}
+          to={`/${link}`}
+          onClick={setActivePopup}
+        >
+          <li style={sx} className={cn("menu__item")} key={id}>
             <div
               type="link"
               className="dd-list-link"
@@ -40,10 +41,7 @@ const MenuElement= ({
           </li>
         </Link>
       ) : (
-        <li
-          className={cn("menu__item")}
-          key={`category_${id}-${name}`}
-        >
+        <li className={cn("menu__item")} key={`category_${id}-${name}`}>
           <div
             type="link"
             className="dd-list-link"
@@ -71,7 +69,11 @@ const MenuElement= ({
 
           <ul className="submenu">
             {category?.map((elem) => (
-              <Link key={`category-item_${elem.id}`} to={`${elem.link}`}>
+              <Link
+                key={`category-item_${elem.id}`}
+                to={`${elem.link}`}
+                onClick={setActivePopup}
+              >
                 <li className="submenu__elem">{t(`${elem.value}`)}</li>
               </Link>
             ))}

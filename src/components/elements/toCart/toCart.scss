@@ -1,0 +1,26 @@
+@import '../../../scss/mixins.scss';
+
+.add-to-cart  {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .cancel {
+    margin-right: 10px;
+  }
+}
+
+.cart-item {
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart {
+  &__name {
+    @include _767 {
+      font-size: 16px!important;
+    }
+  }
+}

@@ -155,6 +155,11 @@
   }
 
   .header {
+
+    &__img {
+      display: none;
+    }
+    
     &__popup {
       display: inline-block;
       height: 100%;
@@ -206,7 +211,7 @@
     &__box {
       max-width: 100%;
     }
-}
+  }
 }
 
 @media screen and (max-width: 767px) {

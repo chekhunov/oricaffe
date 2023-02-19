@@ -6,6 +6,8 @@ import BaseButton from "../baseButton";
 
 import StateContext from "../../../utils/stateContext";
 
+import "./toCart.scss";
+
 export default function ToCart({ viewProps }) {
   const { t } = useTranslation();
   const [quantity, setQuantity] = useState(1);
@@ -51,12 +53,12 @@ export default function ToCart({ viewProps }) {
   };
 
   return (
-    <div className="add-to-cart h100p d-flex flex-column justify-between">
+    <div className="add-to-cart h100p">
       <div className="subtitle__cart text-center mb-20">
         {t("popup.choose_the_quantity")}
       </div>
 
-      <div className="cartItem d-flex justify-between align-center mb-50">
+      <div className="cart-item">
         <div className="d-flex align-center">
           <div
             className="cart__img ml-20"
@@ -73,7 +75,7 @@ export default function ToCart({ viewProps }) {
               </span>
             </span>
 
-            <p style={{ fontSize: "14px" }} className="cart__name">
+            <p className="cart__name">
               {name} {desc}
             </p>
           </div>

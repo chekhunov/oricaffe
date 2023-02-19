@@ -10,6 +10,7 @@ const Menu = ({
   activeId,
   setActiveId,
   activePopup,
+  setActivePopup,
 }) => {
   const [selection, setSelection] = React.useState([]);
 
@@ -44,6 +45,7 @@ const Menu = ({
           sx={sx}
           handleOnClick={handleOnClick}
           clickItem={clickItem}
+          setActivePopup={setActivePopup}
         />
       ))}
     </nav>

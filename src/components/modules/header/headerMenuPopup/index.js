@@ -7,18 +7,18 @@ export default function HeaderMenuPopup({
   menuItems,
   activeId,
   setActiveId,
+  setActivePopup,
 }) {
   return (
     <div className="menu-mobile">
       <div className="menu-mobile__inner">
         <Menu
+          setActivePopup={setActivePopup}
           activePopup={activePopup}
           menuItems={menuItems}
           activeId={activeId}
           setActiveId={setActiveId}
         />
-
-        {/* <ContactsAddress /> */}
       </div>
     </div>
   );
