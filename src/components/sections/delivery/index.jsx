@@ -1,5 +1,4 @@
 import React from "react";
-import cn from "classnames";
 import { useTranslation } from "react-i18next";
 
 import Button from "../../elements/button";

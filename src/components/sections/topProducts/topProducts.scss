@@ -5,11 +5,22 @@
   width: 100%;
   padding: 70px 20px 20px;
 
+  &__description {
+    margin-bottom: 20px;
+  }
+
+  &__price {
+    margin-left: 20px;
+    @include _767 {
+      margin-left: 0;
+    }
+  }
+
   .swiper-wrapper {
     padding: 0 0 40px;
 
     @include _767 {
-      padding: 0 0 10px;
+      padding: 0 0 35px;
     }
   }
 
@@ -125,5 +136,15 @@
 @media screen and (max-width: 767px) {
   .top-products {
     padding-bottom: 0;
+
+    &__description {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.swiper-pagination {
+  .swiper-pagination-bullet-active {
+    background: #8E0303!important;
   }
 }

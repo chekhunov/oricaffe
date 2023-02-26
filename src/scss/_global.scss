@@ -224,6 +224,33 @@
     }
   }
 
+  &__controls {
+    @include _767 {
+      flex-direction: column-reverse;
+      align-items: center;
+
+      .cancel {
+        min-width: 100%;
+        margin-top: 10px;
+        margin-right: 0;
+      }
+
+      .continue {
+        width: 100%!important;
+      }
+
+      .order {
+        width: 100%!important;
+      }
+    }
+  }
+
+  &__bottom {
+    @include _767 {
+      width: 100%;
+    }
+  }
+
   button {
     width: 100%;
     height: 55px;

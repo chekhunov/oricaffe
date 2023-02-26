@@ -11,7 +11,7 @@ import HowItWork from "../../components/sections/howItWork";
 import Box from "../../components/elements/box";
 import Headline from "../../components/modules/headline";
 
-import BannerMapCaffee from "../../assets/img/home/map-coffe.jpg";
+// import BannerMapCaffee from "../../assets/img/home/map-coffe.jpg";
 import BannerBottom from "../../assets/img/home/bottom.jpg";
 
 import "./home.scss";
@@ -127,7 +127,7 @@ export default function Home() {
           bgColor={bgColorAbout}
           textAccent={textAccentAbout}
         >
-          <Container>
+          <Container classN="category">
             <Category />
           </Container>
         </Headline>

@@ -1,30 +1,27 @@
-import MockAdapter from 'axios-mock-adapter';
-import { match, pathToRegexp } from 'path-to-regexp';
-import axios, { AxiosRequestConfig } from 'axios';
-import { apiRoutes } from './routes';
-import { topProducts } from '../state/topProducts';
-import { navMenu, menuSubheader, categoryProducts } from '../state/navMenu';
-import {
-  cartMocks
-} from '../state/cartMocks';
+import MockAdapter from "axios-mock-adapter";
+import { match, pathToRegexp } from "path-to-regexp";
+import axios, { AxiosRequestConfig } from "axios";
+import { apiRoutes } from "./routes";
+import { topProducts } from "../state/topProducts";
+import { navMenu, menuSubheader, categoryProducts } from "../state/navMenu";
+import { cartMocks } from "../state/cartMocks";
 // import { services } from '../fixtures/services';
 // import { InsuranceDetailsInterface } from '../interfaces/appointments';
 
-const ADMIN_TOKEN = 'admintoken';
-const MODERATOR_TOKEN = 'moderatortoken';
-// const COUNT = 5;
+const ADMIN_TOKEN = "admintoken";
+const MODERATOR_TOKEN = "moderatortoken";
 
 const PROFILES = [
   {
     token: ADMIN_TOKEN,
     profile: {
-      name: 'Admin',
+      name: "Admin",
     },
   },
   {
     token: MODERATOR_TOKEN,
     profile: {
-      name: 'Moderator',
+      name: "Moderator",
     },
   },
 ];
@@ -51,26 +48,6 @@ axios.interceptors.response.use((response) => {
 
 export const initializeMockAdapter = () => {
   const mock = new MockAdapter(axios, { delayResponse: 1000 });
-
-  // mock.onGet(apiRoutes.getUserList).reply((config) => {
-  //   if (!getUser(config)) {
-  //     return [403];
-  //   }
-
-  //   const { pageParam } = config.params;
-
-  //   const nextId =
-  //     appointments.length > pageParam * COUNT ? pageParam + 1 : undefined;
-
-  //   return [
-  //     200,
-  //     {
-  //       nextId,
-  //       data: appointments.slice((pageParam - 1) * COUNT, pageParam * COUNT),
-  //       count: appointments.length,
-  //     },
-  //   ];
-  // });
 
   mock.onPost(apiRoutes.getTokenByPassword).reply(() => {
     return [200, { token: ADMIN_TOKEN }];
@@ -146,7 +123,15 @@ export const initializeMockAdapter = () => {
     //   return [500];
     // }
 
-    return [200, { nav_menu: navMenu, menu_subheader: menuSubheader, category: categoryProducts, top_products: topProducts }];
+    return [
+      200,
+      {
+        nav_menu: navMenu,
+        menu_subheader: menuSubheader,
+        category: categoryProducts,
+        top_products: topProducts,
+      },
+    ];
   });
 
   mock.onGet(apiRoutes.getNavMenu).reply((config) => {
@@ -160,7 +145,14 @@ export const initializeMockAdapter = () => {
     //   return [500];
     // }
 
-    return [200, { nav_menu: navMenu, menu_subheader: menuSubheader, category: categoryProducts }];
+    return [
+      200,
+      {
+        nav_menu: navMenu,
+        menu_subheader: menuSubheader,
+        category: categoryProducts,
+      },
+    ];
   });
 
   mock.onGet(apiRoutes.getTopProductsList).reply((config) => {
@@ -251,13 +243,13 @@ export const initializeMockAdapter = () => {
     // }
 
     const data = JSON.parse(config.data);
-    
+
     // if (data.id === 2) {
     //   return [400];
     // }
-    
-    console.log('--------------------------')
-    console.log(data)
+
+    console.log("--------------------------");
+    console.log(data);
     const body = {
       ...data,
       // id: Math.floor(Math.random() * 10000000),

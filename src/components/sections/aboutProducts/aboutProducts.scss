@@ -18,23 +18,27 @@
     .contacts-btn {
       display: inline-flex
     }
+
+    &.ground {
+      @include _767 {
+        display: none;
+      }
+    }
   }
 
-  &__btn-mobile {
-    width: 100%;
+  .about-products__btn-mobile {
     display: none;
+  }
 
+  .catalog-btn,
+  .about-products__btn-mobile {
     @include _767 {
+      width: 100%;
       display: inline-flex;
       margin-top: 20px;
-      .contacts-btn {
-        width: 100%;
-        display: inline-flex;
-        margin-right: 0!important;
-
-        .atuin-btn {
-          width: 100%!important;
-        }
+      margin-right: 0!important;
+      .atuin-btn {
+        width: 100%!important;
       }
     }
   }
@@ -284,10 +288,10 @@
 @media screen and (max-width: 1024px) {
   .about-products {
 
-    &__content {
-      & a:last-child {
-        margin-right: 35px;
-      }
-    }
+    // &__content {
+    //   & a:last-child {
+    //     margin-right: 35px;
+    //   }
+    // }
   }
 }

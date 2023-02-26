@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { Navigation, Autoplay, A11y } from "swiper";
+import { Navigation, Pagination, Autoplay, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import TopProductsCard from "./topProductsCard";
@@ -8,20 +8,20 @@ import { useGetTopProducts } from "../../../api/topProductList";
 
 import "swiper/scss";
 import "swiper/scss/navigation";
+import "swiper/scss/pagination";
 
 import "./topProducts.scss";
 export default function TopProducts() {
-
   const { data } = useGetTopProducts();
   const { top_products } = data || [];
 
   return (
     <div className={"top-products"}>
       <Swiper
-        modules={[Navigation, Autoplay, A11y]}
+        modules={[Navigation, Autoplay, Pagination, A11y]}
         spaceBetween={50}
-        slidesPerView={4}
         navigation
+        pagination={{ clickable: true }}
         onSwiper={(swiper) => swiper}
         onSlideChange={() => console.log("slide change")}
         breakpoints={{
@@ -33,12 +33,11 @@ export default function TopProducts() {
           1440: { slidesPerView: 4, spaceBetween: 50 },
         }}
       >
-        {top_products &&
-          top_products.map((item, index) => (
-            <SwiperSlide key={item.code} virtualIndex={index}>
-              <TopProductsCard {...item} />
-            </SwiperSlide>
-          ))}
+        {top_products?.map((item, index) => (
+          <SwiperSlide key={item.code} virtualIndex={index}>
+            <TopProductsCard {...item} />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );

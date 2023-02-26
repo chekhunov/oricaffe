@@ -33,16 +33,43 @@
     justify-content: center;
 
     @include _767 {
-      padding: 50px 60px;
+      min-width: 95%;
+      padding: 20px 30px;
     }
 
     .closed-btn {
       width: 100%;
       display: flex;
       justify-content: flex-end;
+
+      @include _767 {
+        top: 10px;
+        right: 10px;
+      }
     
       &__line {
         margin-right: 0;
+      }
+    }
+  }
+
+  .cart {
+    &__img {
+      @include _767 {
+        margin-left: 0;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .cart-item {
+    @include _767 {
+      margin-bottom: 30px;
+    }
+
+    &__controls {
+      @include _767 {
+        padding: 0 10px 0 5px;
       }
     }
   }

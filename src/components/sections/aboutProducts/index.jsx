@@ -184,7 +184,7 @@ export default function AboutProducts() {
                         {t("about_products.ground_coffee")}
                       </div>
 
-                      <div className="about-products__btn">
+                      <div className="about-products__btn ground">
                         <Button
                           sx={coffeGround.sx}
                           link={coffeGround.urlButton}

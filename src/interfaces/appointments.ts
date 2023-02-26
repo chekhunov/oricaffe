@@ -10,3 +10,11 @@ export interface TopProductCardInterface {
   info: string
   link: string
 }
+
+export interface UserInterface {
+  id: number
+  email: string
+  password: string
+  banned: boolean
+  banReason: string
+}

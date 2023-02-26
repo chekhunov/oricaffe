@@ -65,8 +65,8 @@ export default function ToCart({ viewProps }) {
             style={{ backgroundImage: "url(/" + imgUrl + ")" }}
           ></div>
 
-          <div className="mr-20 d-flex align-center">
-            <span className="d-flex flex-column mr-40">
+          <div className="cart-item__headline d-flex">
+            <span className="cart-item__code d-flex flex-column">
               <span style={{ fontSize: "10px" }} className="cart__label">
                 {t("cart_page.product_code")}
               </span>
@@ -81,7 +81,7 @@ export default function ToCart({ viewProps }) {
           </div>
         </div>
 
-        <div className="d-flex align-center pr-20 pl-20">
+        <div className="cart-item__controls d-flex align-center">
           <button
             className="cart__btn-quantity"
             onClick={() => setQuantity(quantity - 1)}
@@ -124,7 +124,7 @@ export default function ToCart({ viewProps }) {
           <li className={"d-flex"}>
             <span>{t("cart_page.price")}</span>
             <div></div>
-            <b>{price}</b>
+            <b>{price} грн.</b>
           </li>
 
           <li className={"d-flex"}>
@@ -134,7 +134,7 @@ export default function ToCart({ viewProps }) {
           </li>
         </ul>
 
-        <div className="d-flex justify-between">
+        <div className="cart-total-block__controls d-flex justify-between">
           <BaseButton
             name={cancel_attributes.button}
             click={handleCancelClick}
@@ -142,7 +142,7 @@ export default function ToCart({ viewProps }) {
             sx={cancel_attributes.sx}
           />
 
-          <div className="d-flex">
+          <div className="cart-total-block__bottom d-flex">
             <BaseButton
               name={continue_attributes.button}
               click={handleContinueClick}
