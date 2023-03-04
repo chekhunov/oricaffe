@@ -38,9 +38,13 @@ export default function Home() {
   const [isHeigthAbout, setIsHeigthAbout] = useState(0);
   const [textAccentAbout, setTextAccentAbout] = useState(colorDefault);
 
+  const [bgColorProducts, setBgColorProducts] = useState(bgColorDefault);
+  const [textAccentProducts, setTextAccentProducts] = useState(colorDefault);
+
   const [colortTopProducts, setColortTopProducts] = useState(colorDefault);
+  const [bgColorTopProducts, setBgColorTopProducts] = useState(bgColorDefault);
   const [isHeigthtTopProducts, setIsHeigthtTopProducts] = useState(0);
-  const [textAccentTopProducts, setTextAccenttTopProducts] =
+  const [textAccentTopProducts, setTextAccentTopProducts] =
     useState(colorDefault);
 
   // calculation number heigth %
@@ -90,19 +94,23 @@ export default function Home() {
       setBgColor(bgColorDefault);
     }
 
-    //about title
-    isActiveText(640, setTextAccentAbout, setBgColorAbout);
-    isActiveLine(660, 680, setColorAbout, setIsHeigthAbout);
+    isActiveText(940, setTextAccentAbout, setBgColorAbout);
+    isActiveLine(960, 980, setColorAbout, setIsHeigthAbout);
 
-    if (scrollPlace < 680) {
+    if (scrollPlace < 980) {
       setColorAbout(colorDefault);
     }
 
-    //tTopProducts title
-    isActiveText(2440, setTextAccenttTopProducts);
-    isActiveLine(2480, 2500, setColortTopProducts, setIsHeigthtTopProducts);
+    isActiveText(1600, setTextAccentProducts, setBgColorProducts);
 
-    if (scrollPlace < 2500) {
+    if (scrollPlace < 1600) {
+      setBgColorProducts(colorDefault);
+    }
+
+    isActiveText(3400, setTextAccentTopProducts, setBgColorTopProducts);
+    isActiveLine(3400, 3420, setColortTopProducts, setIsHeigthtTopProducts);
+
+    if (scrollPlace < 3420) {
       setColortTopProducts(colorDefault);
     }
   };
@@ -132,13 +140,16 @@ export default function Home() {
           </Container>
         </Headline>
 
-        <AboutProducts />
+        <AboutProducts
+          bgColor={bgColorProducts}
+          textAccent={textAccentProducts}
+        />
 
         <Headline
           name="top-products"
           isHeigth={isHeigthtTopProducts}
           color={colortTopProducts}
-          bgColor={bgColorAbout}
+          bgColor={bgColorTopProducts}
           textAccent={textAccentTopProducts}
           sx={{ marginBottom: "100px" }}
         >

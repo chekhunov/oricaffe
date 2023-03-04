@@ -51,12 +51,14 @@
   }
 
   &__desc {
+    width: fit-content;
     display: flex;
     align-items: baseline;
     margin-bottom: 20px;
     font-size: 14px;
     font-weight: 400;
     color: #CDBAAA;
+    padding: 5px 10px;
     text-transform: uppercase;
 
     @media screen and (max-width: 767px) {

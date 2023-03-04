@@ -48,13 +48,21 @@ const coffeGreen = {
   },
 };
 
-export default function AboutProducts() {
+export default function AboutProducts({ textAccent, bgColor }) {
   const { t } = useTranslation();
+
+  console.log(textAccent, "ffdg");
 
   return (
     <section className="about-products">
       <div className="container">
-        <h2 className="about-products__desc">
+        <h2
+          className="about-products__desc"
+          style={{
+            color: textAccent,
+            backgroundColor: bgColor,
+          }}
+        >
           {t("production_company")}
           <a
             className="oriental-link ml-10"
@@ -62,7 +70,7 @@ export default function AboutProducts() {
             target={"_blank"}
             rel="noreferrer"
           >
-            Oriental caffe
+            Orientalcaffe
           </a>
         </h2>
 
@@ -145,7 +153,7 @@ export default function AboutProducts() {
                     {t("about_products.grain_coffee")}
                   </div>
                   <p className="about-row__text mb-20">
-                    <span className="about__text-accent">Oriental caffe</span> –{" "}
+                    <span className="about__text-accent">Orientalcaffe</span> –{" "}
                     {t("about_products.this_is_traditional")}
                   </p>
                   <p className="about-row__text mobile paragraph">

@@ -16,13 +16,13 @@ export default function About() {
               <div className="about__text">
                 <span className="about__meta-text pb-20">
                   {t("company")}
-                  <span className="about__text-accent">Oriental caffe</span>
+                  <span className="about__text-accent">Orientalcaffe</span>
                   {t("about_section.headline")}
                 </span>
                 <p className="about__text-desc">
                   {t("company")}
                   <span className="about__text-accent">
-                    Oriental caffe (Oriental caffè)
+                    Orientalcaffe (Orientalcaffè)
                   </span>
                   – {t("about_section.about_company")}{" "}
                   <span style={{ color: "red" }}>Samuele</span>,{" "}
