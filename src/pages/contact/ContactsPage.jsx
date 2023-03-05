@@ -4,7 +4,7 @@ import { Breadcrumbs, Contacts } from "../../components";
 
 import { Divider } from "@material-ui/core";
 
-import "./contacts.scss";
+import "./Contact.scss";
 
 let breadcrumbs = [
   {
@@ -19,13 +19,13 @@ let breadcrumbs = [
   },
 ];
 
-export default function PageContacts() {
+const ContactPage = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="page-contacts mt-50">
+    <section className="page-contacts">
       <div className="container-big">
-        <div className="page-contacts__inner pt-50">
+        <div className="page-contacts__inner pt-30">
           <Breadcrumbs breadcrumbs={breadcrumbs} />
 
           <div className="page-contacts__title">{t("contacts")}</div>
@@ -39,4 +39,6 @@ export default function PageContacts() {
       </div>
     </section>
   );
-}
+};
+
+export default ContactPage;

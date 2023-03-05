@@ -8,13 +8,19 @@ import avatar4 from "../../../assets/img/avatar4.jpg";
 
 import "./reviews.scss";
 
-export default function Reviews() {
+export default function Reviews({ bgColor, textAccent }) {
   const { t } = useTranslation();
 
   return (
     <section className="reviews">
       <div className="container">
-        <h2 className="reviews__desc">
+        <h2
+          className="reviews__desc"
+          style={{
+            color: textAccent,
+            backgroundColor: bgColor,
+          }}
+        >
           {t("reviews_section.reviews")}
           <a
             className="oriental-link ml-10"

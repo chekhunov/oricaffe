@@ -3,14 +3,14 @@ import { Routes, Route, useLocation } from "react-router-dom";
 
 import { pageRoutes } from "./utils/routes";
 import LayoutDefault from "./components/layout";
-import {
-  NotFound,
-  PageAbout,
-  PageContacts,
-  PageCart,
-  DetailsProductCard,
-} from "./pages";
+import { DetailsProductCard } from "./pages";
 import { Home } from "./pages/home";
+import NotFound from "./pages/notFound";
+import CartPage from "./pages/cart";
+import AboutPage from "./pages/about";
+import BlogPage from "./pages/blog";
+import ContactPage from "./pages/contact";
+
 import StateContext from "./utils/stateContext";
 import { CartProvider } from "react-use-cart";
 
@@ -58,9 +58,10 @@ function Content() {
     >
       <Routes location={displayLocation}>
         <Route path={pageRoutes.main} element={<Home />} />
-        <Route path={pageRoutes.about} element={<PageAbout />} />
-        <Route path={pageRoutes.contacts} element={<PageContacts />} />
-        <Route path={pageRoutes.cart} element={<PageCart />} />
+        <Route path={pageRoutes.about} element={<AboutPage />} />
+        <Route path={pageRoutes.contact} element={<ContactPage />} />
+        <Route path={pageRoutes.cart} element={<CartPage />} />
+        <Route path={pageRoutes.blog} element={<BlogPage />} />
         <Route
           path={pageRoutes.catalog + "/:id"}
           element={<DetailsProductCard />}

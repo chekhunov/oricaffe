@@ -14,7 +14,8 @@ export const apiRoutes = {
 export const pageRoutes = {
   main: "/",
   about: "/about",
-  contacts: "/contacts",
+  blog: "/blog",
+  contact: "/contacts",
   catalog: "/catalog",
   cart: "/cart",
   not_found: "/404",

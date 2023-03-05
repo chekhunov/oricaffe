@@ -84,7 +84,7 @@
   "more_info": "More Info",
   "cart": "Cart",
   "make_an_order": "Make an order",
-  "no_hassle": "No hassle. A couple of clicks and coffee will be at your home.",
+  "no_hassle": "No hassle. With a couple of clicks and coffee will be at your home.",
   "we_quite_easily": "We quite easily and quickly offer ways to transport various goods across the territory of Ukraine and neighboring countries by road, it takes a little more time to calculate air transportation. You can compare our routes with other companies and you will see that because this is not our main source of income, we can offer these services at a lower price, but at the same high level. You can order the services listed above by calling us, leaving a request on the website, writing in the feedback form, or sending us an email, which can be found in contacts.",
   "we_cooperate_with": "We cooperate with reliable cargo transportation companies, as well as offer high-quality logistics.",
   "since_our_production": "Since our production also works with foreign customers, we often need to develop logistics routes across Ukraine and the EU. Therefore, if we can do it for ourselves, we can do it for you too.",
@@ -106,8 +106,17 @@
   "blog_section": {
     "recommendations_from": "Recommendations from our experts:"
   },
+  "blog": "Blog",
   "reviews_section": {
     "reviews": "Reviews",
     "latest_customer": "Latest customer reviews of our store:"
+  },
+  "how_work": {
+    "leave_request": "Leave a request",
+    "our_managers": "Our managers will help you make a choice",
+    "make_payment": "Make a payment",
+    "choose_payment": "Choose a payment method convenient for you",
+    "arrange_delivery": "Arrange delivery",
+    "arrange_delivery_receive": "Arrange delivery and receive goods"
   }
 }

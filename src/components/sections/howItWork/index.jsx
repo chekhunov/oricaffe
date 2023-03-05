@@ -27,30 +27,25 @@ export default function HowItWork() {
           <div className="how-it-work__box box d-flex justify-center align-center">
             <div className="box__item">
               <span className="box__num">1</span>
-              <div className="box__title">Leave a request</div>
-              <div className="box__desc">
-                Our managers will help you make a choice
-              </div>
+              <div className="box__title">{t("how_work.leave_request")}</div>
+              <div className="box__desc">{t("how_work.our_managers")}</div>
             </div>
+
             <div className="box__item">
               <span className="box__num">2</span>
-              <div className="box__title">
-                Make a payment
-              </div>
-              <div className="box__desc">
-                Choose a payment method convenient for you
-              </div>
+              <div className="box__title">{t("how_work.make_payment")}</div>
+              <div className="box__desc">{t("how_work.choose_payment")}</div>
             </div>
+
             <div className="box__item">
               <span className="box__num">3</span>
-              <div className="box__title">
-                Arrange delivery
-              </div>
+              <div className="box__title">{t("how_work.arrange_delivery")}</div>
               <div className="box__desc">
-                Arrange delivery and receive goods
+                {t("how_work.arrange_delivery_receive")}
               </div>
             </div>
           </div>
+          
           <Button
             sx={delivery_attributes.sx}
             link={delivery_attributes.urlButton}

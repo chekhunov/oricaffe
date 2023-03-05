@@ -4,8 +4,8 @@ import { Info, Breadcrumbs } from "../../components";
 import { useTranslation } from "react-i18next";
 import { useCart } from "react-use-cart";
 
-import "./cart.scss";
-function Cart({ onClosed, onRemove, items = [] }) {
+import "./Cart.scss";
+const CartPage = ({ onClosed, onRemove, items = [] }) => {
   const breadcrumbs = [
     {
       id: 0,
@@ -35,7 +35,7 @@ function Cart({ onClosed, onRemove, items = [] }) {
   };
 
   return (
-    <div className="cart mt-50 mb-50">
+    <div className="cart mb-50">
       <div className="container-big">
         <div className="d-flex justify-between align-center pt-30 mb-30">
           <Breadcrumbs breadcrumbs={breadcrumbs} />
@@ -175,6 +175,6 @@ function Cart({ onClosed, onRemove, items = [] }) {
       </div>
     </div>
   );
-}
+};
 
-export default Cart;
+export default CartPage;

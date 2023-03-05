@@ -51,8 +51,6 @@ const coffeGreen = {
 export default function AboutProducts({ textAccent, bgColor }) {
   const { t } = useTranslation();
 
-  console.log(textAccent, "ffdg");
-
   return (
     <section className="about-products">
       <div className="container">

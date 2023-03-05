@@ -13,6 +13,9 @@ export default function Delivery() {
   const delivery_attributes = {
     button: "more_info",
     urlButton: "delivery",
+    sx: {
+      width: "200px",
+    },
   };
 
   return (

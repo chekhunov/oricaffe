@@ -41,11 +41,34 @@ export default function Home() {
   const [bgColorProducts, setBgColorProducts] = useState(bgColorDefault);
   const [textAccentProducts, setTextAccentProducts] = useState(colorDefault);
 
-  const [colortTopProducts, setColortTopProducts] = useState(colorDefault);
+  const [colorTopProducts, setColorTopProducts] = useState(colorDefault);
   const [bgColorTopProducts, setBgColorTopProducts] = useState(bgColorDefault);
-  const [isHeigthtTopProducts, setIsHeigthtTopProducts] = useState(0);
+  const [isHeigthTopProducts, setIsHeigthTopProducts] = useState(0);
   const [textAccentTopProducts, setTextAccentTopProducts] =
     useState(colorDefault);
+
+  const [colorPackage, setColorPackage] = useState(colorDefault);
+  const [bgColorPackage, setBgColorPackage] = useState(bgColorDefault);
+  const [isHeigthPackage, setIsHeigthPackage] = useState(0);
+  const [textAccentPackage, setTextAccentPackage] = useState(colorDefault);
+
+  const [colorDelivery, setColorDelivery] = useState(colorDefault);
+  const [bgColorDelivery, setBgColorDelivery] = useState(bgColorDefault);
+  const [isHeigthDelivery, setIsHeigthDelivery] = useState(0);
+  const [textAccentDelivery, setTextAccentDelivery] = useState(colorDefault);
+
+  const [colorBlog, setColorBlog] = useState(colorDefault);
+  const [bgColorBlog, setBgColorBlog] = useState(bgColorDefault);
+  const [isHeigthBlog, setIsHeigthBlog] = useState(0);
+  const [textAccentBlog, setTextAccentBlog] = useState(colorDefault);
+
+  const [bgColorReviews, setBgColorReviews] = useState(bgColorDefault);
+  const [textAccentReviews, setTextAccentReviews] = useState(colorDefault);
+
+  const [colorVideo, setColorVideo] = useState(colorDefault);
+  const [bgColorVideo, setBgColorVideo] = useState(bgColorDefault);
+  const [isHeigthVideo, setIsHeigthVideo] = useState(0);
+  const [textAccentVideo, setTextAccentVideo] = useState(colorDefault);
 
   // calculation number heigth %
   function procentAccentBlock(num) {
@@ -104,14 +127,48 @@ export default function Home() {
     isActiveText(1600, setTextAccentProducts, setBgColorProducts);
 
     if (scrollPlace < 1600) {
-      setBgColorProducts(colorDefault);
+      setTextAccentProducts(colorDefault);
     }
 
     isActiveText(3400, setTextAccentTopProducts, setBgColorTopProducts);
-    isActiveLine(3400, 3420, setColortTopProducts, setIsHeigthtTopProducts);
+    isActiveLine(3400, 3420, setColorTopProducts, setIsHeigthTopProducts);
 
     if (scrollPlace < 3420) {
-      setColortTopProducts(colorDefault);
+      setColorTopProducts(colorDefault);
+    }
+
+    isActiveText(5000, setTextAccentPackage, setBgColorPackage);
+    isActiveLine(5000, 5020, setColorPackage, setIsHeigthPackage);
+
+    if (scrollPlace < 5020) {
+      setColorPackage(colorDefault);
+    }
+
+    isActiveText(5800, setTextAccentDelivery, setBgColorDelivery);
+    isActiveLine(5800, 5820, setColorDelivery, setIsHeigthDelivery);
+
+    if (scrollPlace < 5820) {
+      setColorDelivery(colorDefault);
+    }
+
+    isActiveText(7700, setTextAccentBlog, setBgColorBlog);
+    isActiveLine(7700, 7720, setColorBlog, setIsHeigthBlog);
+
+    if (scrollPlace < 7720) {
+      setColorBlog(colorDefault);
+    }
+
+    isActiveText(8600, setTextAccentReviews, setBgColorReviews);
+
+    if (scrollPlace < 8600) {
+      setTextAccentReviews(colorDefault);
+    }
+
+    isActiveText(9200, setTextAccentVideo, setBgColorVideo);
+    isActiveLine(9200, 9220, setColorVideo, setIsHeigthVideo);
+
+    if (scrollPlace < 9220) {
+      setColorVideo(colorDefault);
     }
   };
 
@@ -147,8 +204,8 @@ export default function Home() {
 
         <Headline
           name="top-products"
-          isHeigth={isHeigthtTopProducts}
-          color={colortTopProducts}
+          isHeigth={isHeigthTopProducts}
+          color={colorTopProducts}
           bgColor={bgColorTopProducts}
           textAccent={textAccentTopProducts}
           sx={{ marginBottom: "100px" }}
@@ -168,10 +225,10 @@ export default function Home() {
       <Box name="base-set set-2">
         <Headline
           name="package"
-          isHeigth={{}}
-          color={{}}
-          bgColor={bgColorAbout}
-          textAccent={textAccentTopProducts}
+          isHeigth={isHeigthPackage}
+          color={colorPackage}
+          bgColor={bgColorPackage}
+          textAccent={textAccentPackage}
         >
           <Container>
             <Package />
@@ -180,10 +237,10 @@ export default function Home() {
 
         <Headline
           name="delivery"
-          isHeigth={{}}
-          color={{}}
-          bgColor={bgColorAbout}
-          textAccent={textAccentTopProducts}
+          isHeigth={isHeigthDelivery}
+          color={colorDelivery}
+          bgColor={bgColorDelivery}
+          textAccent={textAccentDelivery}
           sx={{ marginBottom: "100px" }}
         >
           <Container>
@@ -197,24 +254,24 @@ export default function Home() {
       <Box name="base-set set-4">
         <Headline
           name="in_our_blog"
-          isHeigth={{}}
-          color={{}}
-          bgColor={bgColorAbout}
-          textAccent={textAccentTopProducts}
+          isHeigth={isHeigthBlog}
+          color={colorBlog}
+          bgColor={bgColorBlog}
+          textAccent={textAccentBlog}
         >
           <Container>
             <Blog />
           </Container>
         </Headline>
 
-        <Reviews />
+        <Reviews bgColor={bgColorReviews} textAccent={textAccentReviews} />
 
         <Headline
           name="in_our_blog"
-          isHeigth={{}}
-          color={{}}
-          bgColor={bgColorAbout}
-          textAccent={textAccentTopProducts}
+          isHeigth={isHeigthVideo}
+          color={colorVideo}
+          bgColor={bgColorVideo}
+          textAccent={textAccentVideo}
         >
           <Container>
             <Video />
