@@ -18,6 +18,7 @@ export const pageRoutes = {
   contact: "/contacts",
   catalog: "/catalog",
   cart: "/cart",
+  terms: "/terms-and-conditions",
   not_found: "/404",
   all: "*",
   auth: "/auth",

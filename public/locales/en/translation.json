@@ -118,5 +118,25 @@
     "choose_payment": "Choose a payment method convenient for you",
     "arrange_delivery": "Arrange delivery",
     "arrange_delivery_receive": "Arrange delivery and receive goods"
+  },
+  "not_found": {
+    "there_is_coffee": "If there is coffee, there is a way",
+    "sorry": "Sorry, we couldn’t fins this page. But don’t worry, you can find plenty of other things on our",
+    "homepage": "homepage."
+  },
+  "video_coffee": "Video",
+  "questions": {
+    "faq": "Frequently asked questions",
+    "help": "We are here to help you with the most frequently asked questions. If you did not find the answer, you can go to the frequently asked questions page for more information or contact us.",
+    "how_work": "How does it work?",
+    "every_day": "Every day from 9:00 a.m. to 6:00 p.m. you need to contact our specialist who will help you place the order, make payment and send the goods.",
+    "can_cancel": "Can I cancel cancel my order?",
+    "cancel": "The buyer has the right to act in advance at any time without giving reasons. You can make an appointment at \"Cart\" or contact the sales manager.",
+    "what_cancel": "What happens if a customer cancels their order?",
+    "here": "here.",
+    "customers_accept": "Customers accept the Orientalcaffe terms and conditions, including our cancellation clause. Depending on how close to the event they cancel, the customer may be given a full refund, they may lose 50% of the deposit, or the entire payment. For more information on our cancellation policy click",
+    "pre_order": "Can I pre order?",
+    "pre_order_anytime": "Yes, you can pre-order anytime and get a discount. To do this, you need to contact our manager.",
+    "pre_order": "Can I pre order?"
   }
 }

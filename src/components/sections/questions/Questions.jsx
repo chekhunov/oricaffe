@@ -1,23 +1,19 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
+import { pageRoutes } from "../../../utils/routes";
 
 import "./questions.scss";
-
 const Questions = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="questions">
       <div className="container-big">
         <div className="questions__inner d-flex justify-between align-start">
           <div className="questions__column left">
-            <div className="title questions__title">
-              Часто задаваемые вопросы
-            </div>
+            <div className="title questions__title">{t("questions.faq")}</div>
 
-            <p className="questions__descriptions">
-              Мы здесь, чтобы помочь вам с наиболее часто задаваемыми вопросами.
-              Если вы не нашли ответ, вы можете перейти на страницу часто
-              задаваемых вопросов для получения дополнительной информации или
-              связаться с нами.
-            </p>
+            <p className="questions__descriptions">{t("questions.help")}</p>
           </div>
 
           <div className="questions__column right">
@@ -25,80 +21,8 @@ const Questions = () => {
               <li className="questions__item">
                 <div className="questions__headline">
                   <div className="questions__item-title d-flex align-center">
-                    Как это работает?
-                    <svg
-                      className={"questions__item-svg"}
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M2.75018 12C2.75018 17.108 6.89118 21.25 12.0002 21.25C17.1082 21.25 21.2502 17.108 21.2502 12C21.2502 6.892 17.1082 2.75 12.0002 2.75C6.89118 2.75 2.75018 6.892 2.75018 12Z"
-                        stroke="#2B304F"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M8.52899 10.5576L12 14.0436L15.471 10.5576"
-                        stroke="#2B304F"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
-                </div>
-                <p className="questions__item-desc">
-                  Ежедневно с 9.00 до 18.00 вам необходимо связаться с нашим
-                  специалистом, который поможет оформить заказ, произвести
-                  оплату и отправить товар.
-                </p>
-              </li>
+                    {t("questions.how_work")}
 
-              <li className="questions__item">
-                <div className="questions__headline">
-                  <div className="questions__item-title d-flex align-center">
-                    Могу ли я отменить отменить свой заказ?
-                    <svg
-                      className={"questions__item-svg"}
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        d="M2.75018 12C2.75018 17.108 6.89118 21.25 12.0002 21.25C17.1082 21.25 21.2502 17.108 21.2502 12C21.2502 6.892 17.1082 2.75 12.0002 2.75C6.89118 2.75 2.75018 6.892 2.75018 12Z"
-                        stroke="#2B304F"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                      <path
-                        d="M8.52899 10.5576L12 14.0436L15.471 10.5576"
-                        stroke="#2B304F"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  </div>
-                </div>
-
-                <p className="questions__item-desc">text</p>
-              </li>
-
-              <li className="questions__item">
-                <div className="questions__headline">
-                  <div className="questions__item-title d-flex align-center">
-                    Что произойдет, если клиент отменит свой заказ?
                     <svg
                       className={"questions__item-svg"}
                       width="24"
@@ -128,19 +52,51 @@ const Questions = () => {
                 </div>
 
                 <p className="questions__item-desc">
-                  Клиенты принимают положения и условия Orientalcaffe, включая
-                  наш пункт об отмене. В зависимости от того, насколько близко к
-                  событию они отменяют, клиенту может быть возвращен полный
-                  возврат средств, он может потерять 50% депозита или весь
-                  платеж. Для получения более подробной информации о нашей
-                  политике отмены нажмите здесь.
+                  {t("questions.every_day")}
                 </p>
               </li>
 
               <li className="questions__item">
                 <div className="questions__headline">
                   <div className="questions__item-title d-flex align-center">
-                    Могу ли я сделать пред заказ?
+                    {t("questions.can_cancel")}
+
+                    <svg
+                      className={"questions__item-svg"}
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M2.75018 12C2.75018 17.108 6.89118 21.25 12.0002 21.25C17.1082 21.25 21.2502 17.108 21.2502 12C21.2502 6.892 17.1082 2.75 12.0002 2.75C6.89118 2.75 2.75018 6.892 2.75018 12Z"
+                        stroke="#2B304F"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M8.52899 10.5576L12 14.0436L15.471 10.5576"
+                        stroke="#2B304F"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </div>
+                </div>
+
+                <p className="questions__item-desc">{t("questions.cancel")}</p>
+              </li>
+
+              <li className="questions__item">
+                <div className="questions__headline">
+                  <div className="questions__item-title d-flex align-center">
+                    {t("questions.what_cancel")}
+
                     <svg
                       className={"questions__item-svg"}
                       width="24"
@@ -170,14 +126,55 @@ const Questions = () => {
                 </div>
 
                 <p className="questions__item-desc">
-                  Да, вы можете сделать предзаказ в любое время и получить
-                  скидку. Для этого вам необходимо связаться с нашим менеджером.
+                  {t("questions.customers_accept")}
+                  <a className="questions__item-link" href={pageRoutes.terms}>
+                    {t("questions.here")}
+                  </a>
                 </p>
               </li>
 
               <li className="questions__item">
                 <div className="questions__headline">
                   <div className="questions__item-title d-flex align-center">
+                    {t("questions.pre_order")}
+
+                    <svg
+                      className={"questions__item-svg"}
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M2.75018 12C2.75018 17.108 6.89118 21.25 12.0002 21.25C17.1082 21.25 21.2502 17.108 21.2502 12C21.2502 6.892 17.1082 2.75 12.0002 2.75C6.89118 2.75 2.75018 6.892 2.75018 12Z"
+                        stroke="#2B304F"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M8.52899 10.5576L12 14.0436L15.471 10.5576"
+                        stroke="#2B304F"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </div>
+                </div>
+
+                <p className="questions__item-desc">
+                  {t("questions.pre_order_anytime")}
+                </p>
+              </li>
+
+              <li className="questions__item">
+                <div className="questions__headline">
+                  <div className="questions__item-title d-flex align-center">
+                    {t("questions.pre_order_anytime")}
                     Когда я получу товар, если оформил предзаказ?
                     <svg
                       className={"questions__item-svg"}

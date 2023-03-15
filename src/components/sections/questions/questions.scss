@@ -88,6 +88,11 @@
     }
   }
 
+  &__item-link {
+    display: inline-flex;
+    margin-left: 4px;
+  }
+
   &__item-svg {
     margin-top: -5px;
     transform: rotate(0deg);

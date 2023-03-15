@@ -3,13 +3,13 @@ import { Routes, Route, useLocation } from "react-router-dom";
 
 import { pageRoutes } from "./utils/routes";
 import LayoutDefault from "./components/layout";
-import { DetailsProductCard } from "./pages";
-import { Home } from "./pages/home";
+import Home from "./pages/home";
 import NotFound from "./pages/notFound";
 import CartPage from "./pages/cart";
 import AboutPage from "./pages/about";
 import BlogPage from "./pages/blog";
 import ContactPage from "./pages/contact";
+import DetailsProductCard from "./pages/catalog";
 
 import StateContext from "./utils/stateContext";
 import { CartProvider } from "react-use-cart";

@@ -24,54 +24,43 @@ export default function Blog() {
       </div>
 
       <div className="blog__content d-flex">
-        <img
-          className="blog-img"
-          src={BlogImg}
-          alt="blog"
-        />
+        <img className="blog-img" src={BlogImg} alt="blog" />
 
         <div className="blog__row blog-row p-20 d-flex flex-column justify-between">
           <a className="blog-row__element d-flex mb-20" href="/blog">
-            <img
-              className="blog-row__img"
-              src={BlogEl1}
-              alt="blog-comment"
-            />
+            <img className="blog-row__img" src={BlogEl1} alt="blog-comment" />
 
             <div className="blog-row__content">
-              <div className="blog-row__headline">КОФЕ 29/08/2022</div>
-              <div className="blog-row__text">Как выбрать молотый кофе? 9 советов от эксперта.</div>
+              <div className="blog-row__headline">КАВА 29/08/2022</div>
+              <div className="blog-row__text">
+                Як вибрати мелену каву? 9 порад від експерта.
+              </div>
             </div>
           </a>
 
           <a className="blog-row__element d-flex mb-20" href="/blog">
-            <img
-              className="blog-row__img"
-              src={BlogEl1}
-              alt="blog-comment"
-            />
+            <img className="blog-row__img" src={BlogEl1} alt="blog-comment" />
 
             <div className="blog-row__content">
-              <div className="blog-row__headline">КОФЕ 29/08/2022</div>
-              <div className="blog-row__text">Различия зёрен арабики и робусты. В чём разница во вкусе?</div>
+              <div className="blog-row__headline">КАВА 03/11/2022</div>
+              <div className="blog-row__text">
+                Відмінності зерен арабіки та робусти. У чому різниця смаку?
+              </div>
             </div>
           </a>
 
           <a className="blog-row__element d-flex" href="/blog">
-            <img
-              className="blog-row__img"
-              src={BlogEl1}
-              alt="blog-comment"
-            />
+            <img className="blog-row__img" src={BlogEl1} alt="blog-comment" />
 
             <div className="blog-row__content">
-              <div className="blog-row__headline">КОФЕ 29/08/2022</div>
-              <div className="blog-row__text">Обзор кофе Oriental-caffee Rococo.</div>
+              <div className="blog-row__headline">КАВА 21/12/2022</div>
+              <div className="blog-row__text">
+                Огляд кави Orientalcaffee Rococo.
+              </div>
             </div>
           </a>
         </div>
       </div>
-
     </div>
   );
 }
