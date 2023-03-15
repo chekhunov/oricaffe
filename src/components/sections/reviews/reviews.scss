@@ -1,0 +1,89 @@
+@import '../../../scss/vars.scss';
+@import '../../../scss/mixins.scss';
+
+.reviews {
+  position: relative;
+  margin-bottom: 150px;
+
+  &::before {
+    content: '';
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 1px;
+    color: rgba(205, 186, 170, 0.5);
+  }
+
+  &__desc {
+    width: fit-content;
+    margin-left: -20px;
+    margin-bottom: 20px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: baseline;
+    font-size: 14px;
+    font-weight: 400;
+    color: #CDBAAA;
+    text-transform: uppercase;
+
+    @media screen and (max-width: 767px) {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__subtitle {
+    text-align: left;
+  }
+
+  &__row {
+    justify-content: space-between;
+    margin-bottom: 40px;
+
+    @include _767 {
+      margin-bottom: 0;
+      flex-direction: column;
+    }
+
+    .reviews__element {
+      width: calc(30%);
+
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+
+      @include _767 {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+.element {
+  &__headline {
+    margin-bottom: 20px;
+  }
+
+  &__fullname {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  &__date {
+    font-style: italic;
+  }
+
+  &__img {
+    height: 80px;
+    width: 80px;
+    margin-right: 10px;
+    border-radius: 50%;
+  }
+}

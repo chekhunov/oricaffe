@@ -1,0 +1,88 @@
+@import '../../../scss/vars.scss';
+@import '../../../scss/mixins.scss';
+
+.delivery {
+  position: relative;
+  padding-top: 30px;
+
+  &::before {
+      content: '';
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 1px;
+      color: rgba(205, 186, 170, 0.5);
+  }
+
+  &__content {
+    height: 100%;
+    padding: 70px 0;
+
+    @include _1024 {
+      padding: 70px 0 0;
+    }
+  }
+
+  &__content-block {
+    @include _767 {
+      .container {
+        padding: 0;
+      }
+    }
+  }
+
+  &__row {
+    width: 100%;
+  }
+
+  .delivery-btn {
+    width: 200px;
+
+    @include _767 {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+}
+
+.delivery-row {
+  width: 100%;
+  color: $default;
+  background-color: rgba(255,255,255, 55%);
+  border: 0.5px solid $hover;
+  border-radius: 15px;
+  @extend%libreBaskervilleItalic-400;
+
+  &__title {
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+
+  &__text {
+    font-size: 16px;
+    flex-grow: 1;
+  }
+
+  &__column-left {
+    height: auto;
+    min-height: 100%;
+    width: calc(50% - 20px);
+    margin-right: 20px;
+
+    @include _1024 {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+
+  &__img {
+    max-height: 440px;
+    width: calc(50%);
+    margin-right: 0;
+    border-radius: 10px;
+
+    @include _1024 {
+      display: none;
+    }
+  }
+}

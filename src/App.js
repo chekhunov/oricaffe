@@ -1,26 +1,38 @@
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 
-import { Home, NotFound, PageContacts } from "./pages";
-import { Header, Footer, Popup } from "./components";
-import SocialBtn from './components/elements/socialBtn'
-import { Context } from "./context";
+import { pageRoutes } from "./utils/routes";
+import LayoutDefault from "./components/layout";
+import Home from "./pages/home";
+import NotFound from "./pages/notFound";
+import CartPage from "./pages/cart";
+import AboutPage from "./pages/about";
+import BlogPage from "./pages/blog";
+import ContactPage from "./pages/contact";
+import DetailsProductCard from "./pages/catalog";
 
-export default function App({ appState }) {
-  const [context, setContext] = useState([]);
+import StateContext from "./utils/stateContext";
+import { CartProvider } from "react-use-cart";
+
+export default function App() {
+  const [stateContext, setStateContext] = useState({});
+  // const history = useHistory();
+  // const { error } = useGetProfile();
+
+  // useEffect(() => {
+  //   if (error) {
+  //     history.replace(pageRoutes.auth);
+  //   }
+  // }, [error]);
 
   return (
-    <BrowserRouter>
-      <Context.Provider value={{ appState, context, setContext }}>
-        <Header appState={appState} />
-
-        <SocialBtn />
-
-        <Content />
-        {/* <Footer /> */}
-        <Popup />
-      </Context.Provider>
-    </BrowserRouter>
+    <StateContext.Provider value={{ stateContext, setStateContext }}>
+      <CartProvider>
+        <LayoutDefault>
+          <Content />
+        </LayoutDefault>
+      </CartProvider>
+    </StateContext.Provider>
   );
 }
 
@@ -45,9 +57,19 @@ function Content() {
       }}
     >
       <Routes location={displayLocation}>
-        <Route path="/" element={<Home />} />
-        <Route path="/contacts" element={<PageContacts />} />
-        <Route path="*" element={<NotFound to="/404" replace />} />
+        <Route path={pageRoutes.main} element={<Home />} />
+        <Route path={pageRoutes.about} element={<AboutPage />} />
+        <Route path={pageRoutes.contact} element={<ContactPage />} />
+        <Route path={pageRoutes.cart} element={<CartPage />} />
+        <Route path={pageRoutes.blog} element={<BlogPage />} />
+        <Route
+          path={pageRoutes.catalog + "/:id"}
+          element={<DetailsProductCard />}
+        />
+        <Route
+          path={pageRoutes.all}
+          element={<NotFound to={pageRoutes.not_found} replace />}
+        />
       </Routes>
     </div>
   );

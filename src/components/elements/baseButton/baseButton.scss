@@ -1,0 +1,100 @@
+
+@import "../../../scss/vars.scss"; 
+
+  .base-btn {
+    padding: 5px;
+    height: 56px;
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    cursor: pointer;
+  }
+
+.checkout {
+  &:hover {
+    background-color: #74a736;
+    transition: background-color 0.3s;
+  }
+
+  &:active {
+    background-color: darken($color: #9dd558, $amount: 40%);
+    transition: background-color 0.3s;
+  }
+}
+
+.cancel {
+  border: 1px solid $hover;
+  color:#8E0303;
+  border-radius: 13px;
+  transition: background-color 0.3s color 0.3s;
+
+  &:hover {
+    color: #fff;
+    background-color: #f0b4ae;
+    transition: background-color 0.3s color 0.3s;
+  }
+
+  &:active {
+    background-color: darken($color: #f0b4ae, $amount: 20%);
+    transition: background-color 0.3s color 0.3s;
+  }
+}
+
+.continue {
+  margin-right: 20px;
+  border: 1px solid #2C397C;
+  border-radius: 13px;
+  color:#fff;
+  background-color: #2C397C;
+  transition: background-color 0.3s color 0.3s;
+
+  &:hover {
+    color: $default;
+    background-color: #fff;
+    transition: background-color 0.3s color 0.3s;
+  }
+
+  &:active {
+    color: #fff;
+    background-color: lighten($color: #2C397C, $amount: 10%);
+    transition: background-color 0.3s color 0.3s;
+  }
+}
+
+.order {
+  background-color: #9dd558;
+  border: 1px solid #9dd558;
+  color: #ffffff;
+  border-radius: 13px;
+
+  &:hover {
+    color: $default;
+    background-color: #fff;
+    transition: background-color 0.3s color 0.3s;
+  }
+
+  &:active {
+    color: #fff;
+    background-color: lighten($color: #9dd558, $amount: 10%);
+    transition: background-color 0.3s color 0.3s;
+  }
+}
+
+  .clear {
+    background-color: $active;
+    border: 0px solid $hover;
+    color: #fff;
+
+    &:hover {
+      background-color: #f0b4ae;
+      transition: background-color 0.3s;
+    }
+
+    &:active {
+      color: $default;
+      background-color: darken($color: #f0b4ae, $amount: 20%);
+      transition: background-color 0.3s color 0.3s;
+    }
+  }

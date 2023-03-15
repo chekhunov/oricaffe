@@ -1,21 +1,31 @@
 @import 'mixins';
 
-html,
-body {
-  min-width: 320px;
+html {
   height: 100%;
 }
 
+html,
 body {
+  min-width: 320px;
+}
+
+#root {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+body {
   font-size: 16px;
   color: $default;
   background-color: #ffffff;
   @extend %helvetica-400;
 }
 
-.main {
+
+main,
+.fadeIn,
+.fadeOut {
   flex-grow: 1;
 }
 
@@ -31,6 +41,20 @@ body {
 
 .container-big {
   max-width: 1340px;
+  margin: 0 auto;
+  padding: 0 25px;
+
+  @media screen and (max-width: 1024px) {
+    padding: 0 40px;
+  }
+
+  @media screen and (max-width: 767px) {
+    padding: 0 15px;
+  }
+}
+
+.container-max {
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0 25px;
 

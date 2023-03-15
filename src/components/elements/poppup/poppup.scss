@@ -1,0 +1,76 @@
+@import '../../../scss/mixins';
+
+
+.poppup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  overflow-y: auto;
+
+  &-inner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    min-height: 300px;
+    max-height: 500px;
+    max-width: 1070px;
+    min-width: 600px;
+    padding: 50px 80px;
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 33px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @include _767 {
+      min-width: 95%;
+      padding: 20px 30px;
+    }
+
+    .closed-btn {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+
+      @include _767 {
+        top: 10px;
+        right: 10px;
+      }
+    
+      &__line {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .cart {
+    &__img {
+      @include _767 {
+        margin-left: 0;
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .cart-item {
+    @include _767 {
+      margin-bottom: 30px;
+    }
+
+    &__controls {
+      @include _767 {
+        padding: 0 10px 0 5px;
+      }
+    }
+  }
+}

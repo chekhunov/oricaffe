@@ -1,21 +1,32 @@
 .closed-btn {
   position: absolute;
   background-color: transparent;
-  width: 20px!important;
+  height: 40px;
+  width: 40px!important;
+  padding: 9px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   top: 30px;
   right: 30px;
   left: auto;
-    border: none;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: rgb(0 0 0 / 2%) 0px 1px 3px 0px, rgb(27 31 35 / 15%) 0px 0px 0px 1px;
+  border: 1px solid #fff;
 
-    &__line{
+  &:hover {
+    border: 1px solid #8E0303;
+    transition: background-color 0.3s border 0.3s;
+  }
+
+  &__line{
     position: relative;
     height: 0;
     width: 20px;
     padding: 10px;
-    
+    padding-left: 2px;
     display: inline-block;
-    margin-right: 15px;
-    margin-bottom: 5px;
 
     &::before,
     &::after {
@@ -24,18 +35,18 @@
       width: 20px;
       height: 2px;
       right: 0;
-      background-color: $default;
+      background-color: #8E0303;
       transition: transform 0.3s;
     }
 
     &::before {
-        top: 8px;
+        top: 9px;
         margin-bottom: 0;
         transform: rotate(45deg);  
     }
 
     &::after {
-        bottom: 10px;
+        bottom: 9px;
         transform: rotate(-45deg);
     }
   }

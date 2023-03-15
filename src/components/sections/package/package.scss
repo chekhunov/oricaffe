@@ -1,15 +1,98 @@
 @import '../../../scss/vars.scss';
+@import '../../../scss/mixins.scss';
 
 .package {
-    position: relative;
-    padding-top: 30px;
+  position: relative;
+  margin-bottom: 50px;
+  padding-top: 30px;
 
-    &::before {
-        content: '';
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 1px;
-        color: rgba(205, 186, 170, 0.5);
+  .container {
+    @include _380 {
+      padding: 0;
     }
   }
+
+  &::before {
+      content: '';
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 1px;
+      color: rgba(205, 186, 170, 0.5);
+  }
+
+  &__content {
+    height: 100%;
+    padding: 70px 0;
+
+    @include _767 {
+      padding: 20px;
+    }
+  }
+
+  &__content-block {
+    .container {
+    @include _380 {
+      padding: 0;
+    }
+  }
+  }
+
+  &__row {
+    width: 100%;
+  }
+}
+
+.package-row {
+  width: 100%;
+  color: $default;
+  background-color: rgba(255,255,255, 55%);
+  border: 0.5px solid $hover;
+  border-radius: 15px;
+  @extend%libreBaskervilleItalic-400;
+
+  &__title {
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+
+  &__text {
+    font-size: 16px;
+    flex-grow: 1;
+  }
+
+  &__column-left {
+    height: auto;
+    min-height: 100%;
+    width: calc(50% - 20px);
+    margin-right: 20px;
+
+    @include _1024 {
+      width: 100%;
+      margin-right: 0;
+    }
+  }
+
+  &__img {
+    max-height: 440px;
+    width: calc(50%);
+    margin-right: 0;
+    border-radius: 10px;
+
+    @include _1024 {
+      display: none;
+    }
+  }
+
+  .package-btn {
+    width: 200px;
+
+    @include _767 {
+      width: 100%;
+
+      .autin-btn {
+        min-width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,216 @@
+@import '../../../scss/mixins.scss';
+@import '../../../scss/vars.scss';
+
+.sub-footer {
+  font-size: 10px;
+  color: #CDBAAA;
+
+  @include _1024 {
+    padding-top: 10px;
+  }
+}
+
+.footer {
+  position: relative;
+  width: 100%;
+  z-index: 20;
+  margin-bottom: 15px;
+
+  &__bottom {
+    height: 210px;
+    padding: 40px 110px 50px;
+    background-color: #FFFFFF;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    box-shadow: rgb(0 0 0 / 2%) 0px 1px 3px 0px, rgb(27 31 35 / 15%) 0px 0px 0px 1px;
+  
+    @include _1200 {
+      height: 100%;
+      padding: 40px 40px 40px;
+    }
+  }
+
+  &__box {
+    @include _380 {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include _1024 {
+      width: calc(100%);
+    }
+
+    @include _380 {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__nav {
+    @include _1024 {
+      flex-direction: column;
+    }
+  }
+
+  &__bottom-meta {
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__copy {
+    width: 100%;
+    align-items: flex-start;
+
+    & a,
+    & p {
+      font-size: 14px;
+      color: #CDBAAA;
+    }
+  }
+
+  .socials {
+    @include _1024 {
+      display: inline-flex;
+    }
+
+    &__item {
+      &:not(:last-child) {
+        margin-right: 10px;
+      }
+    }
+
+    &__link {
+      height: 34px;
+      width: 34px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+
+      &.twitter {
+        background-color: #131938;
+      }
+
+      &:hover {
+        &.telegram,
+        &.facebook,
+        &.instagram {
+          background-color: darken($color: #ffffff, $amount: 30%);
+          transition: background-color 0.3s;
+        }
+
+        &.twitter {
+          .socials__ico path {
+            fill: darken($color: #ffffff, $amount: 30%);
+            transition: fill 0.3s;
+          }
+        }
+      }
+    }
+  }
+
+  &__headline {
+    color: #131938;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  &__link {
+    color: #2B304F;
+    font-size: 16px;
+    font-weight: normal;
+    transition: color 0.3s;
+
+    &:hover {
+      color: lighten($color: #2B304F, $amount: 30%);
+      transition: color 0.3s;
+    }
+  }
+}
+
+.icon-instagram {
+  &:before {
+    font-size: 26px;
+    color: #ffffff;
+    transition: color 0.3s;
+  }
+
+  &:hover {
+    &:before {
+      color: darken($color: #ffffff, $amount: 30%);
+      transition: color 0.3s;
+    }
+  }
+}
+
+
+@media screen and (max-width: 1024px) {
+  .footer {
+    &__inner {
+      flex-direction: column;
+    }
+
+    &__item {
+      width: 100%;
+
+      & ul li {
+        width: 40%;
+      }
+    }
+
+    &__social {
+      flex: 1;
+      justify-content: space-evenly;
+    }
+
+    &__copy {
+      justify-content: space-between;
+
+      & a {
+        margin-left: auto;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .footer {
+    &__item ul li {
+      width: 100%;
+    }
+
+    &__bottom-meta {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &__cicr {
+      margin-bottom: 24px;
+    }
+
+    &__copy {
+      flex-direction: column;
+      align-items: flex-start;
+
+      & p {
+        margin-bottom: 10px;
+      }
+
+      & a {
+        margin-left: 0;
+        margin-bottom: 10px;
+      }
+    }
+
+  }
+}

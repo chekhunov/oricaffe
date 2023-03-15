@@ -15,10 +15,13 @@
   "company": "Company",
   "send": "Send",
   "catalog_products": "Catalog of Products",
+  "production_company_coffee": "Production of the company",
+  "more": "More Info",
+  "category_coffee": "Category",
   "banners": {
     "b-0": "Exactly what you were looking for"
   },
-  "category_coffee": {
+  "category": {
     "coffe_beans": "Whole bean coffee",
     "coffe_single": "Coffee in single doses",
     "coffe_nespresso": "Coffee in nespresso capsules",
@@ -30,12 +33,110 @@
     "coffee": "Coffee",
     "coffee_equipment": "Coffee equipment",
     "tea": "Tea",
-    "chocolate": "Chocolate"
+    "chocolate": "Chocolate",
+    "coffee_accessories": "Coffee accessories"
   },
   "about_section": {
     "headline": "(Oriental caffè) has been operating in Tuscany (a region in Italy) since 1955.",
     "about_company": "is a small craft company representing refinement of the art of Italian coffee roasting grains. We produce roasted coffee and try to do it ok we love coffee and try to spread coffee culture in the world. Values ​​and passion are the heritage of our company, associated with the precious baggage of knowledge, which with special care and attention are daily introduced into practice, starting from sorting and selection of raw materials to complete the process at the stage roasting and mixing beans. Due to coffee roasting grains and mixture assembly",
     "about_company_two": "master of frying, controlling your senses, embracing the whole soul of our work: the search for the most pleasant extraction of flavors in their harmonious and balanced balance. The goal is simple and clear: every cup of our coffee should be used for flavors. Our philosophy is to make quality coffee well, for every chain that accompanies the coffee drink from seed to cup, which must pursue this goal of perfection with the same passion and devotion. This is due to the emergence of such a phenomenon among the peasants as green coffee sprouts, which manifests itself in every daily gesture aimed at the frequency perception of the opposite of coffee compared to the biodiversity of the territory. It means engaging in discussions with customers about cultured coffee and making sure that all the flavor love that accompanied every upcoming choice is consumed through its extraction.",
     "about_company_three": "This community of intentions is the basis of our art and prerequisite for coffee tasting."
+  },
+  "about_products": {
+    "subtitle": "Our company has all the necessary equipment for the production of products in the form of:",
+    "grain_coffee": "Coffee beans",
+    "this_is_traditional": "this is a traditional Italian freshly roasted coffee. Each package has (stamped) an expiration date, which guarantees flavor and maximum quality. Our customers need to get the coffee experience \"i'm in Italy\".",
+    "among_the_principles": "Among the principles of our activity are naturalness and inspiration. We are inspired by innovative ideas to increase coffee yields, maintain product quality and discover new and unique coffee flavors.",
+    "choose_the_coffee": "Choose the coffee that suits you and your customers.",
+    "ground_coffee": "Ground coffee",
+    "many_people_represent": "Many people cannot imagine morning without a cup of invigorating coffee. In order to save their time as much as possible, they prefer a soluble product, which is devoid of almost all useful properties and does not allow you to enjoy all the richness of aromas and tastes. An excellent alternative is ground coffee - it is also distinguished by quick preparation, but at the same time retains all the aromatic and flavoring shades.",
+    "coffee_in_single_doses": "Coffee in single doses \n",
+    "diameter": "diameter",
+    "word_chald": "The word \"pod\" (Italian \"cialda \" -\"waffle\") came to us from Italy, where local coffee producers thought up a unique way to quickly prepare portioned espresso and tea. Coffee pods are roasted ground beans pressed into disposable filter bags. To preserve the taste, they are packaged in foil with the addition of nitrogen, which better preserves the aroma and prolongs the life of ground coffee. Properly packaged pods can be stored for up to 2 years without losing their essential characteristics. Coffee in a pod is the perfect solution for the office: quick, convenient and always delicious, but you will need a special pod coffee maker to make it. Typically, coffee makers are priced lower than professional or regular beans, making the switch to espresso capsules even more enjoyable.",
+    "coffee_nespresso": "Coffee capsules Nespresso",
+    "coffee_nespresso_this": "The Nespresso capsule is a whole system for preparing a coffee drink. It consists of a coffee machine and Nespresso capsules. Nespresso coffee makers are automatic coffee makers that are able to prepare a unique and delicious coffee, getting the maximum flavor and aroma from the capsule. The biggest advantage of these machines is the speed and ease of making coffee, as well as easy maintenance. Nespresso capsules are pre-packaged ground roasted coffee, pressed into portioned disposable sealed plastic or metal capsules, which are small cups with a lid. The preparation of the drink is carried out in a special machine that provides simultaneous perforation of the bottom of the capsule and its lid, while high-pressure water is injected into the capsule through the bottom, and the finished drink is discharged from the place of preparation into the cup through the lid. To fill the capsules, manufacturers often use coffee blends consisting of several varieties of ground coffee beans. Also, the capsule does not allow air, moisture and sunlight to pass through. The coffee is always fresh.",
+    "coffee_green": "Green coffee",
+    "june": "In June 2017 we took part in the WOC (World of Coffee) in Budapest and from this important event we introduced our Farmers & Roasters Project. Thanks to the Farmers & Roasters project, we can finally truly control the entire production process of our coffee from grain to cup, focusing on improving the working conditions of people on the plantation, paying their wages fairly, applying agricultural practices that are environmentally friendly, getting the cup of the highest. quality. This project is a transparent supply chain - more than fair trade In our social projects, we cooperate with the cooperative Cocafcal (Honduras). Our goal is to help local communities in producing countries fight hunger and poverty, improve their education and economy, and implement environmental standards."
+  },
+  "about_company": "About company",
+  "bonus": "Bonus program",
+  "delivery_coffee": "Delivery",
+  "guarantee": "Guarantee",
+  "back_to": "Back to",
+  "drawer": "Basket",
+  "service": "Service",
+  "menu": "Menu",
+  "history_company": "History company",
+  "faq": "FAQs",
+  "terms_conditions": "Terms & Conditions",
+  "continue_shopping": "continue Shopping",
+  "legal_material": "Legal material",
+  "privacy_policy": "Privacy Policy",
+  "cancelation_policy": "Cancelation policy",
+  "find_us_on": "Find us on social networks",
+  "cart_is_empty": "Cart is empty",
+  "add_to_cart": "Add to cart",
+  "add_item_to_cart": "Add item to cart. You can do this -> go to the products section and make your choice, or you can contact our managers and they will help you place an order. You can also send an inquiry with order details.",
+  "package_coffee": "package",
+  "follow_the_news": "Follow the news and updates, participate in promotions, get discounts, free shipping!",
+  "there_is_a_wide": "There is a wide range of goods on the market for which we use different types of packaging to preserve the unique taste of ground coffee. When packing tablets in blisters, we guarantee the quality and purity of sealing, as well as the integrity of the product during production and during storage of the finished product in our warehouses.",
+  "high_quality_preservation": "For high-quality preservation of products (tablets, capsules, pods), we use vacuum packaging, which preserves the freshness and aroma of coffee.",
+  "more_info": "More Info",
+  "cart": "Cart",
+  "make_an_order": "Make an order",
+  "no_hassle": "No hassle. With a couple of clicks and coffee will be at your home.",
+  "we_quite_easily": "We quite easily and quickly offer ways to transport various goods across the territory of Ukraine and neighboring countries by road, it takes a little more time to calculate air transportation. You can compare our routes with other companies and you will see that because this is not our main source of income, we can offer these services at a lower price, but at the same high level. You can order the services listed above by calling us, leaving a request on the website, writing in the feedback form, or sending us an email, which can be found in contacts.",
+  "we_cooperate_with": "We cooperate with reliable cargo transportation companies, as well as offer high-quality logistics.",
+  "since_our_production": "Since our production also works with foreign customers, we often need to develop logistics routes across Ukraine and the EU. Therefore, if we can do it for ourselves, we can do it for you too.",
+  "cart_page": {
+    "product_code": "Product code:",
+    "price": "Price",
+    "sum": "Sum",
+    "quantity": "Quantity:",
+    "total": "Total:",
+    "tax": "Tax",
+    "clear": "Clear cart",
+    "cancel": "Cancel",
+    "checkout": "proceed to Checkout"
+  },
+  "popup": {
+    "choose_the_quantity": "Choose the quantity of goods and go to the basket for design"
+  },
+  "in_our_blog_coffee": "In our Blog",
+  "blog_section": {
+    "recommendations_from": "Recommendations from our experts:"
+  },
+  "blog": "Blog",
+  "reviews_section": {
+    "reviews": "Reviews",
+    "latest_customer": "Latest customer reviews of our store:"
+  },
+  "how_work": {
+    "leave_request": "Leave a request",
+    "our_managers": "Our managers will help you make a choice",
+    "make_payment": "Make a payment",
+    "choose_payment": "Choose a payment method convenient for you",
+    "arrange_delivery": "Arrange delivery",
+    "arrange_delivery_receive": "Arrange delivery and receive goods"
+  },
+  "not_found": {
+    "there_is_coffee": "If there is coffee, there is a way",
+    "sorry": "Sorry, we couldn’t fins this page. But don’t worry, you can find plenty of other things on our",
+    "homepage": "homepage."
+  },
+  "video_coffee": "Video",
+  "questions": {
+    "faq": "Frequently asked questions",
+    "help": "We are here to help you with the most frequently asked questions. If you did not find the answer, you can go to the frequently asked questions page for more information or contact us.",
+    "how_work": "How does it work?",
+    "every_day": "Every day from 9:00 a.m. to 6:00 p.m. you need to contact our specialist who will help you place the order, make payment and send the goods.",
+    "can_cancel": "Can I cancel cancel my order?",
+    "cancel": "The buyer has the right to act in advance at any time without giving reasons. You can make an appointment at \"Cart\" or contact the sales manager.",
+    "what_cancel": "What happens if a customer cancels their order?",
+    "here": "here.",
+    "customers_accept": "Customers accept the Orientalcaffe terms and conditions, including our cancellation clause. Depending on how close to the event they cancel, the customer may be given a full refund, they may lose 50% of the deposit, or the entire payment. For more information on our cancellation policy click",
+    "pre_order": "Can I pre order?",
+    "pre_order_anytime": "Yes, you can pre-order anytime and get a discount. To do this, you need to contact our manager.",
+    "pre_order": "Can I pre order?"
   }
 }

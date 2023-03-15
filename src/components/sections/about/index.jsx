@@ -4,51 +4,25 @@ import { useTranslation } from "react-i18next";
 
 import "./about.scss";
 
-export default function About({ textAccentAbout, colorAbout, isHeigthAbout }) {
+export default function About() {
   const { t } = useTranslation();
-  const stylesBlock = {
-    backgroundColor: colorAbout,
-    height: isHeigthAbout + "%",
-  };
+
   return (
     <section className="about">
       <div className="container-big">
         <div className={classNames("about__inner", "inner")}>
-          <div className="line">
-            <span className="line__accent"></span>
-          </div>
-
-          <h2
-            style={{ color: textAccentAbout }}
-            className={classNames("about__desc d-flex", "desc")}
-          >
-            {t("company")}
-            <a
-              className="oriental-link ml-10"
-              href="https://bhousecoffee.com/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Oriental caffe
-            </a>
-          </h2>
-
-          <div className="line">
-            <span style={stylesBlock} className="line__accent"></span>
-          </div>
-
           <div className="about__content-block">
             <div className="container">
               <div className="about__text">
                 <span className="about__meta-text pb-20">
                   {t("company")}
-                  <span className="about__text-accent">Oriental caffe</span>
+                  <span className="about__text-accent">Orientalcaffe</span>
                   {t("about_section.headline")}
                 </span>
                 <p className="about__text-desc">
                   {t("company")}
                   <span className="about__text-accent">
-                    Oriental caffe (Oriental caffè)
+                    Orientalcaffe (Orientalcaffè)
                   </span>
                   – {t("about_section.about_company")}{" "}
                   <span style={{ color: "red" }}>Samuele</span>,{" "}

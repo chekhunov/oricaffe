@@ -1,8 +1,10 @@
 .header {
+  top: 30px;
   width: 100%;
-  position: fixed;
+  position: sticky;
+  top: 0;
   background-color: #fff;
-  padding: 5px 0;
+  padding: 10px 0;
   z-index: 1000;
   box-shadow: 0 0 20px -3px #282535;
   
@@ -108,12 +110,56 @@
   }
 }
 
+.oriental-mobile {
+  display: none;
+}
+
+.header__cart {
+  position: relative;
+  &-count {
+    position: absolute;
+    top: -2px;
+    right: -4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4px;
+    font-size: 12px;
+    height: 14px;
+    width: 14px;
+    border-radius: 50%;
+    background-color: #F2E9E9;
+    box-shadow: rgb(0 0 0 / 2%) 0px 1px 3px 0px, rgb(27 31 35 / 15%) 0px 0px 0px 1px;
+  }
+
+  &-img {
+    padding: 2px;
+    border-radius: 50%;
+    transition: box-shadow 0.3s;
+
+    &:hover {
+      box-shadow: rgb(0 0 0 / 2%) 0px 1px 3px 0px, rgb(27 31 35 / 15%) 0px 0px 0px 1px;
+      transition: box-shadow 0.3s;
+    }
+  }
+}
+
 @media screen and (max-width: 1024px) {
+  .oriental-mobile {
+    display: inline-block;
+  }
+
   .oriental {
+    display: none;
     margin-left: 75px;
   }
 
   .header {
+
+    &__img {
+      display: none;
+    }
+    
     &__popup {
       display: inline-block;
       height: 100%;
@@ -165,7 +211,7 @@
     &__box {
       max-width: 100%;
     }
-}
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -188,6 +234,12 @@
   }
 
   .contacts-btn {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .oriental-mobile {
     display: none;
   }
 }

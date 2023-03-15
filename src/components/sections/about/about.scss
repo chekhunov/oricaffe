@@ -3,8 +3,7 @@
 
 .about {
     position: relative;
-    margin-top: 50px;
-    padding-top: 100px;
+    padding-top: 50px;
     margin-bottom: 50px;
 
     &::before {
@@ -17,6 +16,7 @@
     }
 
     &__desc {
+      padding: 5px 10px;
       align-items: baseline;
     }
 

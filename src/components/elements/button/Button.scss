@@ -23,6 +23,21 @@
     // box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
     // box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 
+    &.icon {
+      .ico {
+        margin-right: 10px;
+        transform: translateX(0);
+        transition: transform 0.3s;
+      }
+    }
+
+    &:hover {
+      .ico {
+        transform: translateX(-10px);
+        transition: transform 0.3s;
+      }
+    }
+
     &__text {
       padding-top: 2px;
     }
@@ -52,8 +67,6 @@
 }
 
 .atuin-btn:active {
-      // color: #ffffff;
-      // background-color: #CE1D26;
-box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
-      transition: color 0.3s, background-color 0.3s;
-    }
+  box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  transition: color 0.3s, background-color 0.3s;
+}

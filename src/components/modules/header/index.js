@@ -1,25 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
-
-import classNames from "classnames";
-
+import cn from "classnames";
 import { Menu } from "../..";
 import HeaderMenuPopup from "./headerMenuPopup";
 import Button from "../../elements/button";
 import LogoCompany from "./logoCompany";
 import { Locales } from "../..";
+import { Link } from "react-router-dom";
 
+/* TODO remove */
 // import help from "../../../assets/img/help.png";
+
+import cartIcon from "../../../assets/icons/anim/cart.gif";
 import logo from "../../../assets/header/logo.png";
 
-export default function Header({ appState }) {
+const home = [
+  {
+    id: 0,
+    value: "home",
+    link: "",
+  },
+];
+
+export default function Header({ navMenu, menuSubheader, countCart }) {
   const { t } = useTranslation();
 
-  const [activeId, setActiveId] = React.useState(null);
-  const [activePopup, setActivePopup] = React.useState(false);
+  const [activeId, setActiveId] = useState(null);
+  const [activePopup, setActivePopup] = useState(false);
 
   function isActivePopup() {
     setActivePopup(!activePopup);
+    addedOverflowForBody();
   }
 
   function addedOverflowForBody() {
@@ -29,30 +40,37 @@ export default function Header({ appState }) {
   }
 
   return (
-    <header className={classNames("header")}>
+    <header className={cn("header")}>
       <div className="container-big">
         <div
-          className={classNames(
+          className={cn(
             "header__inner d-flex justify-beetwen",
             activePopup && "active"
           )}
         >
           <div className={"header__box"}>
-            <LogoCompany logo={logo} setActiveId={setActiveId} />
+            <LogoCompany logo={logo} />
 
             <button
-              className={classNames("header__popup", activePopup && "active")}
+              className={cn("header__popup", activePopup && "active")}
               onClick={(e) => {
                 isActivePopup();
-                addedOverflowForBody();
               }}
             >
               <span className="header__popup-line"></span>Меню
             </button>
+            <a
+              className="oriental ml-20"
+              href="https://bhousecoffee.com/"
+              target={"_blank"}
+              rel="noreferrer"
+            >
+              Orientalcaffe
+            </a>
           </div>
 
           <a
-            className="oriental"
+            className="oriental-mobile ml-20"
             href="https://bhousecoffee.com/"
             target={"_blank"}
             rel="noreferrer"
@@ -63,19 +81,22 @@ export default function Header({ appState }) {
           {!activePopup ? (
             <Menu
               activePopup={activePopup}
-              menuItems={appState.menuItems}
+              menuItems={navMenu}
               activeId={activeId}
               setActiveId={setActiveId}
             />
           ) : (
             <HeaderMenuPopup
+              setActivePopup={isActivePopup}
               activePopup={activePopup}
-              menuItems={appState.menuItems}
+              menuItems={[...home, ...navMenu, ...menuSubheader]}
               activeId={activeId}
               setActiveId={setActiveId}
             />
           )}
 
+          {/* TODO remove */}
+          {/* help for ukraine */}
           {/* <a href="/">
             <img className="help" height="70" src={help} alt="help" />
           </a> */}
@@ -83,10 +104,17 @@ export default function Header({ appState }) {
           <div className="d-flex align-center">
             <Locales />
 
-            <Button
-              link={"contacts"}
-              text={t("contacts")}
-            />
+            <Link to="cart" className="header__cart mr-30">
+              <span className="header__cart-count">{countCart}</span>
+              <img
+                className="header__cart-img"
+                height="30"
+                src={cartIcon}
+                alt="cart"
+              />
+            </Link>
+
+            <Button link={"contacts"} text={t("contacts")} />
           </div>
         </div>
       </div>

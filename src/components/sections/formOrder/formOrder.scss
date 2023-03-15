@@ -1,0 +1,36 @@
+@import '../../../scss/mixins.scss';
+
+.form-order {
+  width: 100%;
+  margin-bottom: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include _1024 {
+    margin-bottom: 100px;
+    flex-direction: column-reverse;
+  }
+
+  @include _380 {
+    margin-bottom: 50px;
+  }
+
+  &__form {
+    max-width: 400px;
+    margin-right: 100px;
+
+    @include _1024 {
+      margin-right: 0;
+    }
+  }
+
+  &__img {
+    border-radius: 45px;
+
+    @include _1024 {
+      max-height: 250px;
+      margin-bottom: 30px;
+    }
+  }
+}

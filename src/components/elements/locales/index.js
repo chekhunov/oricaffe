@@ -6,9 +6,9 @@ import ru from "../../../assets/img/flags/ru.png";
 import ua from "../../../assets/img/flags/ua.png";
 
 export default function Locales() {
-  const { i18n, ready } = useTranslation();
-  console.log(i18n);
-  const [locale, setLocale] = useState(i18n.language);
+  const { i18n } = useTranslation();
+  const [locale, setLocale] = useState(i18n.language || "en");
+
 
   const changeLanguage = (lng) => {
     setLocale(lng);
@@ -19,15 +19,15 @@ export default function Locales() {
     <div className="lang mr-20">
       <span className="lang__el d-flex align-center">
         <img
-          className="flag mr-5"
-          height="20"
+          className="flag-active mr-5"
+          height="30"
           width="30"
-          src={`flags/${locale === "en-US" ? "en" : locale}.png`}
+          src="/icons/globe.png"
           alt="flag"
         />
 
         <span className="lang__text active">
-          {locale === "en-US" ? "en" : locale}
+          {locale === ("en-US" || "en-GB") ? "en" : locale}
         </span>
 
         <div className="lang__popup">

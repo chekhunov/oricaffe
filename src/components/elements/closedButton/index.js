@@ -1,21 +1,12 @@
 import React from "react";
-import classNames from "classnames";
-import { Context } from "../../../context";
+import cn from "classnames";
 
-export default function ClosedButton({ isOpen, setIsOpen }) {
-  const { setContext } = React.useContext(Context);
-
-  function removeOverflowForBody() {
-    document.body.classList.remove("overflowe");
-  }
+export default function ClosedButton({ click }) {
   return (
     <>
       <button
-        className={classNames("closed-btn")}
-        onClick={(e) => {
-          removeOverflowForBody();
-          setContext(isOpen);
-        }}
+        className={cn("closed-btn")}
+        onClick={click}
       >
         <span className="closed-btn__line"></span>
       </button>

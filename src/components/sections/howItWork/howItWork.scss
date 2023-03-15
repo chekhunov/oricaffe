@@ -1,0 +1,81 @@
+@import '../../../scss/vars.scss';
+@import '../../../scss/mixins.scss';
+
+.how-it-work {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url(../../../assets/img/howItWork/tq.png);
+  background-repeat: repeat;
+  background-size: 4%;
+
+  &__inner {
+    width: 100%;
+    padding: 100px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__title {
+    max-width: 500px;
+    margin: 0 auto;
+    font-weight: 700;
+    font-size: 36px;
+    text-align: center;
+    color: #131938;
+    @extend%libreBaskerville-700;
+
+    @include _767 {
+      font-size: 24px;
+    }
+  }
+}
+
+.box {
+  margin-bottom: 50px;
+  padding: 40px 0;
+
+  @include _767 {
+    flex-direction: column;
+    margin-bottom: 0;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include _767 {
+      margin-bottom: 20px;
+    }
+  }
+  &__num {
+    height: 40px;
+    width: 40px;
+    padding-top: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #C7305A;
+    color: $disable;
+    border-radius: 50%;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    font-size: 22px;
+    color: #131938;
+    @extend%libreBaskerville-700;
+  }
+
+  &__desc {
+    font-size: 16px;
+    color: #3e4159;
+    max-width: 270px;
+    text-align: center;
+    @extend%libreBaskerville-400;
+  }
+}
