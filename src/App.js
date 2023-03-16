@@ -2,11 +2,15 @@ import React, { useState, useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 
 import { pageRoutes } from "./utils/routes";
+
 import LayoutDefault from "./components/layout";
 import Home from "./pages/home";
 import NotFound from "./pages/notFound";
 import CartPage from "./pages/cart";
 import AboutPage from "./pages/about";
+import BonusPage from "./pages/bonus";
+import DeliveryPage from "./pages/delivery";
+import GuaranteePage from "./pages/guarantee";
 import BlogPage from "./pages/blog";
 import ContactPage from "./pages/contact";
 import DetailsProductCard from "./pages/catalog";
@@ -59,6 +63,9 @@ function Content() {
       <Routes location={displayLocation}>
         <Route path={pageRoutes.main} element={<Home />} />
         <Route path={pageRoutes.about} element={<AboutPage />} />
+        <Route path={pageRoutes.bonus} element={<BonusPage />} />
+        <Route path={pageRoutes.delivery} element={<DeliveryPage />} />
+        <Route path={pageRoutes.guarantee} element={<GuaranteePage />} />
         <Route path={pageRoutes.contact} element={<ContactPage />} />
         <Route path={pageRoutes.cart} element={<CartPage />} />
         <Route path={pageRoutes.blog} element={<BlogPage />} />

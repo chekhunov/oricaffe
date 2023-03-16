@@ -8,30 +8,28 @@ export default function Breadcrumbs({ breadcrumbs }) {
 
   const length = breadcrumbs?.length - 1;
 
+  const handleClick = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <>
       <div className={style.breadcrumbs}>
         <ul className={style.list}>
-          {breadcrumbs &&
-            breadcrumbs.map((item, index) => (
-              <li key={item.id} className={style.item}>
-                {length !== index ? (
-                  <Link to={`/${item.link}`}>
-                    <span
-                      onClick={() => {
-                        window.scrollTo(0, 0);
-                      }}
-                      className={style.link}
-                    >
-                      {" "}
-                      {t(item.title)}
-                    </span>
-                  </Link>
-                ) : (
-                  <span className={style.link}>{t(item.title)}</span>
-                )}
-              </li>
-            ))}
+          {breadcrumbs?.map((item, index) => (
+            <li key={item.id} className={style.item}>
+              {length !== index ? (
+                <Link to={`/${item.link}`}>
+                  <span onClick={handleClick} className={style.link}>
+                    {" "}
+                    {t(item.title)}
+                  </span>
+                </Link>
+              ) : (
+                <span className={style.link}>{t(item.title)}</span>
+              )}
+            </li>
+          ))}
         </ul>
       </div>
     </>

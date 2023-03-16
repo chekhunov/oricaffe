@@ -14,6 +14,9 @@ export const apiRoutes = {
 export const pageRoutes = {
   main: "/",
   about: "/about",
+  bonus: "/bonus",
+  delivery: "/delivery",
+  guarantee: "/guarantee",
   blog: "/blog",
   contact: "/contacts",
   catalog: "/catalog",

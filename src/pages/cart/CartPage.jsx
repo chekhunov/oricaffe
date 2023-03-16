@@ -4,7 +4,7 @@ import { Info, Breadcrumbs } from "../../components";
 import { useTranslation } from "react-i18next";
 import { useCart } from "react-use-cart";
 
-import "./Cart.scss";
+import "./cart.scss";
 const CartPage = ({ onClosed, onRemove, items = [] }) => {
   const breadcrumbs = [
     {

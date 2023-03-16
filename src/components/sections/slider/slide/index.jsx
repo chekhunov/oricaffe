@@ -7,33 +7,28 @@ import Button from "../../../elements/button";
 import "./../Slider.scss";
 
 export default function Slide({
-                                data: {url, title, subTitle, button, urlButton, sx, titleColor},
-                              }) {
+  data: { url, title, subTitle, button, urlButton, sx, titleColor },
+}) {
   return (
     <div className="slide">
       <div className="slide__content">
-        {title && <SlideTitle title={title} titleColor={titleColor}/>}
-        {subTitle && <SlideSubTitle subTitle={subTitle}/>}
-        {button && <Button sx={sx} link={urlButton} text={button}/>}
+        {title && <SlideTitle title={title} titleColor={titleColor} />}
+        {subTitle && <SlideSubTitle subTitle={subTitle} />}
+        {button && <Button sx={sx} link={urlButton} text={button} />}
       </div>
       <video
         width="100%"
         height="auto"
         autoPlay="autoplay"
+        poster="/baners/baner-ori.jpg"
         loop
         muted
         playsInline
-        // playsinline
       >
-        <source src="/video/1.mp4" type="video/mp4"/>
+        <source src="/video/neworiental.mp4" type="video/mp4" />
+        <source src="/video/preoriental.webm" type="video/webm" />
       </video>
-      {url && <SlideImage src={url} alt={title}/>}
-
-      {/* <div className="slide__content">
-        {title && <SlideTitle title={title} />}
-        {subTitle && <SlideSubTitle subTitle={subTitle} />}
-        {button && <Button sx={sx} link={urlButton} text={button} />}
-      </div> */}
+      {url && <SlideImage src={url} alt={title} />}
     </div>
   );
 }

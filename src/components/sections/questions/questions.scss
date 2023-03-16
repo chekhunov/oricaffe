@@ -94,6 +94,7 @@
   }
 
   &__item-svg {
+    min-width: 30px;
     margin-top: -5px;
     transform: rotate(0deg);
     transition: transform 0.3s;

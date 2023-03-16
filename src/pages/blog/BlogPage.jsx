@@ -28,11 +28,6 @@ const BlogPage = () => {
         <div className="blog-page__inner">
           <Breadcrumbs breadcrumbs={breadcrumbs} />
 
-          {/* <img
-            className="page-about__title-img mt-20"
-            src="/aboutPage/title.jpg"
-            alt="title"
-          /> */}
           <div className="blog-page__title pb-50">{t("blog")}</div>
 
           <Divider />
