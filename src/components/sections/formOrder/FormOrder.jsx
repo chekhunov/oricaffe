@@ -58,8 +58,6 @@ const FormOrder = () => {
     setValues(data);
   };
 
-  console.log(!!errors?.lastName)
-
   return (<div className="form-order">
     <Form onSubmit={handleSubmit(onSubmit)}>
       <label className="subtitle" htmlFor="firstName">Submit your application</label>

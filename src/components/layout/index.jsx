@@ -37,8 +37,6 @@ export default function Layout({ children }) {
     },
   }[stateContext?.type];
 
-  console.log(setProductsToPoppup, top_products, stateContext);
-
   const ViewComponent = View?.component;
   const view_props = View?.props;
 

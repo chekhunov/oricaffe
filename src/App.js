@@ -11,6 +11,7 @@ import AboutPage from "./pages/about";
 import BonusPage from "./pages/bonus";
 import DeliveryPage from "./pages/delivery";
 import GuaranteePage from "./pages/guarantee";
+import ServicesPage from "./pages/services";
 import BlogPage from "./pages/blog";
 import ContactPage from "./pages/contact";
 import DetailsProductCard from "./pages/catalog";
@@ -66,6 +67,7 @@ function Content() {
         <Route path={pageRoutes.bonus} element={<BonusPage />} />
         <Route path={pageRoutes.delivery} element={<DeliveryPage />} />
         <Route path={pageRoutes.guarantee} element={<GuaranteePage />} />
+        <Route path={pageRoutes.services} element={<ServicesPage />} />
         <Route path={pageRoutes.contact} element={<ContactPage />} />
         <Route path={pageRoutes.cart} element={<CartPage />} />
         <Route path={pageRoutes.blog} element={<BlogPage />} />

@@ -174,8 +174,7 @@ const Questions = () => {
               <li className="questions__item">
                 <div className="questions__headline">
                   <div className="questions__item-title d-flex align-center">
-                    {t("questions.pre_order_anytime")}
-                    Когда я получу товар, если оформил предзаказ?
+                    {t("questions.when_will")}
                     <svg
                       className={"questions__item-svg"}
                       width="24"
@@ -205,8 +204,7 @@ const Questions = () => {
                 </div>
 
                 <p className="questions__item-desc">
-                  Вы получите товар по предзаказу в оговоренный срок при этом
-                  компания предоставит вам скидку на продукцию.
+                  {t("questions.you_will_receive")}
                 </p>
               </li>
             </ul>

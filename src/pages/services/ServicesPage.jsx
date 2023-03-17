@@ -4,7 +4,7 @@ import { Divider } from "@material-ui/core";
 import { Breadcrumbs } from "../../components";
 import { useTranslation } from "react-i18next";
 import InProgressCreate from "../../components/modules/InProgressCreate";
-import "./Guarantee.scss";
+import "./Services.scss";
 
 let breadcrumbs = [
   {
@@ -14,26 +14,24 @@ let breadcrumbs = [
   },
   {
     id: 1,
-    title: "guarantee_coffee",
+    title: "services",
     link: "",
   },
 ];
 
-const GuaranteePage = () => {
+const ServicesPage = () => {
   const { t } = useTranslation();
   return (
-    <section className={classNames("guarantee-page")}>
+    <section className={classNames("services-page")}>
       <div className={classNames("container-big")}>
-        <div className="guarantee-page__inner">
+        <div className="services-page__inner">
           <Breadcrumbs breadcrumbs={breadcrumbs} />
 
-          <div className="guarantee-page__title pb-50">
-            {t("guarantee_coffee")}
-          </div>
+          <div className="services-page__title pb-50">{t("services")}</div>
 
           <Divider />
 
-          <div className="guarantee-page__content d-flex justify-center mt-50">
+          <div className="services-page__content d-flex justify-center mt-50">
             <InProgressCreate />
           </div>
         </div>
@@ -42,4 +40,4 @@ const GuaranteePage = () => {
   );
 };
 
-export default GuaranteePage;
+export default ServicesPage;

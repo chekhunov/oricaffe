@@ -136,7 +136,9 @@
     "here": "here.",
     "customers_accept": "Customers accept the Orientalcaffe terms and conditions, including our cancellation clause. Depending on how close to the event they cancel, the customer may be given a full refund, they may lose 50% of the deposit, or the entire payment. For more information on our cancellation policy click",
     "pre_order": "Can I pre order?",
-    "pre_order_anytime": "Yes, you can pre-order anytime and get a discount. To do this, you need to contact our manager."
+    "pre_order_anytime": "Yes, you can pre-order anytime and get a discount. To do this, you need to contact our manager.",
+    "when_will": "When will I receive the product if I pre-ordered it?",
+    "you_will_receive": "You will receive the goods by pre-order within the agreed time, while the company will provide you with a discount on the products."
   },
   "guarantee_coffee": "Guarantee"
 }

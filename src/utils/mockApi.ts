@@ -248,8 +248,6 @@ export const initializeMockAdapter = () => {
     //   return [400];
     // }
 
-    console.log("--------------------------");
-    console.log(data);
     const body = {
       ...data,
       // id: Math.floor(Math.random() * 10000000),

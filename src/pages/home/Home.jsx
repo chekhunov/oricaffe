@@ -25,7 +25,7 @@ import InfoBlock from "../../components/elements/infoBlock";
 
 export default function Home() {
   const colorAccent = "#8E0303";
-  const bgColor = "#F4BC2F";
+  const bgColor = "#f2f2f2";
 
   const [colorAbout] = useState(colorAccent);
   const [bgColorAbout] = useState(bgColor);

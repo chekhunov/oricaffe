@@ -25,7 +25,7 @@ const CartPage = ({ onClosed, onRemove, items = [] }) => {
 
   const sum = cart.map((el) => el.itemTotal);
   const quan = cart.map((el) => el.quantity);
-  console.log(cart);
+
   const initialValue = 0;
   const sumWithInitial = (arr) => {
     return arr.reduce(

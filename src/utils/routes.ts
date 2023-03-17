@@ -17,6 +17,7 @@ export const pageRoutes = {
   bonus: "/bonus",
   delivery: "/delivery",
   guarantee: "/guarantee",
+  services: "/services",
   blog: "/blog",
   contact: "/contacts",
   catalog: "/catalog",
