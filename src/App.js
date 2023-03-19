@@ -13,7 +13,7 @@ import DeliveryPage from "./pages/delivery";
 import GuaranteePage from "./pages/guarantee";
 import ServicesPage from "./pages/services";
 import BlogPage from "./pages/blog";
-import ContactPage from "./pages/contact";
+import ContactPage from "./pages/contacts";
 import DetailsProductCard from "./pages/catalog";
 
 import StateContext from "./utils/stateContext";

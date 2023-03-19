@@ -25,7 +25,6 @@ export default function Slide({
         muted
         playsInline
       >
-        <source src="/video/neworiental.mp4" type="video/mp4" />
         <source src="/video/preoriental.webm" type="video/webm" />
       </video>
       {url && <SlideImage src={url} alt={title} />}

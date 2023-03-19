@@ -1,12 +1,9 @@
-import { getRandomInt } from '../helpers/randomInt';
-import {
-TopProductCardInterface
-} from '../interfaces/appointments'
+import { TopProductCardInterface } from "../interfaces/appointments";
 
 export const topProducts = [
   {
     id: 1,
-    code: `${getRandomInt(4000, 9999)}${getRandomInt(1000, 4000)}`,
+    code: 100001,
     name: "Il Rosso in grains",
     desc: "в зернах",
     sort: "Арабика: 80%",
@@ -19,7 +16,7 @@ export const topProducts = [
   },
   {
     id: 2,
-    code: `${getRandomInt(4000, 9999)}${getRandomInt(1000, 4000)}`,
+    code: 100002,
     name: "Il Rosso in grains",
     desc: "в зернах",
     sort: "Арабика: 80%",
@@ -32,7 +29,7 @@ export const topProducts = [
   },
   {
     id: 3,
-    code: `${getRandomInt(4000, 9999)}${getRandomInt(1000, 4000)}`,
+    code: 100003,
     name: "Il Rosso in grains",
     desc: "в зернах",
     sort: "Арабика: 80%",
@@ -45,7 +42,7 @@ export const topProducts = [
   },
   {
     id: 4,
-    code: `${getRandomInt(4000, 9999)}${getRandomInt(1000, 4000)}`,
+    code: 100004,
     name: "Il Rosso in grains",
     desc: "в зернах",
     sort: "Арабика: 80%",
@@ -58,7 +55,7 @@ export const topProducts = [
   },
   {
     id: 5,
-    code: `${getRandomInt(4000, 9999)}${getRandomInt(1000, 4000)}`,
+    code: 100005,
     name: "Il Rosso in grains",
     desc: "в зернах",
     sort: "Арабика: 80%",
@@ -71,7 +68,7 @@ export const topProducts = [
   },
   {
     id: 6,
-    code: `${getRandomInt(4000, 9999)}${getRandomInt(1000, 4000)}`,
+    code: 100006,
     name: "Il Rosso in grains",
     desc: "в зернах",
     sort: "Арабика: 80%",

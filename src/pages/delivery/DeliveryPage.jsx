@@ -1,9 +1,8 @@
 import React from "react";
-import classNames from "classnames";
-import { Divider } from "@material-ui/core";
-import { Breadcrumbs } from "../../components";
-import { useTranslation } from "react-i18next";
+
+import ContainerPage from "../../components/modules/containerPage";
 import InProgressCreate from "../../components/modules/InProgressCreate";
+
 import "./Delivery.scss";
 
 let breadcrumbs = [
@@ -19,27 +18,14 @@ let breadcrumbs = [
   },
 ];
 
-const BonusPage = () => {
-  const { t } = useTranslation();
+const DeliveryPage = () => {
   return (
-    <section className={classNames("delivery-page")}>
-      <div className={classNames("container-big")}>
-        <div className="delivery-page__inner">
-          <Breadcrumbs breadcrumbs={breadcrumbs} />
-
-          <div className="delivery-page__title pb-50">
-            {t("delivery_coffee")}
-          </div>
-
-          <Divider />
-
-          <div className="delivery-page__content d-flex justify-center mt-50">
-            <InProgressCreate />
-          </div>
-        </div>
+    <ContainerPage name="delivery" breadcrumbs={breadcrumbs}>
+      <div className="about-page__content d-flex justify-center">
+        <InProgressCreate />
       </div>
-    </section>
+    </ContainerPage>
   );
 };
 
-export default BonusPage;
+export default DeliveryPage;

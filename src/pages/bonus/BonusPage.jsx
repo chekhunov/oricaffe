@@ -1,12 +1,11 @@
 import React from "react";
-import classNames from "classnames";
-import { Divider } from "@material-ui/core";
-import { Breadcrumbs } from "../../components";
-import { useTranslation } from "react-i18next";
+
+import ContainerPage from "../../components/modules/containerPage";
 import InProgressCreate from "../../components/modules/InProgressCreate";
+
 import "./Bonus.scss";
 
-let breadcrumbs = [
+const breadcrumbs = [
   {
     id: 0,
     title: "home",
@@ -20,23 +19,12 @@ let breadcrumbs = [
 ];
 
 const BonusPage = () => {
-  const { t } = useTranslation();
   return (
-    <section className={classNames("bonus-page")}>
-      <div className={classNames("container-big")}>
-        <div className="bonus-page__inner">
-          <Breadcrumbs breadcrumbs={breadcrumbs} />
-
-          <div className="bonus-page__title pb-50">{t("bonus")}</div>
-
-          <Divider />
-
-          <div className="bonus-page__content d-flex justify-center mt-50">
-            <InProgressCreate />
-          </div>
-        </div>
+    <ContainerPage name="bonus" breadcrumbs={breadcrumbs}>
+      <div className="about-page__content d-flex justify-center">
+        <InProgressCreate />
       </div>
-    </section>
+    </ContainerPage>
   );
 };
 

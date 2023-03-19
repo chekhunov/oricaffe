@@ -1,11 +1,9 @@
 import React from "react";
-import classNames from "classnames";
-import { Divider } from "@material-ui/core";
-import { Breadcrumbs } from "../../components";
-import { useTranslation } from "react-i18next";
+
+import ContainerPage from "../../components/modules/containerPage";
+import InProgressCreate from "../../components/modules/InProgressCreate";
 
 import "./Blog.scss";
-import InProgressCreate from '../../components/modules/InProgressCreate';
 
 let breadcrumbs = [
   {
@@ -21,23 +19,12 @@ let breadcrumbs = [
 ];
 
 const BlogPage = () => {
-  const { t } = useTranslation();
   return (
-    <section className={classNames("blog-page")}>
-      <div className={classNames("container-big")}>
-        <div className="blog-page__inner">
-          <Breadcrumbs breadcrumbs={breadcrumbs} />
-
-          <div className="blog-page__title pb-50">{t("blog")}</div>
-
-          <Divider />
-
-          <div className="blog-page__content d-flex justify-center mt-50">
-            <InProgressCreate />
-          </div>
-        </div>
+    <ContainerPage name="blog" breadcrumbs={breadcrumbs}>
+      <div className="about-page__content d-flex justify-center">
+        <InProgressCreate />
       </div>
-    </section>
+    </ContainerPage>
   );
 };
 

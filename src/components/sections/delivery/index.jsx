@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import Button from "../../elements/button";
 
-import deliveryImg from "../../../assets/img/delivery/delivery.gif";
+import deliveryImg from "../../../assets/img/delivery/delivery.webm";
 
 import "./delivery.scss";
 
@@ -41,11 +41,18 @@ export default function Delivery() {
               />
             </div>
 
-            <img
-              className="delivery-row__img"
-              src={deliveryImg}
-              alt="delivery"
-            />
+            <div className="delivery-row__img">
+              <video
+                width="100%"
+                height="auto"
+                autoPlay="autoplay"
+                loop
+                muted
+                playsInline
+              >
+                <source src={deliveryImg} type="video/webm" />
+              </video>
+            </div>
           </div>
         </div>
       </div>

@@ -1,15 +1,31 @@
 import React from "react";
 import { useParams } from "react-router-dom";
+
+import ContainerPage from "../../components/modules/containerPage";
 import InProgressCreate from "../../components/modules/InProgressCreate";
+
+const breadcrumbs = [
+  {
+    id: 0,
+    title: "home",
+    link: "",
+  },
+  {
+    id: 1,
+    title: "catalog",
+    link: "",
+  },
+];
 
 const DetailsProductCard = () => {
   let { id } = useParams();
   return (
-    <div className="d-flex flex-column align-center mt-50">
-      <div>{id}</div>
-
-      <InProgressCreate />
-    </div>
+    <ContainerPage name="catalog" breadcrumbs={breadcrumbs}>
+      <div className="about-page__content d-flex justify-center">
+        <div>{id}</div>
+        <InProgressCreate />
+      </div>
+    </ContainerPage>
   );
 };
 
