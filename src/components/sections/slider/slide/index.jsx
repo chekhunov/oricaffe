@@ -3,6 +3,7 @@ import SlideTitle from "./slideTitle";
 import SlideSubTitle from "./slideSubTitle";
 import SlideImage from "./slideImage";
 import Button from "../../../elements/button";
+import orientalUrl from "../../../../assets/video/preoriental.webm";
 
 import "./../Slider.scss";
 
@@ -25,7 +26,7 @@ export default function Slide({
         muted
         playsInline
       >
-        <source src="/video/preoriental.webm" type="video/webm" />
+        <source src={orientalUrl} type="video/webm" />
       </video>
       {url && <SlideImage src={url} alt={title} />}
     </div>

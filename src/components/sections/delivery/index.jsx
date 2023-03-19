@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 
 import Button from "../../elements/button";
 
-import deliveryImg from "../../../assets/img/delivery/delivery.webm";
+import deliveryUrl from "../../../assets/video/delivery.webm";
 
 import "./delivery.scss";
 
@@ -50,7 +50,7 @@ export default function Delivery() {
                 muted
                 playsInline
               >
-                <source src={deliveryImg} type="video/webm" />
+                <source src={deliveryUrl} type="video/webm" />
               </video>
             </div>
           </div>

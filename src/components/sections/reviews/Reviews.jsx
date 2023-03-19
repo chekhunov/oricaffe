@@ -1,10 +1,10 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import avatar1 from "../../../assets/img/avatar1.jpg";
-import avatar2 from "../../../assets/img/avatar2.jpg";
-import avatar3 from "../../../assets/img/avatar3.jpg";
-import avatar4 from "../../../assets/img/avatar4.jpg";
+import avatar1 from "../../../assets/img/avatar1.webp";
+import avatar2 from "../../../assets/img/avatar2.webp";
+import avatar3 from "../../../assets/img/avatar3.webp";
+import avatar4 from "../../../assets/img/avatar4.webp";
 
 import "./reviews.scss";
 

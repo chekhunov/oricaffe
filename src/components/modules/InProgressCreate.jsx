@@ -1,5 +1,5 @@
 import React from "react";
-import CreatePng from "../../assets/icons/create.png";
+import CreatePng from "../../assets/icons/create.webp";
 export default function InProgressCreate() {
   return (
     <div className="d-flex flex-column align-center">

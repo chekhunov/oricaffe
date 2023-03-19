@@ -169,7 +169,7 @@ const CartPage = ({ onClosed, onRemove, items = [] }) => {
           <Info
             title={t("cart_is_empty")}
             description={t("add_item_to_cart")}
-            image={"/cart/empty.png"}
+            image={"/cart/empty.webp"}
           />
         )}
       </div>

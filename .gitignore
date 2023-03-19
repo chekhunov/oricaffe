@@ -12,6 +12,8 @@
 /build
 
 # misc
+.idea
+.vscode
 .history
 .DS_Store
 .env.local

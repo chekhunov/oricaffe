@@ -3,16 +3,16 @@ import { useTranslation } from "react-i18next";
 
 import Button from "../../elements/button";
 
-import grani from "../../../assets/img/aboutProducts/beans.png";
-import green from "../../../assets/img/aboutProducts/beans-green.png";
-import moka from "../../../assets/img/aboutProducts/icona_moka.png";
-import chald from "../../../assets/img/aboutProducts/icona_cialda.png";
-import capsule from "../../../assets/img/aboutProducts/icona_NESPRESSO.png";
+import grani from "../../../assets/img/aboutProducts/beans.webp";
+import green from "../../../assets/img/aboutProducts/beans-green.webp";
+import moka from "../../../assets/img/aboutProducts/icona_moka.webp";
+import chald from "../../../assets/img/aboutProducts/icona_cialda.webp";
+import capsule from "../../../assets/img/aboutProducts/icona_NESPRESSO.webp";
 
-import aboutGround from "../../../assets/icons/aboutGround.png";
-import singleDoses from "../../../assets/icons/single-doses.png";
-import nespresso from "../../../assets/icons/nespresso.png";
-import greenCoffeGround from "../../../assets/icons/greenCoffeGround.png";
+import aboutGround from "../../../assets/icons/aboutGround.webp";
+import singleDoses from "../../../assets/icons/single-doses.webp";
+import nespresso from "../../../assets/icons/nespresso.webp";
+import greenCoffeGround from "../../../assets/icons/greenCoffeGround.webp";
 
 import "./aboutProducts.scss";
 

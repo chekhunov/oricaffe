@@ -82,7 +82,6 @@
 
   &__row {
     width: 100%;
-    background-color: #fff;
     
     @include _1024 {
       position: relative;
@@ -288,16 +287,5 @@
     @include _1200 {
       display: none;
     }
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  .about-products {
-
-    // &__content {
-    //   & a:last-child {
-    //     margin-right: 35px;
-    //   }
-    // }
   }
 }

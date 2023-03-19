@@ -219,7 +219,7 @@ export default function Home() {
 
       <img
         className="home__banner-clean"
-        src="/baners/baner-1.jpg"
+        src="/baners/baner-1.webp"
         alt="banner"
       />
 

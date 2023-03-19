@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import en from "../../../assets/img/flags/en.png";
-import ru from "../../../assets/img/flags/ru.png";
-import ua from "../../../assets/img/flags/ua.png";
+import en from "../../../assets/img/flags/en.webp";
+import ru from "../../../assets/img/flags/ru.webp";
+import ua from "../../../assets/img/flags/ua.webp";
 
 export default function Locales() {
   const { i18n } = useTranslation();
   const [locale, setLocale] = useState(i18n.language || "en");
 
-
   const changeLanguage = (lng) => {
     setLocale(lng);
     i18n.changeLanguage(lng);
   };
+
+  let result = locale.match(/en/);
 
   return (
     <div className="lang mr-20">
@@ -27,7 +28,7 @@ export default function Locales() {
         />
 
         <span className="lang__text active">
-          {locale === ("en-US" || "en-GB") ? "en" : locale}
+          {result?.length > 0 ? "en" : locale}
         </span>
 
         <div className="lang__popup">
