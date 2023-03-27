@@ -21,7 +21,7 @@ const DetailsProductCard = () => {
   let { id } = useParams();
   return (
     <ContainerPage name="catalog" breadcrumbs={breadcrumbs}>
-      <div className="about-page__content d-flex justify-center">
+      <div className="catalog__content d-flex justify-center">
         <div>{id}</div>
         <InProgressCreate />
       </div>

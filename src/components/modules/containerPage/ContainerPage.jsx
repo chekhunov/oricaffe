@@ -16,7 +16,7 @@ const Container = ({ children, breadcrumbs, name }) => {
           <Breadcrumbs breadcrumbs={breadcrumbs} />
           <div className={`${name}-page__title pb-50`}>{t(`${name}`)}</div>
           <Divider />
-          <div className="mt-50">{children}</div>
+          {children}
         </div>
       </div>
     </section>

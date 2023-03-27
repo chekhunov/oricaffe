@@ -21,7 +21,7 @@ let breadcrumbs = [
 const BlogPage = () => {
   return (
     <ContainerPage name="blog" breadcrumbs={breadcrumbs}>
-      <div className="about-page__content d-flex justify-center">
+      <div className="blog__content d-flex justify-center">
         <InProgressCreate />
       </div>
     </ContainerPage>

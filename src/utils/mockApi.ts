@@ -3,6 +3,7 @@ import { match, pathToRegexp } from "path-to-regexp";
 import axios, { AxiosRequestConfig } from "axios";
 import { apiRoutes } from "./routes";
 import { topProducts } from "../state/topProducts";
+import { products } from "../state/catalog";
 import { navMenu, menuSubheader, categoryProducts } from "../state/navMenu";
 import { cartMocks } from "../state/cartMocks";
 // import { services } from '../fixtures/services';
@@ -167,6 +168,20 @@ export const initializeMockAdapter = () => {
     // }
 
     return [200, { top_products: topProducts }];
+  });
+
+  mock.onGet(apiRoutes.getProductsList).reply((config) => {
+    // if (!getUser(config)) {
+    //   return [403];
+    // }
+
+    // const failed = !!Math.round(Math.random());
+
+    // if (failed) {
+    //   return [500];
+    // }
+
+    return [200, { products: products }];
   });
 
   // mock.onGet(pathToRegexp(apiRoutes.getInsurance)).reply((config) => {

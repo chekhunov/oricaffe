@@ -4,6 +4,7 @@ import { CategoryModel } from "../models/category.model";
 export const categoryProducts = [
   {
     id: 1,
+    name: "coffee",
     value: "category_products.coffee",
     link: "catalog/coffee",
     img: "/category/bean-c.webp",
@@ -11,6 +12,7 @@ export const categoryProducts = [
   },
   {
     id: 2,
+    name: "tea",
     value: "category_products.tea",
     link: "catalog/tea",
     img: "/category/tea.webp",
@@ -18,6 +20,7 @@ export const categoryProducts = [
   },
   {
     id: 3,
+    name: "chocolate",
     value: "category_products.chocolate",
     link: "catalog/chocolate",
     img: "/category/powder.webp",
@@ -25,6 +28,7 @@ export const categoryProducts = [
   },
   {
     id: 4,
+    name: "equipment",
     value: "category_products.coffee_equipment",
     link: "catalog/equipment",
     img: "/category/coffee-equipment.webp",
@@ -32,6 +36,7 @@ export const categoryProducts = [
   },
   {
     id: 5,
+    name: "accessories",
     value: "category_products.coffee_accessories",
     link: "catalog/accessories",
     img: "/category/coffee-accessories.webp",

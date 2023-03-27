@@ -14,7 +14,8 @@ import GuaranteePage from "./pages/guarantee";
 import ServicesPage from "./pages/services";
 import BlogPage from "./pages/blog";
 import ContactPage from "./pages/contacts";
-import DetailsProductCard from "./pages/catalog";
+import { DetailsProductCard } from "./pages/catalog";
+import { CatalogPage } from "./pages/catalog";
 
 import StateContext from "./utils/stateContext";
 import { CartProvider } from "react-use-cart";
@@ -71,6 +72,7 @@ function Content() {
         <Route path={pageRoutes.contact} element={<ContactPage />} />
         <Route path={pageRoutes.cart} element={<CartPage />} />
         <Route path={pageRoutes.blog} element={<BlogPage />} />
+        <Route path={pageRoutes.catalog} element={<CatalogPage />} />
         <Route
           path={pageRoutes.catalog + "/:id"}
           element={<DetailsProductCard />}

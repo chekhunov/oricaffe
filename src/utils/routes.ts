@@ -2,6 +2,7 @@ export const apiRoutes = {
   getTokenByPassword: "/api/getTokenByPassword",
   getProfile: "/api/getProfile",
   getTopProductsList: "/api/getTopProductsList",
+  getProductsList: "/api/getProductsList",
   getNavMenu: "/api/getNavMenu",
   initialState: "/api/initialState",
   getCart: "/api/getCart",
@@ -26,5 +27,4 @@ export const pageRoutes = {
   not_found: "/404",
   all: "*",
   auth: "/auth",
-  // appointment: '/appointment/:id',
 };
