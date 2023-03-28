@@ -12,7 +12,8 @@ export default function ContactsAddress() {
             href="https://www.google.com/maps/place/%D0%B2%D1%8A%D0%B5%D0%B7%D0%B4+%D0%91%D0%B0%D0%BB%D0%B0%D0%BA%D0%B8%D1%80%D0%B5%D0%B2%D0%B0,+1,+%D0%A5%D0%B0%D1%80%D1%8C%D0%BA%D0%BE%D0%B2,+%D0%A5%D0%B0%D1%80%D1%8C%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+61000/@50.039936,36.2426616,17z/data=!3m1!4b1!4m5!3m4!1s0x4127a6c68400393f:0x9c9af1ee91cf5108!8m2!3d50.039936!4d36.2448503"
             target="_blanck"
           >
-            Ужгород, въезд Балакирева 1
+            Vulytsya Aranʹ Yanosha, 31, Berehove, Zakarpats'ka oblast, Ukraine,
+            90201
           </a>
 
           <div className={"contacts__text"}></div>

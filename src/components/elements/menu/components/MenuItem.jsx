@@ -71,7 +71,7 @@ const MenuElement = ({
             {category?.map((elem) => (
               <Link
                 key={`category-item_${elem.id}`}
-                to={`${elem.link}`}
+                to={`${elem.link}/${elem.category}`}
                 onClick={setActivePopup}
               >
                 <li className="submenu__elem">{t(`${elem.value}`)}</li>

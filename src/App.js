@@ -72,7 +72,7 @@ function Content() {
         <Route path={pageRoutes.contact} element={<ContactPage />} />
         <Route path={pageRoutes.cart} element={<CartPage />} />
         <Route path={pageRoutes.blog} element={<BlogPage />} />
-        <Route path={pageRoutes.catalog} element={<CatalogPage />} />
+        <Route path={pageRoutes.catalog + "/:category"} element={<CatalogPage />} />
         <Route
           path={pageRoutes.catalog + "/:id"}
           element={<DetailsProductCard />}

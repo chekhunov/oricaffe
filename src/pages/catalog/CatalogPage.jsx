@@ -1,5 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import { pageRoutes } from "../../utils/routes";
 
+import cn from "classnames";
 import ContainerPage from "../../components/modules/containerPage";
 import Loader from "../../components/elements/loader";
 import Center from "../../components/elements/center";
@@ -25,11 +28,13 @@ const breadcrumbs = [
 ];
 
 const CatalogPage = () => {
-  const [productCategory, setProductCategory] = useState("coffee");
+  let { category } = useParams();
+  let navigate = useNavigate();
+  const [productCategory, setProductCategory] = useState(category);
   const { t } = useTranslation();
   const { data: productsData, isLoadingProducts } = useGetProducts();
   const { data: categoryData, isLoading: isLoadingCategory } = useGetNavMenu();
-  const { category } = categoryData;
+  const { category: categoryItems } = categoryData;
   const { products } = productsData;
 
   const filterProducts = products?.filter(
@@ -37,11 +42,17 @@ const CatalogPage = () => {
   );
 
   const handleClick = (name) => {
-    console.log(name);
+    navigate(`${pageRoutes.catalog}/${name}`);
     setProductCategory(name);
   };
 
-  console.log(filterProducts);
+  console.log(category, productCategory);
+
+  useEffect(() => {
+    if (category) {
+      setProductCategory(category);
+    }
+  }, [category]);
 
   return (
     <ContainerPage name="catalog" breadcrumbs={breadcrumbs}>
@@ -58,9 +69,12 @@ const CatalogPage = () => {
                 <Loader />
               </Center>
             ) : (
-              category?.map((item) => (
+              categoryItems?.map((item) => (
                 <div
-                  className="catalog__category-item mb-10"
+                  className={cn(
+                    "catalog__category-item mb-10",
+                    item.name === category ? "active" : ""
+                  )}
                   onClick={() => handleClick(item.name)}
                 >
                   {t(item.value)}
