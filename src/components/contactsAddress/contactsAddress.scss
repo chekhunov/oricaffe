@@ -1,0 +1,45 @@
+@import '../../scss/vars.scss';
+
+.icon-location {
+  width: 30px;
+  font-size: 30px;
+}
+
+.icon-phone {
+  width: 30px;
+  font-size: 24px;
+}
+
+.icon-mail {
+  width: 30px;
+  font-size: 20px;
+}
+
+.partners-title {
+  font-size: 36px!important;
+}
+
+.contacts {
+  &__block {
+    padding-left: 10px;
+    margin-bottom: 20px;
+  }
+
+  &__item {
+    display: flex;
+  }
+
+  &__title {
+    font-size: 16px;
+    color: $default;
+
+    &:hover {
+      color: lighten($color: $default, $amount: 30%);
+    }
+  }
+
+  &__text {
+    padding-top: 5px;
+    color: #908f97;
+  }
+}

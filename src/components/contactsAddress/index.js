@@ -1,6 +1,11 @@
 import React from "react";
 
+import { useTranslation } from "react-i18next";
+
+import "./contactsAddress.scss";
+
 export default function ContactsAddress() {
+  const { t } = useTranslation();
   return (
     <address className={"contacts__list"}>
       <div className={"contacts__item"}>
@@ -9,14 +14,14 @@ export default function ContactsAddress() {
         <div className={"contacts__block"}>
           <a
             className={"contacts__title"}
-            href="https://www.google.com/maps/place/%D0%B2%D1%8A%D0%B5%D0%B7%D0%B4+%D0%91%D0%B0%D0%BB%D0%B0%D0%BA%D0%B8%D1%80%D0%B5%D0%B2%D0%B0,+1,+%D0%A5%D0%B0%D1%80%D1%8C%D0%BA%D0%BE%D0%B2,+%D0%A5%D0%B0%D1%80%D1%8C%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%B0%D1%8F+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C,+61000/@50.039936,36.2426616,17z/data=!3m1!4b1!4m5!3m4!1s0x4127a6c68400393f:0x9c9af1ee91cf5108!8m2!3d50.039936!4d36.2448503"
+            href="https://www.google.com/maps/place/Vulytsya+Aran%CA%B9+Yanosha,+31,+Berehove,+Zakarpats'ka+oblast,+Ukraine,+90201/@48.199247,22.6424614,17z/data=!3m1!4b1!4m6!3m5!1s0x47385b2aea2eb8c3:0x1c64b872282aa715!8m2!3d48.1992434!4d22.6446501!16s%2Fg%2F11c899jkdr"
             target="_blanck"
           >
             Vulytsya Aranʹ Yanosha, 31, Berehove, Zakarpats'ka oblast, Ukraine,
             90201
           </a>
 
-          <div className={"contacts__text"}></div>
+          <p className={"contacts__text"}>{t("where_to_find_us")}</p>
         </div>
       </div>
 
@@ -24,13 +29,11 @@ export default function ContactsAddress() {
         <span className="icon-phone"></span>
 
         <div className={"contacts__block"}>
-          <a className={"contacts__title"} href="tel:+380993147059">
-            +380 99 314 7059
+          <a className={"contacts__title"} href="tel:+380506924860">
+            +38(050) 692 48 60
           </a>
 
-          <div className={"contacts__text"}>
-            По всем вопросам. С 9:00 до 19:00
-          </div>
+          <p className={"contacts__text"}>{t("for_all_questions")}</p>
         </div>
       </div>
 
@@ -45,7 +48,7 @@ export default function ContactsAddress() {
             orientalcaffeua@gmail.com
           </a>
 
-          <div className={"contacts__text"}>Наша электронная почта</div>
+          <p className={"contacts__text"}>{t("our_email")}</p>
         </div>
       </div>
     </address>
