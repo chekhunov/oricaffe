@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { pageRoutes } from "../../utils/routes";
+import Pagination from "../../components/modules/pagination";
 
 import cn from "classnames";
+import { Skeleton } from "react-skeleton-generator";
 import ContainerPage from "../../components/modules/containerPage";
 import Loader from "../../components/elements/loader";
 import Center from "../../components/elements/center";
@@ -28,31 +30,39 @@ const breadcrumbs = [
 ];
 
 const CatalogPage = () => {
-  let { category } = useParams();
-  let navigate = useNavigate();
-  const [productCategory, setProductCategory] = useState(category);
   const { t } = useTranslation();
-  const { data: productsData, isLoadingProducts } = useGetProducts();
+
+  let navigate = useNavigate();
+
+  let { category } = useParams();
+  const [productCategory, setProductCategory] = useState(category);
+
+  const productsLimit = 9;
+  const [page, setPage] = useState(1);
+
+  const params = { page, limit: productsLimit, productCategory };
+
+  const { data: productsData, isLoading: isLoadingProducts } =
+    useGetProducts(params);
+
+  const { products, count } = productsData || [];
+
+  const isPaginationShow = count > 1;
+
   const { data: categoryData, isLoading: isLoadingCategory } = useGetNavMenu();
   const { category: categoryItems } = categoryData;
-  const { products } = productsData;
-
-  const filterProducts = products?.filter(
-    (item) => item.category === productCategory
-  );
 
   const handleClick = (name) => {
     navigate(`${pageRoutes.catalog}/${name}`);
     setProductCategory(name);
+    setPage(1);
   };
-
-  console.log(category, productCategory);
 
   useEffect(() => {
     if (category) {
       setProductCategory(category);
     }
-  }, [category]);
+  }, [category, page]);
 
   return (
     <ContainerPage name="catalog" breadcrumbs={breadcrumbs}>
@@ -61,7 +71,7 @@ const CatalogPage = () => {
           <div className="catalog__category">
             <div className="catalog__title">{t("category_coffee")}</div>
 
-            <Divider />
+            <Divider orientation="horizontal" />
             <div className="mb-20"></div>
 
             {isLoadingCategory ? (
@@ -71,6 +81,7 @@ const CatalogPage = () => {
             ) : (
               categoryItems?.map((item) => (
                 <div
+                  key={item.id}
                   className={cn(
                     "catalog__category-item mb-10",
                     item.name === category ? "active" : ""
@@ -85,15 +96,85 @@ const CatalogPage = () => {
         </div>
         <div className="catalog__content">
           {isLoadingProducts ? (
-            <Center>
-              <Loader />
-            </Center>
+            <Skeleton.SkeletonThemeProvider
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                justifyContent: "center",
+              }}
+            >
+              {[...Array(6)]?.map((item, index) => (
+                <div
+                  key={`skeleton-el_${index}`}
+                  className="mr-20 mb-20 d-flex justify-center"
+                  style={{ width: "304px" }}
+                >
+                  <div className="d-flex flex-column align-center">
+                    <Skeleton
+                      width="274px"
+                      height="187px"
+                      borderRadius="25px 25px 0px 0px"
+                    />
+
+                    <Skeleton width="220px" height="26px" borderRadius="10px" />
+                    <Skeleton
+                      width="100px"
+                      height="20px"
+                      borderRadius="10px"
+                      spaceBetween="30px"
+                    />
+                    <Skeleton
+                      width="170px"
+                      height="20px"
+                      borderRadius="10px"
+                      spaceBetween="10px"
+                    />
+                    <Skeleton
+                      width="170px"
+                      height="50px"
+                      borderRadius="10px"
+                      spaceBetween="20px"
+                    />
+                  </div>
+                  <div
+                    style={{
+                      display: "flex",
+                      justifyContent: "space-between",
+                      marginTop: "10px",
+                    }}
+                  >
+                    <Skeleton width="48%" height="50px" borderRadius="10px" />
+
+                    <Skeleton width="48%" height="50px" borderRadius="10px" />
+                  </div>
+                </div>
+              ))}
+            </Skeleton.SkeletonThemeProvider>
           ) : (
             <div className="catalog__items">
-              {filterProducts?.map((item, index) => (
-                <ProductsCard {...item} sx={{ marginRight: "20px" }} />
-              ))}
+              {products?.length ? (
+                products?.map((item, index) => (
+                  <ProductsCard
+                    key={`card-prodict_${item.id}`}
+                    {...item}
+                    sx={{ marginRight: "20px" }}
+                  />
+                ))
+              ) : (
+                <Center sx={{ width: "100%" }}>
+                  <div>{t("there_is_currently")}</div>
+                </Center>
+              )}
             </div>
+          )}
+
+          {isPaginationShow && (
+            <Pagination
+              page={page}
+              onChange={setPage}
+              defaultPage={1}
+              count={count}
+            />
           )}
         </div>
       </div>

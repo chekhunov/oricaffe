@@ -15,7 +15,7 @@ const Container = ({ children, breadcrumbs, name }) => {
         <div className={`${name}-page__inner`}>
           <Breadcrumbs breadcrumbs={breadcrumbs} />
           <div className={`${name}-page__title pb-50`}>{t(`${name}`)}</div>
-          <Divider />
+          <Divider orientation="horizontal" />
           {children}
         </div>
       </div>

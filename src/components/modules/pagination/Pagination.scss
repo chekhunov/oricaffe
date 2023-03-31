@@ -1,0 +1,80 @@
+@import '../../../scss/mixins';
+
+  .button-prev,
+  .button-next {
+    position: relative;
+    height: 50px;
+    width: 50px;
+    background-color: #fff;
+    border-radius: 50%;
+    z-index: 10;
+    border: 0.5px solid #8E0303;
+    transition: background-color 0.3s;
+    cursor: pointer;
+
+    &:before {
+      position: absolute;
+      display: block;
+      content: url('../../../assets/icons/category/arrow-b.svg');
+    }
+
+    &:hover {
+      background-color: darken($color: #fff, $amount: 5%);
+      transition: background-color 0.3s;
+    }
+  }
+
+  .button-num {
+    position: relative;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
+    background-color: #fff;
+    border-radius: 50%;
+    z-index: 10;
+    color: #8E0303;
+    font-size: 20px;
+    padding-top: 2px;
+    border: 0.5px solid #8E0303;
+    transition: background-color 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken($color: #fff, $amount: 5%);
+      transition: background-color 0.3s;
+    }
+
+    &.active {
+      background-color: darken($color: #fff, $amount: 5%);
+      transition: background-color 0.3s;
+    }
+  }
+
+  .button-prev {
+    margin-right: 5px;
+    &:before {
+      right: 20px;
+      bottom: 14px;
+      transform: rotate(-180deg);
+    }
+
+    &.disable {
+      pointer-events: none;
+      opacity: 0.5;
+    }
+  }
+
+  .button-next {
+    &:before {
+      right: 16px;
+      bottom: 8px;
+    }
+
+    &.disable {
+      pointer-events: none;
+      opacity: 0.5;
+    }
+  }

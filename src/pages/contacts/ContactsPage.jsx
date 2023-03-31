@@ -219,16 +219,19 @@ const ContactPage = () => {
         <div className="contacts-page__partners">
           <div className="contacts-page__items">
             {listPartners?.map((item, index) => (
-              <div
+              <a
+                href={item.link}
                 className={cn(
                   "contacts-page__item",
                   index === active ? "active" : ""
                 )}
                 onClick={() => setActive(index)}
+                target="_blank"
+                rel="noreferrer"
               >
                 <div className="contacts-page__caffee">{item.title}</div>
                 <div className="contacts-page__address">{item.address}</div>
-              </div>
+              </a>
             ))}
           </div>
 

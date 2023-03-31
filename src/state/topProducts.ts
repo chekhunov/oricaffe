@@ -4,6 +4,7 @@ export const topProducts = [
   {
     id: 1,
     code: 100001,
+    category: "coffee",
     name: "Il Rosso in grains",
     desc: "в зернах",
     sort: "Арабика: 80%",
@@ -17,6 +18,7 @@ export const topProducts = [
   {
     id: 2,
     code: 100002,
+    category: "coffee",
     name: "Il Rosso in grains",
     desc: "в зернах",
     sort: "Арабика: 80%",
@@ -30,6 +32,7 @@ export const topProducts = [
   {
     id: 3,
     code: 100003,
+    category: "coffee",
     name: "Il Rosso in grains",
     desc: "в зернах",
     sort: "Арабика: 80%",
@@ -43,6 +46,7 @@ export const topProducts = [
   {
     id: 4,
     code: 100004,
+    category: "coffee",
     name: "Il Rosso in grains",
     desc: "в зернах",
     sort: "Арабика: 80%",
@@ -56,6 +60,7 @@ export const topProducts = [
   {
     id: 5,
     code: 100005,
+    category: "coffee",
     name: "Il Rosso in grains",
     desc: "в зернах",
     sort: "Арабика: 80%",
@@ -69,6 +74,7 @@ export const topProducts = [
   {
     id: 6,
     code: 100006,
+    category: "coffee",
     name: "Il Rosso in grains",
     desc: "в зернах",
     sort: "Арабика: 80%",

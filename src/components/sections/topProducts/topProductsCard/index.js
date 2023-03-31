@@ -15,6 +15,7 @@ export default function TopProductsCard({
   weight,
   imgUrl,
   price,
+  category,
 }) {
   const { setStateContext } = useContext(StateContext);
 
@@ -30,7 +31,7 @@ export default function TopProductsCard({
 
   return (
     <Link
-      to={pageRoutes.catalog + `/${code}`}
+      to={pageRoutes.catalog + `/${category}/${code}`}
       className={cn("top-products__item")}
     >
       <div className="top-products__cart" onClick={(e) => handleClick(e)}>
@@ -95,7 +96,7 @@ export default function TopProductsCard({
           </div>
 
           <Divider
-            orientation="gorizontal"
+            orientation="horizontal"
             sx={{
               height: "1px",
               width: "70%",

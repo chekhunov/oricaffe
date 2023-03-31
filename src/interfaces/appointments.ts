@@ -13,6 +13,7 @@ export interface TopProductCardInterface {
 
 export interface ProductCardInterface {
   id: number | string;
+  code: number;
   name: string;
   category: string;
   desc: string;

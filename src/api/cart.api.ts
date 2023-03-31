@@ -1,5 +1,5 @@
 import { useDelete, useFetch, usePost } from '../utils/reactQuery';
-import { pathToUrl } from '../utils/router.path';
+import { pathToUrl } from '../utils/router';
 import { apiRoutes } from '../utils/routes';
 import { CartModel } from '../models/cart.model';
 

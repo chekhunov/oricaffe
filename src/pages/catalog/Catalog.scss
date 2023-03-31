@@ -1,4 +1,4 @@
-.catalog-page {
+.card_details-page {
   padding-top: 30px;
   &__title {
     padding-top: 50px;
@@ -58,5 +58,17 @@
     width: 100%;
     display: flex;
     margin-left: 50px;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.card-details {
+  &__content {
+    margin: 50px 0;
+  }
+
+  &__title {
+
   }
 }

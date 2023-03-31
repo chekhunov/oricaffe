@@ -16,6 +16,7 @@ export default function ProductsCard({
   weight,
   imgUrl,
   price,
+  category,
   sx,
 }) {
   const [quantity, setQuantity] = useState(1);
@@ -41,7 +42,7 @@ export default function ProductsCard({
 
   return (
     <Link
-      to={pageRoutes.catalog + `/${code}`}
+      to={pageRoutes.catalog + `/${category}/${code}`}
       className={cn("products-card__item")}
       style={sx}
     >
@@ -66,7 +67,7 @@ export default function ProductsCard({
           </div>
 
           <Divider
-            orientation="gorizontal"
+            orientation="horizontal"
             sx={{
               height: "1px",
               width: "70%",

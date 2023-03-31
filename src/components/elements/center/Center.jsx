@@ -1,8 +1,8 @@
 import React from "react";
 
 import "./Center.scss";
-const Center = ({ children }) => {
-  return <div className="center">{children}</div>;
+const Center = ({ children, sx }) => {
+  return <div className="center" style={sx}>{children}</div>;
 };
 
 export default Center;

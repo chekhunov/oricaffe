@@ -3,13 +3,10 @@ export const apiRoutes = {
   getProfile: "/api/getProfile",
   getTopProductsList: "/api/getTopProductsList",
   getProductsList: "/api/getProductsList",
+  getProductCardDetails: "/api/getProduct",
   getNavMenu: "/api/getNavMenu",
   initialState: "/api/initialState",
   getCart: "/api/getCart",
-  // getUserList: "/api/users",
-  // getCarDetail: '/api/getCarDetail/:id',
-  // getInsurance: '/api/getInsurance/:id',
-  // job: '/api/job/:id?',
 };
 
 export const pageRoutes = {

@@ -6,8 +6,6 @@ import { topProducts } from "../state/topProducts";
 import { products } from "../state/catalog";
 import { navMenu, menuSubheader, categoryProducts } from "../state/navMenu";
 import { cartMocks } from "../state/cartMocks";
-// import { services } from '../fixtures/services';
-// import { InsuranceDetailsInterface } from '../interfaces/appointments';
 
 const ADMIN_TOKEN = "admintoken";
 const MODERATOR_TOKEN = "moderatortoken";
@@ -69,59 +67,9 @@ export const initializeMockAdapter = () => {
     ];
   });
 
-  // mock.onGet(pathToRegexp(apiRoutes.appointment)).reply((config) => {
-  //   if (!getUser(config)) {
-  //     return [403];
-  //   }
-
-  //   const result = match<{ id: string }>(apiRoutes.appointment, {
-  //     decode: decodeURIComponent,
-  //   })(config.url!);
-
-  //   if (result === false) {
-  //     return [403];
-  //   }
-
-  //   const { id } = result.params;
-
-  //   return [200, appointments.find((item) => item.id === +id)];
-  // });
-
-  // mock.onPatch(pathToRegexp(apiRoutes.appointment)).reply((config) => {
-  //   const user = getUser(config);
-
-  //   if (!user) {
-  //     return [403];
-  //   }
-
-  //   const body = JSON.parse(config.data);
-
-  //   const idx = appointments.findIndex((item) => item.id === body.id);
-
-  //   appointments[idx] = {
-  //     ...appointments[idx],
-  //     ...body,
-  //     history: [
-  //       ...appointments[idx].history,
-  //       {
-  //         date: new Date(),
-  //         comment: `Changed by ${user.name}`,
-  //       },
-  //     ],
-  //   };
-
-  //   return [200, appointments[idx]];
-  // });
-
   mock.onGet(apiRoutes.initialState).reply((config) => {
     // if (!getUser(config)) {
     //   return [403];
-    // }
-
-    // const failed = !!Math.round(Math.random());
-
-    // if (failed) {
-    //   return [500];
     // }
 
     return [
@@ -136,15 +84,6 @@ export const initializeMockAdapter = () => {
   });
 
   mock.onGet(apiRoutes.getNavMenu).reply((config) => {
-    // if (!getUser(config)) {
-    //   return [403];
-    // }
-
-    // const failed = !!Math.round(Math.random());
-
-    // if (failed) {
-    //   return [500];
-    // }
 
     return [
       200,
@@ -157,82 +96,48 @@ export const initializeMockAdapter = () => {
   });
 
   mock.onGet(apiRoutes.getTopProductsList).reply((config) => {
-    // if (!getUser(config)) {
-    //   return [403];
-    // }
-
-    // const failed = !!Math.round(Math.random());
-
-    // if (failed) {
-    //   return [500];
-    // }
 
     return [200, { top_products: topProducts }];
   });
 
   mock.onGet(apiRoutes.getProductsList).reply((config) => {
-    // if (!getUser(config)) {
-    //   return [403];
-    // }
 
-    // const failed = !!Math.round(Math.random());
+    const { params } = config;
 
-    // if (failed) {
-    //   return [500];
-    // }
+    const { page, limit, productCategory } = params;
 
-    return [200, { products: products }];
+    const filterData = products.filter(
+      (item) => item.category === productCategory
+    );
+
+    return [
+      200,
+      {
+        products: filterData.slice(
+          page === 1 ? 0 : (page - 1) * 10,
+          limit * page
+        ),
+        count: Math.ceil(filterData.length / limit),
+      },
+    ];
   });
 
-  // mock.onGet(pathToRegexp(apiRoutes.getInsurance)).reply((config) => {
-  //   if (!getUser(config)) {
-  //     return [403];
-  //   }
+  mock.onGet(apiRoutes.getProductCardDetails).reply((config) => {
+    const { params } = config;
 
-  //   const result = match<{ id: string }>(apiRoutes.getInsurance, {
-  //     decode: decodeURIComponent,
-  //   })(config.url!);
+    console.log(config);
 
-  //   if (result === false) {
-  //     return [403];
-  //   }
+    const filterData = products.filter(
+      (item) => Number(item.code) === Number(params.code)
+    );
 
-  //   const { id } = result.params;
-
-  //   if (+id === 1) {
-  //     return [
-  //       200,
-  //       {
-  //         allCovered: true,
-  //       } as InsuranceDetailsInterface,
-  //     ];
-  //   }
-
-  //   return [
-  //     200,
-  //     {
-  //       allCovered: false,
-  //     } as InsuranceDetailsInterface,
-  //   ];
-  // });
-
-  // mock.onGet(pathToRegexp(apiRoutes.getCarDetail)).reply((config) => {
-  //   if (!getUser(config)) {
-  //     return [403];
-  //   }
-
-  //   const result = match<{ id: string }>(apiRoutes.getCarDetail, {
-  //     decode: decodeURIComponent,
-  //   })(config.url!);
-
-  //   if (result === false) {
-  //     return [403];
-  //   }
-
-  //   const { id } = result.params;
-
-  //   return [200, carDetailsMock.find((item) => item.id === +id)];
-  // });
+    return [
+      200,
+      {
+        filterData,
+      },
+    ];
+  });
 
   mock.onGet(pathToRegexp(apiRoutes.getCart)).reply((config) => {
     // if (!getUser(config)) {
@@ -265,34 +170,9 @@ export const initializeMockAdapter = () => {
 
     const body = {
       ...data,
-      // id: Math.floor(Math.random() * 10000000),
     };
     cartMocks.push(body);
 
     return [200, body];
   });
-
-  // mock.onDelete(pathToRegexp(apiRoutes.job)).reply((config) => {
-  //   const user = getUser(config);
-
-  //   if (!user) {
-  //     return [403];
-  //   }
-
-  //   const result = match<{ id: string }>(apiRoutes.job, {
-  //     decode: decodeURIComponent,
-  //   })(config.url!);
-
-  //   if (result === false) {
-  //     return [403];
-  //   }
-
-  //   const { id } = result.params;
-
-  //   const idx = jobsMocks.findIndex((item) => item.id === +id);
-
-  //   const [body] = jobsMocks.splice(idx, 1);
-
-  //   return [200, body];
-  // });
 };
