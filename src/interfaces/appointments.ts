@@ -1,26 +1,18 @@
-export interface TopProductCardInterface {
-  id: number | string;
-  name: string;
-  desc: string;
-  sort: string;
-  weight: number;
-  weightBox: number;
-  price: number;
-  imgUrl: string;
-  info: string;
-  link: string;
-}
-
 export interface ProductCardInterface {
   id: number | string;
-  code: number;
-  name: string;
+  code: string;
   category: string;
+  name: string;
+  type_of_coffee: string;
   desc: string;
   sort: string;
   weight: number;
-  weightBox: number;
-  price: number;
+  weight_box: number;
+  price_opt: number;
+  priceOpt?: number;
+  price_site: number;
+  priceSite?: number;
+  type_currency: string;
   imgUrl: string;
   info: string;
   link: string;

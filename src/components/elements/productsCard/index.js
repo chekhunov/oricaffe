@@ -5,25 +5,37 @@ import { Link } from "react-router-dom";
 import { pageRoutes } from "../../../utils/routes";
 import { useCart } from "react-use-cart";
 import { useTranslation } from "react-i18next";
+import useGetPrice from "../../../hooks/useGetPrice";
 
 import "./ProductsCard.scss";
 export default function ProductsCard({
   id,
-  code,
-  name,
-  desc,
-  sort,
-  weight,
-  imgUrl,
-  price,
   category,
+  type_of_coffee,
+  sort,
+  name,
+  weight,
+  weight_box,
+  cost,
+  desc,
+  imgUrl,
   sx,
 }) {
   const [quantity, setQuantity] = useState(1);
   const { t } = useTranslation();
   const { addItem } = useCart();
 
-  const data = { id, code, imgUrl, name, desc, price };
+  const { price_opt, price_site } = useGetPrice();
+
+  const data = {
+    id,
+    code: `10000${id}`,
+    imgUrl,
+    name,
+    quantity,
+    price: price_site(cost),
+    price_opt: price_opt(cost),
+  };
 
   const handlePlus = (e) => {
     setQuantity(quantity + 1);
@@ -42,7 +54,7 @@ export default function ProductsCard({
 
   return (
     <Link
-      to={pageRoutes.catalog + `/${category}/${code}`}
+      to={pageRoutes.catalog + `/${category}/${id}`}
       className={cn("products-card__item")}
       style={sx}
     >
@@ -56,7 +68,7 @@ export default function ProductsCard({
               }}
             >
               <span className="products-card__number">{weight}</span>
-              <span className="products-card__practice">кг.</span>
+              <span className="products-card__practice">{t("kg")}</span>
             </div>
 
             <img
@@ -87,7 +99,15 @@ export default function ProductsCard({
               {name}
             </span>
 
+            <div
+              style={{ fontWeight: "400", fontSize: "14px", color: "#131938" }}
+              className="products-card__description products-card__description--meta d-flex justify-center mb-10"
+            >
+              <span>{sort}</span>
+            </div>
+
             <span
+              className={"products-card__desc"}
               style={{ fontWeight: "400", fontSize: "14px", color: "#131938" }}
             >
               {desc}
@@ -95,20 +115,26 @@ export default function ProductsCard({
           </div>
 
           <div
-            className="products-card__description products-card__description--meta d-flex justify-center"
-            style={{ fontWeight: "400", fontSize: "14px", color: "#131938" }}
+            className="products-card__description d-flex justify-center"
+            style={{
+              color: "#131938",
+            }}
           >
-            <span>{sort}</span>
+            <span className="products-card__price-opt ">
+              ({t("from")} {weight_box} {t("kg")}): {price_opt(cost)}
+            </span>
+            <span>{t("hrn")}</span>
           </div>
-
           <div
             className="products-card__description products-card__description--three d-flex justify-center"
             style={{
               color: "#131938",
             }}
           >
-            <span className="products-card__price">{price}</span>
-            <span>грн</span>
+            <span className="products-card__price">
+              Цена: {price_site(cost)}
+            </span>
+            <span>{t("hrn")}</span>
           </div>
         </div>
 

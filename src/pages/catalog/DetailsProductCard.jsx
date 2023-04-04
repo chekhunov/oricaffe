@@ -6,6 +6,7 @@ import { Skeleton } from "react-skeleton-generator";
 import { useGetProductCardDetail } from "../../api/productCardDetails";
 import Center from "../../components/elements/center";
 import { useTranslation } from "react-i18next";
+import useGetPrice from "../../hooks/useGetPrice";
 
 const DetailsProductCard = () => {
   const { t } = useTranslation();
@@ -13,24 +14,28 @@ const DetailsProductCard = () => {
 
   const params = { code: productCode };
 
+  const { price_opt, price_site } = useGetPrice();
+
+  console.log(productCode);
+
   const { data, isLoading } = useGetProductCardDetail(params);
 
+  console.log(data);
+
   const { filterData } = data || {};
-  const [productDetails] = filterData || [];
 
   const {
     id,
-    code,
     category,
     name,
+    cost,
     desc,
     sort,
     weight,
-    weightBox,
-    price,
+    weight_box,
     imgUrl,
     info,
-  } = productDetails || {};
+  } = filterData || {};
 
   const breadcrumbs = [
     {
@@ -50,7 +55,6 @@ const DetailsProductCard = () => {
     },
   ];
 
-  console.log(productDetails);
   return (
     <ContainerPage name="card_details" breadcrumbs={breadcrumbs}>
       <div className="card-details__content d-flex justify-center">
@@ -86,8 +90,10 @@ const DetailsProductCard = () => {
               />
 
               <div className="card-details__info">
-                <span className="card-details__code">Code product: {code}</span>
-                <span className="card-details__code">{price}</span>
+                <span className="card-details__code">Code product: {`10000${id}`}</span>
+                <span className="card-details__price">Price: {price_site(cost)}</span>
+                <span className="card-details__desc">{desc}</span>
+                <span className="card-details__desc">{info}</span>
               </div>
             </div>
           </div>

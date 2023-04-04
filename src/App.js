@@ -19,9 +19,19 @@ import { CatalogPage } from "./pages/catalog";
 
 import StateContext from "./utils/stateContext";
 import { CartProvider } from "react-use-cart";
+import useWellCurrency from "./hooks/useWellCurrency";
 
 export default function App() {
   const [stateContext, setStateContext] = useState({});
+
+  const { eurData } = useWellCurrency();
+
+  useEffect(() => {
+    if (eurData?.rate) {
+      localStorage.setItem("eur", eurData.rate);
+    }
+  }, [eurData]);
+
   // const history = useHistory();
   // const { error } = useGetProfile();
 

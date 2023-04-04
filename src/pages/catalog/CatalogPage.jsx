@@ -12,6 +12,7 @@ import { useGetProducts } from "../../api/productList";
 import { useGetNavMenu } from "../../api/navMenu";
 import { useTranslation } from "react-i18next";
 import ProductsCard from "../../components/elements/productsCard";
+import useWellCurrency from '../../hooks/useWellCurrency'
 
 import "./Catalog.scss";
 import { Divider } from "@material-ui/core";
@@ -35,6 +36,9 @@ const CatalogPage = () => {
   let navigate = useNavigate();
 
   let { category } = useParams();
+
+  const { eurData } = useWellCurrency();
+
   const [productCategory, setProductCategory] = useState(category);
 
   const productsLimit = 9;
@@ -63,6 +67,8 @@ const CatalogPage = () => {
       setProductCategory(category);
     }
   }, [category, page]);
+
+  console.log(products)
 
   return (
     <ContainerPage name="catalog" breadcrumbs={breadcrumbs}>
@@ -156,6 +162,7 @@ const CatalogPage = () => {
                 products?.map((item, index) => (
                   <ProductsCard
                     key={`card-prodict_${item.id}`}
+                    rate={eurData?.rate}
                     {...item}
                     sx={{ marginRight: "20px" }}
                   />

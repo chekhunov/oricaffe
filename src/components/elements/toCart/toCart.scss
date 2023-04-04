@@ -51,6 +51,10 @@
 
 .cart {
   &__name {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
     @include _767 {
       font-size: 16px!important;
     }

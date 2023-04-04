@@ -149,5 +149,9 @@
   "can_buy_goods": "Here you can buy goods from the Orientalcaffe team",
   "there_is_currently": "There is currently no such product",
   "category-name": "Category",
-  "card_details": "Card Details"
+  "card_details": "Card Details",
+  "hrn": "hrn",
+  "kg": "kg",
+  "from": "from",
+  "code_of_product": "code"
 }

@@ -79,12 +79,12 @@ export const initializeMockAdapter = () => {
         menu_subheader: menuSubheader,
         category: categoryProducts,
         top_products: topProducts,
+        products,
       },
     ];
   });
 
   mock.onGet(apiRoutes.getNavMenu).reply((config) => {
-
     return [
       200,
       {
@@ -96,12 +96,10 @@ export const initializeMockAdapter = () => {
   });
 
   mock.onGet(apiRoutes.getTopProductsList).reply((config) => {
-
     return [200, { top_products: topProducts }];
   });
 
   mock.onGet(apiRoutes.getProductsList).reply((config) => {
-
     const { params } = config;
 
     const { page, limit, productCategory } = params;
@@ -127,9 +125,7 @@ export const initializeMockAdapter = () => {
 
     console.log(config);
 
-    const filterData = products.filter(
-      (item) => Number(item.code) === Number(params.code)
-    );
+    const filterData = products.find((item) => String(item.id) === params.code);
 
     return [
       200,

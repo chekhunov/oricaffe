@@ -8,6 +8,7 @@ import ButtonTop from "../elements/buttonTop";
 import SocialBtn from "../elements/socialBtn";
 import ToCart from "../elements/toCart";
 import StateContext from "../../utils/stateContext";
+import useGetPrice from "../../hooks/useGetPrice";
 
 import { useInitialState } from "../../api/initialState";
 import { useCart } from "react-use-cart";
@@ -16,22 +17,29 @@ import PreLoader from "../elements/preLoader";
 
 export default function Layout({ children }) {
   const { data, isLoading, isFetching } = useInitialState();
-  const { top_products, menu_subheader, nav_menu } = data;
-
-  const { stateContext } = useContext(StateContext);
+  const { products, menu_subheader, nav_menu } = data;
   const { items } = useCart();
+  const { stateContext } = useContext(StateContext);
 
   const countCart = items?.length;
 
-  const setProductsToPoppup = top_products.filter(
-    (item) => item.code === stateContext?.add_to_cart
-  )[0];
+  const setProductsToPoppup = products.find(
+    (item) => item.id === stateContext.add_to_cart
+  );
+
+  const { price_opt, price_site } = useGetPrice();
+
+  const newData = {
+    price: price_site(setProductsToPoppup?.cost),
+    price_opt: price_opt(setProductsToPoppup?.cost),
+    ...setProductsToPoppup,
+  };
 
   const View = {
     to_cart: {
       component: ToCart,
       props: {
-        data: setProductsToPoppup,
+        data: newData,
         isActiveCardPopup: true,
       },
     },

@@ -1,7 +1,6 @@
 import React, { useContext, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useCart } from "react-use-cart";
-
 import BaseButton from "../baseButton";
 
 import StateContext from "../../../utils/stateContext";
@@ -16,15 +15,25 @@ export default function ToCart({ viewProps }) {
   const { setStateContext } = useContext(StateContext);
   const { addItem } = useCart();
 
-  const { code, imgUrl, name, desc, price } = data;
+  const { id, imgUrl, name, price, price_opt } = data || {};
 
   const handleCancelClick = () => {
     document.body.classList.remove("overflowe");
     setStateContext({ isActiveCardPopup: false, type: "", add_to_cart: null });
   };
 
+  const newData = {
+    imgUrl,
+    quantity,
+    price,
+    price_opt,
+    name,
+    id,
+    code: `10000${id}`
+  };
+
   const handleContinueClick = () => {
-    addItem(data, quantity);
+    addItem(newData, quantity);
     handleCancelClick();
   };
 
@@ -71,13 +80,11 @@ export default function ToCart({ viewProps }) {
                 {t("cart_page.product_code")}
               </span>
               <span style={{ fontSize: "14px" }} className="cart__num">
-                {code}
+                {`10000${id}`}
               </span>
             </span>
 
-            <p className="cart__name">
-              {name} {desc}
-            </p>
+            <p className="cart__name">{name}</p>
           </div>
         </div>
 
@@ -124,13 +131,17 @@ export default function ToCart({ viewProps }) {
           <li className={"d-flex"}>
             <span>{t("cart_page.price")}</span>
             <div></div>
-            <b>{price} грн.</b>
+            <b>
+              {price} {t("hrn")}
+            </b>
           </li>
 
           <li className={"d-flex"}>
             <span>{t("cart_page.total")}</span>
             <div></div>
-            <b>{price * quantity} грн.</b>
+            <b>
+              {price * quantity} {t("hrn")}
+            </b>
           </li>
         </ul>
 

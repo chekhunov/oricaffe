@@ -34,7 +34,7 @@ export default function TopProducts() {
         }}
       >
         {top_products?.map((item, index) => (
-          <SwiperSlide key={item.code} virtualIndex={index}>
+          <SwiperSlide key={item.id} virtualIndex={index}>
             <TopProductsCard {...item} />
           </SwiperSlide>
         ))}

@@ -4,7 +4,9 @@ import { pathToUrl } from "../utils/router";
 import { apiRoutes } from "../utils/routes";
 
 interface paramsProps {
-  code?: string | number;
+  params: {
+    code?: string | number;
+  }
 }
 
 export const useGetProductCardDetail = (params: paramsProps) =>

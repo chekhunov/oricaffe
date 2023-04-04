@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { useCart } from "react-use-cart";
 
 import "./cart.scss";
-const CartPage = ({ onClosed, onRemove, items = [] }) => {
+const CartPage = () => {
   const breadcrumbs = [
     {
       id: 0,
@@ -21,10 +21,12 @@ const CartPage = ({ onClosed, onRemove, items = [] }) => {
 
   const { t } = useTranslation();
 
-  const { items: cart, setItems, removeItem, updateItemQuantity } = useCart();
+  const { items = [], setItems, removeItem, updateItemQuantity } = useCart();
 
-  const sum = cart.map((el) => el.itemTotal);
-  const quan = cart.map((el) => el.quantity);
+  console.log(items);
+
+  const sum = items?.map((el) => el.itemTotal);
+  const quan = items?.map((el) => el.quantity);
 
   const initialValue = 0;
   const sumWithInitial = (arr) => {
@@ -45,12 +47,12 @@ const CartPage = ({ onClosed, onRemove, items = [] }) => {
 
         <Divider />
 
-        {cart?.length > 0 ? (
+        {items?.length > 0 ? (
           <div className="cart__inner d-flex flex-column">
             <div className="cart__items mb-50">
-              {cart?.map((obj) => (
+              {items?.map((obj) => (
                 <div
-                  key={`${obj.id}${obj.code}`}
+                  key={`${obj.code}${obj.id}`}
                   className="cartItem d-flex justify-between align-center"
                 >
                   <div className="d-flex align-center">
@@ -100,12 +102,16 @@ const CartPage = ({ onClosed, onRemove, items = [] }) => {
                       <span className="cart__label">
                         {t("cart_page.price")}
                       </span>
-                      <span className="cart__num price">{obj?.price} грн.</span>
+                      <span className="cart__num price">
+                        {obj?.price} {t("hrn")}
+                      </span>
                     </span>
 
                     <div className="cart__column d-flex flex-column mr-20">
                       <span className="cart__label">{t("cart_page.sum")}</span>
-                      <span className="cart__num">{obj.itemTotal} грн.</span>
+                      <span className="cart__num">
+                        {obj.itemTotal} {t("hrn")}
+                      </span>
                     </div>
 
                     <div
@@ -140,12 +146,16 @@ const CartPage = ({ onClosed, onRemove, items = [] }) => {
                 <li className={"d-flex"}>
                   <span>{t("cart_page.total")}</span>
                   <div></div>
-                  <b>{sumWithInitial(sum)} грн.</b>
+                  <b>
+                    {sumWithInitial(sum)} {t("hrn")}
+                  </b>
                 </li>
                 <li className={"d-flex"}>
                   <span>{t("cart_page.tax")} 20%:</span>
                   <div></div>
-                  <b>{(sumWithInitial(sum) / 100) * 20} грн.</b>
+                  <b>
+                    {Math.floor((sumWithInitial(sum) / 100) * 20)} {t("hrn")}
+                  </b>
                 </li>
               </ul>
 

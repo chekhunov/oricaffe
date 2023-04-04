@@ -11,4 +11,5 @@ export interface PoppupModel {
   dataCart: CartModel[]
   type: string
   to_cart: CartModel
+  eur: number
 }

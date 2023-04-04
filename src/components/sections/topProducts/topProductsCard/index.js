@@ -1,29 +1,37 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import cn from "classnames";
 import StateContext from "../../../../utils/stateContext";
 import Divider from "@material-ui/core/Divider";
 import { Link } from "react-router-dom";
 import { pageRoutes } from "../../../../utils/routes";
+import { useTranslation } from "react-i18next";
 
 import "./topProductsCard.scss";
+import useGetPrice from "../../../../hooks/useGetPrice";
 export default function TopProductsCard({
   id,
-  code,
-  name,
-  desc,
-  sort,
-  weight,
-  imgUrl,
-  price,
   category,
+  type_of_coffee,
+  sort,
+  name,
+  weight,
+  weight_box,
+  cost,
+  desc,
+  imgUrl,
+  sx,
 }) {
   const { setStateContext } = useContext(StateContext);
+
+  const { t } = useTranslation();
+
+  const { price_opt, price_site } = useGetPrice();
 
   const handleClick = (e) => {
     setStateContext({
       isActiveCardPopup: true,
       type: "to_cart",
-      add_to_cart: code,
+      add_to_cart: id,
     });
     document.body.classList.add("overflowe");
     e.preventDefault();
@@ -31,7 +39,7 @@ export default function TopProductsCard({
 
   return (
     <Link
-      to={pageRoutes.catalog + `/${category}/${code}`}
+      to={pageRoutes.catalog + `/${category}/${id}`}
       className={cn("top-products__item")}
     >
       <div className="top-products__cart" onClick={(e) => handleClick(e)}>
@@ -116,28 +124,48 @@ export default function TopProductsCard({
               {name}
             </span>
 
+            <div
+              className="top-products__description products-card__description--meta d-flex justify-center mb-10"
+              style={{ fontWeight: "400", fontSize: "14px", color: "#131938" }}
+            >
+              <span>{sort}</span>
+            </div>
+
             <span
               style={{ fontWeight: "400", fontSize: "14px", color: "#131938" }}
+              className={"top-products__desc"}
             >
               {desc}
             </span>
           </div>
 
           <div
-            className="top-products__description top-products__description--meta d-flex justify-center"
-            style={{ fontWeight: "400", fontSize: "14px", color: "#131938" }}
-          >
-            <span>{sort}</span>
-          </div>
-
-          <div
-            className="top-products__description top-products__description--three d-flex justify-center"
+            className="top-products__description d-flex justify-start"
             style={{
               color: "#131938",
             }}
           >
-            <span className="top-products__price">{price}</span>
-            <span>грн</span>
+            <span className="top-products__price-opt ">
+              ({t("from")}
+              {weight_box} {t("kg")}): {price_opt(cost)}
+            </span>{" "}
+            <div>{t("hrn")}</div>
+          </div>
+          <div
+            className="top-products__description top-products__description--three d-flex justify-start"
+            style={{
+              color: "#131938",
+            }}
+          >
+            <span className="top-products__price">
+              <span className="top-products__price-name">{t("price")}: </span>
+              {price_site(cost)}
+            </span>
+            <span>{t("hrn")}</span>
+          </div>
+
+          <div className="top-products__code">
+            {t("code_of_product")}:{`10000${id}`}
           </div>
         </div>
       </div>
