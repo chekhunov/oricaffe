@@ -62,4 +62,10 @@
       transition: background-color 0.3s border 0.3s;
     }
   }
+
+  &__info {
+    font-size: 14px;
+    color: #8E0303;
+    margin-bottom: 5px;
+  }
 }

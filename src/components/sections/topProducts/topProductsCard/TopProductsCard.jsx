@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext } from "react";
 import cn from "classnames";
 import StateContext from "../../../../utils/stateContext";
 import Divider from "@material-ui/core/Divider";
@@ -17,7 +17,6 @@ export default function TopProductsCard({
   weight,
   weight_box,
   cost,
-  desc,
   imgUrl,
   sx,
 }) {
@@ -25,7 +24,7 @@ export default function TopProductsCard({
 
   const { t } = useTranslation();
 
-  const { price_opt, price_site } = useGetPrice();
+  const { price_site } = useGetPrice();
 
   const handleClick = (e) => {
     setStateContext({
@@ -130,27 +129,12 @@ export default function TopProductsCard({
             >
               <span>{sort}</span>
             </div>
-
-            <span
-              style={{ fontWeight: "400", fontSize: "14px", color: "#131938" }}
-              className={"top-products__desc"}
-            >
-              {desc}
-            </span>
           </div>
 
-          <div
-            className="top-products__description d-flex justify-start"
-            style={{
-              color: "#131938",
-            }}
-          >
-            <span className="top-products__price-opt ">
-              ({t("from")}
-              {weight_box} {t("kg")}): {price_opt(cost)}
-            </span>{" "}
-            <div>{t("hrn")}</div>
+          <div className="top-products__info">
+            { t('discount')}
           </div>
+
           <div
             className="top-products__description top-products__description--three d-flex justify-start"
             style={{

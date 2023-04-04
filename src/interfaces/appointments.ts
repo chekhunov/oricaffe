@@ -8,10 +8,6 @@ export interface ProductCardInterface {
   sort: string;
   weight: number;
   weight_box: number;
-  price_opt: number;
-  priceOpt?: number;
-  price_site: number;
-  priceSite?: number;
   type_currency: string;
   imgUrl: string;
   info: string;

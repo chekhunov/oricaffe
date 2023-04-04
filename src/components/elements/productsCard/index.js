@@ -17,7 +17,6 @@ export default function ProductsCard({
   weight,
   weight_box,
   cost,
-  desc,
   imgUrl,
   sx,
 }) {
@@ -25,7 +24,7 @@ export default function ProductsCard({
   const { t } = useTranslation();
   const { addItem } = useCart();
 
-  const { price_opt, price_site } = useGetPrice();
+  const { price_site } = useGetPrice();
 
   const data = {
     id,
@@ -34,7 +33,6 @@ export default function ProductsCard({
     name,
     quantity,
     price: price_site(cost),
-    price_opt: price_opt(cost),
   };
 
   const handlePlus = (e) => {
@@ -105,26 +103,10 @@ export default function ProductsCard({
             >
               <span>{sort}</span>
             </div>
-
-            <span
-              className={"products-card__desc"}
-              style={{ fontWeight: "400", fontSize: "14px", color: "#131938" }}
-            >
-              {desc}
-            </span>
           </div>
 
-          <div
-            className="products-card__description d-flex justify-center"
-            style={{
-              color: "#131938",
-            }}
-          >
-            <span className="products-card__price-opt ">
-              ({t("from")} {weight_box} {t("kg")}): {price_opt(cost)}
-            </span>
-            <span>{t("hrn")}</span>
-          </div>
+          <div className="products-card__info">{t("discount")}</div>
+
           <div
             className="products-card__description products-card__description--three d-flex justify-center"
             style={{

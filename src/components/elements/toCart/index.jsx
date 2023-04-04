@@ -15,7 +15,7 @@ export default function ToCart({ viewProps }) {
   const { setStateContext } = useContext(StateContext);
   const { addItem } = useCart();
 
-  const { id, imgUrl, name, price, price_opt } = data || {};
+  const { id, imgUrl, name, price } = data || {};
 
   const handleCancelClick = () => {
     document.body.classList.remove("overflowe");
@@ -26,10 +26,9 @@ export default function ToCart({ viewProps }) {
     imgUrl,
     quantity,
     price,
-    price_opt,
     name,
     id,
-    code: `10000${id}`
+    code: `10000${id}`,
   };
 
   const handleContinueClick = () => {
@@ -60,6 +59,14 @@ export default function ToCart({ viewProps }) {
       width: "150px",
     },
   };
+
+  const isOrderWithDiscount = price * quantity < 10000;
+
+  const discount = 10
+  const sumOrder = price * quantity;
+  const sumOrderWithDiscount = Math.floor(
+    sumOrder - sumOrder * (discount / 100)
+  );
 
   return (
     <div className="add-to-cart h100p">
@@ -137,10 +144,21 @@ export default function ToCart({ viewProps }) {
           </li>
 
           <li className={"d-flex"}>
+            <span>
+              {t("cart_page.discount")} ({isOrderWithDiscount ? "0%" : "10%"})
+            </span>
+            <div></div>
+            <b>
+              {isOrderWithDiscount ? 0 : `-${sumOrder - sumOrderWithDiscount}`}{" "}
+              {t("hrn")}
+            </b>
+          </li>
+
+          <li className={"d-flex"}>
             <span>{t("cart_page.total")}</span>
             <div></div>
             <b>
-              {price * quantity} {t("hrn")}
+              {isOrderWithDiscount ? sumOrder : sumOrderWithDiscount} {t("hrn")}
             </b>
           </li>
         </ul>

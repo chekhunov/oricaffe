@@ -27,11 +27,10 @@ export default function Layout({ children }) {
     (item) => item.id === stateContext.add_to_cart
   );
 
-  const { price_opt, price_site } = useGetPrice();
+  const { price_site } = useGetPrice();
 
   const newData = {
     price: price_site(setProductsToPoppup?.cost),
-    price_opt: price_opt(setProductsToPoppup?.cost),
     ...setProductsToPoppup,
   };
 

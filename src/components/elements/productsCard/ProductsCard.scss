@@ -63,6 +63,14 @@
     font-weight: 400;
     font-size: 38px;
   }
+
+  &__info {
+    max-width: 250px;
+    margin: 0 auto 5px;
+    font-size: 14px;
+    color: #8E0303;
+    text-align: center;
+  }
 }
 
 @media screen and (max-width: 1024px) {

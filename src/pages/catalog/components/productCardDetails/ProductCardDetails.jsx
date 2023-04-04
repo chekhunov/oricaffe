@@ -1,20 +1,22 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 
-import ContainerPage from "../../components/modules/containerPage";
+import ContainerPage from "../../../../components/modules/containerPage";
 import { Skeleton } from "react-skeleton-generator";
-import { useGetProductCardDetail } from "../../api/productCardDetails";
-import Center from "../../components/elements/center";
+import { useGetProductCardDetail } from "../../../../api/productCardDetails";
+import Center from "../../../../components/elements/center";
 import { useTranslation } from "react-i18next";
-import useGetPrice from "../../hooks/useGetPrice";
+import useGetPrice from "../../../../hooks/useGetPrice";
 
-const DetailsProductCard = () => {
+import "./ProductCardDetails.scss";
+
+const ProductCardDetails = () => {
   const { t } = useTranslation();
   let { id: productCode } = useParams();
 
   const params = { code: productCode };
 
-  const { price_opt, price_site } = useGetPrice();
+  const { price_site } = useGetPrice();
 
   console.log(productCode);
 
@@ -89,11 +91,18 @@ const DetailsProductCard = () => {
                 alt="card-details"
               />
 
-              <div className="card-details__info">
-                <span className="card-details__code">Code product: {`10000${id}`}</span>
-                <span className="card-details__price">Price: {price_site(cost)}</span>
+              <div className="card-details__info d-flex flex-column">
+                <span className="card-details__code">
+                  Code product: {`10000${id}`}
+                </span>
+                <span className="card-details__price">
+                  Price: {price_site(cost)}
+                </span>
                 <span className="card-details__desc">{desc}</span>
                 <span className="card-details__desc">{info}</span>
+                <span className="card-details__desc">{sort}</span>
+                <span className="card-details__desc">{weight}</span>
+                <span className="card-details__desc">{weight_box}</span>
               </div>
             </div>
           </div>
@@ -107,4 +116,4 @@ const DetailsProductCard = () => {
   );
 };
 
-export default DetailsProductCard;
+export default ProductCardDetails;

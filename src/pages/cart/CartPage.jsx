@@ -23,10 +23,10 @@ const CartPage = () => {
 
   const { items = [], setItems, removeItem, updateItemQuantity } = useCart();
 
-  console.log(items);
-
   const sum = items?.map((el) => el.itemTotal);
   const quan = items?.map((el) => el.quantity);
+
+
 
   const initialValue = 0;
   const sumWithInitial = (arr) => {
@@ -35,6 +35,15 @@ const CartPage = () => {
       initialValue
     );
   };
+
+    const isOrderWithDiscount = sumWithInitial(sum) < 10000;
+
+    const discount = 10;
+    const sumOrder = sumWithInitial(sum);
+    const sumOrderWithDiscount = Math.floor(
+      sumOrder - sumOrder * (discount / 100)
+    );
+
 
   return (
     <div className="cart mb-50">
@@ -143,13 +152,29 @@ const CartPage = () => {
                   <div></div>
                   <b>{sumWithInitial(quan)}</b>
                 </li>
+
+                <li className={"d-flex"}>
+                  <span>
+                    {t("discount_order")} (
+                    {isOrderWithDiscount ? "0%" : "10%"})
+                  </span>
+                  <div></div>
+                  <b>
+                    {isOrderWithDiscount
+                      ? 0
+                      : `-${sumOrder - sumOrderWithDiscount}`}{" "}
+                    {t("hrn")}
+                  </b>
+                </li>
+
                 <li className={"d-flex"}>
                   <span>{t("cart_page.total")}</span>
                   <div></div>
                   <b>
-                    {sumWithInitial(sum)} {t("hrn")}
+                    {sumOrder} {t("hrn")}
                   </b>
                 </li>
+
                 <li className={"d-flex"}>
                   <span>{t("cart_page.tax")} 20%:</span>
                   <div></div>

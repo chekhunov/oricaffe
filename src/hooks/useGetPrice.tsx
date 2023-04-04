@@ -1,15 +1,8 @@
 const useGetPrice = () => {
   const eur = localStorage.getItem("eur");
 
-  const well_currency_opt = 30;
-  const well_currency_site = 40;
+  const well_currency_site = 50;
 
-  const price_opt = (purchase_price: number) => {
-    return Math.floor(
-      (purchase_price + purchase_price * (well_currency_opt / 100)) *
-        Number(eur)
-    );
-  };
   const price_site = (purchase_price: number) => {
     return Math.floor(
       (purchase_price + purchase_price * (well_currency_site / 100)) *
@@ -17,7 +10,7 @@ const useGetPrice = () => {
     );
   };
 
-  return { price_opt, price_site };
+  return { price_site };
 };
 
 export default useGetPrice;
