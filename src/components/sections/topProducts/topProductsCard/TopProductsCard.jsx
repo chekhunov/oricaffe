@@ -3,11 +3,11 @@ import cn from "classnames";
 import StateContext from "../../../../utils/stateContext";
 import Divider from "@material-ui/core/Divider";
 import { Link } from "react-router-dom";
-import { pageRoutes } from "../../../../utils/routes";
 import { useTranslation } from "react-i18next";
 
 import "./topProductsCard.scss";
 import useGetPrice from "../../../../hooks/useGetPrice";
+import { SHOP_ROUTE } from '../../../../types/const';
 export default function TopProductsCard({
   id,
   category,
@@ -38,7 +38,7 @@ export default function TopProductsCard({
 
   return (
     <Link
-      to={pageRoutes.catalog + `/${category}/${id}`}
+      to={SHOP_ROUTE + `/${category}/${id}`}
       className={cn("top-products__item")}
     >
       <div className="top-products__cart" onClick={(e) => handleClick(e)}>

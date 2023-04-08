@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { pageRoutes } from "../../utils/routes";
 
 import ContainerPage from "../../components/modules/containerPage";
 import SkeletonCatalogItem from "./components/SkeletonCatalogItem";
@@ -13,7 +12,8 @@ import { useGetProducts } from "../../api/productList";
 import { useGetNavMenu } from "../../api/navMenu";
 import { useTranslation } from "react-i18next";
 
-import ProductsCard from "../../components/elements/productsCard";
+import ProductCard from "../../components/elements/productCard";
+import { MAIN_ROUTE, SHOP_ROUTE } from "../../types/const";
 
 import cn from "classnames";
 import "./Catalog.scss";
@@ -22,7 +22,7 @@ const breadcrumbs = [
   {
     id: 0,
     title: "home",
-    link: "",
+    link: MAIN_ROUTE,
   },
   {
     id: 1,
@@ -35,9 +35,12 @@ const CatalogPage = () => {
   const { t } = useTranslation();
   let navigate = useNavigate();
 
-  let { category } = useParams();
-  const [productCategory, setProductCategory] = useState(category);
+  const category = useParams().category;
+  const [productCategory, setProductCategory] = useState(
+    category ? category : "coffee"
+  );
 
+  console.log(category, "dddssd");
   const productsLimit = 9;
   const [page, setPage] = useState(1);
 
@@ -53,7 +56,7 @@ const CatalogPage = () => {
   const { category: categoryItems } = categoryData;
 
   const handleClick = (name) => {
-    navigate(`${pageRoutes.catalog}/${name}`);
+    navigate(SHOP_ROUTE + `/${name}`);
     setProductCategory(name);
     setPage(1);
   };
@@ -63,8 +66,6 @@ const CatalogPage = () => {
       setProductCategory(category);
     }
   }, [category, page]);
-
-  console.log(products);
 
   return (
     <ContainerPage name="catalog" breadcrumbs={breadcrumbs}>
@@ -102,8 +103,8 @@ const CatalogPage = () => {
           ) : (
             <div className="catalog__items">
               {products?.length ? (
-                products?.map((item, index) => (
-                  <ProductsCard
+                products?.map((item) => (
+                  <ProductCard
                     key={`card-prodict_${item.id}`}
                     sx={{ marginRight: "20px" }}
                     {...item}

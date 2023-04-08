@@ -14,7 +14,7 @@ const Menu = ({
 }) => {
   const [selection, setSelection] = React.useState([]);
 
-  function handleOnClick(item) {
+  const handleOnClick = (item) => {
     if (!selection.some((current) => current.id === item.id)) {
       if (!multiSelect) {
         setSelection([item]);
@@ -28,11 +28,11 @@ const Menu = ({
       );
       setSelection([...selectionAfterRemoval]);
     }
-  }
+  };
 
-  function clickItem(val) {
+  const handleClickItem = (val) => {
     setActiveId(val);
-  }
+  };
 
   return (
     <nav className={cn("menu")}>
@@ -41,11 +41,11 @@ const Menu = ({
           key={`${item.id}-${index}`}
           item={item}
           index={index}
-          {...item}
           sx={sx}
           handleOnClick={handleOnClick}
-          clickItem={clickItem}
+          clickItem={handleClickItem}
           setActivePopup={setActivePopup}
+          {...item}
         />
       ))}
     </nav>

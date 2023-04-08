@@ -7,6 +7,7 @@ import LogoCompany from "../../modules/header/logoCompany";
 import logo from "../../../assets/header/logo.png";
 
 import "./footer.scss";
+import { CONTACT_ROUTE } from '../../../types/const';
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -43,7 +44,7 @@ export default function Footer() {
                   </li>
 
                   <li>
-                    <a className="footer__link" href="/contacts">
+                    <a className="footer__link" href={CONTACT_ROUTE}>
                       {t("contacts")}
                     </a>
                   </li>

@@ -1,13 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Slide from "./slide";
+import { SHOP_ROUTE } from "../../../types/const";
 
 const defaultItems = [
   {
     title: "banners.b-0",
     titleColor: "grey",
     button: "catalog_products",
-    urlButton: "contacts",
+    urlButton: SHOP_ROUTE + "/coffee",
     sx: {
       width: "200px",
       borderRadius: "5px 25px 5px 25px",

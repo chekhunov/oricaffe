@@ -19,7 +19,7 @@ export default function Breadcrumbs({ breadcrumbs }) {
           {breadcrumbs?.map((item, index) => (
             <li key={item.id} className={style.item}>
               {length !== index ? (
-                <Link to={`/${item.link}`}>
+                <Link to={item.link}>
                   <span onClick={handleClick} className={style.link}>
                     {" "}
                     {t(item.title)}

@@ -5,12 +5,13 @@ import About from "../../components/sections/about";
 import InProgressCreate from "../../components/modules/InProgressCreate";
 
 import "./About.scss";
+import { MAIN_ROUTE } from '../../types/const';
 
-let breadcrumbs = [
+const breadcrumbs = [
   {
     id: 0,
     title: "home",
-    link: "",
+    link: MAIN_ROUTE,
   },
   {
     id: 1,

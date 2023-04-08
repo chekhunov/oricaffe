@@ -3,12 +3,13 @@ import React from "react";
 import ContainerPage from "../../components/modules/containerPage";
 import InProgressCreate from "../../components/modules/InProgressCreate";
 import "./Guarantee.scss";
+import { MAIN_ROUTE } from '../../types/const';
 
-let breadcrumbs = [
+const breadcrumbs = [
   {
     id: 0,
     title: "home",
-    link: "",
+    link: MAIN_ROUTE,
   },
   {
     id: 1,

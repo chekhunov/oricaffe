@@ -6,10 +6,11 @@ import { Divider } from "@material-ui/core";
 import ContainerPage from "../../components/modules/containerPage";
 import ContactsAddress from "../../components/contactsAddress";
 import map from "../../assets/img/contacts/mapBeregovo.jpg";
-import mapPartners from "../../assets/img/contacts/mapPartners.png";
 
-import "./ContactsPage.scss";
+import "./ContactPage.scss";
+import { MAIN_ROUTE } from "../../types/const";
 
+// TODO listPartners to query
 const listPartners = [
   {
     id: 0,
@@ -186,7 +187,7 @@ let breadcrumbs = [
   {
     id: 0,
     title: "home",
-    link: "",
+    link: MAIN_ROUTE,
   },
   {
     id: 1,
@@ -234,8 +235,6 @@ const ContactPage = () => {
               </a>
             ))}
           </div>
-
-          <img src={mapPartners} alt="map partners" />
         </div>
       </div>
     </ContainerPage>

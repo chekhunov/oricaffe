@@ -5,12 +5,13 @@ import { useTranslation } from "react-i18next";
 import { useCart } from "react-use-cart";
 
 import "./cart.scss";
+import { MAIN_ROUTE } from '../../types/const';
 const CartPage = () => {
   const breadcrumbs = [
     {
       id: 0,
       title: "home",
-      link: "",
+      link: MAIN_ROUTE,
     },
     {
       id: 1,

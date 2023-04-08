@@ -1,5 +1,4 @@
 import React from "react";
-import { useTranslation } from "react-i18next";
 import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import YouTube from "react-youtube";
@@ -11,7 +10,6 @@ import "swiper/css/bundle";
 import "./video.scss";
 
 export default function Video() {
-  const { t } = useTranslation();
 
   const video = [
     {
@@ -24,6 +22,7 @@ export default function Video() {
         width: "250",
         playerVars: {
           autoplay: 1,
+          origin: "https://example.com",
         },
       },
     },
@@ -72,7 +71,7 @@ export default function Video() {
   return (
     <div className="video">
       <Swiper
-        container
+        container="true"
         modules={[Navigation]}
         spaceBetween={50}
         slidesPerView={3}

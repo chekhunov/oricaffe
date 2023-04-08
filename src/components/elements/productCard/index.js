@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import cn from "classnames";
 import Divider from "@material-ui/core/Divider";
 import { Link } from "react-router-dom";
-import { pageRoutes } from "../../../utils/routes";
 import { useCart } from "react-use-cart";
 import { useTranslation } from "react-i18next";
 import useGetPrice from "../../../hooks/useGetPrice";
 
 import "./ProductsCard.scss";
-export default function ProductsCard({
+import { SHOP_ROUTE } from "../../../types/const";
+const ProductCard = ({
   id,
   category,
   type_of_coffee,
@@ -19,7 +19,7 @@ export default function ProductsCard({
   cost,
   imgUrl,
   sx,
-}) {
+}) => {
   const [quantity, setQuantity] = useState(1);
   const { t } = useTranslation();
   const { addItem } = useCart();
@@ -52,7 +52,7 @@ export default function ProductsCard({
 
   return (
     <Link
-      to={pageRoutes.catalog + `/${category}/${id}`}
+      to={SHOP_ROUTE + "/" + category + "/" + id}
       className={cn("products-card__item")}
       style={sx}
     >
@@ -156,4 +156,6 @@ export default function ProductsCard({
       </div>
     </Link>
   );
-}
+};
+
+export default ProductCard;

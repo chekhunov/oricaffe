@@ -1,6 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { pageRoutes } from "../../../utils/routes";
+import { TAC_ROUTE } from "../../../types/const";
 
 import "./questions.scss";
 const Questions = () => {
@@ -127,7 +127,7 @@ const Questions = () => {
 
                 <p className="questions__item-desc">
                   {t("questions.customers_accept")}
-                  <a className="questions__item-link" href={pageRoutes.terms}>
+                  <a className="questions__item-link" href={TAC_ROUTE}>
                     {t("questions.here")}
                   </a>
                 </p>

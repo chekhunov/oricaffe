@@ -2,13 +2,14 @@ import React from "react";
 
 import ContainerPage from "../../components/modules/containerPage";
 import InProgressCreate from "../../components/modules/InProgressCreate";
-import "./Services.scss";
+import "./Service.scss";
+import { MAIN_ROUTE } from '../../types/const';
 
-let breadcrumbs = [
+const breadcrumbs = [
   {
     id: 0,
     title: "home",
-    link: "",
+    link: MAIN_ROUTE,
   },
   {
     id: 1,
@@ -17,7 +18,7 @@ let breadcrumbs = [
   },
 ];
 
-const ServicesPage = () => {
+const ServicePage = () => {
   return (
     <ContainerPage name="services" breadcrumbs={breadcrumbs}>
       <div className="about-page__content d-flex justify-center">
@@ -27,4 +28,4 @@ const ServicesPage = () => {
   );
 };
 
-export default ServicesPage;
+export default ServicePage;

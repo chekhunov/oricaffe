@@ -23,7 +23,7 @@ import Questions from "../../components/sections/questions";
 import { DataProvider } from "../../utils/FormContext";
 import InfoBlock from "../../components/elements/infoBlock";
 
-export default function Home() {
+const HomePage = () => {
   const colorAccent = "#8E0303";
   const bgColor = "#f2f2f2";
 
@@ -179,4 +179,6 @@ export default function Home() {
       </Box>
     </>
   );
-}
+};
+
+export default HomePage;

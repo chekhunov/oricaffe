@@ -53,7 +53,7 @@ routs
 
 /quality
 
-/contacts
+/contact
 
 /terms-conditions
 

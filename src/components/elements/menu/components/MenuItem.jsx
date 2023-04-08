@@ -18,12 +18,14 @@ const MenuElement = ({
 }) => {
   const { t } = useTranslation();
 
+  console.log(link);
+
   return (
     <>
       {!category ? (
         <Link
           key={`without-category_${id}-${name}`}
-          to={`/${link}`}
+          to={link}
           onClick={setActivePopup}
         >
           <li style={sx} className={cn("menu__item")} key={id}>
@@ -71,7 +73,7 @@ const MenuElement = ({
             {category?.map((elem) => (
               <Link
                 key={`category-item_${elem.id}`}
-                to={`${elem.link}/${elem.category}`}
+                to={elem.link + `/${elem.category}`}
                 onClick={setActivePopup}
               >
                 <li className="submenu__elem">{t(`${elem.value}`)}</li>

@@ -5,10 +5,10 @@ import cn from "classnames";
 
 import "./Button.scss";
 
-export default function Button({ sx, link, text, icon, click}) {
+export default function Button({ sx, link, text, icon, click, name }) {
   const { t } = useTranslation();
   return (
-    <Link to={`/${link}`} className={`${link}-btn`} onClick={click}>
+    <Link to={link} className={`${name}-btn`} onClick={click}>
       <span style={sx} className={cn("atuin-btn", { icon: icon })}>
         {icon && <img className="ico" src={icon} alt="Arrow" />}
 

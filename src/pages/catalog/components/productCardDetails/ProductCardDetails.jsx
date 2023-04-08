@@ -9,6 +9,7 @@ import { useTranslation } from "react-i18next";
 import useGetPrice from "../../../../hooks/useGetPrice";
 
 import "./ProductCardDetails.scss";
+import { MAIN_ROUTE, SHOP_ROUTE } from '../../../../types/const';
 
 const ProductCardDetails = () => {
   const { t } = useTranslation();
@@ -18,11 +19,7 @@ const ProductCardDetails = () => {
 
   const { price_site } = useGetPrice();
 
-  console.log(productCode);
-
   const { data, isLoading } = useGetProductCardDetail(params);
-
-  console.log(data);
 
   const { filterData } = data || {};
 
@@ -43,12 +40,12 @@ const ProductCardDetails = () => {
     {
       id: 0,
       title: "home",
-      link: "",
+      link: MAIN_ROUTE,
     },
     {
       id: 1,
       title: "catalog",
-      link: `catalog/${category}`,
+      link: SHOP_ROUTE + `/${category ? category : "coffee"}`,
     },
     {
       id: 2,
@@ -81,7 +78,7 @@ const ProductCardDetails = () => {
               </div>
             </div>
           </Skeleton.SkeletonThemeProvider>
-        ) : id ? (
+        ) : productCode ? (
           <div className="card-details__inner">
             <div className="card-details__title title">{name}</div>
             <div className="card-details__box d-flex">

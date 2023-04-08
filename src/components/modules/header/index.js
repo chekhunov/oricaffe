@@ -13,6 +13,7 @@ import { Link } from "react-router-dom";
 
 import cartIcon from "../../../assets/icons/anim/cart.gif";
 import logo from "../../../assets/header/logo.png";
+import { BASKET_ROUTE, CONTACT_ROUTE } from "../../../types/const";
 
 const home = [
   {
@@ -104,7 +105,7 @@ export default function Header({ navMenu, menuSubheader, countCart }) {
           <div className="d-flex align-center">
             <Locales />
 
-            <Link to="cart" className="header__cart mr-30">
+            <Link to={BASKET_ROUTE} className="header__cart mr-30">
               <span className="header__cart-count">{countCart}</span>
               <img
                 className="header__cart-img"
@@ -114,7 +115,7 @@ export default function Header({ navMenu, menuSubheader, countCart }) {
               />
             </Link>
 
-            <Button link={"contacts"} text={t("contacts")} />
+            <Button link={CONTACT_ROUTE} name="contacts" text={t("contacts")} />
           </div>
         </div>
       </div>

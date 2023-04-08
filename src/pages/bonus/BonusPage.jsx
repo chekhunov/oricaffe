@@ -4,12 +4,13 @@ import ContainerPage from "../../components/modules/containerPage";
 import InProgressCreate from "../../components/modules/InProgressCreate";
 
 import "./Bonus.scss";
+import { MAIN_ROUTE } from '../../types/const';
 
 const breadcrumbs = [
   {
     id: 0,
     title: "home",
-    link: "",
+    link: MAIN_ROUTE,
   },
   {
     id: 1,
