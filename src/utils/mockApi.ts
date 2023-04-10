@@ -112,7 +112,7 @@ export const initializeMockAdapter = () => {
       200,
       {
         products: filterData.slice(
-          page === 1 ? 0 : (page - 1) * 10,
+          page === 1 ? 0 : (page - 1) * 9,
           limit * page
         ),
         count: Math.ceil(filterData.length / limit),

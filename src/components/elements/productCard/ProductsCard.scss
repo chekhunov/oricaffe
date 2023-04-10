@@ -44,6 +44,7 @@
   }
 
   &__title {
+    max-width: 250px;
     margin-top: 12px;
     font-style: italic;
     text-transform: none;
@@ -64,11 +65,9 @@
     font-size: 38px;
   }
 
-  &__info {
-    max-width: 250px;
-    margin: 0 auto 5px;
-    font-size: 14px;
-    color: #8E0303;
+  &__state {
+    margin-bottom: 5px;
+    color: green;
     text-align: center;
   }
 }

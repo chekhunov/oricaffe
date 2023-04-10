@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { useCart } from "react-use-cart";
 
 import "./cart.scss";
-import { MAIN_ROUTE } from '../../types/const';
+import { MAIN_ROUTE } from "../../types/const";
 const CartPage = () => {
   const breadcrumbs = [
     {
@@ -27,8 +27,6 @@ const CartPage = () => {
   const sum = items?.map((el) => el.itemTotal);
   const quan = items?.map((el) => el.quantity);
 
-
-
   const initialValue = 0;
   const sumWithInitial = (arr) => {
     return arr.reduce(
@@ -37,14 +35,13 @@ const CartPage = () => {
     );
   };
 
-    const isOrderWithDiscount = sumWithInitial(sum) < 10000;
+  const isOrderWithDiscount = sumWithInitial(sum) < 10000;
 
-    const discount = 10;
-    const sumOrder = sumWithInitial(sum);
-    const sumOrderWithDiscount = Math.floor(
-      sumOrder - sumOrder * (discount / 100)
-    );
-
+  const discount = 10;
+  const sumOrder = sumWithInitial(sum);
+  const sumOrderWithDiscount = Math.floor(
+    sumOrder - sumOrder * (discount / 100)
+  );
 
   return (
     <div className="cart mb-50">
@@ -68,7 +65,7 @@ const CartPage = () => {
                   <div className="d-flex align-center">
                     <div
                       className="cart__img ml-20"
-                      style={{ backgroundImage: "url(/" + obj?.imgUrl + ")" }}
+                      style={{ backgroundImage: "url(" + obj?.imgUrl + ")" }}
                     ></div>
 
                     <div className="mr-20 d-flex align-center">
@@ -156,8 +153,7 @@ const CartPage = () => {
 
                 <li className={"d-flex"}>
                   <span>
-                    {t("discount_order")} (
-                    {isOrderWithDiscount ? "0%" : "10%"})
+                    {t("discount_order")} ({isOrderWithDiscount ? "0%" : "10%"})
                   </span>
                   <div></div>
                   <b>

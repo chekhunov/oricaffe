@@ -7,7 +7,7 @@ import LogoCompany from "../../modules/header/logoCompany";
 import logo from "../../../assets/header/logo.png";
 
 import "./footer.scss";
-import { CONTACT_ROUTE } from '../../../types/const';
+import { CONTACT_ROUTE, TAC_ROUTE } from '../../../types/const';
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -80,7 +80,7 @@ export default function Footer() {
 
                 <ul>
                   <li>
-                    <a className="footer__link" href="/terms-conditions">
+                    <a className="footer__link" href={TAC_ROUTE}>
                       {t("terms_conditions")}
                     </a>
                   </li>

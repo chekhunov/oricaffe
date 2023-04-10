@@ -14,6 +14,7 @@ const ProductCard = ({
   type_of_coffee,
   sort,
   name,
+  state,
   weight,
   weight_box,
   cost,
@@ -70,8 +71,9 @@ const ProductCard = ({
             </div>
 
             <img
-              className="products-card__img"
-              src={`/${imgUrl}`}
+              height={200}
+              className="products-card__img pb-5"
+              src={imgUrl}
               alt="products-card"
             />
           </div>
@@ -105,7 +107,7 @@ const ProductCard = ({
             </div>
           </div>
 
-          <div className="products-card__info">{t("discount")}</div>
+          <div className="products-card__state" style={{color: state === 'on_order' ? 'blue' : 'green'}}>{t(state)}</div>
 
           <div
             className="products-card__description products-card__description--three d-flex justify-center"
@@ -114,7 +116,7 @@ const ProductCard = ({
             }}
           >
             <span className="products-card__price">
-              Цена: {price_site(cost)}
+              {t("cart_page.price")}: {price_site(cost)}
             </span>
             <span>{t("hrn")}</span>
           </div>

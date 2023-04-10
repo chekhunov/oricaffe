@@ -15,10 +15,11 @@ import nespresso from "../../../assets/icons/nespresso.webp";
 import greenCoffeGround from "../../../assets/icons/greenCoffeGround.webp";
 
 import "./aboutProducts.scss";
+import { SHOP_ROUTE } from "../../../types/const";
 
 const coffeGrani = {
   button: "more",
-  urlButton: "catalog",
+  urlButton: SHOP_ROUTE + "/coffee",
   sx: {
     width: "200px",
   },
@@ -26,7 +27,7 @@ const coffeGrani = {
 
 const coffeGround = {
   button: "more",
-  urlButton: "catalog",
+  urlButton: SHOP_ROUTE + "/coffee",
   sx: {
     width: "200px",
   },
@@ -34,7 +35,7 @@ const coffeGround = {
 
 const coffeNespresso = {
   button: "more",
-  urlButton: "catalog",
+  urlButton: SHOP_ROUTE + "/coffee",
   sx: {
     width: "200px",
   },
@@ -42,7 +43,7 @@ const coffeNespresso = {
 
 const coffeGreen = {
   button: "more",
-  urlButton: "catalog",
+  urlButton: SHOP_ROUTE + "/coffee",
   sx: {
     width: "200px",
   },

@@ -1,5 +1,9 @@
 import { useState, useEffect } from "react";
-import { SHOP_ROUTE, ALL_ROUTE, ERROR_ROUTE } from "../../types/const";
+import {
+  SHOP_ROUTE,
+  ALL_ROUTE,
+  ERROR_ROUTE,
+} from "../../types/const";
 import { Routes, Route, useLocation } from "react-router-dom";
 
 import { authRoutes, publicRoutes } from "../../utils/routes";

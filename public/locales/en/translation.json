@@ -155,5 +155,7 @@
   "from": "from",
   "code_of_product": "code",
   "discount": "При купівлі на суму 10 000 грн. діє 10% ЗНИЖКА",
-  "discount_order": "Discount"
+  "discount_order": "Discount",
+  "are_available": "Are available",
+  "on_order": "On order"
 }

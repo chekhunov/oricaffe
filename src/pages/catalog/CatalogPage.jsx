@@ -68,7 +68,7 @@ const CatalogPage = () => {
   }, [category, page]);
 
   return (
-    <ContainerPage name="catalog" breadcrumbs={breadcrumbs}>
+    <ContainerPage name="catalog" isDiscount breadcrumbs={breadcrumbs}>
       <div className="catalog__block d-flex justify-center">
         <div className="catalog__nav">
           <div className="catalog__category">

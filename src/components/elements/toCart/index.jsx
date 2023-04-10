@@ -6,6 +6,7 @@ import BaseButton from "../baseButton";
 import StateContext from "../../../utils/stateContext";
 
 import "./toCart.scss";
+import { BASKET_ROUTE } from '../../../types/const';
 
 export default function ToCart({ viewProps }) {
   const { t } = useTranslation();
@@ -78,7 +79,7 @@ export default function ToCart({ viewProps }) {
         <div className="d-flex align-center">
           <div
             className="cart__img ml-20"
-            style={{ backgroundImage: "url(/" + imgUrl + ")" }}
+            style={{ backgroundImage: "url(" + imgUrl + ")" }}
           ></div>
 
           <div className="cart-item__headline d-flex">
@@ -181,7 +182,7 @@ export default function ToCart({ viewProps }) {
 
             <BaseButton
               name={make_order_attributes.button}
-              link="cart"
+              link={BASKET_ROUTE}
               click={handleContinueClick}
               text={t(make_order_attributes.text)}
               sx={make_order_attributes.sx}
