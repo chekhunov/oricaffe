@@ -150,12 +150,15 @@
   "there_is_currently": "There is currently no such product",
   "category-name": "Category",
   "card_details": "Card Details",
-  "hrn": "hrn",
+  "hrn": "uah",
   "kg": "kg",
   "from": "from",
   "code_of_product": "code",
-  "discount": "При купівлі на суму 10 000 грн. діє 10% ЗНИЖКА",
+  "discount": "When buying for the amount of 10 000 UAH. dіє 10% REDUCTION",
   "discount_order": "Discount",
   "are_available": "Are available",
-  "on_order": "On order"
+  "on_order": "On order",
+  "add_product_to_cart": "Product added to cart.",
+  "removed_from_cart": "Item removed from cart.",
+  "cart_empty": "Cart empty"
 }

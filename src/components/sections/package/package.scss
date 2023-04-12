@@ -71,6 +71,19 @@
       width: 100%;
       margin-right: 0;
     }
+
+
+    .package-btn {
+      width: 200px;
+
+      @include _767 {
+        width: 100%;
+
+        .autin-btn {
+          min-width: 100%;
+        }
+      }
+    }
   }
 
   &__img {
@@ -84,15 +97,4 @@
     }
   }
 
-  .package-btn {
-    width: 200px;
-
-    @include _767 {
-      width: 100%;
-
-      .autin-btn {
-        min-width: 100%;
-      }
-    }
-  }
 }

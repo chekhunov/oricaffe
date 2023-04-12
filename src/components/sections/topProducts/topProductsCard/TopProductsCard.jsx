@@ -14,6 +14,7 @@ export default function TopProductsCard({
   type_of_coffee,
   sort,
   name,
+  state,
   weight,
   weight_box,
   cost,
@@ -131,8 +132,11 @@ export default function TopProductsCard({
             </div>
           </div>
 
-          <div className="top-products__info">
-            { t('discount')}
+          <div
+            className="products-card__state"
+            style={{ color: state === "on_order" ? "blue" : "green" }}
+          >
+            {t(state)}
           </div>
 
           <div

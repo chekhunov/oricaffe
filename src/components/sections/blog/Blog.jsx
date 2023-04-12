@@ -9,14 +9,6 @@ import "./blog.scss";
 export default function Blog() {
   const {t} = useTranslation();
 
-  const blog_attributes = {
-    button: "more_info",
-    urlButton: "blog",
-    sx: {
-      width: "200px",
-    },
-  };
-
   return (
     <div className="blog">
       <div className="blog__subtitle mb-25">

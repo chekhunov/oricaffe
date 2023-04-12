@@ -3,6 +3,7 @@ import { Divider } from "@material-ui/core";
 import { Info, Breadcrumbs } from "../../components";
 import { useTranslation } from "react-i18next";
 import { useCart } from "react-use-cart";
+import { toast } from "react-toastify";
 
 import "./cart.scss";
 import { MAIN_ROUTE } from "../../types/const";
@@ -21,6 +22,7 @@ const CartPage = () => {
   ];
 
   const { t } = useTranslation();
+  const notify = (message) => toast(t(message));
 
   const { items = [], setItems, removeItem, updateItemQuantity } = useCart();
 
@@ -62,7 +64,7 @@ const CartPage = () => {
                   key={`${obj.code}${obj.id}`}
                   className="cartItem d-flex justify-between align-center"
                 >
-                  <div className="d-flex align-center">
+                  <div className="cart__info d-flex align-center">
                     <div
                       className="cart__img ml-20"
                       style={{ backgroundImage: "url(" + obj?.imgUrl + ")" }}
@@ -82,7 +84,7 @@ const CartPage = () => {
                     </div>
                   </div>
 
-                  <div className="d-flex align-center ml-50">
+                  <div className="d-flex align-center ml-20 mr-50">
                     <button
                       className="cart__btn-quantity mr-10"
                       onClick={() =>
@@ -123,7 +125,10 @@ const CartPage = () => {
 
                     <div
                       className="cart__del-btn"
-                      onClick={() => removeItem(obj.id)}
+                      onClick={() => {
+                        removeItem(obj.id);
+                        notify("removed_from_cart");
+                      }}
                     >
                       <svg
                         width="10"
@@ -182,13 +187,19 @@ const CartPage = () => {
               </ul>
 
               <div className="d-flex ">
-                <button className="clear mr-20" onClick={() => setItems([])}>
+                <button
+                  className="clear mr-20"
+                  onClick={() => {
+                    setItems([]);
+                    notify("cart_empty");
+                  }}
+                >
                   {t("cart_page.clear")}
                 </button>
 
                 <button
                   className="cancel mr-20"
-                  onClick={() => (document.location = "/")}
+                  onClick={() => (document.location = MAIN_ROUTE)}
                 >
                   {t("cart_page.cancel")}
                 </button>

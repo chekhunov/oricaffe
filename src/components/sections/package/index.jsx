@@ -5,6 +5,7 @@ import Button from "../../elements/button";
 
 import packageImg from "../../../assets/img/package/pack.webp";
 
+import { PACKAGE_ROUTE } from '../../../types/const';
 import "./package.scss";
 
 export default function Package({ textAccent, color, isHeigth }) {
@@ -12,7 +13,10 @@ export default function Package({ textAccent, color, isHeigth }) {
 
   const package_attributes = {
     button: "more_info",
-    urlButton: "package",
+    urlButton: PACKAGE_ROUTE,
+    sx: {
+      width: "200px",
+    },
   };
 
   return (
@@ -30,9 +34,10 @@ export default function Package({ textAccent, color, isHeigth }) {
               <p className="package-row__text pb-20">{t("there_is_a_wide")}</p>
 
               <Button
-                sx={package_attributes.sx}
+                name='package'
                 link={package_attributes.urlButton}
                 text={t(package_attributes.button)}
+                sx={package_attributes.sx}
               />
             </div>
 

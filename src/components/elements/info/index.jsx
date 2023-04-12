@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import Button from "../../elements/button";
 
 import "./info.scss";
+import { MAIN_ROUTE } from '../../../types/const';
 const Info = ({ title, image, description }) => {
   const { t } = useTranslation();
 
@@ -14,7 +15,7 @@ const Info = ({ title, image, description }) => {
       <p className="cart-empty__desc opacity-6 mb-40">{description}</p>
 
       <Button
-        link={""}
+        link={MAIN_ROUTE}
         text={t("back_to")}
         icon={"/icons/arrow_left.svg"}
         sx={{

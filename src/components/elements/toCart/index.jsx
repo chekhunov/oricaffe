@@ -2,14 +2,17 @@ import React, { useContext, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useCart } from "react-use-cart";
 import BaseButton from "../baseButton";
+import { toast } from "react-toastify";
 
 import StateContext from "../../../utils/stateContext";
 
 import "./toCart.scss";
-import { BASKET_ROUTE } from '../../../types/const';
+import { BASKET_ROUTE } from "../../../types/const";
 
 export default function ToCart({ viewProps }) {
   const { t } = useTranslation();
+  const notify = (message) => toast(t(message));
+
   const [quantity, setQuantity] = useState(1);
   const { data } = viewProps;
 
@@ -28,12 +31,13 @@ export default function ToCart({ viewProps }) {
     quantity,
     price,
     name,
-    id,
+    id: id + 1,
     code: `10000${id}`,
   };
 
   const handleContinueClick = () => {
     addItem(newData, quantity);
+    notify("add_product_to_cart");
     handleCancelClick();
   };
 
@@ -63,7 +67,7 @@ export default function ToCart({ viewProps }) {
 
   const isOrderWithDiscount = price * quantity < 10000;
 
-  const discount = 10
+  const discount = 10;
   const sumOrder = price * quantity;
   const sumOrderWithDiscount = Math.floor(
     sumOrder - sumOrder * (discount / 100)

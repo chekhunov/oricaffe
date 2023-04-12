@@ -115,7 +115,7 @@ export const products = [
     category: "coffee",
     type_of_coffee: "В зернах",
     sort: "Arabica 100%",
-    name: "Brasile Signature Dulce",
+    name: "Brasile Gold",
     state: "on_order",
     weight: 0.25,
     weight_box: 12,
