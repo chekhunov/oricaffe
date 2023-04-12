@@ -1,13 +1,22 @@
 import { NavMenuInterface } from "../interfaces/navMenu";
 import { CategoryModel } from "../models/category.model";
-import { ABOUT_ROUTE, BONUS_ROUTE, COOPERATION_ROUTE, DELIVERY_ROUTE, GUARANTEE_ROUTE, QUALITY_ROUTE, SERVICE_ROUTE, SHOP_ROUTE } from '../types/const';
+import {
+  ABOUT_ROUTE,
+  BONUS_ROUTE,
+  COOPERATION_ROUTE,
+  DELIVERY_ROUTE,
+  GUARANTEE_ROUTE,
+  QUALITY_ROUTE,
+  SERVICE_ROUTE,
+  SHOP_ROUTE,
+} from "../types/const";
 
 export const categoryProducts = [
   {
     id: 1,
     name: "coffee",
     value: "category_products.coffee",
-    link: SHOP_ROUTE,
+    link: SHOP_ROUTE + "/coffee",
     category: "coffee",
     img: "/category/bean-c.webp",
     bgColor: "#e33939",
@@ -16,7 +25,7 @@ export const categoryProducts = [
     id: 2,
     name: "tea",
     value: "category_products.tea",
-    link: SHOP_ROUTE,
+    link: SHOP_ROUTE + "/tea",
     category: "tea",
     img: "/category/tea.webp",
     bgColor: "#f1c40f",
@@ -25,7 +34,7 @@ export const categoryProducts = [
     id: 3,
     name: "chocolate",
     value: "category_products.chocolate",
-    link: SHOP_ROUTE,
+    link: SHOP_ROUTE + "/chocolate",
     category: "chocolate",
     img: "/category/powder.webp",
     bgColor: "#e33939",
@@ -34,7 +43,7 @@ export const categoryProducts = [
     id: 4,
     name: "equipment",
     value: "category_products.coffee_equipment",
-    link: SHOP_ROUTE,
+    link: SHOP_ROUTE + "/equipment",
     category: "equipment",
     img: "/category/coffee-equipment.webp",
     bgColor: "#f1c40f",
@@ -43,7 +52,7 @@ export const categoryProducts = [
     id: 5,
     name: "accessories",
     value: "category_products.coffee_accessories",
-    link: SHOP_ROUTE,
+    link: SHOP_ROUTE + "/accessories",
     category: "accessories",
     img: "/category/coffee-accessories.webp",
     bgColor: "#e33939",
