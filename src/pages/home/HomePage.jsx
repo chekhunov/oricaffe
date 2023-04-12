@@ -86,7 +86,7 @@ const HomePage = () => {
         />
 
         <Headline
-          name="top-products"
+          name="topproducts"
           isHeigth={isHeigthTopProducts}
           color={colorTopProducts}
           bgColor={bgColorTopProducts}
