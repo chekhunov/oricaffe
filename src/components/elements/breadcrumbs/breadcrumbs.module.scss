@@ -1,57 +1,65 @@
 .list {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    font-size: 14px;
-    color: #342314;
-    white-space: nowrap;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+
+	white-space: nowrap;
+
+	color: #342314;
+
+	font-size: 14px;
 }
 
 .link {
-    color: #342314;
-    text-decoration: underline;
+	text-decoration: underline;
+
+	color: #342314;
 }
 
 .item {
-    position: relative;
-    display: flex;
+	position: relative;
 
-    &-accent {
-      display: inline;
-      color: #888c91;
-    }
+	display: flex;
 
-    &::before {
-      content: "/";
-      color: #342314;
-    }
+	&-accent {
+		display: inline;
 
-    &:not(:first-child) {
-      margin-left: 5px;
+		color: #888C91;
+	}
 
-      &::before {
-        margin-left: 5px;
-        margin-right: 5px;
-      }
-    }
+	&::before {
+		content: "/";
 
-    &:first-child {
-      &::before {
-        content: "";
-      }
-    }
+		color: #342314;
+	}
 
-    &:last-child {
-      color: #888c91;
-      .link {
-        text-decoration: none;
-        cursor: default;
-      }
-    }
+	&:not(:first-child) {
+		margin-left: 5px;
+
+		&::before {
+			margin-right: 5px;
+			margin-left: 5px;
+		}
+	}
+
+	&:first-child {
+		&::before {
+			content: "";
+		}
+	}
+
+	&:last-child {
+		color: #888C91;
+
+		.link {
+			cursor: default;
+			text-decoration: none;
+		}
+	}
 }
 
-@media screen and (max-width: 767px){
-  .list {
-    overflow-x: scroll;
-  }
+@media screen and (width <= 767px){
+	.list {
+		overflow-x: scroll;
+	}
 }

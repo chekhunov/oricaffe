@@ -1,80 +1,97 @@
 @import '../../../scss/mixins';
 
-  .button-prev,
-  .button-next {
-    position: relative;
-    height: 50px;
-    width: 50px;
-    background-color: #fff;
-    border-radius: 50%;
-    z-index: 10;
-    border: 0.5px solid #8E0303;
-    transition: background-color 0.3s;
-    cursor: pointer;
+.button-prev,
+.button-next {
+	position: relative;
+	z-index: 10;
 
-    &:before {
-      position: absolute;
-      display: block;
-      content: url('../../../assets/icons/category/arrow-b.svg');
-    }
+	width: 50px;
+	height: 50px;
 
-    &:hover {
-      background-color: darken($color: #fff, $amount: 5%);
-      transition: background-color 0.3s;
-    }
-  }
+	cursor: pointer;
+	transition: background-color 0.3s;
 
-  .button-num {
-    position: relative;
-    height: 50px;
-    width: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 5px;
-    background-color: #fff;
-    border-radius: 50%;
-    z-index: 10;
-    color: #8E0303;
-    font-size: 20px;
-    padding-top: 2px;
-    border: 0.5px solid #8E0303;
-    transition: background-color 0.3s;
-    cursor: pointer;
+	border: 0.5px solid #8E0303;
+	border-radius: 50%;
+	background-color: #FFF;
 
-    &:hover {
-      background-color: darken($color: #fff, $amount: 5%);
-      transition: background-color 0.3s;
-    }
+	&::before {
+		position: absolute;
 
-    &.active {
-      background-color: darken($color: #fff, $amount: 5%);
-      transition: background-color 0.3s;
-    }
-  }
+		display: block;
 
-  .button-prev {
-    margin-right: 5px;
-    &:before {
-      right: 20px;
-      bottom: 14px;
-      transform: rotate(-180deg);
-    }
+		content: url('../../../assets/icons/category/arrow-b.svg');
+	}
 
-    &.disable {
-      pointer-events: none;
-      opacity: 0.5;
-    }
-  }
+	&:hover {
+		transition: background-color 0.3s;
 
-  .button-next {
-    &:before {
-      right: 16px;
-      bottom: 8px;
-    }
+		background-color: darken($color: #FFF, $amount: 5%);
+	}
+}
 
-    &.disable {
-      pointer-events: none;
-      opacity: 0.5;
-    }
-  }
+.button-num {
+	position: relative;
+	z-index: 10;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 50px;
+	height: 50px;
+	margin-right: 5px;
+	padding-top: 2px;
+
+	cursor: pointer;
+	transition: background-color 0.3s;
+
+	color: #8E0303;
+	border: 0.5px solid #8E0303;
+	border-radius: 50%;
+	background-color: #FFF;
+
+	font-size: 20px;
+
+	&:hover {
+		transition: background-color 0.3s;
+
+		background-color: darken($color: #FFF, $amount: 5%);
+	}
+
+	&.active {
+		transition: background-color 0.3s;
+
+		background-color: darken($color: #FFF, $amount: 5%);
+	}
+}
+
+.button-prev {
+	margin-right: 5px;
+
+	&::before {
+		right: 20px;
+		bottom: 14px;
+
+		transform: rotate(-180deg);
+	}
+
+	&.disable {
+		pointer-events: none;
+
+		opacity: 0.5;
+	}
+}
+
+.button-next {
+	&::before {
+		right: 16px;
+		bottom: 8px;
+	}
+
+	&.disable {
+		pointer-events: none;
+
+		opacity: 0.5;
+	}
+}

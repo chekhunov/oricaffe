@@ -1,71 +1,81 @@
 .top-products__text {
-  display: none;
+	display: none;
 }
 
 .top-products {
-  &__item {
-    &:hover {
-      .top-products__cart  {
-        transition: all 0.3s;
-      }
-    }
-  }
+	&__item {
+		&:hover {
+			.top-products__cart  {
+				transition: all 0.3s;
+			}
+		}
+	}
 
-  &__title {
-    margin-bottom: 10px;
-  }
+	&__title {
+		margin-bottom: 10px;
+	}
 
-  &__desc {
-    width: 100%;
-    max-width: 230px;
-    text-align: center;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-  }
+	&__desc {
+		display: -webkit-box;
+		overflow: hidden;
 
-  &__price-opt {
-    display: flex;
-  }
+		width: 100%;
+		max-width: 230px;
 
-  &__price-name {
-    font-size: 20px;
-  }
+		text-align: center;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+	}
 
-  &__code {
-    font-size: 12px;
-    color: #8E0303
-  }
+	&__price-opt {
+		display: flex;
+	}
 
-  &__cart {
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
-    height: 30px;
-    width: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;
-    border-radius: 15px;
-    padding: 10px;
-    object-fit: cover;
-    cursor: pointer;
-    border: 1px solid #fff;
-    box-shadow: rgb(0 0 0 / 2%) 0px 1px 3px 0px, rgb(27 31 35 / 15%) 0px 0px 0px 1px;
-    transition: all 0.3s;
+	&__price-name {
+		font-size: 20px;
+	}
 
-    &:hover {
-      background-color: rgb(247, 238, 238);
-      border: 1px solid #8E0303;
-      transition: background-color 0.3s border 0.3s;
-    }
-  }
+	&__code {
+		color: #8E0303;
 
-  &__info {
-    font-size: 14px;
-    color: #8E0303;
-    margin-bottom: 5px;
-  }
+		font-size: 12px
+	}
+
+	&__cart {
+		position: absolute;
+		right: 10px;
+		bottom: 10px;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		width: 30px;
+		height: 30px;
+		padding: 10px;
+
+		cursor: pointer;
+		transition: all 0.3s;
+
+		border: 1px solid #FFF;
+		border-radius: 15px;
+		background-color: #FFF;
+		box-shadow: rgb(0 0 0 / 2%) 0 1px 3px 0, rgb(27 31 35 / 15%) 0 0 0 1px;
+		object-fit: cover;
+
+		&:hover {
+			transition: background-color 0.3s border 0.3s;
+
+			border: 1px solid #8E0303;
+			background-color: rgb(247 238 238);
+		}
+	}
+
+	&__info {
+		margin-bottom: 5px;
+
+		color: #8E0303;
+
+		font-size: 14px;
+	}
 }

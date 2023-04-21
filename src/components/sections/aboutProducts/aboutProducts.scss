@@ -2,290 +2,323 @@
 @import '../../../scss/mixins.scss';
 
 .about-products {
-  position: relative;
-  margin-bottom: 150px;
+	position: relative;
 
-  &::before {
-    content: '';
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 1px;
-    color: rgba(205, 186, 170, 0.5);
-  }
+	margin-bottom: 150px;
 
-  &__btn {
-    .contacts-btn {
-      display: inline-flex
-    }
+	&::before {
+		top: 0;
+		left: 0;
 
-    &.ground {
-      @include _767 {
-        display: none;
-      }
-    }
-  }
+		width: 1px;
+		height: 100%;
 
-  .about-products__btn-mobile {
-    display: none;
-  }
+		content: '';
 
-  .catalog-btn,
-  .about-products__btn-mobile {
-    @include _767 {
-      width: 100%;
-      display: inline-flex;
-      margin-top: 20px;
-      margin-right: 0!important;
-      .atuin-btn {
-        width: 100%!important;
-      }
-    }
-  }
+		color: rgb(205 186 170 / 50%);
+	}
 
-  .single-doses {
-    @include _767 {
-      display: flex;
-      flex-direction: column;
-    }
-  }
+	&__btn {
+		.contacts-btn {
+			display: inline-flex
+		}
 
-  &__desc {
-    width: fit-content;
-    margin-left: -20px;
-    margin-bottom: 20px;
-    padding: 5px 10px;
-    display: flex;
-    align-items: baseline;
-    font-size: 14px;
-    font-weight: 400;
-    background-color: transparent;
-    color: #CDBAAA;
-    text-transform: uppercase;
+		&.ground {
+			@include _767 {
+				display: none;
+			}
+		}
+	}
 
-    @media screen and (max-width: 767px) {
-      width: 100%;
-      margin-left: 0;
-      display: flex;
-      justify-content: center;
-    }
-  }
+	.about-products__btn-mobile {
+		display: none;
+	}
 
-  &__inner {
-    display: flex;
-    flex-direction: column;
-  }
+	.catalog-btn,
+	.about-products__btn-mobile {
+		@include _767 {
+			display: inline-flex;
 
-  &__subtitle {
-    text-align: left;
-  }
+			width: 100%;
+			margin-top: 20px;
+			margin-right: 0!important;
 
-  &__row {
-    width: 100%;
+			.atuin-btn {
+				width: 100%!important;
+			}
+		}
+	}
+
+	.single-doses {
+		@include _767 {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+
+	&__desc {
+		display: flex;
+		align-items: baseline;
+
+		width: fit-content;
+		margin-bottom: 20px;
+		margin-left: -20px;
+		padding: 5px 10px;
+
+		text-transform: uppercase;
+
+		color: #CDBAAA;
+		background-color: transparent;
+
+		font-size: 14px;
+		font-weight: 400;
+
+		@media screen and (width <= 767px) {
+			display: flex;
+			justify-content: center;
+
+			width: 100%;
+			margin-left: 0;
+		}
+	}
+
+	&__inner {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__subtitle {
+		text-align: left;
+	}
+
+	&__row {
+		width: 100%;
+
+		&.center {
+			margin-bottom: 40px;
+
+			@include _1200 {
+				flex-direction: column;
+
+				margin-bottom: 0;
+			}
+		}
     
-    @include _1024 {
-      position: relative;
-    }
+		@include _1024 {
+			position: relative;
+		}
+	}
 
-    &.center {
-      margin-bottom: 40px;
-      @include _1200 {
-        flex-direction: column;
-        margin-bottom: 0;
-      }
-    }
-  }
+	&__label,
+	&__label--svg {
+		position: absolute;
 
-  &__label,
-  &__label--svg {
-    position: absolute;
-    display: none;
+		display: none;
 
-    @include _1024 {
-      right: 20px;
-      display: inline-flex;
-    }
-  }
+		@include _1024 {
+			right: 20px;
 
-  &__label--svg {
-    @include _1024 {
-      top: -5px;
-    }
-  }
+			display: inline-flex;
+		}
+	}
 
-  &__label {
-    @include _1024 {
-      top: -3px;
-    }
-  }
+	&__label--svg {
+		@include _1024 {
+			top: -5px;
+		}
+	}
+
+	&__label {
+		@include _1024 {
+			top: -3px;
+		}
+	}
 }
 
 .about-row {
-  width: 100%;
-  color: $default;
-  background-color: #fff;
-  border: 0.5px solid $hover;
-  border-radius: 15px;
-  @extend %libreBaskervilleItalic-400;
+	width: 100%;
 
-  &__label {
-    display: none;
+	color: $default;
+	border: 0.5px solid $hover;
+	border-radius: 15px;
+	background-color: #FFF;
 
-    @include _1024 {
-      position: absolute;
-      width: 40px;
-      height: 60px;
-      top: 100px;
-      right: 30px;
-      background-color: brown;
-      display: inline-flex;
+	&__label {
+		display: none;
 
-    }
-  }
+		@include _1024 {
+			position: absolute;
+			top: 100px;
+			right: 30px;
 
-  &__block-beans {
-    .about-row__text {
-      padding-bottom: 20px;
+			display: inline-flex;
 
-      @include _1024 {
-        padding: 0;
+			width: 40px;
+			height: 60px;
 
-        &.mobile {
-          visibility: hidden;
-          height: 0;
-        }
-      }
-    }
-  }
+			background-color: brown;
 
-  &__title {
-    margin-bottom: 20px;
-    font-size: 24px;
-  }
+		}
+	}
 
-  &__text {
-    font-size: 16px;
+	&__block-beans {
+		.about-row__text {
+			padding-bottom: 20px;
 
-    @include _1024 {
-      overflow: hidden;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      padding: 0;
-    }
-  }
+			@include _1024 {
+				padding: 0;
 
-  &__column-left {
-    height: auto;
-    min-height: 100%;
-    width: calc(90% - 20px);
-    margin-right: 20px;
+				&.mobile {
+					visibility: hidden;
 
-    @include _1200 {
-      width: 100%;
-    }
+					height: 0;
+				}
+			}
+		}
+	}
 
-    @include _767 {
-      margin-right: 0;
-      margin-bottom: 0;
-      .contacts-btn {
-        width: 100%;
-        display: inline-flex;
-        margin-right: 0!important;
+	&__title {
+		margin-bottom: 20px;
 
-        .atuin-btn {
-          width: 100%!important;
-        }
-      }
-    }
-  }
+		font-size: 24px;
+	}
 
-  &__headline {
-    @include _767 {
-      .about-products__btn {
-        display: none;
-      }
-    }
-  }
+	&__text {
+		font-size: 16px;
 
-  &__column-right {
-    height: auto;
-    width: 100%;
-    margin-right: 0;
-  }
+		@include _1024 {
+			display: -webkit-box;
+			overflow: hidden;
 
-  &__inner {
-    align-items: baseline;
-    justify-content: space-between;
-  }
+			padding: 0;
+			-webkit-line-clamp: 3;
+			-webkit-box-orient: vertical;
+		}
+	}
 
-  &__img {
-    border-radius: 10px;
-    width: 32%;
-    float: right;
+	&__column-left {
+		width: calc(90% - 20px);
+		height: auto;
+		min-height: 100%;
+		margin-right: 20px;
 
-    @include _1200 {
-      display: none;
-    }
-  }
+		@include _1200 {
+			width: 100%;
+		}
 
-  &__img-moka {
-    border-radius: 10px;
-    width: 35%;
-    object-fit: cover;
-    float: right;
+		@include _767 {
+			margin-right: 0;
+			margin-bottom: 0;
 
-    @include _1200 {
-      display: none;
-    }
-  }
+			.contacts-btn {
+				display: inline-flex;
 
-  &__img--big {
-    max-height: 250px;
-    width: 20%;
-    margin-right: 0;
-    border-radius: 10px;
+				width: 100%;
+				margin-right: 0!important;
 
-    @include _1200 {
-      display: none;
-    }
-  }
+				.atuin-btn {
+					width: 100%!important;
+				}
+			}
+		}
+	}
 
-  &__img-green {
-    width: 20%;
-  }
+	&__headline {
+		@include _767 {
+			.about-products__btn {
+				display: none;
+			}
+		}
+	}
 
-  &__column {
-    position: relative;
-    padding: 20px;
-  }
+	&__column-right {
+		width: 100%;
+		height: auto;
+		margin-right: 0;
+	}
 
-  &__column-inner {
-    width: calc(50%);
+	&__inner {
+		align-items: baseline;
+		justify-content: space-between;
+	}
 
-    @include _1200 {
-      width: 100%;
-    }
-  }
+	&__img {
+		float: right;
+
+		width: 32%;
+
+		border-radius: 10px;
+
+		@include _1200 {
+			display: none;
+		}
+	}
+
+	&__img-moka {
+		float: right;
+
+		width: 35%;
+
+		border-radius: 10px;
+		object-fit: cover;
+
+		@include _1200 {
+			display: none;
+		}
+	}
+
+	&__img--big {
+		width: 20%;
+		max-height: 250px;
+		margin-right: 0;
+
+		border-radius: 10px;
+
+		@include _1200 {
+			display: none;
+		}
+	}
+
+	&__img-green {
+		width: 20%;
+	}
+
+	&__column {
+		position: relative;
+
+		padding: 20px;
+	}
+
+	&__column-inner {
+		width: calc(50%);
+
+		@include _1200 {
+			width: 100%;
+		}
+	}
+
+	@extend %libreBaskervilleItalic-400;
 }
 
 .column-right {
-  height: 100%;
+	height: 100%;
 
-  @include _1200 {
-    margin-bottom: 40px;
-  }
+	&__img {
+		float: bottom;
 
-  &__img {
-    max-height: 250px;
-    object-fit: cover;
-    margin: 0 auto;
-    width: 55%;
-    border-radius: 10px;
-    float: bottom;
+		width: 55%;
+		max-height: 250px;
+		margin: 0 auto;
 
-    @include _1200 {
-      display: none;
-    }
-  }
+		border-radius: 10px;
+		object-fit: cover;
+
+		@include _1200 {
+			display: none;
+		}
+	}
+
+	@include _1200 {
+		margin-bottom: 40px;
+	}
 }

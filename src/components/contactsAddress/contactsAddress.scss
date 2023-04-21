@@ -1,45 +1,50 @@
 @import '../../scss/vars.scss';
 
 .icon-location {
-  width: 30px;
-  font-size: 30px;
+	width: 30px;
+
+	font-size: 30px;
 }
 
 .icon-phone {
-  width: 30px;
-  font-size: 24px;
+	width: 30px;
+
+	font-size: 24px;
 }
 
 .icon-mail {
-  width: 30px;
-  font-size: 20px;
+	width: 30px;
+
+	font-size: 20px;
 }
 
 .partners-title {
-  font-size: 36px!important;
+	font-size: 36px!important;
 }
 
 .contacts {
-  &__block {
-    padding-left: 10px;
-    margin-bottom: 20px;
-  }
+	&__block {
+		margin-bottom: 20px;
+		padding-left: 10px;
+	}
 
-  &__item {
-    display: flex;
-  }
+	&__item {
+		display: flex;
+	}
 
-  &__title {
-    font-size: 16px;
-    color: $default;
+	&__title {
+		color: $default;
 
-    &:hover {
-      color: lighten($color: $default, $amount: 30%);
-    }
-  }
+		font-size: 16px;
 
-  &__text {
-    padding-top: 5px;
-    color: #908f97;
-  }
+		&:hover {
+			color: lighten($color: $default, $amount: 30%);
+		}
+	}
+
+	&__text {
+		padding-top: 5px;
+
+		color: #908F97;
+	}
 }

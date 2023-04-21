@@ -1,86 +1,100 @@
 .card_details-page {
-  padding-top: 30px;
-  &__title {
-    padding-top: 50px;
-    display: flex;
-    justify-content: center;
-    font-size: 48px;
-  }
+	padding-top: 30px;
 
-  &__title-img {
-    width: 100%;
-    object-fit: cover;
-    margin: 0 auto;
-    max-height: 300px;
-  }
+	&__title {
+		display: flex;
+		justify-content: center;
+
+		padding-top: 50px;
+
+		font-size: 48px;
+	}
+
+	&__title-img {
+		width: 100%;
+		max-height: 300px;
+		margin: 0 auto;
+		object-fit: cover;
+	}
 }
-.catalog-page {
-  padding-top: 30px;
-  &__title {
-    padding-top: 50px;
-    display: flex;
-    justify-content: center;
-    font-size: 48px;
-  }
 
-  &__title-img {
-    width: 100%;
-    object-fit: cover;
-    margin: 0 auto;
-    max-height: 300px;
-  }
+.catalog-page {
+	padding-top: 30px;
+
+	&__title {
+		display: flex;
+		justify-content: center;
+
+		padding-top: 50px;
+
+		font-size: 48px;
+	}
+
+	&__title-img {
+		width: 100%;
+		max-height: 300px;
+		margin: 0 auto;
+		object-fit: cover;
+	}
 }
 
 .catalog {
-  &__nav {
-    min-width: 200px;
-    max-width: 200px;
-    margin-right: 20px;
-  }
-  &__category {
-    width: 100%;
-  }
+	&__nav {
+		min-width: 200px;
+		max-width: 200px;
+		margin-right: 20px;
+	}
 
-  &__block {
-    position: relative;
-    width: 100%;
-    margin: 50px 0;
-  }
+	&__category {
+		width: 100%;
+	}
 
-  &__items {
-    min-width: 100%;
-    display: flex;
-    flex: 1;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-  }
+	&__block {
+		position: relative;
 
-  &__title {
-    text-transform: uppercase;
-    font-weight: 500;
-  }
+		width: 100%;
+		margin: 50px 0;
+	}
 
-  &__category-item {
-    padding: 3px 0 0 5px;
-    border-radius: 5px;
-    cursor: pointer;
+	&__items {
+		display: flex;
+		flex: 1;
+		flex-wrap: wrap;
+		justify-content: flex-start;
 
-    &.active {
-      background-color: #f2e9e9;
-    }
-  }
+		min-width: 100%;
+	}
 
-  &__content {
-    width: 100%;
-    display: flex;
-    margin-left: 50px;
-    flex-direction: column;
-    align-items: center;
-  }
+	&__title {
+		text-transform: uppercase;
+
+		font-weight: 500;
+	}
+
+	&__category-item {
+		padding: 3px 0 0 5px;
+
+		cursor: pointer;
+
+		border-radius: 5px;
+
+		&.active {
+			background-color: #F2E9E9;
+		}
+	}
+
+	&__content {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+
+		width: 100%;
+		margin-left: 50px;
+	}
 }
 
 .card-details {
-  &__content {
-    margin: 50px 0;
-  }
+	&__content {
+		margin: 50px 0;
+	}
 }

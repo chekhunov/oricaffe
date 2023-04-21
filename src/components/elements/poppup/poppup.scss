@@ -2,75 +2,79 @@
 
 
 .poppup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 1000;
-  overflow-y: auto;
+	position: fixed;
+	z-index: 1000;
+	inset: 0;
 
-  &-inner {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    height: 100%;
-    min-height: 300px;
-    max-height: 500px;
-    max-width: 1070px;
-    min-width: 600px;
-    padding: 50px 80px;
-    background-color: #fff;
-    text-align: center;
-    box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.15);
-    border-radius: 33px;
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+	overflow-y: auto;
 
-    @include _767 {
-      min-width: 95%;
-      padding: 20px 30px;
-    }
+	background-color: rgb(0 0 0 / 80%);
 
-    .closed-btn {
-      width: 100%;
-      display: flex;
-      justify-content: flex-end;
+	&-inner {
+		position: absolute;
+		z-index: 10;
+		top: 50%;
+		left: 50%;
 
-      @include _767 {
-        top: 10px;
-        right: 10px;
-      }
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		justify-content: center;
+
+		min-width: 600px;
+		max-width: 1070px;
+		height: 100%;
+		min-height: 300px;
+		max-height: 500px;
+		padding: 50px 80px;
+
+		transform: translate(-50%, -50%);
+		text-align: center;
+
+		border-radius: 33px;
+		background-color: #FFF;
+		box-shadow: 0 2px 15px rgb(0 0 0 / 15%);
+
+		.closed-btn {
+			display: flex;
+			justify-content: flex-end;
+
+			width: 100%;
     
-      &__line {
-        margin-right: 0;
-      }
-    }
-  }
+			&__line {
+				margin-right: 0;
+			}
 
-  .cart {
-    &__img {
-      @include _767 {
-        margin-left: 0;
-        margin-right: 5px;
-      }
-    }
-  }
+			@include _767 {
+				top: 10px;
+				right: 10px;
+			}
+		}
 
-  .cart-item {
-    @include _767 {
-      margin-bottom: 30px;
-    }
+		@include _767 {
+			min-width: 95%;
+			padding: 20px 30px;
+		}
+	}
 
-    &__controls {
-      @include _767 {
-        padding: 0 10px 0 5px;
-      }
-    }
-  }
+	.cart {
+		&__img {
+			@include _767 {
+				margin-right: 5px;
+				margin-left: 0;
+			}
+		}
+	}
+
+	.cart-item {
+		&__controls {
+			@include _767 {
+				padding: 0 10px 0 5px;
+			}
+		}
+
+		@include _767 {
+			margin-bottom: 30px;
+		}
+	}
 }

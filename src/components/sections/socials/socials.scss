@@ -1,73 +1,83 @@
-@import '../../../scss/vars.scss';
+@import url('../../../scss/vars.scss');
 
 .socials {
-    position: relative;
-    padding-top: 30px;
+	position: relative;
 
-    &::before {
-        content: '';
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 1px;
-        color: rgba(205, 186, 170, 0.5);
-    }
+	padding-top: 30px;
 
-    &__desc {
-      align-items: baseline;
-    }
+	&::before {
+		top: 0;
+		left: 0;
 
-    &__inner {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+		width: 1px;
+		height: 100%;
 
-    &__content-block {
-      width: 100%;
-      padding: 70px 0;
-    }
+		content: '';
 
-    &__block {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-    }
+		color: rgb(205 186 170 / 50%);
+	}
 
-    &__icon {
-      display: inline-block;
-      width: 100px;
-      height: 100px;
-      background-color: #E6481F;
-      border-radius: 50%;
-      transition: background-color 0.3s;
+	&__desc {
+		align-items: baseline;
+	}
 
-      &:not(:last-child) {
-        margin-right: 30px;
-      }
+	&__inner {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+	}
 
-      &:hover {
-        background-color: lighten($color: #E6481F, $amount: 20%);
-        transition: background-color 0.3s;
-      }
-    }
+	&__content-block {
+		width: 100%;
+		padding: 70px 0;
+	}
 
-    &__link {
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+	&__block {
+		display: flex;
+		justify-content: center;
 
-    &__ico path {
-      fill: $disable;
-    }
+		width: 100%;
+	}
 
-    .icon-instagram {
-      font-size: 42px;
+	&__icon {
+		display: inline-block;
 
-      &::before {
-        color: #E8E8E8;
-      }
-    }
-  }
+		width: 100px;
+		height: 100px;
+
+		transition: background-color 0.3s;
+
+		border-radius: 50%;
+		background-color: #E6481F;
+
+		&:not(:last-child) {
+			margin-right: 30px;
+		}
+
+		&:hover {
+			transition: background-color 0.3s;
+
+			background-color: lighten($color: #E6481F, $amount: 20%);
+		}
+	}
+
+	&__link {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		height: 100%;
+	}
+
+	&__ico path {
+		fill: $disable;
+	}
+
+	.icon-instagram {
+		font-size: 42px;
+
+		&::before {
+			color: #E8E8E8;
+		}
+	}
+}

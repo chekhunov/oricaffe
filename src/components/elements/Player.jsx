@@ -17,6 +17,8 @@ export default function Player() {
     setIsPlaying(false);
     audio.file.pause();
   }
+
+  
   return (
     <div
       className="player fab-buttons__link"

@@ -2,89 +2,101 @@
 @import '../../../scss/mixins.scss';
 
 .reviews {
-  position: relative;
-  margin-bottom: 150px;
+	position: relative;
 
-  &::before {
-    content: '';
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 1px;
-    color: rgba(205, 186, 170, 0.5);
-  }
+	margin-bottom: 150px;
 
-  &__desc {
-    width: fit-content;
-    margin-left: -20px;
-    margin-bottom: 20px;
-    padding: 5px 10px;
-    display: flex;
-    align-items: baseline;
-    font-size: 14px;
-    font-weight: 400;
-    color: #CDBAAA;
-    text-transform: uppercase;
+	&::before {
+		top: 0;
+		left: 0;
 
-    @media screen and (max-width: 767px) {
-      width: 100%;
-      margin-left: 0;
-      display: flex;
-      justify-content: center;
-    }
-  }
+		width: 1px;
+		height: 100%;
 
-  &__inner {
-    display: flex;
-    flex-direction: column;
-  }
+		content: '';
 
-  &__subtitle {
-    text-align: left;
-  }
+		color: rgb(205 186 170 / 50%);
+	}
 
-  &__row {
-    justify-content: space-between;
-    margin-bottom: 40px;
+	&__desc {
+		display: flex;
+		align-items: baseline;
 
-    @include _767 {
-      margin-bottom: 0;
-      flex-direction: column;
-    }
+		width: fit-content;
+		margin-bottom: 20px;
+		margin-left: -20px;
+		padding: 5px 10px;
 
-    .reviews__element {
-      width: calc(30%);
+		text-transform: uppercase;
 
-      &:not(:last-child) {
-        margin-right: 20px;
-      }
+		color: #CDBAAA;
 
-      @include _767 {
-        width: 100%;
-        margin-bottom: 20px;
-      }
-    }
-  }
+		font-size: 14px;
+		font-weight: 400;
+
+		@media screen and (width <= 767px) {
+			display: flex;
+			justify-content: center;
+
+			width: 100%;
+			margin-left: 0;
+		}
+	}
+
+	&__inner {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__subtitle {
+		text-align: left;
+	}
+
+	&__row {
+		justify-content: space-between;
+
+		margin-bottom: 40px;
+
+		.reviews__element {
+			width: calc(30%);
+
+			&:not(:last-child) {
+				margin-right: 20px;
+			}
+
+			@include _767 {
+				width: 100%;
+				margin-bottom: 20px;
+			}
+		}
+
+		@include _767 {
+			flex-direction: column;
+
+			margin-bottom: 0;
+		}
+	}
 }
 
 .element {
-  &__headline {
-    margin-bottom: 20px;
-  }
+	&__headline {
+		margin-bottom: 20px;
+	}
 
-  &__fullname {
-    font-size: 18px;
-    font-weight: bold;
-  }
+	&__fullname {
+		font-size: 18px;
+		font-weight: bold;
+	}
 
-  &__date {
-    font-style: italic;
-  }
+	&__date {
+		font-style: italic;
+	}
 
-  &__img {
-    height: 80px;
-    width: 80px;
-    margin-right: 10px;
-    border-radius: 50%;
-  }
+	&__img {
+		width: 80px;
+		height: 80px;
+		margin-right: 10px;
+
+		border-radius: 50%;
+	}
 }

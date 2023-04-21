@@ -1,13 +1,15 @@
 @import '../../../scss/mixins.scss';
 
 .sub-header {
-  position: relative;
-  width: 100%;
-  padding: 0px 0 10px;
-  background-color: red;
-  z-index: 1000;
+	position: relative;
+	z-index: 1000;
 
-  @include _1024 {
-    display: none;
-  }
+	width: 100%;
+	padding: 0 0 10px;
+
+	background-color: red;
+
+	@include _1024 {
+		display: none;
+	}
 }

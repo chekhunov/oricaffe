@@ -2,215 +2,233 @@
 @import '../../../scss/vars.scss';
 
 .sub-footer {
-  font-size: 10px;
-  color: #CDBAAA;
+	color: #CDBAAA;
 
-  @include _1024 {
-    padding-top: 10px;
-  }
+	font-size: 10px;
+
+	@include _1024 {
+		padding-top: 10px;
+	}
 }
 
 .footer {
-  position: relative;
-  width: 100%;
-  z-index: 20;
-  margin-bottom: 15px;
+	position: relative;
+	z-index: 20;
 
-  &__bottom {
-    height: 210px;
-    padding: 40px 110px 50px;
-    background-color: #FFFFFF;
-    border-radius: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    box-shadow: rgb(0 0 0 / 2%) 0px 1px 3px 0px, rgb(27 31 35 / 15%) 0px 0px 0px 1px;
+	width: 100%;
+	margin-bottom: 15px;
+
+	&__bottom {
+		display: flex;
+		align-items: flex-end;
+		flex-direction: column;
+
+		height: 210px;
+		padding: 40px 110px 50px;
+
+		border-radius: 40px;
+		background-color: #FFF;
+		box-shadow: rgb(0 0 0 / 2%) 0 1px 3px 0, rgb(27 31 35 / 15%) 0 0 0 1px;
   
-    @include _1200 {
-      height: 100%;
-      padding: 40px 40px 40px;
-    }
-  }
+		@include _1200 {
+			height: 100%;
+			padding: 40px;
+		}
+	}
 
-  &__box {
-    @include _380 {
-      display: flex;
-      flex-direction: column;
-    }
-  }
+	&__box {
+		@include _380 {
+			display: flex;
+			flex-direction: column;
+		}
+	}
 
-  &__logo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+	&__logo {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
 
-    @include _1024 {
-      width: calc(100%);
-    }
+		@include _1024 {
+			width: calc(100%);
+		}
 
-    @include _380 {
-      margin-bottom: 20px;
-    }
-  }
+		@include _380 {
+			margin-bottom: 20px;
+		}
+	}
 
-  &__nav {
-    @include _1024 {
-      flex-direction: column;
-    }
-  }
+	&__nav {
+		@include _1024 {
+			flex-direction: column;
+		}
+	}
 
-  &__bottom-meta {
-    width: 100%;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+	&__bottom-meta {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
 
-  &__copy {
-    width: 100%;
-    align-items: flex-start;
+		width: 100%;
+		margin-bottom: 10px;
+	}
 
-    & a,
-    & p {
-      font-size: 14px;
-      color: #CDBAAA;
-    }
-  }
+	&__copy {
+		align-items: flex-start;
 
-  .socials {
-    @include _1024 {
-      display: inline-flex;
-    }
+		width: 100%;
 
-    &__item {
-      &:not(:last-child) {
-        margin-right: 10px;
-      }
-    }
+		& a,
+		& p {
+			color: #CDBAAA;
 
-    &__link {
-      height: 34px;
-      width: 34px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      border-radius: 50%;
+			font-size: 14px;
+		}
+	}
 
-      &.twitter {
-        background-color: #131938;
-      }
+	.socials {
+		&__item {
+			&:not(:last-child) {
+				margin-right: 10px;
+			}
+		}
 
-      &:hover {
-        &.telegram,
-        &.facebook,
-        &.instagram {
-          background-color: darken($color: #ffffff, $amount: 30%);
-          transition: background-color 0.3s;
-        }
+		&__link {
+			display: flex;
+			align-items: center;
+			justify-content: center;
 
-        &.twitter {
-          .socials__ico path {
-            fill: darken($color: #ffffff, $amount: 30%);
-            transition: fill 0.3s;
-          }
-        }
-      }
-    }
-  }
+			width: 34px;
+			height: 34px;
 
-  &__headline {
-    color: #131938;
-    font-size: 18px;
-    font-weight: bold;
-  }
+			border-radius: 50%;
 
-  &__link {
-    color: #2B304F;
-    font-size: 16px;
-    font-weight: normal;
-    transition: color 0.3s;
+			&.twitter {
+				background-color: #131938;
+			}
 
-    &:hover {
-      color: lighten($color: #2B304F, $amount: 30%);
-      transition: color 0.3s;
-    }
-  }
+			&:hover {
+				&.telegram,
+				&.facebook,
+				&.instagram {
+					transition: background-color 0.3s;
+
+					background-color: darken($color: #FFF, $amount: 30%);
+				}
+
+				&.twitter {
+					.socials__ico path {
+						fill: darken($color: #FFF, $amount: 30%);
+
+						transition: fill 0.3s;
+					}
+				}
+			}
+		}
+
+		@include _1024 {
+			display: inline-flex;
+		}
+	}
+
+	&__headline {
+		color: #131938;
+
+		font-size: 18px;
+		font-weight: bold;
+	}
+
+	&__link {
+		transition: color 0.3s;
+
+		color: #2B304F;
+
+		font-size: 16px;
+		font-weight: normal;
+
+		&:hover {
+			transition: color 0.3s;
+
+			color: lighten($color: #2B304F, $amount: 30%);
+		}
+	}
 }
 
 .icon-instagram {
-  &:before {
-    font-size: 26px;
-    color: #ffffff;
-    transition: color 0.3s;
-  }
+	&::before {
+		transition: color 0.3s;
 
-  &:hover {
-    &:before {
-      color: darken($color: #ffffff, $amount: 30%);
-      transition: color 0.3s;
-    }
-  }
+		color: #FFF;
+
+		font-size: 26px;
+	}
+
+	&:hover {
+		&::before {
+			transition: color 0.3s;
+
+			color: darken($color: #FFF, $amount: 30%);
+		}
+	}
 }
 
 
-@media screen and (max-width: 1024px) {
-  .footer {
-    &__inner {
-      flex-direction: column;
-    }
+@media screen and (width <= 1024px) {
+	.footer {
+		&__inner {
+			flex-direction: column;
+		}
 
-    &__item {
-      width: 100%;
+		&__item {
+			width: 100%;
 
-      & ul li {
-        width: 40%;
-      }
-    }
+			& ul li {
+				width: 40%;
+			}
+		}
 
-    &__social {
-      flex: 1;
-      justify-content: space-evenly;
-    }
+		&__social {
+			flex: 1;
+			justify-content: space-evenly;
+		}
 
-    &__copy {
-      justify-content: space-between;
+		&__copy {
+			justify-content: space-between;
 
-      & a {
-        margin-left: auto;
-      }
-    }
-  }
+			& a {
+				margin-left: auto;
+			}
+		}
+	}
 }
 
-@media screen and (max-width: 767px) {
-  .footer {
-    &__item ul li {
-      width: 100%;
-    }
+@media screen and (width <= 767px) {
+	.footer {
+		&__item ul li {
+			width: 100%;
+		}
 
-    &__bottom-meta {
-      flex-direction: column;
-      align-items: flex-start;
-    }
+		&__bottom-meta {
+			align-items: flex-start;
+			flex-direction: column;
+		}
 
-    &__cicr {
-      margin-bottom: 24px;
-    }
+		&__cicr {
+			margin-bottom: 24px;
+		}
 
-    &__copy {
-      flex-direction: column;
-      align-items: flex-start;
+		&__copy {
+			align-items: flex-start;
+			flex-direction: column;
 
-      & p {
-        margin-bottom: 10px;
-      }
+			& p {
+				margin-bottom: 10px;
+			}
 
-      & a {
-        margin-left: 0;
-        margin-bottom: 10px;
-      }
-    }
+			& a {
+				margin-bottom: 10px;
+				margin-left: 0;
+			}
+		}
 
-  }
+	}
 }

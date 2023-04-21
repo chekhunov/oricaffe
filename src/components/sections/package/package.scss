@@ -2,99 +2,107 @@
 @import '../../../scss/mixins.scss';
 
 .package {
-  position: relative;
-  margin-bottom: 50px;
-  padding-top: 30px;
+	position: relative;
 
-  .container {
-    @include _380 {
-      padding: 0;
-    }
-  }
+	margin-bottom: 50px;
+	padding-top: 30px;
 
-  &::before {
-      content: '';
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 1px;
-      color: rgba(205, 186, 170, 0.5);
-  }
+	.container {
+		@include _380 {
+			padding: 0;
+		}
+	}
 
-  &__content {
-    height: 100%;
-    padding: 70px 0;
+	&::before {
+		top: 0;
+		left: 0;
 
-    @include _767 {
-      padding: 20px;
-    }
-  }
+		width: 1px;
+		height: 100%;
 
-  &__content-block {
-    .container {
-    @include _380 {
-      padding: 0;
-    }
-  }
-  }
+		content: '';
 
-  &__row {
-    width: 100%;
-  }
+		color: rgb(205 186 170 / 50%);
+	}
+
+	&__content {
+		height: 100%;
+		padding: 70px 0;
+
+		@include _767 {
+			padding: 20px;
+		}
+	}
+
+	&__content-block {
+		.container {
+			@include _380 {
+				padding: 0;
+			}
+		}
+	}
+
+	&__row {
+		width: 100%;
+	}
 }
 
 .package-row {
-  width: 100%;
-  color: $default;
-  background-color: #fff;
-  border: 0.5px solid $hover;
-  border-radius: 15px;
-  @extend%libreBaskervilleItalic-400;
+	width: 100%;
 
-  &__title {
-    margin-bottom: 20px;
-    font-size: 24px;
-  }
+	color: $default;
+	border: 0.5px solid $hover;
+	border-radius: 15px;
+	background-color: #FFF;
 
-  &__text {
-    font-size: 16px;
-    flex-grow: 1;
-  }
+	&__title {
+		margin-bottom: 20px;
 
-  &__column-left {
-    height: auto;
-    min-height: 100%;
-    width: calc(50% - 20px);
-    margin-right: 20px;
+		font-size: 24px;
+	}
 
-    @include _1024 {
-      width: 100%;
-      margin-right: 0;
-    }
+	&__text {
+		flex-grow: 1;
+
+		font-size: 16px;
+	}
+
+	&__column-left {
+		width: calc(50% - 20px);
+		height: auto;
+		min-height: 100%;
+		margin-right: 20px;
 
 
-    .package-btn {
-      width: 200px;
+		.package-btn {
+			width: 200px;
 
-      @include _767 {
-        width: 100%;
+			@include _767 {
+				width: 100%;
 
-        .autin-btn {
-          min-width: 100%;
-        }
-      }
-    }
-  }
+				.autin-btn {
+					min-width: 100%;
+				}
+			}
+		}
 
-  &__img {
-    max-height: 440px;
-    width: calc(50%);
-    margin-right: 0;
-    border-radius: 10px;
+		@include _1024 {
+			width: 100%;
+			margin-right: 0;
+		}
+	}
 
-    @include _1024 {
-      display: none;
-    }
-  }
+	&__img {
+		width: calc(50%);
+		max-height: 440px;
+		margin-right: 0;
+
+		border-radius: 10px;
+
+		@include _1024 {
+			display: none;
+		}
+	}
+	@extend%libreBaskervilleItalic-400;
 
 }

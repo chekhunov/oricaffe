@@ -18,7 +18,7 @@ const MenuElement = ({
 }) => {
   const { t } = useTranslation();
 
-  console.log(link);
+  console.log(link, "link");
 
   return (
     <>

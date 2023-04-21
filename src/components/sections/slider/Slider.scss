@@ -2,102 +2,122 @@
 @import '../../../scss/mixins.scss';
 
 .slider {
-  position: relative;
-  margin-top: -50px;
-  margin-bottom: 10px;
-  overflow: hidden;
+	position: relative;
 
-  @include _1024 {
-    height: 100%!important;
-  }
+	overflow: hidden;
 
-  & .slide-list {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-  }
+	margin-top: -50px;
+	margin-bottom: 10px;
+
+	& .slide-list {
+		display: flex;
+
+		width: 100%;
+		height: 100%;
+
+		transition: transform 0.5s ease-in-out;
+	}
+
+	@include _1024 {
+		height: 100%!important;
+	}
 }
 
 .slide {
-  position: relative;
-  height: 100%;
+	position: relative;
 
-  video {
-    @include _767 {
-      min-height: 420px;
-      object-fit: cover;
-    }
-  }
+	height: 100%;
 
-  & .slide-image {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    margin: 0 auto;
-    display: inline-flex;
-    object-fit: cover;
+	video {
+		@include _767 {
+			min-height: 420px;
+			object-fit: cover;
+		}
+	}
 
-    @include _767 {
-      display: none;
-    }
-  }
+	& .slide-image {
+		position: relative;
 
-  &__content {
-    position: absolute;
-    width: 100%;
-    top: 80%;
-    left: 40%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    transform: translate(-50%, -50%); 
-    @extend %libreBaskerville-700;
-    z-index: 200;
+		display: inline-flex;
 
-    @include _767 {
-      top: 60%;
-      left: -10px;
-      transform: translate(0, 0); 
+		width: 100%;
+		height: 100%;
+		margin: 0 auto;
+		object-fit: cover;
 
-      .contacts-btn {
-        display: inline-flex;
-      }
-    }
+		@include _767 {
+			display: none;
+		}
+	}
 
-    @include _640 {
-      left: 0;
-      align-items: center;
-    }
-  }
+	&__content {
+		position: absolute;
+		z-index: 200;
+		top: 80%;
+		left: 40%;
 
-  & .slide-title {
-    margin-top: 10px;
-    margin-bottom: 40px;
-    font-size: 48px;
-    text-align: center;
-    color: #ffffff!important;
+		display: flex;
+		align-items: flex-end;
+		flex-direction: column;
 
-    @include _1024 {
-      font-size: 32px;
-    }
+		width: 100%;
 
-    @include _767 {
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
+		transform: translate(-50%, -50%); 
 
-    @include _320 {
-      font-size: 22px;
-    }
-  }
+		@extend %libreBaskerville-700;
 
-  & .slide-subtitle {
-    margin-bottom: 50px;
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 28px;
-    text-align: center;
-    color: #ffffff;
-      }
-    }
+		@include _767 {
+			top: 60%;
+			left: -10px;
+
+			transform: translate(0, 0); 
+
+			.contacts-btn {
+				display: inline-flex;
+			}
+		}
+
+		@include _640 {
+			left: 0;
+
+			align-items: center;
+		}
+	}
+
+	& .slide-title {
+		margin-top: 10px;
+		margin-bottom: 40px;
+
+		text-align: center;
+
+		color: #FFF!important;
+
+		font-size: 48px;
+
+		@include _1024 {
+			font-size: 32px;
+		}
+
+		@include _767 {
+			margin-bottom: 10px;
+
+			font-size: 28px;
+		}
+
+		@include _320 {
+			font-size: 22px;
+		}
+	}
+
+	& .slide-subtitle {
+		margin-bottom: 50px;
+
+		text-align: center;
+
+		color: #FFF;
+
+		font-size: 18px;
+		font-weight: 600;
+		line-height: 28px;
+	}
+}

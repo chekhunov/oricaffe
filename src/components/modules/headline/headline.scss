@@ -2,61 +2,67 @@
 @import '../../../scss/mixins.scss';
 
 .headline {
-  position: relative;
-  margin-bottom: 150px;
+	position: relative;
 
-  @include _1200 {
-    margin-bottom: 100px;
-  }
+	margin-bottom: 150px;
 
-  @include _767 {
-    margin-bottom: 50px;
-  }
+	&::before {
+		top: 0;
+		left: 0;
 
-  @include _320 {
-    margin-bottom: 30px;
-  }
+		width: 1px;
+		height: 100%;
 
-  &::before {
-    content: '';
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 1px;
-    color: rgba(205, 186, 170, 0.5);
-  }
+		content: '';
+
+		color: rgb(205 186 170 / 50%);
+	}
 
 
-  &__desc {
-    padding: 5px 10px;
-    align-items: baseline;
-  }
+	&__desc {
+		align-items: baseline;
+
+		padding: 5px 10px;
+	}
+
+	@include _1200 {
+		margin-bottom: 100px;
+	}
+
+	@include _767 {
+		margin-bottom: 50px;
+	}
+
+	@include _320 {
+		margin-bottom: 30px;
+	}
 }
 
-@media screen and (max-width: 1024px) {
-  .headline {
-    .line {
-      display: none;
-    }
-  }
+@media screen and (width <= 1024px) {
+	.headline {
+		.line {
+			display: none;
+		}
+	}
 }
 
-@media screen and (max-width: 767px) {
-  .headline {
-    &__desc {
-      left: -5px;
-    }
-  }
+@media screen and (width <= 767px) {
+	.headline {
+		&__desc {
+			left: -5px;
+		}
+	}
 }
 
-@media screen and (max-width: 468px) {
-  .headline {
-    &__desc {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-    }
-  }
+@media screen and (width <= 468px) {
+	.headline {
+		&__desc {
+			display: flex;
+			justify-content: center;
+
+			width: 100%;
+		}
+	}
 }
 
 

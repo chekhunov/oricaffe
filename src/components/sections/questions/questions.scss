@@ -2,136 +2,152 @@
 @import '../../../scss/mixins.scss';
 
 .questions {
-  margin-bottom: 25px;
+	margin-bottom: 25px;
 
-  &__inner {
-    padding: 90px 150px;
-    background-color: #FAF7EF;
-    border-radius: 40px;
+	&__inner {
+		padding: 90px 150px;
 
-    @include _1300 {
-      padding: 90px 100px;
-    }
+		border-radius: 40px;
+		background-color: #FAF7EF;
 
-    @include _1200 {
-      padding: 90px 50px;
-    }
+		@include _1300 {
+			padding: 90px 100px;
+		}
 
-    @include _1024 {
-      flex-direction: column;
-      align-items: center!important;
-    }
-  }
+		@include _1200 {
+			padding: 90px 50px;
+		}
 
-  &__column.left {
-    width: calc(45%);
-    margin-right: 100px;
+		@include _1024 {
+			align-items: center!important;
+			flex-direction: column;
+		}
+	}
 
-    @include _1024 {
-      width: 100%;
-      margin-right: 0;
-      margin-bottom: 60px;
-    }
+	&__column.left {
+		width: calc(45%);
+		margin-right: 100px;
 
-    .title {
-      text-align: left;
-    }
-  }
+		.title {
+			text-align: left;
+		}
 
-  &__column.right {
-    width: calc(55%);
+		@include _1024 {
+			width: 100%;
+			margin-right: 0;
+			margin-bottom: 60px;
+		}
+	}
 
-    @include _1024 {
-      width: 100%;
-    }
-  }
+	&__column.right {
+		width: calc(55%);
 
-  &__title {
-    font-size: 36px;
-    @extend %libreBaskerville-700;
-  }
+		@include _1024 {
+			width: 100%;
+		}
+	}
 
-  &__descriptions {
-    font-size: 18px;
-  }
+	&__title {
+		font-size: 36px;
 
-  &__item {
-    cursor: pointer;
+		@extend %libreBaskerville-700;
+	}
+
+	&__descriptions {
+		font-size: 18px;
+	}
+
+	&__item {
+		cursor: pointer;
     
-    &:not(:last-child) {
-      margin-bottom: 40px;
-    }
+		&:not(:last-child) {
+			margin-bottom: 40px;
+		}
 
-    &:hover {
-      .questions__item-title {
-        color: lighten($default, 20%);
-        transition: color 0.3s;
-      }
+		&:hover {
+			.questions__item-title {
+				transition: color 0.3s;
 
-      .questions__item-svg {
-        transform: rotate(180deg);
-        transition: transform 0.3s;
-      }
+				color: lighten($default, 20%);
+			}
 
-      .questions__item-svg path {
-        stroke: lighten($default, 20%);
-        transition: transform 0.3s;
-      }
+			.questions__item-svg {
+				transition: transform 0.3s;
+				transform: rotate(180deg);
+			}
 
-      .questions__item-desc {
-        visibility: visible;
-        height: 100%;
-        opacity: 1;
-        transform: scale(1, 1);
-        transition: all 0.3s
-      }
-    }
-  }
+			.questions__item-svg path {
+				stroke: lighten($default, 20%);
 
-  &__item-link {
-    display: inline-flex;
-    margin-left: 4px;
-  }
+				transition: transform 0.3s;
+			}
 
-  &__item-svg {
-    min-width: 30px;
-    margin-top: -5px;
-    transform: rotate(0deg);
-    transition: transform 0.3s;
+			.questions__item-desc {
+				visibility: visible;
 
-    @include _1024 {
-      min-width: 24px;
-      min-height: 24px;
-    }
-  }
+				height: 100%;
 
-  &__item-title {
-    width: 100%;
-    display: flex;
-    justify-content: inherit;
-    font-weight: 600;
-    font-size: 18px;
-    color: $default;
-  }
+				transition: all 0.3s;
+				transform: scale(1, 1);
 
-  &__item-desc {
-    padding-top: 20px;
-    visibility: hidden;
-    height: 0;
-    opacity: 0;
-    transform: scale(0.5, 0.5);
-    transition: all 0.3s;
-  }
+				opacity: 1
+			}
+		}
+	}
 
-  &__headline {
-    width: 100%;
-    max-width: 500px;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+	&__item-link {
+		display: inline-flex;
 
-    @include _1024 {
-      max-width: 100%;
-    }
-  }
+		margin-left: 4px;
+	}
+
+	&__item-svg {
+		min-width: 30px;
+		margin-top: -5px;
+
+		transition: transform 0.3s;
+		transform: rotate(0deg);
+
+		@include _1024 {
+			min-width: 24px;
+			min-height: 24px;
+		}
+	}
+
+	&__item-title {
+		display: flex;
+		justify-content: inherit;
+
+		width: 100%;
+
+		color: $default;
+
+		font-size: 18px;
+		font-weight: 600;
+	}
+
+	&__item-desc {
+		visibility: hidden;
+
+		height: 0;
+		padding-top: 20px;
+
+		transition: all 0.3s;
+		transform: scale(0.5, 0.5);
+
+		opacity: 0;
+	}
+
+	&__headline {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+
+		width: 100%;
+		max-width: 500px;
+
+		@include _1024 {
+			max-width: 100%;
+		}
+	}
 }

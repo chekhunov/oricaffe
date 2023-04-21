@@ -1,65 +1,84 @@
 @font-face {
-  font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?b16yc1');
-  src:  url('fonts/icomoon.eot?b16yc1#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?b16yc1') format('truetype'),
-    url('fonts/icomoon.woff?b16yc1') format('woff'),
-    url('fonts/icomoon.svg?b16yc1#icomoon') format('svg');
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
+	font-family: icomoon;
+	src:  url('fonts/icomoon.eot?b16yc1');
+	src:  url('fonts/icomoon.eot?b16yc1#iefix') format('embedded-opentype'),
+		url('fonts/icomoon.ttf?b16yc1') format('truetype'),
+		url('fonts/icomoon.woff?b16yc1') format('woff'),
+		url('fonts/icomoon.svg?b16yc1#icomoon') format('svg');
+
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
 }
 
 [class^="icon-"], [class*=" icon-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
-  speak: never;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
+	text-transform: none;
 
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family: icomoon !important;
+	font-weight: normal;
+	font-style: normal;
+	font-variant: normal;
+	line-height: 1;
+	speak: never;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
-.icon-ardown:before {
-  content: "\e300";
+.icon-ardown::before {
+	content: "\e300";
 }
-.icon-arleft:before {
-  content: "\e301";
-  color: #fff;
+
+.icon-arleft::before {
+	content: "\e301";
+
+	color: #FFF;
 }
-.icon-location:before {
-  content: "\e302";
-  color: #cdbaaa;
+
+.icon-location::before {
+	content: "\e302";
+
+	color: #CDBAAA;
 }
-.icon-user:before {
-  content: "\e303";
-  color: #cdbaaa;
+
+.icon-user::before {
+	content: "\e303";
+
+	color: #CDBAAA;
 }
-.icon-phone:before {
-  content: "\e304";
-  color: #cdbaaa;
+
+.icon-phone::before {
+	content: "\e304";
+
+	color: #CDBAAA;
 }
-.icon-phonenew:before {
-  content: "\e305";
-  color: #cdbaaa;
+
+.icon-phonenew::before {
+	content: "\e305";
+
+	color: #CDBAAA;
 }
-.icon-mail:before {
-  content: "\e306";
-  color: #cdbaaa;
+
+.icon-mail::before {
+	content: "\e306";
+
+	color: #CDBAAA;
 }
-.icon-instagram:before {
-  content: "\e307";
-  color: #E8E8E8;
+
+.icon-instagram::before {
+	content: "\e307";
+
+	color: #E8E8E8;
 }
-.icon-facebook:before {
-  content: "\e308";
-  color: #fff;
+
+.icon-facebook::before {
+	content: "\e308";
+
+	color: #FFF;
 }
-.icon-calendar:before {
-  content: "\e309";
+
+.icon-calendar::before {
+	content: "\e309";
 }

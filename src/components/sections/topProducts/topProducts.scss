@@ -1,150 +1,168 @@
 @import '../../../scss/mixins.scss';
 
 .top-products {
-  position: relative;
-  width: 100%;
-  padding: 70px 20px 20px;
+	position: relative;
 
-  &__description {
-    display: flex;
-    margin-bottom: 20px;
-  }
+	width: 100%;
+	padding: 70px 20px 20px;
 
-  &__price {
-    @include _767 {
-      margin-left: 0;
-    }
-  }
+	&__description {
+		display: flex;
 
-  .swiper-wrapper {
-    padding: 0 0 40px;
+		margin-bottom: 20px;
+	}
 
-    @include _767 {
-      padding: 0 0 35px;
-    }
-  }
+	&__price {
+		@include _767 {
+			margin-left: 0;
+		}
+	}
 
-  .swiper-button-prev,
-  .swiper-button-next {
-    position: relative;
-    height: 50px;
-    width: 50px;
-    background-color: #fff;
-    border-radius: 50%;
-    z-index: 10;
-    border: 0.5px solid #8E0303;
-    transition: background-color 0.3s;
+	.swiper-wrapper {
+		padding: 0 0 40px;
 
-    @include _1024 {
-      display: none;
-    }
+		@include _767 {
+			padding: 0 0 35px;
+		}
+	}
 
-    &:before {
-      position: absolute;
-      display: block;
-      content: url('../../../assets/icons/category/arrow-b.svg');
-    }
+	.swiper-button-prev,
+	.swiper-button-next {
+		position: relative;
+		z-index: 10;
 
-    &:hover {
-      background-color: darken($color: #fff, $amount: 5%);
-      transition: background-color 0.3s;
-    }
-  }
+		width: 50px;
+		height: 50px;
 
-  .swiper-button-prev {
-    bottom: 4px;
-    left: 88%;
+		transition: background-color 0.3s;
 
-    @include _1200 {
-      left: 84%;
-    }
+		border: 0.5px solid #8E0303;
+		border-radius: 50%;
+		background-color: #FFF;
 
-    &:before {
-      right: 20px;
-      bottom: 13px;
-      transform: rotate(-180deg);
-    }
-  }
+		&::before {
+			position: absolute;
 
-  .swiper-button-next {
-    bottom: 32px;
-    left: 95%;
+			display: block;
 
-    @include _1200 {
-      left: 92%;
-    }
+			content: url('../../../assets/icons/category/arrow-b.svg');
+		}
 
-    &:before {
-      right: 16px;
-      bottom: 6px;
-    }
-  }
+		&:hover {
+			transition: background-color 0.3s;
 
-  &__item {
-    padding: 14px;
-    background-color: #fff;
-    border: 1px solid #8E0303;
-    border-radius: 25px 25px 25px 0px;
-    transition: box-shadow 0.3s, background-color 0.3s;
+			background-color: darken($color: #FFF, $amount: 5%);
+		}
 
-    &:hover {
-      background-color: rgb(255, 249, 249);
-      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-      transition: box-shadow 0.3s, background-color 0.3s;
-    }
-  }
+		@include _1024 {
+			display: none;
+		}
+	}
 
-  &__image {
-    position: relative;
-    width: 100%;
-    max-height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #fff;
-    margin: 0;
-    border-radius: 25px 25px 0px 0px;
-  }
+	.swiper-button-prev {
+		bottom: 4px;
+		left: 88%;
 
-  &__title {
-    margin-top: 12px;
-    font-style: italic;
-    text-transform: none;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 12px;
-  }
+		&::before {
+			right: 20px;
+			bottom: 13px;
 
-  &__weight {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-  }
+			transform: rotate(-180deg);
+		}
 
-  &__price {
-    font-weight: 400;
-    font-size: 38px;
-  }
+		@include _1200 {
+			left: 84%;
+		}
+	}
+
+	.swiper-button-next {
+		bottom: 32px;
+		left: 95%;
+
+		&::before {
+			right: 16px;
+			bottom: 6px;
+		}
+
+		@include _1200 {
+			left: 92%;
+		}
+	}
+
+	&__item {
+		padding: 14px;
+
+		transition: box-shadow 0.3s, background-color 0.3s;
+
+		border: 1px solid #8E0303;
+		border-radius: 25px 25px 25px 0;
+		background-color: #FFF;
+
+		&:hover {
+			transition: box-shadow 0.3s, background-color 0.3s;
+
+			background-color: rgb(255 249 249);
+			box-shadow: rgb(0 0 0 / 24%) 0 3px 8px;
+		}
+	}
+
+	&__image {
+		position: relative;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		width: 100%;
+		max-height: 200px;
+		margin: 0;
+
+		border-radius: 25px 25px 0 0;
+		background-color: #FFF;
+	}
+
+	&__title {
+		display: flex;
+		flex-direction: column;
+
+		margin-top: 12px;
+		margin-bottom: 12px;
+
+		text-transform: none;
+
+		font-style: italic;
+	}
+
+	&__weight {
+		position: absolute;
+		top: 12px;
+		right: 12px;
+	}
+
+	&__price {
+		font-size: 38px;
+		font-weight: 400;
+	}
 }
 
-@media screen and (max-width: 1024px) {
-  .top-products {
-    padding-bottom: 70px;
-  }
+@media screen and (width <= 1024px) {
+	.top-products {
+		padding-bottom: 70px;
+	}
 }
 
-@media screen and (max-width: 767px) {
-  .top-products {
-    padding-bottom: 0;
+@media screen and (width <= 767px) {
+	.top-products {
+		padding-bottom: 0;
 
-    &__description {
-      margin-bottom: 10px;
-    }
-  }
+		&__description {
+			margin-bottom: 10px;
+		}
+	}
 }
 
 .swiper-pagination {
-  .swiper-pagination-bullet-active {
-    background: #8E0303!important;
-  }
+	.swiper-pagination-bullet-active {
+		background: #8E0303!important;
+	}
 }

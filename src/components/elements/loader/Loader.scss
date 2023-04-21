@@ -1,31 +1,40 @@
 .spinner {
-  margin: auto;
-  border: 2px solid #dbf2ff; 
-  /*
+	position: absolute;
+	top: 45%;
+
+	display: inline-block; 
+
+	/*
   change to dotted for something cool.
   change width to 1px for tapered bar
   */
-  width: 32px;
-  height: 32px;
-  display: inline-block;
-  position: absolute;
-  top: 45%;
-  border-radius: 50%;
-  border-right: 2px solid #018df7;
-  text-align:center;
-  animation-name: spin;
-  animation-duration: 900ms;
-  animation-iteration-count: infinite;
-  /*animation-timing-function: linear; /*linear spin */
-  animation-timing-function: cubic-bezier(0.53, 0.21, 0.29, 0.67);
+	width: 32px;
+	height: 32px;
+	margin: auto;
+
+	animation-name: spin;
+	animation-duration: 900ms;
+
+	/* animation-timing-function: linear; /*linear spin */
+	animation-timing-function: cubic-bezier(0.53, 0.21, 0.29, 0.67);
+	animation-iteration-count: infinite;
+	text-align:center;
+
+	border: 2px solid #DBF2FF;
+	border-right: 2px solid #018DF7;
+	border-radius: 50%;
 }
-@-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  /*50% {width:24px;height:24px} /*shrinking effect*/
-  100% { -webkit-transform: rotate(360deg); }
-}
+
 @keyframes spin {
-  0% { -webkit-transform: rotate(0deg);}
- /*50% {width:24px;height:24px} /*shrinking effect*/
-  100% { -webkit-transform: rotate(360deg); }
+	0% { transform: rotate(0deg); }
+
+	/* 50% {width:24px;height:24px} /*shrinking effect */
+	100% { transform: rotate(360deg); }
+}
+
+@keyframes spin {
+	0% { transform: rotate(0deg);}
+
+	/* 50% {width:24px;height:24px} /*shrinking effect */
+	100% { transform: rotate(360deg); }
 }
