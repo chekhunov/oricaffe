@@ -155,5 +155,6 @@
   "on_order": "Под заказ",
   "add_product_to_cart": "Товар добавлен в корзину.",
   "removed_from_cart": "Товар удален из корзины.",
-  "cart_empty": "Корзина очищена."
+  "cart_empty": "Корзина очищена.",
+  "submit_application": "Оставить заявку"
 }

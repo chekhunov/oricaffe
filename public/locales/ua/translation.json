@@ -153,5 +153,6 @@
   "on_order": "Під замовлення",
   "add_product_to_cart": "Товар доданий до кошика.",
   "removed_from_cart": "Товар видалено з кошика.",
-  "cart_empty": "Кошик очищений."
+  "cart_empty": "Кошик очищений.",
+  "submit_application": "Надішліть заявку"
 }

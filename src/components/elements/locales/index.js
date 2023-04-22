@@ -7,14 +7,14 @@ import ua from "../../../assets/img/flags/ua.webp";
 
 export default function Locales() {
   const { i18n } = useTranslation();
-  const [locale, setLocale] = useState(i18n.language || "en");
+  const [locale, setLocale] = useState(i18n.language || "ua");
 
   const changeLanguage = (lng) => {
     setLocale(lng);
     i18n.changeLanguage(lng);
   };
 
-  let result = locale.match(/en/);
+  let result = locale.match(/ua/);
 
   return (
     <div className="lang mr-20">
@@ -28,7 +28,7 @@ export default function Locales() {
         />
 
         <span className="lang__text active">
-          {result?.length > 0 ? "en" : locale}
+          {result?.length > 0 ? "ua" : locale}
         </span>
 
         <div className="lang__popup">

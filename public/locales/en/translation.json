@@ -162,5 +162,6 @@
   "on_order": "On order",
   "add_product_to_cart": "Product added to cart.",
   "removed_from_cart": "Item removed from cart.",
-  "cart_empty": "Cart empty"
+  "cart_empty": "Cart empty",
+  "submit_application": "Submit your application"
 }

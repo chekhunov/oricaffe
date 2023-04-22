@@ -7,7 +7,7 @@ import LogoCompany from "../../modules/header/logoCompany";
 import logo from "../../../assets/header/logo.png";
 
 import "./footer.scss";
-import { CONTACT_ROUTE, TAC_ROUTE } from '../../../types/const';
+import { CONTACT_ROUTE, TAC_ROUTE } from "../../../types/const";
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -22,7 +22,7 @@ export default function Footer() {
               </div>
 
               <div className="footer__copy d-flex flex-column">
-                <p>Copiright © 2022 Orientalcaffe.</p>
+                <p>Copiright © 2023 Orientalcaffe.</p>
                 <p>All rights reserved.</p>
               </div>
             </div>
