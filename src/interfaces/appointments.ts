@@ -12,6 +12,7 @@ export interface ProductCardInterface {
   imgUrl: string;
   info: string;
   link: string;
+  cost: number;
 }
 
 export interface UserInterface {

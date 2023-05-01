@@ -16,6 +16,7 @@ export const CONTACT_ROUTE = '/contact'
 export const QUALITY_ROUTE = '/quality'
 export const COOPERATION_ROUTE = "/cooperation"
 export const TAC_ROUTE = '/terms-and-conditions'
+export const ORDER_ROUTE = '/order'
 
 // TODO refactor name to basket
 export const BASKET_ROUTE = '/cart'

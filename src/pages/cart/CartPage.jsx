@@ -1,13 +1,16 @@
 import React from "react";
-import { Divider } from "@material-ui/core";
-import { Info, Breadcrumbs } from "../../components";
+import { Button } from "@mui/material";
+import { Info } from "../../components";
 import { useTranslation } from "react-i18next";
 import { useCart } from "react-use-cart";
 import { toast } from "react-toastify";
+import ContainerPage from "../../components/modules/containerPage";
+import { useStyles } from "./CartPage.styles";
 
-import "./cart.scss";
-import { MAIN_ROUTE } from "../../types/const";
-const CartPage = () => {
+import "./CartPage.scss";
+import { MAIN_ROUTE, ORDER_ROUTE } from "../../types/const";
+import { Box } from "@material-ui/core";
+const CartPage = (): JSX.Element => {
   const breadcrumbs = [
     {
       id: 0,
@@ -21,6 +24,7 @@ const CartPage = () => {
     },
   ];
 
+  const styles = useStyles();
   const { t } = useTranslation();
   const notify = (message) => toast(t(message));
 
@@ -46,16 +50,8 @@ const CartPage = () => {
   );
 
   return (
-    <div className="cart mb-50">
-      <div className="container-big">
-        <div className="d-flex justify-between align-center pt-30 mb-30">
-          <Breadcrumbs breadcrumbs={breadcrumbs} />
-        </div>
-
-        <div className="cart__title pb-50">{t("cart")}</div>
-
-        <Divider />
-
+    <Box mb={8}>
+      <ContainerPage name="cart" breadcrumbs={breadcrumbs}>
         {items?.length > 0 ? (
           <div className="cart__inner d-flex flex-column">
             <div className="cart__items mb-50">
@@ -187,24 +183,67 @@ const CartPage = () => {
               </ul>
 
               <div className="d-flex ">
-                <button
-                  className="clear mr-20"
+                <Button
+                  sx={{
+                    ...styles.button,
+                    backgroundColor: "#f20505",
+                    marginRight: "20px",
+                    border: "0px solid #8E0303",
+                    "&:hover": {
+                      transition: "background-color 0.3s",
+                      backgroundColor: "#F0B4AE",
+                    },
+                    "&:active": {
+                      transition: "background-color 0.3s",
+                      backgroundColor: "darken($color: #F0B4AE, $amount: 40%)",
+                    },
+                  }}
                   onClick={() => {
                     setItems([]);
                     notify("cart_empty");
                   }}
                 >
                   {t("cart_page.clear")}
-                </button>
+                </Button>
 
-                <button
-                  className="cancel mr-20"
+                <Button
+                  sx={{
+                    ...styles.button,
+                    backgroundColor: "white",
+                    color: "#131938",
+                    marginRight: "20px",
+                    border: "1px solid #8E0303",
+                    "&:hover": {
+                      transition: "background-color 0.3s",
+                      backgroundColor: "#fff1f1",
+                    },
+                    "&:active": {
+                      transition: "background-color 0.3s",
+                      backgroundColor: "darken($color: #fff, $amount: 40%)",
+                    },
+                  }}
                   onClick={() => (document.location = MAIN_ROUTE)}
                 >
                   {t("cart_page.cancel")}
-                </button>
+                </Button>
 
-                <button className="checkout">{t("cart_page.checkout")}</button>
+                <Button
+                  href={ORDER_ROUTE}
+                  sx={{
+                    ...styles.button,
+                    backgroundColor: "#9DD558",
+                    "&:hover": {
+                      transition: " background-color 0.3s",
+                      backgroundColor: "#74A736",
+                    },
+                    "&:active": {
+                      transition: "background-color 0.3s",
+                      backgroundColor: "darken($color: #9DD558, $amount: 40%)",
+                    },
+                  }}
+                >
+                  {t("cart_page.checkout")}
+                </Button>
               </div>
             </div>
           </div>
@@ -215,8 +254,8 @@ const CartPage = () => {
             image={"/cart/empty.webp"}
           />
         )}
-      </div>
-    </div>
+      </ContainerPage>
+    </Box>
   );
 };
 

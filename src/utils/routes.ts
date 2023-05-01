@@ -1,6 +1,8 @@
 import AboutPage from "../pages/about";
 import Admin from "../pages/admin";
-import Auth from "../pages/auth";
+import SingIn from "../pages/auth/SingIn";
+//TODO created components singup
+import SingUp from "../pages/auth/SingIn";
 import BlogPage from "../pages/blog";
 import BonusPage from "../pages/bonus";
 import CartPage from "../pages/cart";
@@ -8,6 +10,7 @@ import ContactPage from "../pages/contact";
 import DeliveryPage from "../pages/delivery";
 import GuaranteePage from "../pages/guarantee";
 import HomePage from "../pages/home";
+import OrderPage from '../pages/order/OrderPage';
 import ServicePage from "../pages/service";
 import TermsPage from "../pages/terms";
 import {
@@ -24,6 +27,7 @@ import {
   BASKET_ROUTE,
   BLOG_ROUTE,
   TAC_ROUTE,
+  ORDER_ROUTE,
 } from "../types/const";
 
 export const apiRoutes = {
@@ -58,12 +62,12 @@ export const publicRoutes = [
     id: 1,
     // uid: SomeLibrary.generateUniqueID(),
     path: LOGIN_ROUTE,
-    Component: Auth,
+    Component: SingIn,
   },
   {
     id: 2,
     path: REGISTRATION_ROUTE,
-    Component: Auth,
+    Component: SingUp,
   },
   {
     id: 3,
@@ -114,5 +118,10 @@ export const publicRoutes = [
     id: 12,
     path: TAC_ROUTE,
     Component: TermsPage,
+  },
+  {
+    id: 13,
+    path: ORDER_ROUTE,
+    Component: OrderPage,
   },
 ];

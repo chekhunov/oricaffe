@@ -1,21 +1,21 @@
 import React, { useContext } from "react";
 
-import SubHeader from "../modules/subHeader";
-import Header from "../modules/header";
-import Footer from "../modules/footer";
-import Poppup from "../elements/poppup";
-import ButtonTop from "../elements/buttonTop";
-import SocialBtn from "../elements/socialBtn";
-import ToCart from "../elements/toCart";
-import StateContext from "../../utils/stateContext";
-import useGetPrice from "../../hooks/useGetPrice";
+import SubHeader from "../components/modules/subHeader";
+import Header from "../components/modules/header";
+import Footer from "../components/modules/footer";
+import Poppup from "../components/elements/poppup";
+import ButtonTop from "../components/elements/buttonTop";
+import SocialBtn from "../components/elements/socialBtn";
+import ToCart from "../components/elements/toCart";
+import StateContext from "../utils/stateContext";
+import useGetPrice from "../hooks/useGetPrice";
 
-import { useInitialState } from "../../api/initialState";
+import { useInitialState } from "../api/initialState";
 import { useCart } from "react-use-cart";
 
-import PreLoader from "../elements/preLoader";
+import PreLoader from "../components/elements/preLoader";
 
-export default function Layout({ children }) {
+const Layout = ({ children }) => {
   const { data, isLoading, isFetching } = useInitialState();
   const { products, menu_subheader, nav_menu } = data;
   const { items } = useCart();
@@ -67,4 +67,6 @@ export default function Layout({ children }) {
       ) : null}
     </>
   );
-}
+};
+
+export default Layout;

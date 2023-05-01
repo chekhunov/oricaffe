@@ -163,5 +163,13 @@
   "add_product_to_cart": "Product added to cart.",
   "removed_from_cart": "Item removed from cart.",
   "cart_empty": "Cart empty",
-  "submit_application": "Submit your application"
+  "submit_application": "Submit your application",
+  "form": {
+    "sign_in": "Sign in",
+    "email_address": "Email Address",
+    "forgot": "Forgot password?",
+    "dont_have_account": "Don't have an account? Sign Up"
+  },
+  "terms_and_conditions": "Правила та Умови",
+  "order": "Order"
 }

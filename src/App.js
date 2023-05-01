@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import LayoutDefault from "./components/layout";
+import LayoutDefault from "./layout/Layout";
 import Content from "./components/modules/Content";
 
 import StateContext from "./utils/stateContext";

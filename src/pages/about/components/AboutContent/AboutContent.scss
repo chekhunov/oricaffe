@@ -1,22 +1,8 @@
 
-@import '../../../scss/vars.scss';
+@import '../../../../scss/vars.scss';
 
 .about {
 	position: relative;
-
-	margin-bottom: 50px;
-
-	&::before {
-		top: 0;
-		left: 0;
-
-		width: 1px;
-		height: 100%;
-
-		content: '';
-
-		color: rgb(205 186 170 / 50%);
-	}
 
 	&__desc {
 		align-items: baseline;

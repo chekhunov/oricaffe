@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import "./buttonTop.scss";
-export default function ButtonTop() {
+export default function ButtonTop(): JSX.Element {
   const [show, setShow] = useState(false);
 
   const handleClick = () => {

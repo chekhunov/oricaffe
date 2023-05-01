@@ -177,8 +177,8 @@ export default function AboutProducts({ textAccent, bgColor }) {
             </div>
 
             <div className="about-products__row center d-flex">
-              <div className="about-row__column-inner column-right mr-40">
-                <div className="about-row__column mb-40 about-row d-flex justify-between align-start">
+              <div className="about-row__column-inner column-right">
+                <div className="about-row__column about-row ground-coffe d-flex justify-between align-start">
                   <img
                     className="about-products__label"
                     src={aboutGround}
@@ -222,7 +222,7 @@ export default function AboutProducts({ textAccent, bgColor }) {
                   </div>
                 </div>
 
-                <div className="about-row__column about-row single-doses d-flex justify-between align-start">
+                <div className="about-row__column about-row single-doses d-flex justify-between">
                   <img
                     className="about-products__label"
                     src={singleDoses}

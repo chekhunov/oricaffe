@@ -1,16 +1,17 @@
 import React from "react";
-import classNames from "classnames";
+import cn from "classnames";
 import { useTranslation } from "react-i18next";
+import { Box } from "@mui/material";
 
-import "./about.scss";
+import "./AboutContent.scss";
 
-export default function About() {
+const AboutContent = (): JSX.Element => {
   const { t } = useTranslation();
 
   return (
-    <section className="about">
+    <Box className="about">
       <div className="container-big">
-        <div className={classNames("about__inner", "inner")}>
+        <div className={cn("about__inner", "inner")}>
           <div className="about__content-block">
             <div className="container">
               <div className="about__text">
@@ -36,6 +37,8 @@ export default function About() {
           </div>
         </div>
       </div>
-    </section>
+    </Box>
   );
-}
+};
+
+export default AboutContent;

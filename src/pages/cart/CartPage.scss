@@ -4,15 +4,6 @@
 	&__info {
 		flex: 1;
 	}
-  
-	&__title {
-		display: flex;
-		justify-content: center;
-
-		padding-top: 50px;
-
-		font-size: 48px;
-	}
 
 	&__inner {
 		justify-content: space-between;
@@ -113,38 +104,24 @@
 		}
 	}
 
-	.checkout {
-		&:hover {
-			transition: background-color 0.3s;
+	// .cancel {
+	// 	color: $hover;
+	// 	border: 1px solid $hover;
+	// 	background-color: transparent;
 
-			background-color: #74A736;
-		}
+	// 	&:hover {
+	// 		transition: background-color 0.3s;
 
-		&:active {
-			transition: background-color 0.3s;
+	// 		background-color: #F0B4AE;
+	// 	}
 
-			background-color: darken($color: #9DD558, $amount: 40%);
-		}
-	}
+	// 	&:active {
+	// 		transition: background-color 0.3s color 0.3s;
 
-	.cancel {
-		color: $hover;
-		border: 1px solid $hover;
-		background-color: transparent;
-
-		&:hover {
-			transition: background-color 0.3s;
-
-			background-color: #F0B4AE;
-		}
-
-		&:active {
-			transition: background-color 0.3s color 0.3s;
-
-			color: $default;
-			background-color: darken($color: #F0B4AE, $amount: 20%);
-		}
-	}
+	// 		color: $default;
+	// 		background-color: darken($color: #F0B4AE, $amount: 20%);
+	// 	}
+	// }
 
 	.clear {
 		color: #FFF;

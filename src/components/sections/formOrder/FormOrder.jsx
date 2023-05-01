@@ -11,6 +11,7 @@ import Button from "../../elements/button";
 import { useTranslation } from "react-i18next";
 import { MAIN_ROUTE } from "../../../types/const";
 import emailjs from "@emailjs/browser";
+import { toast } from "react-toastify";
 
 import "./formOrder.scss";
 
@@ -27,6 +28,7 @@ const form_attributes = {
     backgroundColor: "#2C397C",
     color: "#ffffff",
     borderRadius: "13px",
+    border: "none",
   },
 };
 
@@ -105,11 +107,12 @@ const FormOrder = () => {
             console.log(error);
           }
         );
+      toast("The message has been sent");
       reset();
       history(MAIN_ROUTE);
     } catch (error) {
       console.error(error);
-      alert("Failed to send email");
+      toast("Failed to send email");
     }
   };
 
