@@ -5,6 +5,7 @@ export const MAIN_ROUTE = '/'
 
 // TODO refactor name to shop
 export const SHOP_ROUTE = '/catalog'
+
 export const ABOUT_ROUTE = '/about'
 export const BONUS_ROUTE = '/bonus'
 export const DELIVERY_ROUTE = '/delivery'

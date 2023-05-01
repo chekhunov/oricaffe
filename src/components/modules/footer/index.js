@@ -8,6 +8,7 @@ import logo from "../../../assets/header/logo.png";
 
 import "./footer.scss";
 import { CONTACT_ROUTE, TAC_ROUTE } from "../../../types/const";
+import { FACEBOOK_LINK, TELEGRAMLIFE_LINK } from "../../../types/social-links";
 
 export default function Footer() {
   const { t } = useTranslation();
@@ -106,7 +107,7 @@ export default function Footer() {
                   <li className="socials__item">
                     <a
                       className="socials__link telegram"
-                      href="https://www.facebook.com/orientalcaffeua"
+                      href={TELEGRAMLIFE_LINK}
                       rel="noreferrer"
                       target="_blank"
                     >
@@ -115,7 +116,6 @@ export default function Footer() {
                         height="34"
                         viewBox="0 0 24 24"
                         fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
                           fillRule="evenodd"
@@ -126,7 +126,7 @@ export default function Footer() {
                       </svg>
                     </a>
                   </li>
-
+                  {/* TODO add link */}
                   <li className="socials__item">
                     <a
                       className="socials__link instagram"
@@ -138,7 +138,6 @@ export default function Footer() {
                         height="34"
                         viewBox="0 0 24 24"
                         fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
                           d="M14.2969 12C14.2969 13.2686 13.2686 14.2969 12 14.2969C10.7314 14.2969 9.70312 13.2686 9.70312 12C9.70312 10.7314 10.7314 9.70312 12 9.70312C13.2686 9.70312 14.2969 10.7314 14.2969 12Z"
@@ -155,19 +154,17 @@ export default function Footer() {
                       </svg>
                     </a>
                   </li>
-
                   <li className="socials__item">
                     <a
                       className="socials__link facebook"
-                      href="/"
-                      target="_blank"
+                      href={FACEBOOK_LINK}
+                      target="_blank" rel="noreferrer"
                     >
                       <svg
                         width="34"
                         height="34"
                         viewBox="0 0 24 24"
                         fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
                           d="M24 12C24 5.37188 18.6281 0 12 0C5.37188 0 0 5.37188 0 12C0 18.6281 5.37188 24 12 24C12.0703 24 12.1406 24 12.2109 23.9953V14.6578H9.63281V11.6531H12.2109V9.44062C12.2109 6.87656 13.7766 5.47969 16.0641 5.47969C17.1609 5.47969 18.1031 5.55938 18.375 5.59688V8.27813H16.8C15.5578 8.27813 15.3141 8.86875 15.3141 9.73594V11.6484H18.2906L17.9016 14.6531H15.3141V23.5359C20.3297 22.0969 24 17.4797 24 12Z"
@@ -176,7 +173,6 @@ export default function Footer() {
                       </svg>
                     </a>
                   </li>
-
                   <li className="socials__item">
                     <a
                       className="socials__link twitter"
@@ -189,7 +185,6 @@ export default function Footer() {
                         height="26"
                         viewBox="0 0 23 18"
                         fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
                       >
                         <path
                           fillRule="evenodd"

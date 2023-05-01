@@ -21,7 +21,6 @@ export default function Package({ textAccent, color, isHeigth }) {
 
   return (
     <div className="package__content-block">
-      <div className="container">
         <div className="package__content">
           <div className="package__subtitle mb-25">{t("follow_the_news")}</div>
 
@@ -44,7 +43,6 @@ export default function Package({ textAccent, color, isHeigth }) {
             <img className="package-row__img" src={packageImg} alt="package" />
           </div>
         </div>
-      </div>
     </div>
   );
 }

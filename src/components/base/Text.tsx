@@ -6,7 +6,7 @@ type ResponsiveSize = "xs" | "sm" | "md" | "lg" | "xl";
 
 interface TextProps {
   component?: React.ElementType;
-  size: Partial<Record<ResponsiveSize, TypographyProps["variant"]>>;
+  size?: Partial<Record<ResponsiveSize, TypographyProps["variant"]>>;
   lineClamp?: string;
 }
 

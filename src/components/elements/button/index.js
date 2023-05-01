@@ -14,7 +14,12 @@ export default function Button({
   isSubmit = false,
 }) {
   return isSubmit ? (
-    <button type="submit" style={sx} className={cn("atuin-btn")}>
+    <button
+      type="submit"
+      style={sx}
+      className={cn("atuin-btn")}
+      onClick={click}
+    >
       <span className="atuin-btn__text">{text}</span>
     </button>
   ) : (

@@ -10,18 +10,15 @@
 
 	&__form {
 		max-width: 400px;
-		margin-right: 100px;
-
-		@include _1024 {
-			margin-right: 0;
-		}
 	}
 
 	&__img {
+    margin-left: 100px;
 		border-radius: 45px;
 
 		@include _1024 {
 			max-height: 250px;
+      margin-left: 0;
 			margin-bottom: 30px;
 		}
 	}

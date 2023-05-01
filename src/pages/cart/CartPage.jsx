@@ -1,5 +1,5 @@
 import React from "react";
-import { Button } from "@mui/material";
+import { Button, Stack } from "@mui/material";
 import { Info } from "../../components";
 import { useTranslation } from "react-i18next";
 import { useCart } from "react-use-cart";
@@ -182,12 +182,13 @@ const CartPage = (): JSX.Element => {
                 </li>
               </ul>
 
-              <div className="d-flex ">
+              <Stack direction={{ xs: "column", sm: "row" }} className="d-flex">
                 <Button
                   sx={{
                     ...styles.button,
                     backgroundColor: "#f20505",
-                    marginRight: "20px",
+                    marginRight: { xs: "0", sm: "20px" },
+                    marginBottom: { xs: "20px", sm: "0" },
                     border: "0px solid #8E0303",
                     "&:hover": {
                       transition: "background-color 0.3s",
@@ -211,7 +212,8 @@ const CartPage = (): JSX.Element => {
                     ...styles.button,
                     backgroundColor: "white",
                     color: "#131938",
-                    marginRight: "20px",
+                    marginRight: { xs: "0", sm: "20px" },
+                    marginBottom: { xs: "20px", sm: "0" },
                     border: "1px solid #8E0303",
                     "&:hover": {
                       transition: "background-color 0.3s",
@@ -231,6 +233,7 @@ const CartPage = (): JSX.Element => {
                   href={ORDER_ROUTE}
                   sx={{
                     ...styles.button,
+                    textAlign: "center",
                     backgroundColor: "#9DD558",
                     "&:hover": {
                       transition: " background-color 0.3s",
@@ -244,7 +247,7 @@ const CartPage = (): JSX.Element => {
                 >
                   {t("cart_page.checkout")}
                 </Button>
-              </div>
+              </Stack>
             </div>
           </div>
         ) : (

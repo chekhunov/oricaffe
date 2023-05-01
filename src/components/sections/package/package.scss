@@ -27,10 +27,10 @@
 
 	&__content {
 		height: 100%;
-		padding: 70px 0;
+		padding: 70px 20px;
 
 		@include _767 {
-			padding: 20px;
+      padding: 20px 0;
 		}
 	}
 

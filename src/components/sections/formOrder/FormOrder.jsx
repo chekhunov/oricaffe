@@ -19,7 +19,7 @@ const phoneRegExp =
   /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 
 const form_attributes = {
-  button: "Submite",
+  button: "send",
   urlButton: "",
   sx: {
     width: "100%",
@@ -59,7 +59,13 @@ const YOUR_SERVICE_ID = "service_5s2c2vf";
 const YOUR_TEMPLATE_ID = "template_xv6ya99";
 const YOUR_PUBLIC_KEY = "IQz6GZ3imUdOxD_Jd";
 
-const FormOrder = () => {
+const FormOrder = ({
+  isOrderPage = false,
+  isTitle = true,
+  isImage = true,
+  order = "",
+  clearCartClick,
+}): JSX.Element => {
   const { t } = useTranslation();
   const { form } = useRef();
   const { setValues, data } = useData();
@@ -90,10 +96,10 @@ const FormOrder = () => {
         event.phoneNumber +
         " " +
         "comment: " +
-        event.comment,
+        event.comment +
+        "order: " +
+        order,
     };
-
-    console.log(sendData);
 
     try {
       setValues(event);
@@ -119,9 +125,11 @@ const FormOrder = () => {
   return (
     <div className="form-order">
       <Form ref={form} onSubmit={handleSubmit(onSubmit)}>
-        <label className="subtitle" htmlFor="first_name">
-          {t("submit_application")}
-        </label>
+        {isTitle && (
+          <label className="subtitle" htmlFor="first_name">
+            {t("submit_application")}
+          </label>
+        )}
         <Input
           {...register("firstName")}
           id="firstName"
@@ -174,10 +182,11 @@ const FormOrder = () => {
           isSubmit
           sx={form_attributes.sx}
           text={t(form_attributes.button)}
+          click={clearCartClick}
         />
       </Form>
 
-      <img className="form-order__img" src={ImgForm} alt="form" />
+      {isImage && <img className="form-order__img" src={ImgForm} alt="form" />}
     </div>
   );
 };

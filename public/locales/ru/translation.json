@@ -34,7 +34,8 @@
     "coffee": "Кофе",
     "coffee_equipment": "Кофе оборудование",
     "tea": "Чаи",
-    "chocolate": "Шоколад"
+    "chocolate": "Шоколад",
+    "coffee_accessories": "Кофе аксессуары"
   },
   "about_section": {
     "headline": "(Oriental caffè) работает в Тоскане (область в Италии) с 1955 года.",
@@ -98,7 +99,7 @@
     "tax": "Налог",
     "clear": "Очистить корзину",
     "cancel": "Отмена",
-    "checkout": "Перейти к Оформлению заказа"
+    "checkout": "Оформлению заказа"
   },
   "popup": {
     "choose_the_quantity": "Выберите количество товара и перейдите в корзину для оформления"
@@ -156,5 +157,13 @@
   "add_product_to_cart": "Товар добавлен в корзину.",
   "removed_from_cart": "Товар удален из корзины.",
   "cart_empty": "Корзина очищена.",
-  "submit_application": "Оставить заявку"
+  "submit_application": "Оставить заявку",
+  "form": {
+    "sign_in": "Войти",
+    "email_address": "Адрес электронной почты",
+    "forgot": "Забыли пароль?",
+    "dont_have_account": "У вас нет аккаунта? Зарегистрироваться"
+  },
+  "terms_and_conditions": "Условия и положения",
+  "order": "Заказ"
 }
