@@ -171,5 +171,8 @@
     "dont_have_account": "Don't have an account? Sign Up"
   },
   "terms_and_conditions": "Terms and Conditions",
-  "order": "Order"
+  "order": "Order",
+  "selected_products": "Selected products",
+  "form_to_fill": "Form to fill",
+  "after_sending": "After sending an application, our manager will contact you"
 }

@@ -39,6 +39,8 @@ const OrderPage = (): JSX.Element => {
     };
   });
 
+  const convertToString = JSON.stringify(sendData);
+
   const sum = items?.map((el) => el.itemTotal);
   const quan = items?.map((el) => el.quantity);
 
@@ -62,7 +64,7 @@ const OrderPage = (): JSX.Element => {
     <ContainerPage name="order" breadcrumbs={breadcrumbs}>
       <Stack mt={4}>
         <Text textAlign="center" fontSize={26} mb={2}>
-          Продукты которые были вами выбраны
+          { t('selected_products')}
         </Text>
 
         <Box mb={5}>
@@ -76,11 +78,11 @@ const OrderPage = (): JSX.Element => {
         </Box>
 
         <Text textAlign="center" fontSize={26}>
-          Форма для заполнения
+          { t('form_to_fill')}
         </Text>
 
         <Text textAlign="center" fontSize={18}>
-          после отправки заявки с вами свяжиться нащ мененджер
+          {t('after_sending')}
         </Text>
 
         <DataProvider>
@@ -88,7 +90,7 @@ const OrderPage = (): JSX.Element => {
             isOrderPage
             isTitle={false}
             isImage={false}
-            order={JSON.stringify(sendData)}
+            order={convertToString}
             clearCartClick={() => {
               setItems([]);
               notify("cart_empty");
