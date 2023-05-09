@@ -174,5 +174,9 @@
   "order": "Order",
   "selected_products": "Selected products",
   "form_to_fill": "Form to fill",
-  "after_sending": "After sending an application, our manager will contact you"
+  "after_sending": "After sending an application, our manager will contact you",
+  "monodoses": "In monodoses",
+  "notification": "Notification",
+  "thank_for_order": "Thank you for choosing our store! Our manager will contact you shortly to confirm the order.",
+  "ok": "Ok"
 }

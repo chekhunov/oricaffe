@@ -237,7 +237,7 @@ export default function AboutProducts({ textAccent, bgColor }) {
                       >
                         {t("about_products.coffee_in_single_doses")}
                         <span style={{ fontSize: "16px", display: "block" }}>
-                          (38-42 мм {t("about_products.diameter")})
+                          (38-44мм {t("about_products.diameter")})
                         </span>
                       </div>
 
@@ -281,7 +281,7 @@ export default function AboutProducts({ textAccent, bgColor }) {
                       </div>
 
                       <img
-                        className="column-right__img mb-10"
+                        className="column-right__img mb-45"
                         src={capsule}
                         alt="coffe"
                       />

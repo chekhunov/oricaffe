@@ -28,7 +28,7 @@ const ProductCard = ({
 
   const { price_site } = useGetPrice();
 
-  const notify = () => toast(t('add_product_to_cart'));
+  const notify = () => toast(t("add_product_to_cart"));
 
   const data = {
     id: id + 1,
@@ -94,18 +94,20 @@ const ProductCard = ({
             />
 
             <div className={"products-card__title title"}>
-              <span
+              <div
                 style={{
+                  maxWidth: "250px",
                   fontWeight: "400",
                   fontSize: "20px",
                   color: "#131938",
                 }}
               >
                 {name}
-              </span>
+              </div>
 
               <div
                 style={{
+                  maxWidth: "250px",
                   fontWeight: "400",
                   fontSize: "14px",
                   color: "#131938",
@@ -113,6 +115,17 @@ const ProductCard = ({
                 className="products-card__description products-card__description--meta d-flex justify-center mb-10"
               >
                 <span>{sort}</span>
+              </div>
+              <div
+                style={{
+                  maxWidth: "250px",
+                  fontWeight: "400",
+                  fontSize: "14px",
+                  color: "#131938",
+                }}
+                className="products-card__description products-card__description--meta d-flex justify-center mb-10"
+              >
+                <span>{t(type_of_coffee)}</span>
               </div>
             </div>
 

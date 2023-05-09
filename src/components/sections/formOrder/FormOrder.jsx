@@ -1,7 +1,7 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import * as yup from "yup";
 import { useData } from "../../../utils/FormContext";
-import { useNavigate } from "react-router-dom";
+
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Form } from "../../elements/Form";
@@ -9,9 +9,9 @@ import { Input } from "../../elements/Input";
 import ImgForm from "../../../assets/img/home/form-order.jpg";
 import Button from "../../elements/button";
 import { useTranslation } from "react-i18next";
-import { MAIN_ROUTE } from "../../../types/const";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
+import ConfirmModal from "../../elements/ConfirmModal";
 
 import "./formOrder.scss";
 
@@ -70,7 +70,8 @@ const FormOrder = ({
   const { form } = useRef();
   const { setValues, data } = useData();
 
-  const history = useNavigate();
+  const [isOpenModal, setIsOpenModal] = useState(false);
+
   const { register, handleSubmit, formState, reset } = useForm({
     defaultValues: {
       firstName: data.firstName || "",
@@ -97,7 +98,8 @@ const FormOrder = ({
         " " +
         "comment: " +
         event.comment +
-        "order: " +
+        " " +
+        "order:" +
         order,
     };
 
@@ -112,10 +114,13 @@ const FormOrder = ({
           (error) => {
             console.log(error);
           }
-        );
+      );
+      if (isOrderPage) {
+        setIsOpenModal(true);
+        clearCartClick();
+      }
       toast("The message has been sent");
       reset();
-      history(MAIN_ROUTE);
     } catch (error) {
       console.error(error);
       toast("Failed to send email");
@@ -123,71 +128,77 @@ const FormOrder = ({
   };
 
   return (
-    <div className="form-order">
-      <Form ref={form} onSubmit={handleSubmit(onSubmit)}>
-        {isTitle && (
-          <label className="subtitle" htmlFor="first_name">
-            {t("submit_application")}
-          </label>
+    <>
+      <div className="form-order">
+        <Form ref={form} onSubmit={handleSubmit(onSubmit)}>
+          {isTitle && (
+            <label className="subtitle" htmlFor="first_name">
+              {t("submit_application")}
+            </label>
+          )}
+          <Input
+            {...register("firstName")}
+            id="firstName"
+            type="text"
+            label="First Name"
+            name="firstName"
+            error={!!formState?.errors?.firstName}
+            helperText={formState?.errors?.firstName?.message}
+          />
+          <Input
+            {...register("lastName")}
+            id="lastName"
+            type="text"
+            label="Last Name"
+            name="lastName"
+            error={!!formState?.errors?.lastName}
+            helperText={formState?.errors?.lastName?.message}
+          />
+          <Input
+            {...register("email")}
+            id="email"
+            type="email"
+            label="Email"
+            name="email"
+            error={!!formState?.errors?.email}
+            helperText={formState?.errors?.email?.message}
+          />
+          <Input
+            {...register("phoneNumber")}
+            id="phoneNumber"
+            type="tel"
+            label="Phone Number"
+            name="phoneNumber"
+            error={!!formState?.errors?.phoneNumber}
+            helperText={formState?.errors?.phoneNumber?.message}
+          />
+          <Input
+            {...register("comment")}
+            id="comment"
+            type="text"
+            label="Comment"
+            name="comment"
+            minRows={3}
+            multiline
+            error={!!formState?.errors?.comment}
+            helperText={formState?.errors?.comment?.message}
+          />
+
+          <Button
+            isSubmit
+            sx={form_attributes.sx}
+            text={t(form_attributes.button)}
+          />
+        </Form>
+
+        {isImage && (
+          <img className="form-order__img" src={ImgForm} alt="form" />
         )}
-        <Input
-          {...register("firstName")}
-          id="firstName"
-          type="text"
-          label="First Name"
-          name="firstName"
-          error={!!formState?.errors?.firstName}
-          helperText={formState?.errors?.firstName?.message}
-        />
-        <Input
-          {...register("lastName")}
-          id="lastName"
-          type="text"
-          label="Last Name"
-          name="lastName"
-          error={!!formState?.errors?.lastName}
-          helperText={formState?.errors?.lastName?.message}
-        />
-        <Input
-          {...register("email")}
-          id="email"
-          type="email"
-          label="Email"
-          name="email"
-          error={!!formState?.errors?.email}
-          helperText={formState?.errors?.email?.message}
-        />
-        <Input
-          {...register("phoneNumber")}
-          id="phoneNumber"
-          type="tel"
-          label="Phone Number"
-          name="phoneNumber"
-          error={!!formState?.errors?.phoneNumber}
-          helperText={formState?.errors?.phoneNumber?.message}
-        />
-        <Input
-          {...register("comment")}
-          id="comment"
-          type="text"
-          label="Comment"
-          name="comment"
-          minRows={3}
-          multiline
-          error={!!formState?.errors?.comment}
-          helperText={formState?.errors?.comment?.message}
-        />
-
-        <Button
-          isSubmit
-          sx={form_attributes.sx}
-          text={t(form_attributes.button)}
-          click={clearCartClick}
-        />
-      </Form>
-
-      {isImage && <img className="form-order__img" src={ImgForm} alt="form" />}
-    </div>
+      </div>
+      {isOrderPage && (
+        <ConfirmModal open={isOpenModal} setOpen={setIsOpenModal} />
+      )}
+    </>
   );
 };
 
