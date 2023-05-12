@@ -10,13 +10,12 @@ import "swiper/css/bundle";
 import "./video.scss";
 
 export default function Video() {
-
   const video = [
     {
       id: 1,
-      title: "Coffee",
-      text: "Latest customer",
-      urlVideo: "N_N39X2J-UQ",
+      title: "Orientalcaffe Roasting Process - how we do it!",
+      text: "1 minute in the life of a Coffee Roaster",
+      urlVideo: "HjY2Bxz-jgE",
       opts: {
         height: "140",
         width: "250",
@@ -26,30 +25,6 @@ export default function Video() {
         },
       },
     },
-    {
-      id: 2,
-      title: "NE Coffee",
-      text: "Latest customer",
-      urlVideo: "KQ6zr6kCPj8",
-    },
-    {
-      id: 3,
-      title: "NE Coffee",
-      text: "Latest customer",
-      urlVideo: "y8trd3gjJt0",
-    },
-    {
-      id: 4,
-      title: "NE Coffee",
-      text: "Latest customer",
-      urlVideo: "oqFtayBRdfs",
-    },
-    {
-      id: 5,
-      title: "NE Coffee",
-      text: "Latest customer",
-      urlVideo: "oqFtayBRdfs",
-    },
   ];
 
   const onPlayerReady = (event) => {
@@ -58,7 +33,7 @@ export default function Video() {
   };
 
   const mobile = window.innerWidth;
-  
+
   const opts = {
     height: "200",
     width: mobile < 340 ? "250" : "350",

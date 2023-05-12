@@ -1,10 +1,10 @@
 import React from "react";
 
 import ContainerPage from "../../components/modules/containerPage";
-import InProgressCreate from "../../components/modules/InProgressCreate";
+import DeliveryContent from "./components/DeliveryContent";
 
 import "./Delivery.scss";
-import { MAIN_ROUTE } from '../../types/const';
+import { MAIN_ROUTE } from "../../types/const";
 
 let breadcrumbs = [
   {
@@ -23,7 +23,7 @@ const DeliveryPage = () => {
   return (
     <ContainerPage name="delivery" breadcrumbs={breadcrumbs}>
       <div className="about-page__content d-flex justify-center">
-        <InProgressCreate />
+        <DeliveryContent />
       </div>
     </ContainerPage>
   );
