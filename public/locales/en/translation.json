@@ -178,5 +178,10 @@
   "monodoses": "In monodoses",
   "notification": "Notification",
   "thank_for_order": "Thank you for choosing our store! Our manager will contact you shortly to confirm the order.",
-  "ok": "Ok"
+  "ok": "Ok",
+  "first_name": "First Name",
+  "last_name": "Last Name",
+  "email": "Email",
+  "phone_number": "Phone Number",
+  "comment": "Comment"
 }

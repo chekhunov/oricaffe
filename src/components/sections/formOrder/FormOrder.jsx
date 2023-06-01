@@ -114,7 +114,7 @@ const FormOrder = ({
           (error) => {
             console.log(error);
           }
-      );
+        );
       if (isOrderPage) {
         setIsOpenModal(true);
         clearCartClick();
@@ -126,6 +126,12 @@ const FormOrder = ({
       toast("Failed to send email");
     }
   };
+
+  const firstNameLabel = t("first_name");
+  const lastNameLabel = t("last_name");
+  const emailLabel = t("email");
+  const phoneLabel = t("phone_number");
+  const commentLabel = t("comment");
 
   return (
     <>
@@ -140,7 +146,7 @@ const FormOrder = ({
             {...register("firstName")}
             id="firstName"
             type="text"
-            label="First Name"
+            label={firstNameLabel}
             name="firstName"
             error={!!formState?.errors?.firstName}
             helperText={formState?.errors?.firstName?.message}
@@ -149,7 +155,7 @@ const FormOrder = ({
             {...register("lastName")}
             id="lastName"
             type="text"
-            label="Last Name"
+            label={lastNameLabel}
             name="lastName"
             error={!!formState?.errors?.lastName}
             helperText={formState?.errors?.lastName?.message}
@@ -158,7 +164,7 @@ const FormOrder = ({
             {...register("email")}
             id="email"
             type="email"
-            label="Email"
+            label={emailLabel}
             name="email"
             error={!!formState?.errors?.email}
             helperText={formState?.errors?.email?.message}
@@ -167,7 +173,7 @@ const FormOrder = ({
             {...register("phoneNumber")}
             id="phoneNumber"
             type="tel"
-            label="Phone Number"
+            label={phoneLabel}
             name="phoneNumber"
             error={!!formState?.errors?.phoneNumber}
             helperText={formState?.errors?.phoneNumber?.message}
@@ -176,7 +182,7 @@ const FormOrder = ({
             {...register("comment")}
             id="comment"
             type="text"
-            label="Comment"
+            label={commentLabel}
             name="comment"
             minRows={3}
             multiline
