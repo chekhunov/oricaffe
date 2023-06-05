@@ -2,7 +2,7 @@
 	display: block;
 	align-items: center;
 	justify-content: center;
-	texrt-align: center;
+	text-align: center;
 
 	color: #8E0303;
 
@@ -40,4 +40,8 @@
 			right: 0;
 		}
 	}
+
+  &__headline {
+    text-transform: uppercase;
+  }
 }

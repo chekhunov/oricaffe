@@ -13,7 +13,7 @@ export default function Video() {
   const video = [
     {
       id: 1,
-      title: "Orientalcaffe Roasting Process - how we do it!",
+      title: "Orientalcaffé Roasting Process - how we do it!",
       text: "1 minute in the life of a Coffee Roaster",
       urlVideo: "HjY2Bxz-jgE",
       opts: {

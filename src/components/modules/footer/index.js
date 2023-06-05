@@ -23,7 +23,7 @@ export default function Footer() {
               </div>
 
               <div className="footer__copy d-flex flex-column">
-                <p>Copiright © 2023 Orientalcaffe.</p>
+                <p>Copiright © 2023 Orientalcaffé.</p>
                 <p>All rights reserved.</p>
               </div>
             </div>
@@ -158,7 +158,8 @@ export default function Footer() {
                     <a
                       className="socials__link facebook"
                       href={FACEBOOK_LINK}
-                      target="_blank" rel="noreferrer"
+                      target="_blank"
+                      rel="noreferrer"
                     >
                       <svg
                         width="34"

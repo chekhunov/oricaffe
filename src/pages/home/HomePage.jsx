@@ -25,7 +25,7 @@ import InfoBlock from "../../components/elements/infoBlock";
 
 const HomePage = () => {
   const colorAccent = "#8E0303";
-  const bgColor = "#f2f2f2";
+  const bgColor = "transparent";
 
   const [colorAbout] = useState(colorAccent);
   const [bgColorAbout] = useState(bgColor);

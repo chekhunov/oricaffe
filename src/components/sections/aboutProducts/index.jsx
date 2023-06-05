@@ -69,14 +69,14 @@ export default function AboutProducts({ textAccent, bgColor }) {
             target={"_blank"}
             rel="noreferrer"
           >
-            Orientalcaffe
+            Orientalcaffé
           </a>
         </h2>
 
         <div className="about-products__content">
-          <div className="about-products__subtitle mb-25">
+          {/* <div className="about-products__subtitle mb-25">
             {t("about_products.subtitle")}
-          </div>
+          </div> */}
 
           <div className="about-products__inner">
             <div className="about-products__row about-row mb-40 p-20 d-flex">
@@ -152,7 +152,7 @@ export default function AboutProducts({ textAccent, bgColor }) {
                     {t("about_products.grain_coffee")}
                   </div>
                   <p className="about-row__text mb-20">
-                    <span className="about__text-accent">Orientalcaffe</span> –{" "}
+                    <span className="about__text-accent">Orientalcaffé</span> –{" "}
                     {t("about_products.this_is_traditional")}
                   </p>
                   <p className="about-row__text mobile paragraph">

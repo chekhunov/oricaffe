@@ -301,6 +301,8 @@
   display: flex;
   justify-content: center;
   color: $hover;
+  text-transform: uppercase;
+  font-family: sans-serif;
 
   @include _1200 {
     margin-bottom: 100px;
