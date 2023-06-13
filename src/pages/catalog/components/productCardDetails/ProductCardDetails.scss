@@ -1,4 +1,4 @@
-.card_details-page {
+.card-details-page {
 	padding-top: 30px;
 
 	&__title {
@@ -16,4 +16,25 @@
 		margin: 0 auto;
 		object-fit: cover;
 	}
+}
+
+.card-details {
+  &__box {
+    flex-direction: column;
+  }
+
+  &__img {
+    height: 300px;
+    margin-bottom: 30px;
+    object-fit: contain;
+  }
+
+  &__price {
+    // text-align: center;
+    margin-bottom: 20px;
+  }
+
+  &__price-text {
+    font-size: 24px;
+  }
 }

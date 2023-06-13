@@ -19,7 +19,7 @@ export default function Footer() {
           <div className="footer__box w100p d-flex justify-between">
             <div className="footer__logo">
               <div className="footer__bottom-meta">
-                <LogoCompany logo={logo} height={80} width={80} />
+                <LogoCompany isFooter logo={logo} height={80} width={80} />
               </div>
 
               <div className="footer__copy d-flex flex-column">

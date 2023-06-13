@@ -80,11 +80,6 @@ const HomePage = () => {
           </Container>
         </Headline>
 
-        <AboutProducts
-          bgColor={bgColorProducts}
-          textAccent={textAccentProducts}
-        />
-
         <Headline
           name="topproducts"
           isHeigth={isHeigthTopProducts}
@@ -97,6 +92,11 @@ const HomePage = () => {
             <TopProducts />
           </Container>
         </Headline>
+
+        <AboutProducts
+          bgColor={bgColorProducts}
+          textAccent={textAccentProducts}
+        />
       </Box>
 
       <img

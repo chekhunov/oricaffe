@@ -1,7 +1,7 @@
 import React from "react";
 
 import ContainerPage from "../../components/modules/containerPage";
-import DeliveryContent from "./components/DeliveryContent";
+import DeliveryContent from "./components/DeliveryContent/DeliveryContent";
 
 import "./Delivery.scss";
 import { MAIN_ROUTE } from "../../types/const";

@@ -1,0 +1,35 @@
+.delivery-content {
+  margin-bottom: 100px;
+}
+
+.delivery {
+  &__title {
+		display: flex;
+		justify-content: center;
+
+		padding-top: 50px;
+
+		font-size: 36px;
+	}
+
+  &__warning {
+    display: flex;
+		justify-content: center;
+    color:brown;
+    margin-bottom: 40px;
+  }
+
+  &__subtitle {
+    margin-bottom: 30px;
+		font-size: 28px;
+	}
+
+  &__headtext {
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+
+  &__text {
+    margin-bottom: 10px;
+  }
+} 
