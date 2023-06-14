@@ -1,3 +1,5 @@
+@import '../../scss/mixins.scss';
+
 .contacts-page {
 	padding-top: 30px;
 
@@ -16,6 +18,11 @@
 		justify-content: center;
 
 		margin: 30px 0;
+
+    @include _1024 {
+      flex-direction: column-reverse;
+    }
+
 	}
   
 	&__image {
@@ -24,6 +31,15 @@
 
 		border-radius: 25px;
 		object-fit: cover;
+
+    @include _1024 {
+      margin-left: 0;
+      margin-bottom: 20px;
+    }
+
+    @include _640 {
+      max-width: 250px;
+    }
 	}
 
 	&__subtitle {
@@ -60,6 +76,11 @@
 		max-height: 600px;
 		margin-right: 20px;
 		padding-left: 40px;
+
+    @include _640 {
+      padding-left: 0;
+      margin-right: 0;
+    }
 	}
 
 	&__item {
@@ -78,6 +99,11 @@
 		border: 0.5px solid #8E0303;
 		border-radius: 15px;
 		background-color: #FFF;
+
+    @include _640 {
+      min-width: 250px;
+      margin-right: 0;
+    }
 
 		&:hover {
 			transition: background-color 0.3s;

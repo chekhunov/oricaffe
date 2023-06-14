@@ -15,7 +15,7 @@
 
 	&__inner {
 		width: 80%;
-		margin-top: 50px;
+		// margin-top: 50px;
 
 		.menu {
 			position: relative;
@@ -46,4 +46,8 @@
 		align-items: center;
 		justify-content: space-between;
 	}
+
+  &__contacts {
+    padding-top: 100px;
+  }
 }

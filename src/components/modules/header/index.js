@@ -8,9 +8,6 @@ import LogoCompany from "./logoCompany";
 import { Locales } from "../..";
 import { Link } from "react-router-dom";
 
-/* TODO remove */
-// import help from "../../../assets/img/help.png";
-
 import cartIcon from "../../../assets/icons/anim/cart.gif";
 import logo from "../../../assets/header/logo.png";
 import { BASKET_ROUTE, CONTACT_ROUTE } from "../../../types/const";
@@ -90,17 +87,20 @@ export default function Header({ navMenu, menuSubheader, countCart }) {
             <HeaderMenuPopup
               setActivePopup={isActivePopup}
               activePopup={activePopup}
-              menuItems={[...home, ...navMenu, ...menuSubheader]}
+              menuItems={[
+                ...home,
+                ...navMenu,
+                ...menuSubheader,
+                {
+                  id: 3,
+                  value: "contacts",
+                  link: CONTACT_ROUTE,
+                },
+              ]}
               activeId={activeId}
               setActiveId={setActiveId}
             />
           )}
-
-          {/* TODO remove */}
-          {/* help for ukraine */}
-          {/* <a href="/">
-            <img className="help" height="70" src={help} alt="help" />
-          </a> */}
 
           <div className="d-flex align-center">
             <Locales />

@@ -221,6 +221,7 @@ const ContactPage = () => {
           <div className="contacts-page__items">
             {listPartners?.map((item, index) => (
               <a
+                key={item.id}
                 href={item.link}
                 className={cn(
                   "contacts-page__item",

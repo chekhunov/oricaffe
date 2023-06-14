@@ -1,3 +1,5 @@
+@import '../../scss/mixins.scss';
+
 .card_details-page {
 	padding-top: 30px;
 
@@ -43,6 +45,11 @@
 		min-width: 200px;
 		max-width: 200px;
 		margin-right: 20px;
+
+    @include _640 {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
 	}
 
 	&__category {
@@ -54,6 +61,10 @@
 
 		width: 100%;
 		margin: 50px 0;
+
+    @include _640 {
+      flex-direction: column;
+    }
 	}
 
 	&__items {
@@ -63,6 +74,10 @@
 		justify-content: flex-start;
 
 		min-width: 100%;
+
+    @include _640 {
+      justify-content: center;
+    }
 	}
 
 	&__title {
@@ -90,6 +105,10 @@
 
 		width: 100%;
 		margin-left: 50px;
+
+    @include _640 {
+      margin-left: 0;
+    }
 	}
 }
 
