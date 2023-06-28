@@ -6,6 +6,10 @@
 
 	margin-bottom: 150px;
 
+  @include _767 {
+		margin-bottom: 80px;
+	}
+
 	&::before {
 		top: 0;
 		left: 0;
@@ -40,6 +44,7 @@
 			display: inline-flex;
 
 			width: 100%;
+      min-width: 200px;
 			margin-top: 20px;
 			margin-right: 0!important;
 
@@ -331,4 +336,8 @@
 	@include _1200 {
 		margin-bottom: 40px;
 	}
+}
+
+.label-mobile {
+  filter: invert(1);
 }

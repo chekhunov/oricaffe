@@ -63,7 +63,7 @@ export default function Header({ navMenu, menuSubheader, countCart }) {
               target={"_blank"}
               rel="noreferrer"
             >
-              Orientalcaffé
+              Orientalcaffè
             </a>
           </div>
 
@@ -73,7 +73,7 @@ export default function Header({ navMenu, menuSubheader, countCart }) {
             target={"_blank"}
             rel="noreferrer"
           >
-            Orientalcaffé
+            Orientalcaffè
           </a>
 
           {!activePopup ? (

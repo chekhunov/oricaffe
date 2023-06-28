@@ -6,7 +6,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { Form } from "../../elements/Form";
 import { Input } from "../../elements/Input";
-import ImgForm from "../../../assets/img/home/form-order.jpg";
+import ImgForm from "../../../assets/img/home/form-order.webp";
 import Button from "../../elements/button";
 import { useTranslation } from "react-i18next";
 import emailjs from "@emailjs/browser";

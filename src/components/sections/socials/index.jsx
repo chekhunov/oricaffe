@@ -26,7 +26,7 @@ export default function socials({ textAccent, color, isHeigth }) {
               target={"_blank"}
               rel="noreferrer"
             >
-              Orientalcaffé
+              Orientalcaffè
             </a>
             <span className="ml-10">в социальных сетях</span>
           </h2>

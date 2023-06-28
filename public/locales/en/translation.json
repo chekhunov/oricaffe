@@ -1,6 +1,6 @@
 {
   "coffe": "Coffe",
-  "orientalcaffe": "Orientalcaffé",
+  "orientalcaffe": "Orientalcaffè",
   "quality": "Quality",
   "home": "Home",
   "about": "About",
@@ -40,7 +40,7 @@
   },
   "about_section": {
     "headline": "(Oriental caffè) has been operating in Tuscany (a region in Italy) since 1955.",
-    "about_company": "is a small craft company representing refinement of the art of Italian coffee roasting grains. We produce roasted coffee and try to do it ok we love coffee and try to spread coffee culture in the world. Values ​​and passion are the heritage of our company, associated with the precious baggage of knowledge, which with special care and attention are daily introduced into practice, starting from sorting and selection of raw materials to complete the process at the stage roasting and mixing beans. Due to coffee roasting grains and mixture assembly",
+    "about_company": "is a small craft company representing refinement of the art of Italian coffee roasting grains. We produce roasted coffee and try to do it ok we love coffee and try to spread coffee culture in the world. Values   and passion are the heritage of our company, associated with the precious baggage of knowledge, which with special care and attention are daily introduced into practice, starting from sorting and selection of raw materials to complete the process at the stage roasting and mixing beans. Due to coffee roasting grains and mixture assembly",
     "about_company_two": "master of frying, controlling your senses, embracing the whole soul of our work: the search for the most pleasant extraction of flavors in their harmonious and balanced balance. The goal is simple and clear: every cup of our coffee should be used for flavors. Our philosophy is to make quality coffee well, for every chain that accompanies the coffee drink from seed to cup, which must pursue this goal of perfection with the same passion and devotion. This is due to the emergence of such a phenomenon among the peasants as green coffee sprouts, which manifests itself in every daily gesture aimed at the frequency perception of the opposite of coffee compared to the biodiversity of the territory. It means engaging in discussions with customers about cultured coffee and making sure that all the flavor love that accompanied every upcoming choice is consumed through its extraction.",
     "about_company_three": "This community of intentions is the basis of our art and prerequisite for coffee tasting."
   },
@@ -141,7 +141,7 @@
     "cancel": "The buyer has the right to act in advance at any time without giving reasons. You can make an appointment at \"Cart\" or contact the sales manager.",
     "what_cancel": "What happens if a customer cancels their order?",
     "here": "here.",
-    "customers_accept": "Customers accept the Orientalcaffé terms and conditions, including our cancellation clause. Depending on how close to the event they cancel, the customer may be given a full refund, they may lose 50% of the deposit, or the entire payment. For more information on our cancellation policy click",
+    "customers_accept": "Customers accept the Orientalcaffè terms and conditions, including our cancellation clause. Depending on how close to the event they cancel, the customer may be given a full refund, they may lose 50% of the deposit, or the entire payment. For more information on our cancellation policy click",
     "pre_order": "Can I pre order?",
     "pre_order_anytime": "Yes, you can pre-order anytime and get a discount. To do this, you need to contact our manager.",
     "when_will": "When will I receive the product if I pre-ordered it?",
@@ -153,7 +153,7 @@
   "for_all_questions": "For all questions. From 9:00 to 19:00.",
   "our_email": "Our email",
   "our_partners": "Our partners",
-  "can_buy_goods": "Here you can buy goods from the Orientalcaffé team",
+  "can_buy_goods": "Here you can buy goods from the Orientalcaffè team",
   "there_is_currently": "There is currently no such product",
   "category-name": "Category",
   "card_details": "Card Details",

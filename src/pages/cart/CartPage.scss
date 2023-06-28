@@ -1,8 +1,13 @@
 @import "../../scss/vars.scss";
+@import "../../scss/mixins.scss";
 
 .cart {
 	&__info {
 		flex: 1;
+
+    @include _640 {
+      flex-direction: column;
+    }
 	}
 
 	&__inner {
@@ -16,11 +21,41 @@
 		width: 70px;
 		height: 70px;
 		margin-right: 20px;
+    margin-left: 20px;
 
 		background-repeat: no-repeat;
 		background-position: 0 -3px;
 		background-size: contain;
+
+    @include _640 {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
 	}
+
+  &__block-name {
+    margin-right: 20px;
+
+    @include _640 {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__controls {
+    margin-left: 20px;
+    margin-right: 50px;
+
+    @include _640 {
+      margin-left: 0;
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__prices {
+    flex-direction: column;
+  }
 
 	&__del-btn {
 		display: flex;
@@ -68,7 +103,21 @@
 	&__column {
 		width: 100%;
 		min-width: 100px;
+
+    @include _640 {
+      margin-right: 0;
+      margin-bottom: 10px;
+      text-align: center;
+    }
 	}
+
+  .column-price {
+    margin-right: 50px;
+  }
+
+  .column-num {
+    margin-right: 20px;
+  }
 
 	.price {
 		color: #5F5C5C;

@@ -1,13 +1,13 @@
 import React from "react";
-import {useTranslation} from "react-i18next";
+import { useTranslation } from "react-i18next";
 
-import BlogImg from '../../../assets/img/blog/blog-section.jpg'
-import BlogEl1 from '../../../assets/img/blog/blog-el.jpg'
+import BlogImg from "../../../assets/img/blog/blog-section.webp";
+import BlogEl1 from "../../../assets/img/blog/blog-el.webp";
 
 import "./blog.scss";
 
 export default function Blog() {
-  const {t} = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <div className="blog">

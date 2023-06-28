@@ -40,7 +40,6 @@ const CatalogPage = () => {
     category ? category : "coffee"
   );
 
-  console.log(category, "dddssd");
   const productsLimit = 9;
   const [page, setPage] = useState(1);
 

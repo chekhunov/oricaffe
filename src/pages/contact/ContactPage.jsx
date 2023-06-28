@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { Divider } from "@material-ui/core";
 import ContainerPage from "../../components/modules/containerPage";
 import ContactsAddress from "../../components/contactsAddress";
-import map from "../../assets/img/contacts/mapBeregovo.jpg";
+import map from "../../assets/img/contacts/mapBeregovo.webp";
 
 import "./ContactPage.scss";
 import { MAIN_ROUTE } from "../../types/const";
@@ -136,7 +136,7 @@ const listPartners = [
   {
     id: 20,
     title: "Kiscsikó",
-    address: "90201, Закарпатська область, м. Берегове, Kossuth tér 6",
+    address: "90201, Закарпатська область, м. Берегове, Kossuth tèr 6",
     link: "https://www.facebook.com/kiscsikomenza/?locale=ru_RU",
   },
   {

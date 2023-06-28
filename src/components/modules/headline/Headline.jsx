@@ -38,7 +38,7 @@ export default function Category({
               target="_blank"
               rel="noreferrer"
             >
-              Orientalcaffé
+              Orientalcaffè
             </a>
           </h2>
 

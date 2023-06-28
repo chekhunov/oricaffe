@@ -11,7 +11,7 @@ import HowItWork from "../../components/sections/howItWork";
 import Box from "../../components/elements/box";
 import Headline from "../../components/modules/headline";
 
-import BannerBottom from "../../assets/img/home/bottom.jpg";
+import BannerBottom from "../../assets/img/home/bottom.webp";
 
 import "./home.scss";
 import Container from "../../components/modules/Container";

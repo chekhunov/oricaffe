@@ -5,6 +5,7 @@ import SlideImage from "./slideImage";
 import Button from "../../../elements/button";
 import { useTranslation } from "react-i18next";
 import orientalUrl from "../../../../assets/video/preoriental.webm";
+import bgMobileUrl from "../../../../assets/img/home/mobileMainBg.webp";
 
 import "./../Slider.scss";
 
@@ -19,18 +20,20 @@ export default function Slide({
         {subTitle && <SlideSubTitle subTitle={subTitle} />}
         {button && <Button sx={sx} link={urlButton} text={t(button)} />}
       </div>
+
       <video
+        className="slide__desktop"
         width="100%"
         height="auto"
         autoPlay="autoplay"
-        poster="/baners/baner-ori.jpg"
         loop
         muted
         playsInline
       >
         <source src={orientalUrl} type="video/webm" />
       </video>
-      {url && <SlideImage src={url} alt={title} />}
+
+      <SlideImage name="slide__mobile" src={bgMobileUrl} alt={title} />
     </div>
   );
 }

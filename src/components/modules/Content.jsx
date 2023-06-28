@@ -3,6 +3,7 @@ import {
   SHOP_ROUTE,
   ALL_ROUTE,
   ERROR_ROUTE,
+  PRODUCTIONS_DETAILS_ROUTE,
 } from "../../types/const";
 import { Routes, Route, useLocation } from "react-router-dom";
 
@@ -10,6 +11,7 @@ import { authRoutes, publicRoutes } from "../../utils/routes";
 
 import NotFound from "../../pages/notFound";
 import { CatalogPage, ProductCardDetails } from "../../pages/catalog";
+import ProductionsDetailsPage from '../../pages/productionsDetails/ProductionsDetails';
 
 const Content = () => {
   const isAuth = false;
@@ -40,6 +42,7 @@ const Content = () => {
         {publicRoutes?.map(({ id, path, Component }, index) => (
           <Route key={id} path={path} element={Component()} />
         ))}
+        <Route path={PRODUCTIONS_DETAILS_ROUTE + "/:product"} element={<ProductionsDetailsPage />} />
         <Route path={SHOP_ROUTE + "/:category"} element={<CatalogPage />} />
         <Route
           path={SHOP_ROUTE + "/:category/:id"}

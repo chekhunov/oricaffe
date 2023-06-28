@@ -14,12 +14,13 @@ import singleDoses from "../../../assets/icons/single-doses.webp";
 import nespresso from "../../../assets/icons/nespresso.webp";
 import greenCoffeGround from "../../../assets/icons/greenCoffeGround.webp";
 
+import { PRODUCTIONS_DETAILS_ROUTE } from "../../../types/const";
+
 import "./aboutProducts.scss";
-import { SHOP_ROUTE } from "../../../types/const";
 
 const coffeGrani = {
   button: "more",
-  urlButton: SHOP_ROUTE + "/coffee",
+  urlButton: PRODUCTIONS_DETAILS_ROUTE + "/grain",
   sx: {
     width: "200px",
   },
@@ -27,7 +28,15 @@ const coffeGrani = {
 
 const coffeGround = {
   button: "more",
-  urlButton: SHOP_ROUTE + "/coffee",
+  urlButton: PRODUCTIONS_DETAILS_ROUTE + "/ground",
+  sx: {
+    width: "200px",
+  },
+};
+
+const coffeGran = {
+  button: "more",
+  urlButton: PRODUCTIONS_DETAILS_ROUTE + "/gran",
   sx: {
     width: "200px",
   },
@@ -35,7 +44,7 @@ const coffeGround = {
 
 const coffeNespresso = {
   button: "more",
-  urlButton: SHOP_ROUTE + "/coffee",
+  urlButton: PRODUCTIONS_DETAILS_ROUTE + "/nespresso",
   sx: {
     width: "200px",
   },
@@ -43,7 +52,7 @@ const coffeNespresso = {
 
 const coffeGreen = {
   button: "more",
-  urlButton: SHOP_ROUTE + "/coffee",
+  urlButton: PRODUCTIONS_DETAILS_ROUTE + "/green",
   sx: {
     width: "200px",
   },
@@ -69,15 +78,11 @@ export default function AboutProducts({ textAccent, bgColor }) {
             target={"_blank"}
             rel="noreferrer"
           >
-            Orientalcaffé
+            Orientalcaffè
           </a>
         </h2>
 
         <div className="about-products__content">
-          {/* <div className="about-products__subtitle mb-25">
-            {t("about_products.subtitle")}
-          </div> */}
-
           <div className="about-products__inner">
             <div className="about-products__row about-row mb-40 p-20 d-flex">
               <svg
@@ -152,7 +157,7 @@ export default function AboutProducts({ textAccent, bgColor }) {
                     {t("about_products.grain_coffee")}
                   </div>
                   <p className="about-row__text mb-20">
-                    <span className="about__text-accent">Orientalcaffé</span> –{" "}
+                    <span className="about__text-accent">Orientalcaffè</span> –{" "}
                     {t("about_products.this_is_traditional")}
                   </p>
                   <p className="about-row__text mobile paragraph">
@@ -167,6 +172,7 @@ export default function AboutProducts({ textAccent, bgColor }) {
                 </div>
 
                 <Button
+                  name="catalog"
                   sx={coffeGrani.sx}
                   link={coffeGrani.urlButton}
                   text={t(coffeGrani.button)}
@@ -180,7 +186,7 @@ export default function AboutProducts({ textAccent, bgColor }) {
               <div className="about-row__column-inner column-right">
                 <div className="about-row__column about-row ground-coffe d-flex justify-between align-start">
                   <img
-                    className="about-products__label"
+                    className="about-products__label label-mobile"
                     src={aboutGround}
                     alt="mobileground"
                   />
@@ -214,6 +220,7 @@ export default function AboutProducts({ textAccent, bgColor }) {
 
                     <div className="about-products__btn-mobile">
                       <Button
+                        name="catalog"
                         sx={coffeGround.sx}
                         link={coffeGround.urlButton}
                         text={t(coffeGround.button)}
@@ -224,7 +231,7 @@ export default function AboutProducts({ textAccent, bgColor }) {
 
                 <div className="about-row__column about-row single-doses d-flex justify-between">
                   <img
-                    className="about-products__label"
+                    className="about-products__label label-mobile"
                     src={singleDoses}
                     alt="mobileground"
                   />
@@ -243,9 +250,9 @@ export default function AboutProducts({ textAccent, bgColor }) {
 
                       <div className="about-products__btn">
                         <Button
-                          sx={coffeGround.sx}
-                          link={coffeGround.urlButton}
-                          text={t(coffeGround.button)}
+                          sx={coffeGran.sx}
+                          link={coffeGran.urlButton}
+                          text={t(coffeGran.button)}
                         />
                       </div>
                     </div>
@@ -258,9 +265,10 @@ export default function AboutProducts({ textAccent, bgColor }) {
 
                   <div className="about-products__btn-mobile">
                     <Button
-                      sx={coffeGround.sx}
-                      link={coffeGround.urlButton}
-                      text={t(coffeGround.button)}
+                      name="catalog"
+                      sx={coffeGran.sx}
+                      link={coffeGran.urlButton}
+                      text={t(coffeGran.button)}
                     />
                   </div>
                 </div>
@@ -269,7 +277,7 @@ export default function AboutProducts({ textAccent, bgColor }) {
               <div className="about-row__column-inner">
                 <div className="about-row__column about-row column-right d-flex justify-between align-start">
                   <img
-                    className="about-products__label"
+                    className="about-products__label label-mobile"
                     src={nespresso}
                     alt="mobileground"
                   />
@@ -292,6 +300,7 @@ export default function AboutProducts({ textAccent, bgColor }) {
                     </div>
 
                     <Button
+                      name="catalog"
                       sx={coffeNespresso.sx}
                       link={coffeNespresso.urlButton}
                       text={t(coffeNespresso.button)}
@@ -318,6 +327,7 @@ export default function AboutProducts({ textAccent, bgColor }) {
                 </p>
 
                 <Button
+                  name="catalog"
                   sx={coffeGreen.sx}
                   link={coffeGreen.urlButton}
                   text={t(coffeGreen.button)}

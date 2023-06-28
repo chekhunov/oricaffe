@@ -17,13 +17,13 @@ const AboutContent = (): JSX.Element => {
               <div className="about__text">
                 <span className="about__meta-text pb-20">
                   {t("company")}
-                  <span className="about__text-accent">Orientalcaffé</span>
+                  <span className="about__text-accent">Orientalcaffè</span>
                   {t("about_section.headline")}
                 </span>
                 <p className="about__text-desc">
                   {t("company")}
                   <span className="about__text-accent">
-                    Orientalcaffé (Orientalcaffè)
+                    Orientalcaffè (Orientalcaffè)
                   </span>
                   – {t("about_section.about_company")}{" "}
                   <span style={{ color: "red" }}>Samuele</span>,{" "}

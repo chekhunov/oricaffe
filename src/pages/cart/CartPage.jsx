@@ -62,11 +62,11 @@ const CartPage = (): JSX.Element => {
                 >
                   <div className="cart__info d-flex align-center">
                     <div
-                      className="cart__img ml-20"
+                      className="cart__img"
                       style={{ backgroundImage: "url(" + obj?.imgUrl + ")" }}
                     ></div>
 
-                    <div className="mr-20 d-flex align-center">
+                    <div className="cart__block-name d-flex align-center">
                       <span className="d-flex flex-column mr-20">
                         <span className="cart__label">
                           {t("cart_page.product_code")}
@@ -80,7 +80,7 @@ const CartPage = (): JSX.Element => {
                     </div>
                   </div>
 
-                  <div className="d-flex align-center ml-20 mr-50">
+                  <div className="cart__controls d-flex align-center">
                     <button
                       className="cart__btn-quantity mr-10"
                       onClick={() =>
@@ -102,8 +102,8 @@ const CartPage = (): JSX.Element => {
                     </button>
                   </div>
 
-                  <div className="d-flex align-center">
-                    <span className="cart__column d-flex flex-column mr-50">
+                  <div className="cart__prices d-flex align-center">
+                    <span className="cart__column column-price d-flex flex-column">
                       <span className="cart__label">
                         {t("cart_page.price")}
                       </span>
@@ -112,7 +112,7 @@ const CartPage = (): JSX.Element => {
                       </span>
                     </span>
 
-                    <div className="cart__column d-flex flex-column mr-20">
+                    <div className="cart__column column-num d-flex flex-column">
                       <span className="cart__label">{t("cart_page.sum")}</span>
                       <span className="cart__num">
                         {obj.itemTotal} {t("hrn")}

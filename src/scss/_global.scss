@@ -24,6 +24,10 @@
     color: $default;
     text-align: center;
     font-size: 24px;
+
+    @include _767 {
+      font-size: 18px;
+    }
   }
 }
 
@@ -276,6 +280,10 @@
   border: 1px solid #f3f3f3;
   border-radius: 20px;
   overflow: hidden;
+
+  @include _640 {
+    flex-direction: column;
+  }
 
   &:not(:last-child) {
     margin-bottom: 20px;

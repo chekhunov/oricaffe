@@ -28,7 +28,7 @@ export default function Reviews({ bgColor, textAccent }) {
             target={"_blank"}
             rel="noreferrer"
           >
-            Orientalcaffé
+            Orientalcaffè
           </a>
         </h2>
 

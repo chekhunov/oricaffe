@@ -23,7 +23,7 @@ export default function Footer() {
               </div>
 
               <div className="footer__copy d-flex flex-column">
-                <p>Copiright © 2023 Orientalcaffé.</p>
+                <p>Copiright © 2023 Orientalcaffè.</p>
                 <p>All rights reserved.</p>
               </div>
             </div>
