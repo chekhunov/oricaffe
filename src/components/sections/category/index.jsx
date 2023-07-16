@@ -36,7 +36,7 @@ export default function Category() {
           <SwiperSlide key={`slide-category_${slide.id}`}>
             <a
               style={{ backgroundImage: `url(${slide.img})` }}
-              href={slide.link}
+              href={slide.link + "/" + slide.category}
               className="category__link"
             >
               <div className="category__title">{t(slide.value)}</div>

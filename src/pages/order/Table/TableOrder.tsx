@@ -43,7 +43,6 @@ export default function TableOrder({
   discount,
   discountSum,
 }: TableOrderProps) {
-  console.log(itemsData);
 
   const rows = itemsData?.map((el: any) => {
     return {

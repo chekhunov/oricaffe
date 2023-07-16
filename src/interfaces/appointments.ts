@@ -22,3 +22,10 @@ export interface UserInterface {
   banned: boolean;
   banReason: string;
 }
+
+export interface PartnersInterface {
+  id: number;
+  title: string;
+  address: string;
+  link: string;
+}

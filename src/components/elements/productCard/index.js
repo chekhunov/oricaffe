@@ -97,9 +97,14 @@ const ProductCard = ({
               <div
                 style={{
                   maxWidth: "250px",
+                  height: "52px",
                   fontWeight: "400",
                   fontSize: "20px",
                   color: "#131938",
+                  overflow: 'hidden',
+                  display: '-webkit-box',
+                  webkitLineClamp: 2,
+                  webkitBoxOrient: 'vertical',
                 }}
               >
                 {name}

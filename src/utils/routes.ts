@@ -10,9 +10,10 @@ import ContactPage from "../pages/contact";
 import DeliveryPage from "../pages/delivery";
 import GuaranteePage from "../pages/guarantee";
 import HomePage from "../pages/home";
-import OrderPage from '../pages/order/OrderPage';
+import OrderPage from "../pages/order/OrderPage";
 import ServicePage from "../pages/service";
 import TermsPage from "../pages/terms";
+import Cooperation from "../pages/cooperation";
 import {
   ADMIN_ROUTE,
   LOGIN_ROUTE,
@@ -28,6 +29,7 @@ import {
   BLOG_ROUTE,
   TAC_ROUTE,
   ORDER_ROUTE,
+  COOPERATION_ROUTE,
 } from "../types/const";
 
 export const apiRoutes = {
@@ -35,6 +37,7 @@ export const apiRoutes = {
   getProfile: "/api/getProfile",
   getTopProductsList: "/api/getTopProductsList",
   getProductsList: "/api/getProductsList",
+  getPartners: "/api/getPartners",
   getProductCardDetails: "/api/getProduct",
   getNavMenu: "/api/getNavMenu",
   initialState: "/api/initialState",
@@ -118,6 +121,11 @@ export const publicRoutes = [
     id: 12,
     path: TAC_ROUTE,
     Component: TermsPage,
+  },
+  {
+    id: 12,
+    path: COOPERATION_ROUTE,
+    Component: Cooperation,
   },
   {
     id: 13,

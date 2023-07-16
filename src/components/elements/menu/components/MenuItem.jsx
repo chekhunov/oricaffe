@@ -18,8 +18,6 @@ const MenuElement = ({
 }) => {
   const { t } = useTranslation();
 
-  console.log(link, "link");
-
   return (
     <>
       {!category ? (

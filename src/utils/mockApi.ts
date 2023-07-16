@@ -4,6 +4,7 @@ import axios, { AxiosRequestConfig } from "axios";
 import { apiRoutes } from "./routes";
 import { topProducts } from "../state/topProducts";
 import { products } from "../state/catalog";
+import { listPartners } from "../state/partners";
 import { navMenu, menuSubheader, categoryProducts } from "../state/navMenu";
 import { cartMocks } from "../state/cartMocks";
 
@@ -84,7 +85,7 @@ export const initializeMockAdapter = () => {
     ];
   });
 
-  mock.onGet(apiRoutes.getNavMenu).reply((config) => {
+  mock.onGet(apiRoutes.getNavMenu).reply(() => {
     return [
       200,
       {
@@ -95,8 +96,12 @@ export const initializeMockAdapter = () => {
     ];
   });
 
-  mock.onGet(apiRoutes.getTopProductsList).reply((config) => {
+  mock.onGet(apiRoutes.getTopProductsList).reply(() => {
     return [200, { top_products: topProducts }];
+  });
+
+  mock.onGet(apiRoutes.getPartners).reply(() => {
+    return [200, { partners: listPartners }];
   });
 
   mock.onGet(apiRoutes.getProductsList).reply((config) => {
@@ -122,8 +127,6 @@ export const initializeMockAdapter = () => {
 
   mock.onGet(apiRoutes.getProductCardDetails).reply((config) => {
     const { params } = config;
-
-    console.log(config);
 
     const filterData = products.find((item) => String(item.id) === params.code);
 
